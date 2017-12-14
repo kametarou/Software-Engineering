@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="soft" nsURI="/Users/ysakanaka/HomeWork/SEClass/GameMapEditor/src"
+    nsPrefix="sf">
+  <eSubpackages name="mapping" nsURI="/Users/ysakanaka/HomeWork/SEClass/GameMapEditor/src/mapping"
+      nsPrefix="mp">
+    <eClassifiers xsi:type="ecore:EClass" name="Map">
+      <eOperations name="init">
+        <eParameters name="height" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        <eParameters name="width" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </eOperations>
+      <eOperations name="setLayer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eParameters name="layer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="getLogs" lowerBound="1"
+          eType="#//mapping/Logs" changeable="false"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="Cells"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="currentLayer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+          defaultValueLiteral=""/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Logs">
+      <eOperations name="undo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eOperations name="redo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eOperations name="removelog"/>
+      <eOperations name="addlog">
+        <eParameters name="op" eType="#//mapping/Operation"/>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="maps" lowerBound="1"
+          upperBound="-1" eType="#//mapping/Map" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="logdata" defaultValueLiteral=""/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="current" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+          defaultValueLiteral="0"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Cell">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="position" lowerBound="1"
+          eType="#//mapping/Position" eOpposite="#//mapping/Position/myCell"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Position">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="myCell" lowerBound="1"
+          eType="#//mapping/Cell" unsettable="true" containment="true" eOpposite="#//mapping/Cell/position"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Operation">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="after"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="before"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="layer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="area" eType="#//mapping/AreaVector"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AreaVector">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//mapping/Position"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//mapping/Position"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Asset">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="test" eType="#//mapping/Graphics2D"
+          defaultValueLiteral=""/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EDataType" name="Graphics2D" instanceClassName="java.awt.Graphics2D"/>
+  </eSubpackages>
+  <eSubpackages name="main" nsURI="/Users/ysakanaka/HomeWork/SEClass/GameMapEditor/src/main"
+      nsPrefix="main">
+    <eClassifiers xsi:type="ecore:EClass" name="MyGameMapEditor">
+      <eOperations name="main"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Editor"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Window">
+      <eOperations name="init"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MyMouseMotionListener"/>
+    <eClassifiers xsi:type="ecore:EClass" name="MyKeyboardListener"/>
+    <eClassifiers xsi:type="ecore:EClass" name="File">
+      <eOperations name="makeNewFile"/>
+    </eClassifiers>
+  </eSubpackages>
+</ecore:EPackage>
