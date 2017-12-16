@@ -9,9 +9,16 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated My -->
       <package
-            uri="/Users/ysakanaka/HomeWork/SEClass/GameMapEditor/src"
-            class="mapping.MappingPackage"
+            uri="/Users/ysakanaka/HomeWork/SEClass/GameMapEditor/src/mapping"
+            class="soft.mapping.MappingPackage"
             genModel="model/My.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated My -->
+      <package
+            uri="/Users/ysakanaka/HomeWork/SEClass/GameMapEditor/src/main"
+            class="soft.main.MainPackage"
+            genModel="model/My.genmodel"/>
+   </extension>
 </plugin>

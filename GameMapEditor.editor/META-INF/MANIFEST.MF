@@ -4,11 +4,13 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: GameMapEditor.editor;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: mapping.presentation.MyEditorPlugin$Implementation
+Bundle-Activator: soft.mapping.presentation.MyEditorPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: mapping.presentation
+Export-Package: mapping.presentation,
+ soft.main.presentation,
+ soft.mapping.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
  GameMapEditor.edit;visibility:=reexport,

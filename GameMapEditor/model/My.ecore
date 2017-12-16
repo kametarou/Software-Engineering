@@ -14,7 +14,11 @@
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="getLogs" lowerBound="1"
           eType="#//mapping/Logs" changeable="false"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="Cells"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="Cells">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+          <eTypeArguments/>
+        </eGenericType>
+      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="currentLayer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
           defaultValueLiteral=""/>
     </eClassifiers>
@@ -27,7 +31,11 @@
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="maps" lowerBound="1"
           upperBound="-1" eType="#//mapping/Map" containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="logdata" defaultValueLiteral=""/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="logdata" defaultValueLiteral="">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+          <eTypeArguments/>
+        </eGenericType>
+      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="current" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
           defaultValueLiteral="0"/>
     </eClassifiers>
@@ -42,10 +50,10 @@
           eType="#//mapping/Cell" unsettable="true" containment="true" eOpposite="#//mapping/Cell/position"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Operation">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="after"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="before"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="layer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="area" eType="#//mapping/AreaVector"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="beforeMap" eType="#//mapping/Map"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="afterMap" eType="#//mapping/Map"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="AreaVector">
       <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//mapping/Position"/>

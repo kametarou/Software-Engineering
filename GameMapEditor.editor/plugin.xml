@@ -12,9 +12,9 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="mapping.presentation.MappingModelWizardID"
+            id="soft.mapping.presentation.MappingModelWizardID"
             name="%_UI_MappingModelWizard_label"
-            class="mapping.presentation.MappingModelWizard"
+            class="soft.mapping.presentation.MappingModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
             icon="icons/full/obj16/MappingModelFile.gif">
          <description>%_UI_MappingModelWizard_description</description>
@@ -25,13 +25,40 @@
    <extension point="org.eclipse.ui.editors">
       <!-- @generated My -->
       <editor
-            id="mapping.presentation.MappingEditorID"
+            id="soft.mapping.presentation.MappingEditorID"
             name="%_UI_MappingEditor_label"
             icon="icons/full/obj16/MappingModelFile.gif"
             extensions="mapping"
-            class="mapping.presentation.MappingEditor"
-            contributorClass="mapping.presentation.MappingActionBarContributor">
+            class="soft.mapping.presentation.MappingEditor"
+            contributorClass="soft.mapping.presentation.MappingActionBarContributor">
       </editor>
    </extension>
 
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated My -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="soft.main.presentation.MainModelWizardID"
+            name="%_UI_MainModelWizard_label"
+            class="soft.main.presentation.MainModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/MainModelFile.gif">
+         <description>%_UI_MainModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated My -->
+      <editor
+            id="soft.main.presentation.MainEditorID"
+            name="%_UI_MainEditor_label"
+            icon="icons/full/obj16/MainModelFile.gif"
+            extensions="main"
+            class="soft.main.presentation.MainEditor"
+            contributorClass="soft.main.presentation.MainActionBarContributor">
+      </editor>
+   </extension>
 </plugin>
