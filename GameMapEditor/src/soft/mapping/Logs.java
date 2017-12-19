@@ -16,8 +16,8 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link soft.mapping.Logs#getMaps <em>Maps</em>}</li>
- *   <li>{@link soft.mapping.Logs#getLogdata <em>Logdata</em>}</li>
  *   <li>{@link soft.mapping.Logs#getCurrent <em>Current</em>}</li>
+ *   <li>{@link soft.mapping.Logs#getLogdata <em>Logdata</em>}</li>
  * </ul>
  *
  * @see soft.mapping.MappingPackage#getLogs()
@@ -36,37 +36,26 @@ public interface Logs extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Maps</em>' containment reference list.
 	 * @see soft.mapping.MappingPackage#getLogs_Maps()
-	 * @model containment="true" required="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<Map> getMaps();
 
 	/**
-	 * Returns the value of the '<em><b>Logdata</b></em>' attribute.
-	 * The default value is <code>""</code>.
+	 * Returns the value of the '<em><b>Logdata</b></em>' reference list.
+	 * The list contents are of type {@link soft.mapping.Operation}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Logdata</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Logdata</em>' attribute.
-	 * @see #setLogdata(EList)
+	 * @return the value of the '<em>Logdata</em>' reference list.
 	 * @see soft.mapping.MappingPackage#getLogs_Logdata()
-	 * @model default="" many="false"
+	 * @model
 	 * @generated
 	 */
-	EList<?> getLogdata();
-
-	/**
-	 * Sets the value of the '{@link soft.mapping.Logs#getLogdata <em>Logdata</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Logdata</em>' attribute.
-	 * @see #getLogdata()
-	 * @generated
-	 */
-	void setLogdata(EList<?> value);
+	EList<Operation> getLogdata();
 
 	/**
 	 * Returns the value of the '<em><b>Current</b></em>' attribute.

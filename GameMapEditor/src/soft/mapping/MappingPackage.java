@@ -78,22 +78,22 @@ public interface MappingPackage extends EPackage {
 	int MAP__GET_LOGS = 0;
 
 	/**
-	 * The feature id for the '<em><b>Cells</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAP__CELLS = 1;
-
-	/**
 	 * The feature id for the '<em><b>Current Layer</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAP__CURRENT_LAYER = 2;
+	int MAP__CURRENT_LAYER = 1;
+
+	/**
+	 * The feature id for the '<em><b>Cells</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAP__CELLS = 2;
 
 	/**
 	 * The number of structural features of the '<em>Map</em>' class.
@@ -151,22 +151,22 @@ public interface MappingPackage extends EPackage {
 	int LOGS__MAPS = 0;
 
 	/**
-	 * The feature id for the '<em><b>Logdata</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOGS__LOGDATA = 1;
-
-	/**
 	 * The feature id for the '<em><b>Current</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LOGS__CURRENT = 2;
+	int LOGS__CURRENT = 1;
+
+	/**
+	 * The feature id for the '<em><b>Logdata</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGS__LOGDATA = 2;
 
 	/**
 	 * The number of structural features of the '<em>Logs</em>' class.
@@ -494,15 +494,15 @@ public interface MappingPackage extends EPackage {
 	EReference getMap_GetLogs();
 
 	/**
-	 * Returns the meta object for the attribute '{@link soft.mapping.Map#getCells <em>Cells</em>}'.
+	 * Returns the meta object for the reference list '{@link soft.mapping.Map#getCells <em>Cells</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Cells</em>'.
+	 * @return the meta object for the reference list '<em>Cells</em>'.
 	 * @see soft.mapping.Map#getCells()
 	 * @see #getMap()
 	 * @generated
 	 */
-	EAttribute getMap_Cells();
+	EReference getMap_Cells();
 
 	/**
 	 * Returns the meta object for the attribute '{@link soft.mapping.Map#getCurrentLayer <em>Current Layer</em>}'.
@@ -557,15 +557,15 @@ public interface MappingPackage extends EPackage {
 	EReference getLogs_Maps();
 
 	/**
-	 * Returns the meta object for the attribute '{@link soft.mapping.Logs#getLogdata <em>Logdata</em>}'.
+	 * Returns the meta object for the reference list '{@link soft.mapping.Logs#getLogdata <em>Logdata</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Logdata</em>'.
+	 * @return the meta object for the reference list '<em>Logdata</em>'.
 	 * @see soft.mapping.Logs#getLogdata()
 	 * @see #getLogs()
 	 * @generated
 	 */
-	EAttribute getLogs_Logdata();
+	EReference getLogs_Logdata();
 
 	/**
 	 * Returns the meta object for the attribute '{@link soft.mapping.Logs#getCurrent <em>Current</em>}'.
@@ -842,12 +842,12 @@ public interface MappingPackage extends EPackage {
 		EReference MAP__GET_LOGS = eINSTANCE.getMap_GetLogs();
 
 		/**
-		 * The meta object literal for the '<em><b>Cells</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Cells</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute MAP__CELLS = eINSTANCE.getMap_Cells();
+		EReference MAP__CELLS = eINSTANCE.getMap_Cells();
 
 		/**
 		 * The meta object literal for the '<em><b>Current Layer</b></em>' attribute feature.
@@ -892,12 +892,12 @@ public interface MappingPackage extends EPackage {
 		EReference LOGS__MAPS = eINSTANCE.getLogs_Maps();
 
 		/**
-		 * The meta object literal for the '<em><b>Logdata</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Logdata</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute LOGS__LOGDATA = eINSTANCE.getLogs_Logdata();
+		EReference LOGS__LOGDATA = eINSTANCE.getLogs_Logdata();
 
 		/**
 		 * The meta object literal for the '<em><b>Current</b></em>' attribute feature.

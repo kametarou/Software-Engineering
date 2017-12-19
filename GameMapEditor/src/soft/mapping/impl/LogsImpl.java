@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import soft.mapping.Logs;
@@ -34,8 +35,8 @@ import soft.mapping.Operation;
  * </p>
  * <ul>
  *   <li>{@link soft.mapping.impl.LogsImpl#getMaps <em>Maps</em>}</li>
- *   <li>{@link soft.mapping.impl.LogsImpl#getLogdata <em>Logdata</em>}</li>
  *   <li>{@link soft.mapping.impl.LogsImpl#getCurrent <em>Current</em>}</li>
+ *   <li>{@link soft.mapping.impl.LogsImpl#getLogdata <em>Logdata</em>}</li>
  * </ul>
  *
  * @generated
@@ -50,16 +51,6 @@ public class LogsImpl extends MinimalEObjectImpl.Container implements Logs {
 	 * @ordered
 	 */
 	protected EList<Map> maps;
-
-	/**
-	 * The cached value of the '{@link #getLogdata() <em>Logdata</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLogdata()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<?> logdata;
 
 	/**
 	 * The default value of the '{@link #getCurrent() <em>Current</em>}' attribute.
@@ -80,6 +71,16 @@ public class LogsImpl extends MinimalEObjectImpl.Container implements Logs {
 	 * @ordered
 	 */
 	protected int current = CURRENT_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getLogdata() <em>Logdata</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLogdata()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Operation> logdata;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -117,20 +118,11 @@ public class LogsImpl extends MinimalEObjectImpl.Container implements Logs {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<?> getLogdata() {
+	public EList<Operation> getLogdata() {
+		if (logdata == null) {
+			logdata = new EObjectResolvingEList<Operation>(Operation.class, this, MappingPackage.LOGS__LOGDATA);
+		}
 		return logdata;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setLogdata(EList<?> newLogdata) {
-		EList<?> oldLogdata = logdata;
-		logdata = newLogdata;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MappingPackage.LOGS__LOGDATA, oldLogdata, logdata));
 	}
 
 	/**
@@ -222,10 +214,10 @@ public class LogsImpl extends MinimalEObjectImpl.Container implements Logs {
 		switch (featureID) {
 			case MappingPackage.LOGS__MAPS:
 				return getMaps();
-			case MappingPackage.LOGS__LOGDATA:
-				return getLogdata();
 			case MappingPackage.LOGS__CURRENT:
 				return getCurrent();
+			case MappingPackage.LOGS__LOGDATA:
+				return getLogdata();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -243,11 +235,12 @@ public class LogsImpl extends MinimalEObjectImpl.Container implements Logs {
 				getMaps().clear();
 				getMaps().addAll((Collection<? extends Map>)newValue);
 				return;
-			case MappingPackage.LOGS__LOGDATA:
-				setLogdata((EList<?>)newValue);
-				return;
 			case MappingPackage.LOGS__CURRENT:
 				setCurrent((Integer)newValue);
+				return;
+			case MappingPackage.LOGS__LOGDATA:
+				getLogdata().clear();
+				getLogdata().addAll((Collection<? extends Operation>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -264,11 +257,11 @@ public class LogsImpl extends MinimalEObjectImpl.Container implements Logs {
 			case MappingPackage.LOGS__MAPS:
 				getMaps().clear();
 				return;
-			case MappingPackage.LOGS__LOGDATA:
-				setLogdata((EList<?>)null);
-				return;
 			case MappingPackage.LOGS__CURRENT:
 				setCurrent(CURRENT_EDEFAULT);
+				return;
+			case MappingPackage.LOGS__LOGDATA:
+				getLogdata().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -284,10 +277,10 @@ public class LogsImpl extends MinimalEObjectImpl.Container implements Logs {
 		switch (featureID) {
 			case MappingPackage.LOGS__MAPS:
 				return maps != null && !maps.isEmpty();
-			case MappingPackage.LOGS__LOGDATA:
-				return logdata != null;
 			case MappingPackage.LOGS__CURRENT:
 				return current != CURRENT_EDEFAULT;
+			case MappingPackage.LOGS__LOGDATA:
+				return logdata != null && !logdata.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -324,9 +317,7 @@ public class LogsImpl extends MinimalEObjectImpl.Container implements Logs {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (logdata: ");
-		result.append(logdata);
-		result.append(", current: ");
+		result.append(" (current: ");
 		result.append(current);
 		result.append(')');
 		return result.toString();

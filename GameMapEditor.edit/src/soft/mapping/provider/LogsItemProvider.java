@@ -8,8 +8,6 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -64,8 +62,8 @@ public class LogsItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addLogdataPropertyDescriptor(object);
 			addCurrentPropertyDescriptor(object);
+			addLogdataPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -86,8 +84,8 @@ public class LogsItemProvider
 				 MappingPackage.Literals.LOGS__LOGDATA,
 				 true,
 				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 true,
+				 null,
 				 null,
 				 null));
 	}
@@ -163,11 +161,8 @@ public class LogsItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		EList labelValue = ((Logs)object).getLogdata();
-		String label = labelValue == null ? null : labelValue.toString();
-		return label == null || label.length() == 0 ?
-			getString("_UI_Logs_type") :
-			getString("_UI_Logs_type") + " " + label;
+		Logs logs = (Logs)object;
+		return getString("_UI_Logs_type") + " " + logs.getCurrent();
 	}
 	
 
@@ -183,7 +178,6 @@ public class LogsItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Logs.class)) {
-			case MappingPackage.LOGS__LOGDATA:
 			case MappingPackage.LOGS__CURRENT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

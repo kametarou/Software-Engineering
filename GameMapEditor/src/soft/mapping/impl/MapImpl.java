@@ -4,6 +4,7 @@ package soft.mapping.impl;
 
 import java.lang.reflect.InvocationTargetException;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
@@ -14,6 +15,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import soft.mapping.Cell;
 import soft.mapping.Logs;
 import soft.mapping.Map;
 import soft.mapping.MappingPackage;
@@ -27,8 +30,8 @@ import soft.mapping.MappingPackage;
  * </p>
  * <ul>
  *   <li>{@link soft.mapping.impl.MapImpl#getGetLogs <em>Get Logs</em>}</li>
- *   <li>{@link soft.mapping.impl.MapImpl#getCells <em>Cells</em>}</li>
  *   <li>{@link soft.mapping.impl.MapImpl#getCurrentLayer <em>Current Layer</em>}</li>
+ *   <li>{@link soft.mapping.impl.MapImpl#getCells <em>Cells</em>}</li>
  * </ul>
  *
  * @generated
@@ -45,16 +48,6 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 	protected Logs getLogs;
 
 	/**
-	 * The cached value of the '{@link #getCells() <em>Cells</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCells()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<?> cells;
-
-	/**
 	 * The default value of the '{@link #getCurrentLayer() <em>Current Layer</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -62,7 +55,7 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int CURRENT_LAYER_EDEFAULT; // TODO The default value literal "" is not valid.
+	protected static final int CURRENT_LAYER_EDEFAULT = 0; // TODO The default value literal "" is not valid.
 
 	/**
 	 * The cached value of the '{@link #getCurrentLayer() <em>Current Layer</em>}' attribute.
@@ -73,6 +66,16 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 	 * @ordered
 	 */
 	protected int currentLayer = CURRENT_LAYER_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getCells() <em>Cells</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCells()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Cell> cells;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -124,20 +127,11 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<?> getCells() {
+	public EList<Cell> getCells() {
+		if (cells == null) {
+			cells = new EObjectResolvingEList<Cell>(Cell.class, this, MappingPackage.MAP__CELLS);
+		}
 		return cells;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setCells(EList<?> newCells) {
-		EList<?> oldCells = cells;
-		cells = newCells;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MappingPackage.MAP__CELLS, oldCells, cells));
 	}
 
 	/**
@@ -194,10 +188,10 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 			case MappingPackage.MAP__GET_LOGS:
 				if (resolve) return getGetLogs();
 				return basicGetGetLogs();
-			case MappingPackage.MAP__CELLS:
-				return getCells();
 			case MappingPackage.MAP__CURRENT_LAYER:
 				return getCurrentLayer();
+			case MappingPackage.MAP__CELLS:
+				return getCells();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -207,14 +201,16 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case MappingPackage.MAP__CELLS:
-				setCells((EList<?>)newValue);
-				return;
 			case MappingPackage.MAP__CURRENT_LAYER:
 				setCurrentLayer((Integer)newValue);
+				return;
+			case MappingPackage.MAP__CELLS:
+				getCells().clear();
+				getCells().addAll((Collection<? extends Cell>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -228,11 +224,11 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case MappingPackage.MAP__CELLS:
-				setCells((EList<?>)null);
-				return;
 			case MappingPackage.MAP__CURRENT_LAYER:
 				setCurrentLayer(CURRENT_LAYER_EDEFAULT);
+				return;
+			case MappingPackage.MAP__CELLS:
+				getCells().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -248,10 +244,10 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 		switch (featureID) {
 			case MappingPackage.MAP__GET_LOGS:
 				return getLogs != null;
-			case MappingPackage.MAP__CELLS:
-				return cells != null;
 			case MappingPackage.MAP__CURRENT_LAYER:
 				return currentLayer != CURRENT_LAYER_EDEFAULT;
+			case MappingPackage.MAP__CELLS:
+				return cells != null && !cells.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -283,9 +279,7 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (Cells: ");
-		result.append(cells);
-		result.append(", currentLayer: ");
+		result.append(" (currentLayer: ");
 		result.append(currentLayer);
 		result.append(')');
 		return result.toString();

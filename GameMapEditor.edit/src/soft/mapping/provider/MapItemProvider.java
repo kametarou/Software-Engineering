@@ -8,8 +8,6 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
@@ -62,8 +60,8 @@ public class MapItemProvider
 			super.getPropertyDescriptors(object);
 
 			addGetLogsPropertyDescriptor(object);
-			addCellsPropertyDescriptor(object);
 			addCurrentLayerPropertyDescriptor(object);
+			addCellsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -101,13 +99,13 @@ public class MapItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Map_Cells_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Map_Cells_feature", "_UI_Map_type"),
+				 getString("_UI_Map_cells_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Map_cells_feature", "_UI_Map_type"),
 				 MappingPackage.Literals.MAP__CELLS,
 				 true,
 				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 true,
+				 null,
 				 null,
 				 null));
 	}
@@ -153,11 +151,8 @@ public class MapItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		EList labelValue = ((Map)object).getCells();
-		String label = labelValue == null ? null : labelValue.toString();
-		return label == null || label.length() == 0 ?
-			getString("_UI_Map_type") :
-			getString("_UI_Map_type") + " " + label;
+		Map map = (Map)object;
+		return getString("_UI_Map_type") + " " + map.getCurrentLayer();
 	}
 	
 
@@ -173,7 +168,6 @@ public class MapItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Map.class)) {
-			case MappingPackage.MAP__CELLS:
 			case MappingPackage.MAP__CURRENT_LAYER:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

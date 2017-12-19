@@ -16,8 +16,8 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link soft.mapping.Map#getGetLogs <em>Get Logs</em>}</li>
- *   <li>{@link soft.mapping.Map#getCells <em>Cells</em>}</li>
  *   <li>{@link soft.mapping.Map#getCurrentLayer <em>Current Layer</em>}</li>
+ *   <li>{@link soft.mapping.Map#getCells <em>Cells</em>}</li>
  * </ul>
  *
  * @see soft.mapping.MappingPackage#getMap()
@@ -41,34 +41,24 @@ public interface Map extends EObject {
 	Logs getGetLogs();
 
 	/**
-	 * Returns the value of the '<em><b>Cells</b></em>' attribute.
+	 * Returns the value of the '<em><b>Cells</b></em>' reference list.
+	 * The list contents are of type {@link soft.mapping.Cell}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Cells</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Cells</em>' attribute.
-	 * @see #setCells(EList)
+	 * @return the value of the '<em>Cells</em>' reference list.
 	 * @see soft.mapping.MappingPackage#getMap_Cells()
-	 * @model many="false"
+	 * @model transient="true"
 	 * @generated
 	 */
-	EList<?> getCells();
-
-	/**
-	 * Sets the value of the '{@link soft.mapping.Map#getCells <em>Cells</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Cells</em>' attribute.
-	 * @see #getCells()
-	 * @generated
-	 */
-	void setCells(EList<?> value);
+	EList<Cell> getCells();
 
 	/**
 	 * Returns the value of the '<em><b>Current Layer</b></em>' attribute.
-	 * The default value is <code>""</code>.
+	 * The default value is <code>"0"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Current Layer</em>' attribute isn't clear,
@@ -78,7 +68,7 @@ public interface Map extends EObject {
 	 * @return the value of the '<em>Current Layer</em>' attribute.
 	 * @see #setCurrentLayer(int)
 	 * @see soft.mapping.MappingPackage#getMap_CurrentLayer()
-	 * @model default=""
+	 * @model default="0"
 	 * @generated
 	 */
 	int getCurrentLayer();

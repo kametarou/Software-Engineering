@@ -7,7 +7,6 @@ import java.awt.Graphics2D;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
-import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -180,8 +179,8 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getMap_Cells() {
-		return (EAttribute)mapEClass.getEStructuralFeatures().get(1);
+	public EReference getMap_Cells() {
+		return (EReference)mapEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -190,7 +189,7 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 	 * @generated
 	 */
 	public EAttribute getMap_CurrentLayer() {
-		return (EAttribute)mapEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)mapEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -234,8 +233,8 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getLogs_Logdata() {
-		return (EAttribute)logsEClass.getEStructuralFeatures().get(1);
+	public EReference getLogs_Logdata() {
+		return (EReference)logsEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -244,7 +243,7 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 	 * @generated
 	 */
 	public EAttribute getLogs_Current() {
-		return (EAttribute)logsEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)logsEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -466,15 +465,15 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 		// Create classes and their features
 		mapEClass = createEClass(MAP);
 		createEReference(mapEClass, MAP__GET_LOGS);
-		createEAttribute(mapEClass, MAP__CELLS);
 		createEAttribute(mapEClass, MAP__CURRENT_LAYER);
+		createEReference(mapEClass, MAP__CELLS);
 		createEOperation(mapEClass, MAP___INIT__INT_INT);
 		createEOperation(mapEClass, MAP___SET_LAYER__INT);
 
 		logsEClass = createEClass(LOGS);
 		createEReference(logsEClass, LOGS__MAPS);
-		createEAttribute(logsEClass, LOGS__LOGDATA);
 		createEAttribute(logsEClass, LOGS__CURRENT);
+		createEReference(logsEClass, LOGS__LOGDATA);
 		createEOperation(logsEClass, LOGS___UNDO);
 		createEOperation(logsEClass, LOGS___REDO);
 		createEOperation(logsEClass, LOGS___REMOVELOG);
@@ -537,11 +536,8 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 		// Initialize classes, features, and operations; add parameters
 		initEClass(mapEClass, Map.class, "Map", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMap_GetLogs(), this.getLogs(), null, "getLogs", null, 1, 1, Map.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		EGenericType g1 = createEGenericType(ecorePackage.getEEList());
-		EGenericType g2 = createEGenericType();
-		g1.getETypeArguments().add(g2);
-		initEAttribute(getMap_Cells(), g1, "Cells", null, 0, 1, Map.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMap_CurrentLayer(), ecorePackage.getEInt(), "currentLayer", "", 0, 1, Map.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMap_CurrentLayer(), ecorePackage.getEInt(), "currentLayer", "0", 0, 1, Map.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMap_Cells(), this.getCell(), null, "cells", null, 0, -1, Map.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		EOperation op = initEOperation(getMap__Init__int_int(), null, "init", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "height", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -551,12 +547,9 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 		addEParameter(op, ecorePackage.getEInt(), "layer", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(logsEClass, Logs.class, "Logs", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getLogs_Maps(), this.getMap(), null, "maps", null, 1, -1, Logs.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEEList());
-		g2 = createEGenericType();
-		g1.getETypeArguments().add(g2);
-		initEAttribute(getLogs_Logdata(), g1, "logdata", "", 0, 1, Logs.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLogs_Maps(), this.getMap(), null, "maps", null, 0, -1, Logs.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLogs_Current(), ecorePackage.getEInt(), "current", "0", 0, 1, Logs.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLogs_Logdata(), this.getOperation(), null, "logdata", null, 0, -1, Logs.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getLogs__Undo(), ecorePackage.getEBoolean(), "undo", 0, 1, IS_UNIQUE, IS_ORDERED);
 

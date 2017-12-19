@@ -14,13 +14,10 @@
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="getLogs" lowerBound="1"
           eType="#//mapping/Logs" changeable="false"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="Cells">
-        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
-          <eTypeArguments/>
-        </eGenericType>
-      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="currentLayer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
-          defaultValueLiteral=""/>
+          defaultValueLiteral="0"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="cells" upperBound="-1"
+          eType="#//mapping/Cell" transient="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Logs">
       <eOperations name="undo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -29,15 +26,12 @@
       <eOperations name="addlog">
         <eParameters name="op" eType="#//mapping/Operation"/>
       </eOperations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="maps" lowerBound="1"
-          upperBound="-1" eType="#//mapping/Map" containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="logdata" defaultValueLiteral="">
-        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
-          <eTypeArguments/>
-        </eGenericType>
-      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="maps" upperBound="-1"
+          eType="#//mapping/Map" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="current" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
           defaultValueLiteral="0"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="logdata" upperBound="-1"
+          eType="#//mapping/Operation"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Cell">
       <eStructuralFeatures xsi:type="ecore:EReference" name="position" lowerBound="1"
