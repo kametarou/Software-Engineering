@@ -6,9 +6,8 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: mapping.tests,
- soft.main.tests,
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Export-Package: soft.main.tests,
  soft.mapping.tests
 Require-Bundle: org.eclipse.core.runtime,
  GameMapEditor;visibility:=reexport,

@@ -13,6 +13,12 @@ import soft.mapping.MappingFactory;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Cell</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following operations are tested:
+ * <ul>
+ *   <li>{@link soft.mapping.Cell#init(int, int) <em>Init</em>}</li>
+ * </ul>
+ * </p>
  * @generated
  */
 public class CellTest extends TestCase {
@@ -84,6 +90,19 @@ public class CellTest extends TestCase {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
+	}
+
+	/**
+	 * Tests the '{@link soft.mapping.Cell#init(int, int) <em>Init</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see soft.mapping.Cell#init(int, int)
+	 * @generated
+	 */
+	public void testInit__int_int() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
 	}
 
 } //CellTest

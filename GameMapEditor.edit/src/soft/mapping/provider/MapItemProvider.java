@@ -8,6 +8,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
@@ -59,7 +60,7 @@ public class MapItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addGetLogsPropertyDescriptor(object);
+			addOpLogsPropertyDescriptor(object);
 			addCurrentLayerPropertyDescriptor(object);
 			addCellsPropertyDescriptor(object);
 		}
@@ -67,44 +68,22 @@ public class MapItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Get Logs feature.
+	 * This adds a property descriptor for the Op Logs feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addGetLogsPropertyDescriptor(Object object) {
+	protected void addOpLogsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Map_getLogs_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Map_getLogs_feature", "_UI_Map_type"),
-				 MappingPackage.Literals.MAP__GET_LOGS,
+				 getString("_UI_Map_opLogs_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Map_opLogs_feature", "_UI_Map_type"),
+				 MappingPackage.Literals.MAP__OP_LOGS,
 				 false,
 				 false,
 				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Cells feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCellsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Map_cells_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Map_cells_feature", "_UI_Map_type"),
-				 MappingPackage.Literals.MAP__CELLS,
-				 true,
-				 false,
-				 true,
 				 null,
 				 null,
 				 null));
@@ -128,6 +107,28 @@ public class MapItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Cells feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCellsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Map_cells_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Map_cells_feature", "_UI_Map_type"),
+				 MappingPackage.Literals.MAP__CELLS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -169,6 +170,7 @@ public class MapItemProvider
 
 		switch (notification.getFeatureID(Map.class)) {
 			case MappingPackage.MAP__CURRENT_LAYER:
+			case MappingPackage.MAP__CELLS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

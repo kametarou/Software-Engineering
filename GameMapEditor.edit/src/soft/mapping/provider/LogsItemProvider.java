@@ -8,6 +8,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -69,28 +70,6 @@ public class LogsItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Logdata feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addLogdataPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Logs_logdata_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Logs_logdata_feature", "_UI_Logs_type"),
-				 MappingPackage.Literals.LOGS__LOGDATA,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Current feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -108,6 +87,28 @@ public class LogsItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Logdata feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLogdataPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Logs_logdata_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Logs_logdata_feature", "_UI_Logs_type"),
+				 MappingPackage.Literals.LOGS__LOGDATA,
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}

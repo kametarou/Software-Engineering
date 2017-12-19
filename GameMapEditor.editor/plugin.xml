@@ -61,4 +61,5 @@
             contributorClass="soft.main.presentation.MainActionBarContributor">
       </editor>
    </extension>
+
 </plugin>

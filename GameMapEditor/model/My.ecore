@@ -6,18 +6,24 @@
       nsPrefix="mp">
     <eClassifiers xsi:type="ecore:EClass" name="Map">
       <eOperations name="init">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="cells = new Cell[width][height];&#xA;&#xA;for(int x=0; x &lt; width; x++){&#xA;  for(int y=0; y &lt; height; y++){&#xA;    CellImpl myCell = new CellImpl();&#xA;    myCell.init(x,y);&#xA;    cells[x][y] = myCell;&#xA;  }&#xA;}&#xA;&#xA;opLogs = new LogsImpl();"/>
+        </eAnnotations>
         <eParameters name="height" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
         <eParameters name="width" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
       </eOperations>
       <eOperations name="setLayer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="currentLayer = layer;&#xA;&#xA;return currentLayer == layer;"/>
+        </eAnnotations>
         <eParameters name="layer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
       </eOperations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="getLogs" lowerBound="1"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="opLogs" lowerBound="1"
           eType="#//mapping/Logs" changeable="false"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="currentLayer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
           defaultValueLiteral="0"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="cells" upperBound="-1"
-          eType="#//mapping/Cell" transient="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="cells" lowerBound="1"
+          eType="#//mapping/CellArray"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Logs">
       <eOperations name="undo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -33,11 +39,23 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="logdata" upperBound="-1"
           eType="#//mapping/Operation"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Cell">
+    <eClassifiers xsi:type="ecore:EClass" name="Cell" eSuperTypes="#//main/Serializable">
+      <eOperations name="init" lowerBound="1">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="Position myPos = new PositionImpl();&#xA;&#xA;myPos.setX(x);&#xA;myPos.setY(y);&#xA;myPos.setMyCell(this);&#xA;&#xA;this.setPosition(myPos);"/>
+        </eAnnotations>
+        <eParameters name="x" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        <eParameters name="y" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </eOperations>
+      <eOperations name="toString" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="Position myPos = getPosition();&#xA;&#x9;&#x9;return &quot;Cell (&quot;+myPos.getX()+&quot;,&quot;+myPos.getY()+&quot;)&quot;;"/>
+        </eAnnotations>
+      </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="position" lowerBound="1"
           eType="#//mapping/Position" eOpposite="#//mapping/Position/myCell"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Position">
+    <eClassifiers xsi:type="ecore:EClass" name="Position" eSuperTypes="#//main/Serializable">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="myCell" lowerBound="1"
@@ -58,6 +76,7 @@
           defaultValueLiteral=""/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EDataType" name="Graphics2D" instanceClassName="java.awt.Graphics2D"/>
+    <eClassifiers xsi:type="ecore:EDataType" name="CellArray" instanceClassName="soft.mapping.Cell[][]"/>
   </eSubpackages>
   <eSubpackages name="main" nsURI="/Users/ysakanaka/HomeWork/SEClass/GameMapEditor/src/main"
       nsPrefix="main">
@@ -73,5 +92,7 @@
     <eClassifiers xsi:type="ecore:EClass" name="File">
       <eOperations name="makeNewFile"/>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Serializable" instanceClassName="java.io.Serializable"
+        abstract="true" interface="true"/>
   </eSubpackages>
 </ecore:EPackage>

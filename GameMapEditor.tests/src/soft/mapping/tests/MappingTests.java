@@ -33,6 +33,7 @@ public class MappingTests extends TestSuite {
 		TestSuite suite = new MappingTests("mapping Tests");
 		suite.addTestSuite(MapTest.class);
 		suite.addTestSuite(LogsTest.class);
+		suite.addTestSuite(CellTest.class);
 		return suite;
 	}
 
