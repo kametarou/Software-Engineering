@@ -8,6 +8,7 @@ import junit.textui.TestRunner;
 
 import soft.mapping.Map;
 import soft.mapping.MappingFactory;
+import soft.mapping.Position;
 
 /**
  * <!-- begin-user-doc -->
@@ -98,12 +99,24 @@ public class MapTest extends TestCase {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see soft.mapping.Map#init(int, int)
-	 * @generated
+	 * @generated NOT
 	 */
 	public void testInit__int_int() {
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
+		
+		
+		Map myMap = fixture;
+		myMap.init(100, 100);
+		//should test the size of map
+        Position myPos;
+		for(int x = 0; x<100;x++) {
+			for(int y=0; y<100; y++) {
+                                    myPos = myMap.getCells()[x][y].getPosition();
+				assertEquals(myPos.getX(),x);
+                assertEquals(myPos.getY(),y);
+                assertEquals(myPos.getMyCell(),myMap.getCells()[x][y]);
+				//System.out.println(myMap.getCells()[x][y].toString());
+			}
+		}
 	}
 
 	/**
@@ -114,9 +127,24 @@ public class MapTest extends TestCase {
 	 * @generated
 	 */
 	public void testSetLayer__int() {
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
+		Map myMap = fixture;
+		boolean ret;
+		int oldLayer = myMap.getCurrentLayer(); 
+		ret = myMap.setLayer(-1);
+		assertEquals(ret,false);
+		assertEquals(myMap.getCurrentLayer(),oldLayer);
+		ret = myMap.setLayer(4);
+		assertEquals(ret,false);
+		assertEquals(myMap.getCurrentLayer(),oldLayer);
+		ret = myMap.setLayer(3);
+		assertEquals(ret,false);
+		assertEquals(myMap.getCurrentLayer(),oldLayer);
+
+		for(int i = 0; i<3; i++){
+		  ret = myMap.setLayer(i);
+		assertEquals(ret,true);
+		assertEquals(myMap.getCurrentLayer(),i);
+		}
 	}
 
 } //MapTest

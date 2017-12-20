@@ -14,7 +14,7 @@
       </eOperations>
       <eOperations name="setLayer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="body" value="currentLayer = layer;&#xA;&#xA;return currentLayer == layer;"/>
+          <details key="body" value="if(layer &lt; 0 || layer >= maxLayer){&#xA;  return false;&#xA;}&#xA;&#xA;currentLayer = layer;&#xA;&#xA;return currentLayer == layer;"/>
         </eAnnotations>
         <eParameters name="layer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
       </eOperations>
@@ -24,6 +24,8 @@
           defaultValueLiteral="0"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="cells" lowerBound="1"
           eType="#//mapping/CellArray"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxLayer" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="3"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Logs">
       <eOperations name="undo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>

@@ -17,6 +17,7 @@ import soft.mapping.MappingFactory;
  * The following operations are tested:
  * <ul>
  *   <li>{@link soft.mapping.Cell#init(int, int) <em>Init</em>}</li>
+ *   <li>{@link soft.mapping.Cell#toString() <em>To String</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -100,6 +101,19 @@ public class CellTest extends TestCase {
 	 * @generated
 	 */
 	public void testInit__int_int() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link soft.mapping.Cell#toString() <em>To String</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see soft.mapping.Cell#toString()
+	 * @generated
+	 */
+	public void testToString() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

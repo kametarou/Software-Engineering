@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link soft.mapping.Map#getOpLogs <em>Op Logs</em>}</li>
  *   <li>{@link soft.mapping.Map#getCurrentLayer <em>Current Layer</em>}</li>
  *   <li>{@link soft.mapping.Map#getCells <em>Cells</em>}</li>
+ *   <li>{@link soft.mapping.Map#getMaxLayer <em>Max Layer</em>}</li>
  * </ul>
  *
  * @see soft.mapping.MappingPackage#getMap()
@@ -92,9 +93,37 @@ public interface Map extends EObject {
 	void setCells(Cell[][] value);
 
 	/**
+	 * Returns the value of the '<em><b>Max Layer</b></em>' attribute.
+	 * The default value is <code>"3"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Max Layer</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Max Layer</em>' attribute.
+	 * @see #setMaxLayer(int)
+	 * @see soft.mapping.MappingPackage#getMap_MaxLayer()
+	 * @model default="3" required="true"
+	 * @generated
+	 */
+	int getMaxLayer();
+
+	/**
+	 * Sets the value of the '{@link soft.mapping.Map#getMaxLayer <em>Max Layer</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Max Layer</em>' attribute.
+	 * @see #getMaxLayer()
+	 * @generated
+	 */
+	void setMaxLayer(int value);
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='cells = new Cell[width][height];\n\nfor(int x=0; x &lt; width; x++){\n  for(int y=0; y &lt; height; y++){\n    CellImpl myCell = new CellImpl();\n    myCell.init(x,y);\n    cells[x][y] = myCell;\n  }\n}\n\nopLogs = new LogsImpl();'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel testBody='MappingFactory factory = MappingFactoryImpl.init();\n\t\t\n\t\tMap myMap = factory.createMap();\n\t\tmyMap.init(100, 100);\n                  Position myPos;\n\t\tfor(int x = 0; x&lt;100;x++) {\n\t\t\tfor(int y=0; y&lt;100; y++) {\n                                    myPos = myMap.getCells()[x][y].getPosition();\n\t\t\t\tassertEqual(myPos.getX(),x);\n                                    assertEqual(myPos.getY(),y);\n                                   assertEqual(myPos.getMyCell(),myMap.getCells()[x][y]);\n\t\t\t\t//System.out.println(myMap.getCells()[x][y].toString());\n\t\t\t}\n\t\t}'"
 	 * @generated
 	 */
 	void init(int height, int width);
@@ -102,7 +131,8 @@ public interface Map extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='currentLayer = layer;\n\nreturn currentLayer == layer;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if(layer &lt; 0 || layer &gt;= maxLayer){\n  return false;\n}\n\ncurrentLayer = layer;\n\nreturn currentLayer == layer;'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel testBody='Map myMap = fixture;\nboolean ret;\nint oldLayer = myMap.getCurrentLayer(); \nret = myMap.setLayer(-1);\nassertEquals(ret,false);\nassertEquals(myMap.getCurrentLayer(),oldLayer);\nret = myMap.setLayer(4);\nassertEquals(ret,false);\nassertEquals(myMap.getCurrentLayer(),oldLayer);\nret = myMap.setLayer(3);\nassertEquals(ret,false);\nassertEquals(myMap.getCurrentLayer(),oldLayer);\n\nfor(int i = 0; i&lt;3; i++){\n  ret = myMap.setLayer(i);\nassertEquals(ret,true);\nassertEquals(myMap.getCurrentLayer(),i);\n}'"
 	 * @generated
 	 */
 	boolean setLayer(int layer);

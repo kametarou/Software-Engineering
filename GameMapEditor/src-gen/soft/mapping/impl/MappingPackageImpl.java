@@ -204,6 +204,15 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getMap_MaxLayer() {
+		return (EAttribute)mapEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EOperation getMap__Init__int_int() {
 		return mapEClass.getEOperations().get(0);
 	}
@@ -501,6 +510,7 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 		createEReference(mapEClass, MAP__OP_LOGS);
 		createEAttribute(mapEClass, MAP__CURRENT_LAYER);
 		createEAttribute(mapEClass, MAP__CELLS);
+		createEAttribute(mapEClass, MAP__MAX_LAYER);
 		createEOperation(mapEClass, MAP___INIT__INT_INT);
 		createEOperation(mapEClass, MAP___SET_LAYER__INT);
 
@@ -580,6 +590,7 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 		initEReference(getMap_OpLogs(), this.getLogs(), null, "opLogs", null, 1, 1, Map.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMap_CurrentLayer(), ecorePackage.getEInt(), "currentLayer", "0", 0, 1, Map.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMap_Cells(), this.getCellArray(), "cells", null, 1, 1, Map.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMap_MaxLayer(), ecorePackage.getEInt(), "maxLayer", "3", 1, 1, Map.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		EOperation op = initEOperation(getMap__Init__int_int(), null, "init", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "height", 0, 1, IS_UNIQUE, IS_ORDERED);

@@ -98,13 +98,22 @@ public interface MappingPackage extends EPackage {
 	int MAP__CELLS = 2;
 
 	/**
+	 * The feature id for the '<em><b>Max Layer</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAP__MAX_LAYER = 3;
+
+	/**
 	 * The number of structural features of the '<em>Map</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAP_FEATURE_COUNT = 3;
+	int MAP_FEATURE_COUNT = 4;
 
 	/**
 	 * The operation id for the '<em>Init</em>' operation.
@@ -545,6 +554,17 @@ public interface MappingPackage extends EPackage {
 	EAttribute getMap_Cells();
 
 	/**
+	 * Returns the meta object for the attribute '{@link soft.mapping.Map#getMaxLayer <em>Max Layer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Max Layer</em>'.
+	 * @see soft.mapping.Map#getMaxLayer()
+	 * @see #getMap()
+	 * @generated
+	 */
+	EAttribute getMap_MaxLayer();
+
+	/**
 	 * Returns the meta object for the '{@link soft.mapping.Map#init(int, int) <em>Init</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -915,6 +935,14 @@ public interface MappingPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute MAP__CELLS = eINSTANCE.getMap_Cells();
+
+		/**
+		 * The meta object literal for the '<em><b>Max Layer</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MAP__MAX_LAYER = eINSTANCE.getMap_MaxLayer();
 
 		/**
 		 * The meta object literal for the '<em><b>Init</b></em>' operation.

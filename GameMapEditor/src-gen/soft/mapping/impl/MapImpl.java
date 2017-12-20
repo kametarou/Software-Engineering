@@ -30,6 +30,7 @@ import soft.mapping.MappingPackage;
  *   <li>{@link soft.mapping.impl.MapImpl#getOpLogs <em>Op Logs</em>}</li>
  *   <li>{@link soft.mapping.impl.MapImpl#getCurrentLayer <em>Current Layer</em>}</li>
  *   <li>{@link soft.mapping.impl.MapImpl#getCells <em>Cells</em>}</li>
+ *   <li>{@link soft.mapping.impl.MapImpl#getMaxLayer <em>Max Layer</em>}</li>
  * </ul>
  *
  * @generated
@@ -84,6 +85,26 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 	 * @ordered
 	 */
 	protected Cell[][] cells = CELLS_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getMaxLayer() <em>Max Layer</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaxLayer()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int MAX_LAYER_EDEFAULT = 3;
+
+	/**
+	 * The cached value of the '{@link #getMaxLayer() <em>Max Layer</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaxLayer()
+	 * @generated
+	 * @ordered
+	 */
+	protected int maxLayer = MAX_LAYER_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -177,6 +198,27 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getMaxLayer() {
+		return maxLayer;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMaxLayer(int newMaxLayer) {
+		int oldMaxLayer = maxLayer;
+		maxLayer = newMaxLayer;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MappingPackage.MAP__MAX_LAYER, oldMaxLayer, maxLayer));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public void init(final int height, final int width) {
 		cells = new Cell[width][height];
 		
@@ -197,6 +239,10 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 	 * @generated
 	 */
 	public boolean setLayer(final int layer) {
+		if(layer < 0 || layer >= maxLayer){
+		  return false;
+		}
+		
 		currentLayer = layer;
 		
 		return currentLayer == layer;
@@ -217,6 +263,8 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 				return getCurrentLayer();
 			case MappingPackage.MAP__CELLS:
 				return getCells();
+			case MappingPackage.MAP__MAX_LAYER:
+				return getMaxLayer();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -234,6 +282,9 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 				return;
 			case MappingPackage.MAP__CELLS:
 				setCells((Cell[][])newValue);
+				return;
+			case MappingPackage.MAP__MAX_LAYER:
+				setMaxLayer((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -253,6 +304,9 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 			case MappingPackage.MAP__CELLS:
 				setCells(CELLS_EDEFAULT);
 				return;
+			case MappingPackage.MAP__MAX_LAYER:
+				setMaxLayer(MAX_LAYER_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -271,6 +325,8 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 				return currentLayer != CURRENT_LAYER_EDEFAULT;
 			case MappingPackage.MAP__CELLS:
 				return CELLS_EDEFAULT == null ? cells != null : !CELLS_EDEFAULT.equals(cells);
+			case MappingPackage.MAP__MAX_LAYER:
+				return maxLayer != MAX_LAYER_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -306,6 +362,8 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 		result.append(currentLayer);
 		result.append(", cells: ");
 		result.append(cells);
+		result.append(", maxLayer: ");
+		result.append(maxLayer);
 		result.append(')');
 		return result.toString();
 	}
