@@ -128,4 +128,12 @@ public interface Operation extends EObject {
 	 */
 	void setAfterMap(Map value);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void init();
+
 } // Operation

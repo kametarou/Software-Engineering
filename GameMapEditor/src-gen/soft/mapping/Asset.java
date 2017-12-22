@@ -50,4 +50,12 @@ public interface Asset extends EObject {
 	 */
 	void setTest(Graphics2D value);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void init();
+
 } // Asset

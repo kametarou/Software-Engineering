@@ -225,13 +225,22 @@ public interface MappingPackage extends EPackage {
 	int LOGS___ADDLOG__OPERATION = 3;
 
 	/**
+	 * The operation id for the '<em>Init</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGS___INIT = 4;
+
+	/**
 	 * The number of operations of the '<em>Logs</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LOGS_OPERATION_COUNT = 4;
+	int LOGS_OPERATION_COUNT = 5;
 
 	/**
 	 * The meta object id for the '{@link soft.mapping.impl.CellImpl <em>Cell</em>}' class.
@@ -335,13 +344,22 @@ public interface MappingPackage extends EPackage {
 	int POSITION_FEATURE_COUNT = MainPackage.SERIALIZABLE_FEATURE_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>Init</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSITION___INIT = MainPackage.SERIALIZABLE_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>Position</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int POSITION_OPERATION_COUNT = MainPackage.SERIALIZABLE_OPERATION_COUNT + 0;
+	int POSITION_OPERATION_COUNT = MainPackage.SERIALIZABLE_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link soft.mapping.impl.OperationImpl <em>Operation</em>}' class.
@@ -399,13 +417,22 @@ public interface MappingPackage extends EPackage {
 	int OPERATION_FEATURE_COUNT = 4;
 
 	/**
+	 * The operation id for the '<em>Init</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION___INIT = 0;
+
+	/**
 	 * The number of operations of the '<em>Operation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_OPERATION_COUNT = 0;
+	int OPERATION_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link soft.mapping.impl.AreaVectorImpl <em>Area Vector</em>}' class.
@@ -445,13 +472,22 @@ public interface MappingPackage extends EPackage {
 	int AREA_VECTOR_FEATURE_COUNT = 2;
 
 	/**
+	 * The operation id for the '<em>Init</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AREA_VECTOR___INIT = 0;
+
+	/**
 	 * The number of operations of the '<em>Area Vector</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AREA_VECTOR_OPERATION_COUNT = 0;
+	int AREA_VECTOR_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link soft.mapping.impl.AssetImpl <em>Asset</em>}' class.
@@ -482,13 +518,22 @@ public interface MappingPackage extends EPackage {
 	int ASSET_FEATURE_COUNT = 1;
 
 	/**
+	 * The operation id for the '<em>Init</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSET___INIT = 0;
+
+	/**
 	 * The number of operations of the '<em>Asset</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSET_OPERATION_COUNT = 0;
+	int ASSET_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '<em>Graphics2 D</em>' data type.
@@ -668,6 +713,16 @@ public interface MappingPackage extends EPackage {
 	EOperation getLogs__Addlog__Operation();
 
 	/**
+	 * Returns the meta object for the '{@link soft.mapping.Logs#init() <em>Init</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Init</em>' operation.
+	 * @see soft.mapping.Logs#init()
+	 * @generated
+	 */
+	EOperation getLogs__Init();
+
+	/**
 	 * Returns the meta object for class '{@link soft.mapping.Cell <em>Cell</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -752,6 +807,16 @@ public interface MappingPackage extends EPackage {
 	EReference getPosition_MyCell();
 
 	/**
+	 * Returns the meta object for the '{@link soft.mapping.Position#init() <em>Init</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Init</em>' operation.
+	 * @see soft.mapping.Position#init()
+	 * @generated
+	 */
+	EOperation getPosition__Init();
+
+	/**
 	 * Returns the meta object for class '{@link soft.mapping.Operation <em>Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -806,6 +871,16 @@ public interface MappingPackage extends EPackage {
 	EReference getOperation_AfterMap();
 
 	/**
+	 * Returns the meta object for the '{@link soft.mapping.Operation#init() <em>Init</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Init</em>' operation.
+	 * @see soft.mapping.Operation#init()
+	 * @generated
+	 */
+	EOperation getOperation__Init();
+
+	/**
 	 * Returns the meta object for class '{@link soft.mapping.AreaVector <em>Area Vector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -838,6 +913,16 @@ public interface MappingPackage extends EPackage {
 	EReference getAreaVector_End();
 
 	/**
+	 * Returns the meta object for the '{@link soft.mapping.AreaVector#init() <em>Init</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Init</em>' operation.
+	 * @see soft.mapping.AreaVector#init()
+	 * @generated
+	 */
+	EOperation getAreaVector__Init();
+
+	/**
 	 * Returns the meta object for class '{@link soft.mapping.Asset <em>Asset</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -857,6 +942,16 @@ public interface MappingPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getAsset_Test();
+
+	/**
+	 * Returns the meta object for the '{@link soft.mapping.Asset#init() <em>Init</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Init</em>' operation.
+	 * @see soft.mapping.Asset#init()
+	 * @generated
+	 */
+	EOperation getAsset__Init();
 
 	/**
 	 * Returns the meta object for data type '{@link java.awt.Graphics2D <em>Graphics2 D</em>}'.
@@ -1027,6 +1122,14 @@ public interface MappingPackage extends EPackage {
 		EOperation LOGS___ADDLOG__OPERATION = eINSTANCE.getLogs__Addlog__Operation();
 
 		/**
+		 * The meta object literal for the '<em><b>Init</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation LOGS___INIT = eINSTANCE.getLogs__Init();
+
+		/**
 		 * The meta object literal for the '{@link soft.mapping.impl.CellImpl <em>Cell</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1095,6 +1198,14 @@ public interface MappingPackage extends EPackage {
 		EReference POSITION__MY_CELL = eINSTANCE.getPosition_MyCell();
 
 		/**
+		 * The meta object literal for the '<em><b>Init</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation POSITION___INIT = eINSTANCE.getPosition__Init();
+
+		/**
 		 * The meta object literal for the '{@link soft.mapping.impl.OperationImpl <em>Operation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1137,6 +1248,14 @@ public interface MappingPackage extends EPackage {
 		EReference OPERATION__AFTER_MAP = eINSTANCE.getOperation_AfterMap();
 
 		/**
+		 * The meta object literal for the '<em><b>Init</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation OPERATION___INIT = eINSTANCE.getOperation__Init();
+
+		/**
 		 * The meta object literal for the '{@link soft.mapping.impl.AreaVectorImpl <em>Area Vector</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1163,6 +1282,14 @@ public interface MappingPackage extends EPackage {
 		EReference AREA_VECTOR__END = eINSTANCE.getAreaVector_End();
 
 		/**
+		 * The meta object literal for the '<em><b>Init</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation AREA_VECTOR___INIT = eINSTANCE.getAreaVector__Init();
+
+		/**
 		 * The meta object literal for the '{@link soft.mapping.impl.AssetImpl <em>Asset</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1179,6 +1306,14 @@ public interface MappingPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ASSET__TEST = eINSTANCE.getAsset_Test();
+
+		/**
+		 * The meta object literal for the '<em><b>Init</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ASSET___INIT = eINSTANCE.getAsset__Init();
 
 		/**
 		 * The meta object literal for the '<em>Graphics2 D</em>' data type.

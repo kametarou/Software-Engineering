@@ -13,6 +13,12 @@ import soft.mapping.Position;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Position</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following operations are tested:
+ * <ul>
+ *   <li>{@link soft.mapping.Position#init() <em>Init</em>}</li>
+ * </ul>
+ * </p>
  * @generated
  */
 public class PositionTest extends TestCase {
@@ -84,6 +90,19 @@ public class PositionTest extends TestCase {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
+	}
+
+	/**
+	 * Tests the '{@link soft.mapping.Position#init() <em>Init</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see soft.mapping.Position#init()
+	 * @generated
+	 */
+	public void testInit() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
 	}
 
 } //PositionTest

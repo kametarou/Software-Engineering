@@ -13,6 +13,12 @@ import soft.mapping.MappingFactory;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Asset</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following operations are tested:
+ * <ul>
+ *   <li>{@link soft.mapping.Asset#init() <em>Init</em>}</li>
+ * </ul>
+ * </p>
  * @generated
  */
 public class AssetTest extends TestCase {
@@ -84,6 +90,19 @@ public class AssetTest extends TestCase {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
+	}
+
+	/**
+	 * Tests the '{@link soft.mapping.Asset#init() <em>Init</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see soft.mapping.Asset#init()
+	 * @generated
+	 */
+	public void testInit() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
 	}
 
 } //AssetTest

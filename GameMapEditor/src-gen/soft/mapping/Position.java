@@ -132,4 +132,12 @@ public interface Position extends EObject, Serializable {
 	 */
 	boolean isSetMyCell();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void init();
+
 } // Position

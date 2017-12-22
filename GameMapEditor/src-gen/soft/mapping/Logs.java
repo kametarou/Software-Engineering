@@ -116,4 +116,12 @@ public interface Logs extends EObject {
 	 */
 	void addlog(Operation op);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void init();
+
 } // Logs

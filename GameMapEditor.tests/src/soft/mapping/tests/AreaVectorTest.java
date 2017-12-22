@@ -13,6 +13,12 @@ import soft.mapping.MappingFactory;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Area Vector</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following operations are tested:
+ * <ul>
+ *   <li>{@link soft.mapping.AreaVector#init() <em>Init</em>}</li>
+ * </ul>
+ * </p>
  * @generated
  */
 public class AreaVectorTest extends TestCase {
@@ -84,6 +90,19 @@ public class AreaVectorTest extends TestCase {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
+	}
+
+	/**
+	 * Tests the '{@link soft.mapping.AreaVector#init() <em>Init</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see soft.mapping.AreaVector#init()
+	 * @generated
+	 */
+	public void testInit() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
 	}
 
 } //AreaVectorTest

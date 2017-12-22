@@ -20,6 +20,7 @@ import soft.mapping.MappingFactory;
  *   <li>{@link soft.mapping.Logs#redo() <em>Redo</em>}</li>
  *   <li>{@link soft.mapping.Logs#removelog() <em>Removelog</em>}</li>
  *   <li>{@link soft.mapping.Logs#addlog(soft.mapping.Operation) <em>Addlog</em>}</li>
+ *   <li>{@link soft.mapping.Logs#init() <em>Init</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -142,6 +143,19 @@ public class LogsTest extends TestCase {
 	 * @generated
 	 */
 	public void testAddlog__Operation() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link soft.mapping.Logs#init() <em>Init</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see soft.mapping.Logs#init()
+	 * @generated
+	 */
+	public void testInit() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

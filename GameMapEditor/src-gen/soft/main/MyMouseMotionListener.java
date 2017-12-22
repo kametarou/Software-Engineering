@@ -2,6 +2,8 @@
  */
 package soft.main;
 
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -11,8 +13,8 @@ import org.eclipse.emf.ecore.EObject;
  *
  *
  * @see soft.main.MainPackage#getMyMouseMotionListener()
- * @model
+ * @model superTypes="soft.main.MouseMotionListener soft.main.MouseListener"
  * @generated
  */
-public interface MyMouseMotionListener extends EObject {
+public interface MyMouseMotionListener extends EObject, MouseMotionListener, MouseListener {
 } // MyMouseMotionListener

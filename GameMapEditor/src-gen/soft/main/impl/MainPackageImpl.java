@@ -2,6 +2,9 @@
  */
 package soft.main.impl;
 
+import java.awt.event.KeyListener;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 import java.io.Serializable;
 
 import org.eclipse.emf.ecore.EClass;
@@ -78,6 +81,27 @@ public class MainPackageImpl extends EPackageImpl implements MainPackage {
 	 * @generated
 	 */
 	private EClass serializableEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass mouseMotionListenerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass keyListenerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass mouseListenerEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -240,6 +264,33 @@ public class MainPackageImpl extends EPackageImpl implements MainPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getMouseMotionListener() {
+		return mouseMotionListenerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getKeyListener() {
+		return keyListenerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getMouseListener() {
+		return mouseListenerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public MainFactory getMainFactory() {
 		return (MainFactory)getEFactoryInstance();
 	}
@@ -279,6 +330,12 @@ public class MainPackageImpl extends EPackageImpl implements MainPackage {
 		createEOperation(fileEClass, FILE___MAKE_NEW_FILE);
 
 		serializableEClass = createEClass(SERIALIZABLE);
+
+		mouseMotionListenerEClass = createEClass(MOUSE_MOTION_LISTENER);
+
+		keyListenerEClass = createEClass(KEY_LISTENER);
+
+		mouseListenerEClass = createEClass(MOUSE_LISTENER);
 	}
 
 	/**
@@ -309,6 +366,9 @@ public class MainPackageImpl extends EPackageImpl implements MainPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		myMouseMotionListenerEClass.getESuperTypes().add(this.getMouseMotionListener());
+		myMouseMotionListenerEClass.getESuperTypes().add(this.getMouseListener());
+		myKeyboardListenerEClass.getESuperTypes().add(this.getKeyListener());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(myGameMapEditorEClass, MyGameMapEditor.class, "MyGameMapEditor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -330,6 +390,12 @@ public class MainPackageImpl extends EPackageImpl implements MainPackage {
 		initEOperation(getFile__MakeNewFile(), null, "makeNewFile", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(serializableEClass, Serializable.class, "Serializable", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(mouseMotionListenerEClass, MouseMotionListener.class, "MouseMotionListener", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(keyListenerEClass, KeyListener.class, "KeyListener", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(mouseListenerEClass, MouseListener.class, "MouseListener", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

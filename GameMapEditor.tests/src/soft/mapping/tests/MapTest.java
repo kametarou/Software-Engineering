@@ -127,24 +127,9 @@ public class MapTest extends TestCase {
 	 * @generated
 	 */
 	public void testSetLayer__int() {
-		Map myMap = fixture;
-		boolean ret;
-		int oldLayer = myMap.getCurrentLayer(); 
-		ret = myMap.setLayer(-1);
-		assertEquals(ret,false);
-		assertEquals(myMap.getCurrentLayer(),oldLayer);
-		ret = myMap.setLayer(4);
-		assertEquals(ret,false);
-		assertEquals(myMap.getCurrentLayer(),oldLayer);
-		ret = myMap.setLayer(3);
-		assertEquals(ret,false);
-		assertEquals(myMap.getCurrentLayer(),oldLayer);
-
-		for(int i = 0; i<3; i++){
-		  ret = myMap.setLayer(i);
-		assertEquals(ret,true);
-		assertEquals(myMap.getCurrentLayer(),i);
-		}
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
 	}
 
 } //MapTest

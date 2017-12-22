@@ -34,6 +34,7 @@
       <eOperations name="addlog">
         <eParameters name="op" eType="#//mapping/Operation"/>
       </eOperations>
+      <eOperations name="init"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="maps" upperBound="-1"
           eType="#//mapping/Map" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="current" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
@@ -58,22 +59,26 @@
           eType="#//mapping/Position" eOpposite="#//mapping/Position/myCell"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Position" eSuperTypes="#//main/Serializable">
+      <eOperations name="init"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="myCell" lowerBound="1"
           eType="#//mapping/Cell" unsettable="true" containment="true" eOpposite="#//mapping/Cell/position"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Operation">
+      <eOperations name="init"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="layer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="area" eType="#//mapping/AreaVector"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="beforeMap" eType="#//mapping/Map"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="afterMap" eType="#//mapping/Map"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="AreaVector">
+      <eOperations name="init"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//mapping/Position"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//mapping/Position"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Asset">
+      <eOperations name="init"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="test" eType="#//mapping/Graphics2D"
           defaultValueLiteral=""/>
     </eClassifiers>
@@ -89,12 +94,18 @@
     <eClassifiers xsi:type="ecore:EClass" name="Window">
       <eOperations name="init"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="MyMouseMotionListener"/>
-    <eClassifiers xsi:type="ecore:EClass" name="MyKeyboardListener"/>
+    <eClassifiers xsi:type="ecore:EClass" name="MyMouseMotionListener" eSuperTypes="#//main/MouseMotionListener #//main/MouseListener"/>
+    <eClassifiers xsi:type="ecore:EClass" name="MyKeyboardListener" eSuperTypes="#//main/KeyListener"/>
     <eClassifiers xsi:type="ecore:EClass" name="File">
       <eOperations name="makeNewFile"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Serializable" instanceClassName="java.io.Serializable"
+        abstract="true" interface="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="MouseMotionListener" instanceClassName="java.awt.event.MouseMotionListener"
+        abstract="true" interface="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="KeyListener" instanceClassName="java.awt.event.KeyListener"
+        abstract="true" interface="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="MouseListener" instanceClassName="java.awt.event.MouseListener"
         abstract="true" interface="true"/>
   </eSubpackages>
 </ecore:EPackage>

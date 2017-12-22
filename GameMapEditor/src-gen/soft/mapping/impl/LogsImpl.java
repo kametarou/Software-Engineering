@@ -195,6 +195,17 @@ public class LogsImpl extends MinimalEObjectImpl.Container implements Logs {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public void init() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -302,6 +313,9 @@ public class LogsImpl extends MinimalEObjectImpl.Container implements Logs {
 				return null;
 			case MappingPackage.LOGS___ADDLOG__OPERATION:
 				addlog((Operation)arguments.get(0));
+				return null;
+			case MappingPackage.LOGS___INIT:
+				init();
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);

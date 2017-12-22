@@ -303,6 +303,15 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getLogs__Init() {
+		return logsEClass.getEOperations().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getCell() {
 		return cellEClass;
 	}
@@ -375,6 +384,15 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getPosition__Init() {
+		return positionEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getOperation() {
 		return operationEClass;
 	}
@@ -420,6 +438,15 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getOperation__Init() {
+		return operationEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getAreaVector() {
 		return areaVectorEClass;
 	}
@@ -447,6 +474,15 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getAreaVector__Init() {
+		return areaVectorEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getAsset() {
 		return assetEClass;
 	}
@@ -458,6 +494,15 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 	 */
 	public EAttribute getAsset_Test() {
 		return (EAttribute)assetEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getAsset__Init() {
+		return assetEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -522,6 +567,7 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 		createEOperation(logsEClass, LOGS___REDO);
 		createEOperation(logsEClass, LOGS___REMOVELOG);
 		createEOperation(logsEClass, LOGS___ADDLOG__OPERATION);
+		createEOperation(logsEClass, LOGS___INIT);
 
 		cellEClass = createEClass(CELL);
 		createEReference(cellEClass, CELL__POSITION);
@@ -532,19 +578,23 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 		createEAttribute(positionEClass, POSITION__X);
 		createEAttribute(positionEClass, POSITION__Y);
 		createEReference(positionEClass, POSITION__MY_CELL);
+		createEOperation(positionEClass, POSITION___INIT);
 
 		operationEClass = createEClass(OPERATION);
 		createEAttribute(operationEClass, OPERATION__LAYER);
 		createEReference(operationEClass, OPERATION__AREA);
 		createEReference(operationEClass, OPERATION__BEFORE_MAP);
 		createEReference(operationEClass, OPERATION__AFTER_MAP);
+		createEOperation(operationEClass, OPERATION___INIT);
 
 		areaVectorEClass = createEClass(AREA_VECTOR);
 		createEReference(areaVectorEClass, AREA_VECTOR__START);
 		createEReference(areaVectorEClass, AREA_VECTOR__END);
+		createEOperation(areaVectorEClass, AREA_VECTOR___INIT);
 
 		assetEClass = createEClass(ASSET);
 		createEAttribute(assetEClass, ASSET__TEST);
+		createEOperation(assetEClass, ASSET___INIT);
 
 		// Create data types
 		graphics2DEDataType = createEDataType(GRAPHICS2_D);
@@ -613,6 +663,8 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 		op = initEOperation(getLogs__Addlog__Operation(), null, "addlog", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getOperation(), "op", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		initEOperation(getLogs__Init(), null, "init", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(cellEClass, Cell.class, "Cell", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCell_Position(), this.getPosition(), this.getPosition_MyCell(), "position", null, 1, 1, Cell.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -627,18 +679,26 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 		initEAttribute(getPosition_Y(), ecorePackage.getEInt(), "y", null, 1, 1, Position.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPosition_MyCell(), this.getCell(), this.getCell_Position(), "myCell", null, 1, 1, Position.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEOperation(getPosition__Init(), null, "init", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(operationEClass, Operation.class, "Operation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getOperation_Layer(), ecorePackage.getEInt(), "layer", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getOperation_Area(), this.getAreaVector(), null, "area", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getOperation_BeforeMap(), this.getMap(), null, "beforeMap", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getOperation_AfterMap(), this.getMap(), null, "afterMap", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEOperation(getOperation__Init(), null, "init", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(areaVectorEClass, AreaVector.class, "AreaVector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAreaVector_Start(), this.getPosition(), null, "start", null, 0, 1, AreaVector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAreaVector_End(), this.getPosition(), null, "end", null, 0, 1, AreaVector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEOperation(getAreaVector__Init(), null, "init", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(assetEClass, Asset.class, "Asset", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAsset_Test(), this.getGraphics2D(), "test", "", 0, 1, Asset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEOperation(getAsset__Init(), null, "init", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Initialize data types
 		initEDataType(graphics2DEDataType, Graphics2D.class, "Graphics2D", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);

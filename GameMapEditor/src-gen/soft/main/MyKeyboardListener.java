@@ -2,6 +2,7 @@
  */
 package soft.main;
 
+import java.awt.event.KeyListener;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -11,8 +12,8 @@ import org.eclipse.emf.ecore.EObject;
  *
  *
  * @see soft.main.MainPackage#getMyKeyboardListener()
- * @model
+ * @model superTypes="soft.main.KeyListener"
  * @generated
  */
-public interface MyKeyboardListener extends EObject {
+public interface MyKeyboardListener extends EObject, KeyListener {
 } // MyKeyboardListener

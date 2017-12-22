@@ -63,6 +63,7 @@ public class MapItemProvider
 			addOpLogsPropertyDescriptor(object);
 			addCurrentLayerPropertyDescriptor(object);
 			addCellsPropertyDescriptor(object);
+			addMaxLayerPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -134,6 +135,28 @@ public class MapItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Max Layer feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addMaxLayerPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Map_maxLayer_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Map_maxLayer_feature", "_UI_Map_type"),
+				 MappingPackage.Literals.MAP__MAX_LAYER,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns Map.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -171,6 +194,7 @@ public class MapItemProvider
 		switch (notification.getFeatureID(Map.class)) {
 			case MappingPackage.MAP__CURRENT_LAYER:
 			case MappingPackage.MAP__CELLS:
+			case MappingPackage.MAP__MAX_LAYER:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
