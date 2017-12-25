@@ -12,13 +12,7 @@
         <eParameters name="height" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
         <eParameters name="width" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
       </eOperations>
-      <eOperations name="setLayer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="body" value="if(layer &lt; 0 || layer >= maxLayer){&#xA;  return false;&#xA;}&#xA;&#xA;currentLayer = layer;&#xA;&#xA;return currentLayer == layer;"/>
-        </eAnnotations>
-        <eParameters name="layer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-      </eOperations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="opLogs" lowerBound="1"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="myLogs" lowerBound="1"
           eType="#//mapping/Logs" changeable="false"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="currentLayer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
           defaultValueLiteral="0"/>
@@ -57,6 +51,9 @@
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="position" lowerBound="1"
           eType="#//mapping/Position" eOpposite="#//mapping/Position/myCell"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="myAsset" eType="#//mapping/Asset"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="myAssetArea" eType="#//mapping/AreaVector"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="referenceCell" eType="#//mapping/Cell"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Position" eSuperTypes="#//main/Serializable">
       <eOperations name="init"/>
@@ -83,7 +80,7 @@
           defaultValueLiteral=""/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EDataType" name="Graphics2D" instanceClassName="java.awt.Graphics2D"/>
-    <eClassifiers xsi:type="ecore:EDataType" name="CellArray" instanceClassName="soft.mapping.Cell[][]"/>
+    <eClassifiers xsi:type="ecore:EDataType" name="CellArray" instanceClassName="soft.mapping.Cell[][][]"/>
   </eSubpackages>
   <eSubpackages name="main" nsURI="/Users/ysakanaka/HomeWork/SEClass/GameMapEditor/src/main"
       nsPrefix="main">

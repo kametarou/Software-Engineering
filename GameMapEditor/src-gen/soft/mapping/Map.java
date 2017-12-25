@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link soft.mapping.Map#getOpLogs <em>Op Logs</em>}</li>
+ *   <li>{@link soft.mapping.Map#getMyLogs <em>My Logs</em>}</li>
  *   <li>{@link soft.mapping.Map#getCurrentLayer <em>Current Layer</em>}</li>
  *   <li>{@link soft.mapping.Map#getCells <em>Cells</em>}</li>
  *   <li>{@link soft.mapping.Map#getMaxLayer <em>Max Layer</em>}</li>
@@ -25,19 +25,19 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Map extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Op Logs</b></em>' reference.
+	 * Returns the value of the '<em><b>My Logs</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Op Logs</em>' reference isn't clear,
+	 * If the meaning of the '<em>My Logs</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Op Logs</em>' reference.
-	 * @see soft.mapping.MappingPackage#getMap_OpLogs()
+	 * @return the value of the '<em>My Logs</em>' reference.
+	 * @see soft.mapping.MappingPackage#getMap_MyLogs()
 	 * @model required="true" changeable="false"
 	 * @generated
 	 */
-	Logs getOpLogs();
+	Logs getMyLogs();
 
 	/**
 	 * Returns the value of the '<em><b>Current Layer</b></em>' attribute.
@@ -75,12 +75,12 @@ public interface Map extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Cells</em>' attribute.
-	 * @see #setCells(Cell[][])
+	 * @see #setCells(Cell[][][])
 	 * @see soft.mapping.MappingPackage#getMap_Cells()
 	 * @model dataType="soft.mapping.CellArray" required="true"
 	 * @generated
 	 */
-	Cell[][] getCells();
+	Cell[][][] getCells();
 
 	/**
 	 * Sets the value of the '{@link soft.mapping.Map#getCells <em>Cells</em>}' attribute.
@@ -90,7 +90,7 @@ public interface Map extends EObject {
 	 * @see #getCells()
 	 * @generated
 	 */
-	void setCells(Cell[][] value);
+	void setCells(Cell[][][] value);
 
 	/**
 	 * Returns the value of the '<em><b>Max Layer</b></em>' attribute.
@@ -126,13 +126,5 @@ public interface Map extends EObject {
 	 * @generated
 	 */
 	void init(int height, int width);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if(layer &lt; 0 || layer &gt;= maxLayer){\n  return false;\n}\n\ncurrentLayer = layer;\n\nreturn currentLayer == layer;'"
-	 * @generated
-	 */
-	boolean setLayer(int layer);
 
 } // Map

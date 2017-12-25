@@ -16,6 +16,9 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link soft.mapping.Cell#getPosition <em>Position</em>}</li>
+ *   <li>{@link soft.mapping.Cell#getMyAsset <em>My Asset</em>}</li>
+ *   <li>{@link soft.mapping.Cell#getMyAssetArea <em>My Asset Area</em>}</li>
+ *   <li>{@link soft.mapping.Cell#getReferenceCell <em>Reference Cell</em>}</li>
  * </ul>
  *
  * @see soft.mapping.MappingPackage#getCell()
@@ -50,6 +53,84 @@ public interface Cell extends EObject, Serializable {
 	 * @generated
 	 */
 	void setPosition(Position value);
+
+	/**
+	 * Returns the value of the '<em><b>My Asset</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>My Asset</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>My Asset</em>' reference.
+	 * @see #setMyAsset(Asset)
+	 * @see soft.mapping.MappingPackage#getCell_MyAsset()
+	 * @model
+	 * @generated
+	 */
+	Asset getMyAsset();
+
+	/**
+	 * Sets the value of the '{@link soft.mapping.Cell#getMyAsset <em>My Asset</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>My Asset</em>' reference.
+	 * @see #getMyAsset()
+	 * @generated
+	 */
+	void setMyAsset(Asset value);
+
+	/**
+	 * Returns the value of the '<em><b>My Asset Area</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>My Asset Area</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>My Asset Area</em>' reference.
+	 * @see #setMyAssetArea(AreaVector)
+	 * @see soft.mapping.MappingPackage#getCell_MyAssetArea()
+	 * @model
+	 * @generated
+	 */
+	AreaVector getMyAssetArea();
+
+	/**
+	 * Sets the value of the '{@link soft.mapping.Cell#getMyAssetArea <em>My Asset Area</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>My Asset Area</em>' reference.
+	 * @see #getMyAssetArea()
+	 * @generated
+	 */
+	void setMyAssetArea(AreaVector value);
+
+	/**
+	 * Returns the value of the '<em><b>Reference Cell</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Reference Cell</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Reference Cell</em>' reference.
+	 * @see #setReferenceCell(Cell)
+	 * @see soft.mapping.MappingPackage#getCell_ReferenceCell()
+	 * @model
+	 * @generated
+	 */
+	Cell getReferenceCell();
+
+	/**
+	 * Sets the value of the '{@link soft.mapping.Cell#getReferenceCell <em>Reference Cell</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Reference Cell</em>' reference.
+	 * @see #getReferenceCell()
+	 * @generated
+	 */
+	void setReferenceCell(Cell value);
 
 	/**
 	 * <!-- begin-user-doc -->

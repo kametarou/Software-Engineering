@@ -27,7 +27,7 @@ import soft.mapping.MappingPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link soft.mapping.impl.MapImpl#getOpLogs <em>Op Logs</em>}</li>
+ *   <li>{@link soft.mapping.impl.MapImpl#getMyLogs <em>My Logs</em>}</li>
  *   <li>{@link soft.mapping.impl.MapImpl#getCurrentLayer <em>Current Layer</em>}</li>
  *   <li>{@link soft.mapping.impl.MapImpl#getCells <em>Cells</em>}</li>
  *   <li>{@link soft.mapping.impl.MapImpl#getMaxLayer <em>Max Layer</em>}</li>
@@ -37,14 +37,14 @@ import soft.mapping.MappingPackage;
  */
 public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 	/**
-	 * The cached value of the '{@link #getOpLogs() <em>Op Logs</em>}' reference.
+	 * The cached value of the '{@link #getMyLogs() <em>My Logs</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getOpLogs()
+	 * @see #getMyLogs()
 	 * @generated
 	 * @ordered
 	 */
-	protected Logs opLogs;
+	protected Logs myLogs;
 
 	/**
 	 * The default value of the '{@link #getCurrentLayer() <em>Current Layer</em>}' attribute.
@@ -74,7 +74,7 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Cell[][] CELLS_EDEFAULT = null;
+	protected static final Cell[][][] CELLS_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getCells() <em>Cells</em>}' attribute.
@@ -84,7 +84,7 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 	 * @generated
 	 * @ordered
 	 */
-	protected Cell[][] cells = CELLS_EDEFAULT;
+	protected Cell[][][] cells = CELLS_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getMaxLayer() <em>Max Layer</em>}' attribute.
@@ -130,16 +130,16 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Logs getOpLogs() {
-		if (opLogs != null && opLogs.eIsProxy()) {
-			InternalEObject oldOpLogs = (InternalEObject)opLogs;
-			opLogs = (Logs)eResolveProxy(oldOpLogs);
-			if (opLogs != oldOpLogs) {
+	public Logs getMyLogs() {
+		if (myLogs != null && myLogs.eIsProxy()) {
+			InternalEObject oldMyLogs = (InternalEObject)myLogs;
+			myLogs = (Logs)eResolveProxy(oldMyLogs);
+			if (myLogs != oldMyLogs) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MappingPackage.MAP__OP_LOGS, oldOpLogs, opLogs));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MappingPackage.MAP__MY_LOGS, oldMyLogs, myLogs));
 			}
 		}
-		return opLogs;
+		return myLogs;
 	}
 
 	/**
@@ -147,8 +147,8 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Logs basicGetOpLogs() {
-		return opLogs;
+	public Logs basicGetMyLogs() {
+		return myLogs;
 	}
 
 	/**
@@ -177,7 +177,7 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Cell[][] getCells() {
+	public Cell[][][] getCells() {
 		return cells;
 	}
 
@@ -186,8 +186,8 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCells(Cell[][] newCells) {
-		Cell[][] oldCells = cells;
+	public void setCells(Cell[][][] newCells) {
+		Cell[][][] oldCells = cells;
 		cells = newCells;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, MappingPackage.MAP__CELLS, oldCells, cells));
@@ -238,27 +238,12 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean setLayer(final int layer) {
-		if(layer < 0 || layer >= maxLayer){
-		  return false;
-		}
-		
-		currentLayer = layer;
-		
-		return currentLayer == layer;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case MappingPackage.MAP__OP_LOGS:
-				if (resolve) return getOpLogs();
-				return basicGetOpLogs();
+			case MappingPackage.MAP__MY_LOGS:
+				if (resolve) return getMyLogs();
+				return basicGetMyLogs();
 			case MappingPackage.MAP__CURRENT_LAYER:
 				return getCurrentLayer();
 			case MappingPackage.MAP__CELLS:
@@ -281,7 +266,7 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 				setCurrentLayer((Integer)newValue);
 				return;
 			case MappingPackage.MAP__CELLS:
-				setCells((Cell[][])newValue);
+				setCells((Cell[][][])newValue);
 				return;
 			case MappingPackage.MAP__MAX_LAYER:
 				setMaxLayer((Integer)newValue);
@@ -319,8 +304,8 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case MappingPackage.MAP__OP_LOGS:
-				return opLogs != null;
+			case MappingPackage.MAP__MY_LOGS:
+				return myLogs != null;
 			case MappingPackage.MAP__CURRENT_LAYER:
 				return currentLayer != CURRENT_LAYER_EDEFAULT;
 			case MappingPackage.MAP__CELLS:
@@ -342,8 +327,6 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 			case MappingPackage.MAP___INIT__INT_INT:
 				init((Integer)arguments.get(0), (Integer)arguments.get(1));
 				return null;
-			case MappingPackage.MAP___SET_LAYER__INT:
-				return setLayer((Integer)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

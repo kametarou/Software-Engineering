@@ -71,13 +71,13 @@ public interface MappingPackage extends EPackage {
 	int MAP = 0;
 
 	/**
-	 * The feature id for the '<em><b>Op Logs</b></em>' reference.
+	 * The feature id for the '<em><b>My Logs</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAP__OP_LOGS = 0;
+	int MAP__MY_LOGS = 0;
 
 	/**
 	 * The feature id for the '<em><b>Current Layer</b></em>' attribute.
@@ -125,22 +125,13 @@ public interface MappingPackage extends EPackage {
 	int MAP___INIT__INT_INT = 0;
 
 	/**
-	 * The operation id for the '<em>Set Layer</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAP___SET_LAYER__INT = 1;
-
-	/**
 	 * The number of operations of the '<em>Map</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAP_OPERATION_COUNT = 2;
+	int MAP_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link soft.mapping.impl.LogsImpl <em>Logs</em>}' class.
@@ -262,13 +253,40 @@ public interface MappingPackage extends EPackage {
 	int CELL__POSITION = MainPackage.SERIALIZABLE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>My Asset</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CELL__MY_ASSET = MainPackage.SERIALIZABLE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>My Asset Area</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CELL__MY_ASSET_AREA = MainPackage.SERIALIZABLE_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Reference Cell</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CELL__REFERENCE_CELL = MainPackage.SERIALIZABLE_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Cell</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CELL_FEATURE_COUNT = MainPackage.SERIALIZABLE_FEATURE_COUNT + 1;
+	int CELL_FEATURE_COUNT = MainPackage.SERIALIZABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>Init</em>' operation.
@@ -566,15 +584,15 @@ public interface MappingPackage extends EPackage {
 	EClass getMap();
 
 	/**
-	 * Returns the meta object for the reference '{@link soft.mapping.Map#getOpLogs <em>Op Logs</em>}'.
+	 * Returns the meta object for the reference '{@link soft.mapping.Map#getMyLogs <em>My Logs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Op Logs</em>'.
-	 * @see soft.mapping.Map#getOpLogs()
+	 * @return the meta object for the reference '<em>My Logs</em>'.
+	 * @see soft.mapping.Map#getMyLogs()
 	 * @see #getMap()
 	 * @generated
 	 */
-	EReference getMap_OpLogs();
+	EReference getMap_MyLogs();
 
 	/**
 	 * Returns the meta object for the attribute '{@link soft.mapping.Map#getCurrentLayer <em>Current Layer</em>}'.
@@ -618,16 +636,6 @@ public interface MappingPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getMap__Init__int_int();
-
-	/**
-	 * Returns the meta object for the '{@link soft.mapping.Map#setLayer(int) <em>Set Layer</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Set Layer</em>' operation.
-	 * @see soft.mapping.Map#setLayer(int)
-	 * @generated
-	 */
-	EOperation getMap__SetLayer__int();
 
 	/**
 	 * Returns the meta object for class '{@link soft.mapping.Logs <em>Logs</em>}'.
@@ -742,6 +750,39 @@ public interface MappingPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getCell_Position();
+
+	/**
+	 * Returns the meta object for the reference '{@link soft.mapping.Cell#getMyAsset <em>My Asset</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>My Asset</em>'.
+	 * @see soft.mapping.Cell#getMyAsset()
+	 * @see #getCell()
+	 * @generated
+	 */
+	EReference getCell_MyAsset();
+
+	/**
+	 * Returns the meta object for the reference '{@link soft.mapping.Cell#getMyAssetArea <em>My Asset Area</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>My Asset Area</em>'.
+	 * @see soft.mapping.Cell#getMyAssetArea()
+	 * @see #getCell()
+	 * @generated
+	 */
+	EReference getCell_MyAssetArea();
+
+	/**
+	 * Returns the meta object for the reference '{@link soft.mapping.Cell#getReferenceCell <em>Reference Cell</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Reference Cell</em>'.
+	 * @see soft.mapping.Cell#getReferenceCell()
+	 * @see #getCell()
+	 * @generated
+	 */
+	EReference getCell_ReferenceCell();
 
 	/**
 	 * Returns the meta object for the '{@link soft.mapping.Cell#init(int, int) <em>Init</em>}' operation.
@@ -969,7 +1010,7 @@ public interface MappingPackage extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for data type '<em>Cell Array</em>'.
-	 * @model instanceClass="soft.mapping.Cell[][]"
+	 * @model instanceClass="soft.mapping.Cell[][][]"
 	 * @generated
 	 */
 	EDataType getCellArray();
@@ -1008,12 +1049,12 @@ public interface MappingPackage extends EPackage {
 		EClass MAP = eINSTANCE.getMap();
 
 		/**
-		 * The meta object literal for the '<em><b>Op Logs</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>My Logs</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MAP__OP_LOGS = eINSTANCE.getMap_OpLogs();
+		EReference MAP__MY_LOGS = eINSTANCE.getMap_MyLogs();
 
 		/**
 		 * The meta object literal for the '<em><b>Current Layer</b></em>' attribute feature.
@@ -1046,14 +1087,6 @@ public interface MappingPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation MAP___INIT__INT_INT = eINSTANCE.getMap__Init__int_int();
-
-		/**
-		 * The meta object literal for the '<em><b>Set Layer</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation MAP___SET_LAYER__INT = eINSTANCE.getMap__SetLayer__int();
 
 		/**
 		 * The meta object literal for the '{@link soft.mapping.impl.LogsImpl <em>Logs</em>}' class.
@@ -1146,6 +1179,30 @@ public interface MappingPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CELL__POSITION = eINSTANCE.getCell_Position();
+
+		/**
+		 * The meta object literal for the '<em><b>My Asset</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CELL__MY_ASSET = eINSTANCE.getCell_MyAsset();
+
+		/**
+		 * The meta object literal for the '<em><b>My Asset Area</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CELL__MY_ASSET_AREA = eINSTANCE.getCell_MyAssetArea();
+
+		/**
+		 * The meta object literal for the '<em><b>Reference Cell</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CELL__REFERENCE_CELL = eINSTANCE.getCell_ReferenceCell();
 
 		/**
 		 * The meta object literal for the '<em><b>Init</b></em>' operation.

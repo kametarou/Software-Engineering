@@ -18,7 +18,6 @@ import soft.mapping.Position;
  * The following operations are tested:
  * <ul>
  *   <li>{@link soft.mapping.Map#init(int, int) <em>Init</em>}</li>
- *   <li>{@link soft.mapping.Map#setLayer(int) <em>Set Layer</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -117,19 +116,6 @@ public class MapTest extends TestCase {
 				//System.out.println(myMap.getCells()[x][y].toString());
 			}
 		}
-	}
-
-	/**
-	 * Tests the '{@link soft.mapping.Map#setLayer(int) <em>Set Layer</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see soft.mapping.Map#setLayer(int)
-	 * @generated
-	 */
-	public void testSetLayer__int() {
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
 	}
 
 } //MapTest

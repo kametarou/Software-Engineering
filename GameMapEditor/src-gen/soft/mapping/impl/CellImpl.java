@@ -17,6 +17,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
+import soft.mapping.AreaVector;
+import soft.mapping.Asset;
 import soft.mapping.Cell;
 import soft.mapping.MappingPackage;
 import soft.mapping.Position;
@@ -30,6 +32,9 @@ import soft.mapping.Position;
  * </p>
  * <ul>
  *   <li>{@link soft.mapping.impl.CellImpl#getPosition <em>Position</em>}</li>
+ *   <li>{@link soft.mapping.impl.CellImpl#getMyAsset <em>My Asset</em>}</li>
+ *   <li>{@link soft.mapping.impl.CellImpl#getMyAssetArea <em>My Asset Area</em>}</li>
+ *   <li>{@link soft.mapping.impl.CellImpl#getReferenceCell <em>Reference Cell</em>}</li>
  * </ul>
  *
  * @generated
@@ -41,6 +46,34 @@ public class CellImpl extends MinimalEObjectImpl.Container implements Cell {
 	 * @generated
 	 */
 	private static final long serialVersionUID = 1L;
+
+	/**
+	 * The cached value of the '{@link #getMyAsset() <em>My Asset</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMyAsset()
+	 * @generated
+	 * @ordered
+	 */
+	protected Asset myAsset;
+	/**
+	 * The cached value of the '{@link #getMyAssetArea() <em>My Asset Area</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMyAssetArea()
+	 * @generated
+	 * @ordered
+	 */
+	protected AreaVector myAssetArea;
+	/**
+	 * The cached value of the '{@link #getReferenceCell() <em>Reference Cell</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getReferenceCell()
+	 * @generated
+	 * @ordered
+	 */
+	protected Cell referenceCell;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -100,6 +133,120 @@ public class CellImpl extends MinimalEObjectImpl.Container implements Cell {
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, MappingPackage.CELL__POSITION, newPosition, newPosition));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Asset getMyAsset() {
+		if (myAsset != null && myAsset.eIsProxy()) {
+			InternalEObject oldMyAsset = (InternalEObject)myAsset;
+			myAsset = (Asset)eResolveProxy(oldMyAsset);
+			if (myAsset != oldMyAsset) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MappingPackage.CELL__MY_ASSET, oldMyAsset, myAsset));
+			}
+		}
+		return myAsset;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Asset basicGetMyAsset() {
+		return myAsset;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMyAsset(Asset newMyAsset) {
+		Asset oldMyAsset = myAsset;
+		myAsset = newMyAsset;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MappingPackage.CELL__MY_ASSET, oldMyAsset, myAsset));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AreaVector getMyAssetArea() {
+		if (myAssetArea != null && myAssetArea.eIsProxy()) {
+			InternalEObject oldMyAssetArea = (InternalEObject)myAssetArea;
+			myAssetArea = (AreaVector)eResolveProxy(oldMyAssetArea);
+			if (myAssetArea != oldMyAssetArea) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MappingPackage.CELL__MY_ASSET_AREA, oldMyAssetArea, myAssetArea));
+			}
+		}
+		return myAssetArea;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AreaVector basicGetMyAssetArea() {
+		return myAssetArea;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMyAssetArea(AreaVector newMyAssetArea) {
+		AreaVector oldMyAssetArea = myAssetArea;
+		myAssetArea = newMyAssetArea;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MappingPackage.CELL__MY_ASSET_AREA, oldMyAssetArea, myAssetArea));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Cell getReferenceCell() {
+		if (referenceCell != null && referenceCell.eIsProxy()) {
+			InternalEObject oldReferenceCell = (InternalEObject)referenceCell;
+			referenceCell = (Cell)eResolveProxy(oldReferenceCell);
+			if (referenceCell != oldReferenceCell) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MappingPackage.CELL__REFERENCE_CELL, oldReferenceCell, referenceCell));
+			}
+		}
+		return referenceCell;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Cell basicGetReferenceCell() {
+		return referenceCell;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setReferenceCell(Cell newReferenceCell) {
+		Cell oldReferenceCell = referenceCell;
+		referenceCell = newReferenceCell;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MappingPackage.CELL__REFERENCE_CELL, oldReferenceCell, referenceCell));
 	}
 
 	/**
@@ -181,6 +328,15 @@ public class CellImpl extends MinimalEObjectImpl.Container implements Cell {
 		switch (featureID) {
 			case MappingPackage.CELL__POSITION:
 				return getPosition();
+			case MappingPackage.CELL__MY_ASSET:
+				if (resolve) return getMyAsset();
+				return basicGetMyAsset();
+			case MappingPackage.CELL__MY_ASSET_AREA:
+				if (resolve) return getMyAssetArea();
+				return basicGetMyAssetArea();
+			case MappingPackage.CELL__REFERENCE_CELL:
+				if (resolve) return getReferenceCell();
+				return basicGetReferenceCell();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -195,6 +351,15 @@ public class CellImpl extends MinimalEObjectImpl.Container implements Cell {
 		switch (featureID) {
 			case MappingPackage.CELL__POSITION:
 				setPosition((Position)newValue);
+				return;
+			case MappingPackage.CELL__MY_ASSET:
+				setMyAsset((Asset)newValue);
+				return;
+			case MappingPackage.CELL__MY_ASSET_AREA:
+				setMyAssetArea((AreaVector)newValue);
+				return;
+			case MappingPackage.CELL__REFERENCE_CELL:
+				setReferenceCell((Cell)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -211,6 +376,15 @@ public class CellImpl extends MinimalEObjectImpl.Container implements Cell {
 			case MappingPackage.CELL__POSITION:
 				setPosition((Position)null);
 				return;
+			case MappingPackage.CELL__MY_ASSET:
+				setMyAsset((Asset)null);
+				return;
+			case MappingPackage.CELL__MY_ASSET_AREA:
+				setMyAssetArea((AreaVector)null);
+				return;
+			case MappingPackage.CELL__REFERENCE_CELL:
+				setReferenceCell((Cell)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -225,6 +399,12 @@ public class CellImpl extends MinimalEObjectImpl.Container implements Cell {
 		switch (featureID) {
 			case MappingPackage.CELL__POSITION:
 				return getPosition() != null;
+			case MappingPackage.CELL__MY_ASSET:
+				return myAsset != null;
+			case MappingPackage.CELL__MY_ASSET_AREA:
+				return myAssetArea != null;
+			case MappingPackage.CELL__REFERENCE_CELL:
+				return referenceCell != null;
 		}
 		return super.eIsSet(featureID);
 	}
