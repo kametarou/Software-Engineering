@@ -136,7 +136,7 @@ public interface Cell extends EObject, Serializable {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model xRequired="true" yRequired="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='Position myPos = new PositionImpl();\n\nmyPos.setX(x);\nmyPos.setY(y);\nmyPos.setMyCell(this);\n\nthis.setPosition(myPos);'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='Position myPos = new PositionImpl();\n\nmyPos.setX(x);\nmyPos.setY(y);\nmyPos.setMyCell(this);\n\nthis.setPosition(myPos);\n\nmyAsset = null;\nmyAssetArea = null;\nreferenceCell = null;'"
 	 * @generated
 	 */
 	void init(int x, int y);

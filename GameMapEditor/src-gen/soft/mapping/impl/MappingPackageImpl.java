@@ -222,6 +222,15 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getMap__GetCellFromCurrentLayer__int_int() {
+		return mapEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getLogs() {
 		return logsEClass;
 	}
@@ -575,6 +584,7 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 		createEAttribute(mapEClass, MAP__CELLS);
 		createEAttribute(mapEClass, MAP__MAX_LAYER);
 		createEOperation(mapEClass, MAP___INIT__INT_INT);
+		createEOperation(mapEClass, MAP___GET_CELL_FROM_CURRENT_LAYER__INT_INT);
 
 		logsEClass = createEClass(LOGS);
 		createEReference(logsEClass, LOGS__MAPS);
@@ -665,6 +675,10 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 		EOperation op = initEOperation(getMap__Init__int_int(), null, "init", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "height", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "width", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getMap__GetCellFromCurrentLayer__int_int(), this.getCell(), "getCellFromCurrentLayer", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "x", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "y", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(logsEClass, Logs.class, "Logs", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLogs_Maps(), this.getMap(), null, "maps", null, 0, -1, Logs.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

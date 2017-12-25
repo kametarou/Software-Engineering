@@ -20,9 +20,8 @@ import soft.mapping.Map;
 import soft.mapping.MappingPackage;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Map</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object
+ * '<em><b>Map</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
@@ -38,8 +37,7 @@ import soft.mapping.MappingPackage;
 public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 	/**
 	 * The cached value of the '{@link #getMyLogs() <em>My Logs</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getMyLogs()
 	 * @generated
 	 * @ordered
@@ -48,8 +46,7 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 
 	/**
 	 * The default value of the '{@link #getCurrentLayer() <em>Current Layer</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getCurrentLayer()
 	 * @generated
 	 * @ordered
@@ -58,8 +55,7 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 
 	/**
 	 * The cached value of the '{@link #getCurrentLayer() <em>Current Layer</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getCurrentLayer()
 	 * @generated
 	 * @ordered
@@ -67,9 +63,9 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 	protected int currentLayer = CURRENT_LAYER_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getCells() <em>Cells</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The default value of the '{@link #getCells() <em>Cells</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getCells()
 	 * @generated
 	 * @ordered
@@ -77,9 +73,9 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 	protected static final Cell[][][] CELLS_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getCells() <em>Cells</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The cached value of the '{@link #getCells() <em>Cells</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getCells()
 	 * @generated
 	 * @ordered
@@ -88,8 +84,7 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 
 	/**
 	 * The default value of the '{@link #getMaxLayer() <em>Max Layer</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getMaxLayer()
 	 * @generated
 	 * @ordered
@@ -98,8 +93,7 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 
 	/**
 	 * The cached value of the '{@link #getMaxLayer() <em>Max Layer</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getMaxLayer()
 	 * @generated
 	 * @ordered
@@ -107,8 +101,7 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 	protected int maxLayer = MAX_LAYER_EDEFAULT;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected MapImpl() {
@@ -116,8 +109,7 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -126,8 +118,7 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public Logs getMyLogs() {
@@ -143,8 +134,7 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public Logs basicGetMyLogs() {
@@ -152,8 +142,7 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public int getCurrentLayer() {
@@ -161,8 +150,7 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setCurrentLayer(int newCurrentLayer) {
@@ -173,8 +161,7 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public Cell[][][] getCells() {
@@ -182,8 +169,7 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setCells(Cell[][][] newCells) {
@@ -194,8 +180,7 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public int getMaxLayer() {
@@ -203,8 +188,7 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setMaxLayer(int newMaxLayer) {
@@ -215,27 +199,36 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void init(final int height, final int width) {
-		cells = new Cell[width][height];
+			cells = new Cell[width][height][3];
 		
-		for(int x=0; x < width; x++){
-		  for(int y=0; y < height; y++){
-		    CellImpl myCell = new CellImpl();
-		    myCell.init(x,y);
-		    cells[x][y] = myCell;
-		  }
-		}
+				for (int x = 0; x < width; x++) {
+					for (int y = 0; y < height; y++) {
+						for (int z = 0; z < 3; z++) {
+							CellImpl myCell = new CellImpl();
+							myCell.init(x, y);
+							cells[x][y][z] = myCell;
+						}
+					}
+				}
 		
-		opLogs = new LogsImpl();
+				myLogs = new LogsImpl();
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	public Cell getCellFromCurrentLayer(int x, int y) {
+		return cells[x][y][currentLayer];
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -255,8 +248,7 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -276,8 +268,7 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -297,8 +288,7 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -317,8 +307,7 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -327,13 +316,14 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 			case MappingPackage.MAP___INIT__INT_INT:
 				init((Integer)arguments.get(0), (Integer)arguments.get(1));
 				return null;
+			case MappingPackage.MAP___GET_CELL_FROM_CURRENT_LAYER__INT_INT:
+				return getCellFromCurrentLayer((Integer)arguments.get(0), (Integer)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -351,4 +341,4 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 		return result.toString();
 	}
 
-} //MapImpl
+} // MapImpl

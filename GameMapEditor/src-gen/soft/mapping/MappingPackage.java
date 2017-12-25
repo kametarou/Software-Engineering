@@ -125,13 +125,22 @@ public interface MappingPackage extends EPackage {
 	int MAP___INIT__INT_INT = 0;
 
 	/**
+	 * The operation id for the '<em>Get Cell From Current Layer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAP___GET_CELL_FROM_CURRENT_LAYER__INT_INT = 1;
+
+	/**
 	 * The number of operations of the '<em>Map</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAP_OPERATION_COUNT = 1;
+	int MAP_OPERATION_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link soft.mapping.impl.LogsImpl <em>Logs</em>}' class.
@@ -638,6 +647,16 @@ public interface MappingPackage extends EPackage {
 	EOperation getMap__Init__int_int();
 
 	/**
+	 * Returns the meta object for the '{@link soft.mapping.Map#getCellFromCurrentLayer(int, int) <em>Get Cell From Current Layer</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Cell From Current Layer</em>' operation.
+	 * @see soft.mapping.Map#getCellFromCurrentLayer(int, int)
+	 * @generated
+	 */
+	EOperation getMap__GetCellFromCurrentLayer__int_int();
+
+	/**
 	 * Returns the meta object for class '{@link soft.mapping.Logs <em>Logs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1087,6 +1106,14 @@ public interface MappingPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation MAP___INIT__INT_INT = eINSTANCE.getMap__Init__int_int();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Cell From Current Layer</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation MAP___GET_CELL_FROM_CURRENT_LAYER__INT_INT = eINSTANCE.getMap__GetCellFromCurrentLayer__int_int();
 
 		/**
 		 * The meta object literal for the '{@link soft.mapping.impl.LogsImpl <em>Logs</em>}' class.

@@ -262,6 +262,10 @@ public class CellImpl extends MinimalEObjectImpl.Container implements Cell {
 		myPos.setMyCell(this);
 		
 		this.setPosition(myPos);
+		
+		myAsset = null;
+		myAssetArea = null;
+		referenceCell = null;
 	}
 
 	/**
