@@ -123,7 +123,9 @@
       <eOperations name="xml2map" eType="#//mapping/Map">
         <eParameters name="filepath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
-      <eOperations name="xml2assets" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eOperations name="xml2assets" eType="#//mapping/Asset">
+        <eParameters name="filepath"/>
+      </eOperations>
     </eClassifiers>
   </eSubpackages>
 </ecore:EPackage>
