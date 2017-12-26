@@ -32,6 +32,8 @@ import soft.mapping.MappingPackage;
  *   <li>{@link soft.mapping.impl.MapImpl#getCells <em>Cells</em>}</li>
  *   <li>{@link soft.mapping.impl.MapImpl#getMaxLayer <em>Max Layer</em>}</li>
  *   <li>{@link soft.mapping.impl.MapImpl#getAssetsSet <em>Assets Set</em>}</li>
+ *   <li>{@link soft.mapping.impl.MapImpl#getMapheight <em>Mapheight</em>}</li>
+ *   <li>{@link soft.mapping.impl.MapImpl#getMapwidth <em>Mapwidth</em>}</li>
  * </ul>
  *
  * @generated
@@ -121,6 +123,46 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 	 * @ordered
 	 */
 	protected Asset[] assetsSet = ASSETS_SET_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getMapheight() <em>Mapheight</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMapheight()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int MAPHEIGHT_EDEFAULT = 20;
+
+	/**
+	 * The cached value of the '{@link #getMapheight() <em>Mapheight</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMapheight()
+	 * @generated
+	 * @ordered
+	 */
+	protected int mapheight = MAPHEIGHT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getMapwidth() <em>Mapwidth</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMapwidth()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int MAPWIDTH_EDEFAULT = 20;
+
+	/**
+	 * The cached value of the '{@link #getMapwidth() <em>Mapwidth</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMapwidth()
+	 * @generated
+	 * @ordered
+	 */
+	protected int mapwidth = MAPWIDTH_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -242,6 +284,48 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getMapheight() {
+		return mapheight;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMapheight(int newMapheight) {
+		int oldMapheight = mapheight;
+		mapheight = newMapheight;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MappingPackage.MAP__MAPHEIGHT, oldMapheight, mapheight));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getMapwidth() {
+		return mapwidth;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMapwidth(int newMapwidth) {
+		int oldMapwidth = mapwidth;
+		mapwidth = newMapwidth;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MappingPackage.MAP__MAPWIDTH, oldMapwidth, mapwidth));
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -299,6 +383,10 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 				return getMaxLayer();
 			case MappingPackage.MAP__ASSETS_SET:
 				return getAssetsSet();
+			case MappingPackage.MAP__MAPHEIGHT:
+				return getMapheight();
+			case MappingPackage.MAP__MAPWIDTH:
+				return getMapwidth();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -321,6 +409,12 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 				return;
 			case MappingPackage.MAP__ASSETS_SET:
 				setAssetsSet((Asset[])newValue);
+				return;
+			case MappingPackage.MAP__MAPHEIGHT:
+				setMapheight((Integer)newValue);
+				return;
+			case MappingPackage.MAP__MAPWIDTH:
+				setMapwidth((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -345,6 +439,12 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 			case MappingPackage.MAP__ASSETS_SET:
 				setAssetsSet(ASSETS_SET_EDEFAULT);
 				return;
+			case MappingPackage.MAP__MAPHEIGHT:
+				setMapheight(MAPHEIGHT_EDEFAULT);
+				return;
+			case MappingPackage.MAP__MAPWIDTH:
+				setMapwidth(MAPWIDTH_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -366,6 +466,10 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 				return maxLayer != MAX_LAYER_EDEFAULT;
 			case MappingPackage.MAP__ASSETS_SET:
 				return ASSETS_SET_EDEFAULT == null ? assetsSet != null : !ASSETS_SET_EDEFAULT.equals(assetsSet);
+			case MappingPackage.MAP__MAPHEIGHT:
+				return mapheight != MAPHEIGHT_EDEFAULT;
+			case MappingPackage.MAP__MAPWIDTH:
+				return mapwidth != MAPWIDTH_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -405,6 +509,10 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 		result.append(maxLayer);
 		result.append(", assetsSet: ");
 		result.append(assetsSet);
+		result.append(", mapheight: ");
+		result.append(mapheight);
+		result.append(", mapwidth: ");
+		result.append(mapwidth);
 		result.append(')');
 		return result.toString();
 	}

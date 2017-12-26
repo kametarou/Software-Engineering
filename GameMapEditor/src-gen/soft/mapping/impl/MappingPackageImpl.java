@@ -2,6 +2,7 @@
  */
 package soft.mapping.impl;
 
+import java.awt.Color;
 import java.awt.Graphics2D;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -107,6 +108,13 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 	 * @generated
 	 */
 	private EDataType cellArrayEDataType = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType colorEDataType = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -232,6 +240,24 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 	 */
 	public EAttribute getMap_AssetsSet() {
 		return (EAttribute)mapEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getMap_Mapheight() {
+		return (EAttribute)mapEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getMap_Mapwidth() {
+		return (EAttribute)mapEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -385,6 +411,15 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 	 */
 	public EReference getCell_ReferenceCell() {
 		return (EReference)cellEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCell_CellColor() {
+		return (EAttribute)cellEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -581,7 +616,7 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAsset_Name() {
+	public EAttribute getAsset_AssetId() {
 		return (EAttribute)assetEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -626,6 +661,15 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EDataType getColor() {
+		return colorEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public MappingFactory getMappingFactory() {
 		return (MappingFactory)getEFactoryInstance();
 	}
@@ -655,6 +699,8 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 		createEAttribute(mapEClass, MAP__CELLS);
 		createEAttribute(mapEClass, MAP__MAX_LAYER);
 		createEAttribute(mapEClass, MAP__ASSETS_SET);
+		createEAttribute(mapEClass, MAP__MAPHEIGHT);
+		createEAttribute(mapEClass, MAP__MAPWIDTH);
 		createEOperation(mapEClass, MAP___INIT__INT_INT);
 		createEOperation(mapEClass, MAP___GET_CELL_FROM_CURRENT_LAYER__INT_INT);
 		createEOperation(mapEClass, MAP___GET_CELL_FROM_SPECIFIED_LAYER__INT_INT_INT);
@@ -674,6 +720,7 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 		createEReference(cellEClass, CELL__MY_ASSET);
 		createEReference(cellEClass, CELL__MY_ASSET_AREA);
 		createEReference(cellEClass, CELL__REFERENCE_CELL);
+		createEAttribute(cellEClass, CELL__CELL_COLOR);
 		createEOperation(cellEClass, CELL___INIT__INT_INT);
 		createEOperation(cellEClass, CELL___TO_STRING);
 
@@ -699,13 +746,14 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 		createEAttribute(assetEClass, ASSET__MY_GRAPHICS2D);
 		createEAttribute(assetEClass, ASSET__X);
 		createEAttribute(assetEClass, ASSET__Y);
-		createEAttribute(assetEClass, ASSET__NAME);
+		createEAttribute(assetEClass, ASSET__ASSET_ID);
 		createEOperation(assetEClass, ASSET___INIT);
 
 		// Create data types
 		assetArrayEDataType = createEDataType(ASSET_ARRAY);
 		graphics2DEDataType = createEDataType(GRAPHICS2_D);
 		cellArrayEDataType = createEDataType(CELL_ARRAY);
+		colorEDataType = createEDataType(COLOR);
 	}
 
 	/**
@@ -749,6 +797,8 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 		initEAttribute(getMap_Cells(), this.getCellArray(), "cells", null, 1, 1, Map.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMap_MaxLayer(), ecorePackage.getEInt(), "maxLayer", "3", 1, 1, Map.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMap_AssetsSet(), this.getAssetArray(), "assetsSet", null, 1, 1, Map.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMap_Mapheight(), ecorePackage.getEInt(), "mapheight", "20", 1, 1, Map.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMap_Mapwidth(), ecorePackage.getEInt(), "mapwidth", "20", 1, 1, Map.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		EOperation op = initEOperation(getMap__Init__int_int(), null, "init", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "height", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -784,6 +834,7 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 		initEReference(getCell_MyAsset(), this.getAsset(), null, "myAsset", null, 0, 1, Cell.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCell_MyAssetArea(), this.getAreaVector(), null, "myAssetArea", null, 0, 1, Cell.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCell_ReferenceCell(), this.getCell(), null, "referenceCell", null, 0, 1, Cell.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCell_CellColor(), this.getColor(), "cellColor", "", 1, 1, Cell.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = initEOperation(getCell__Init__int_int(), null, "init", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "x", 1, 1, IS_UNIQUE, IS_ORDERED);
@@ -814,9 +865,9 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 
 		initEClass(assetEClass, Asset.class, "Asset", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAsset_MyGraphics2d(), this.getGraphics2D(), "myGraphics2d", "", 0, 1, Asset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAsset_X(), ecorePackage.getEInt(), "x", null, 0, 1, Asset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAsset_Y(), ecorePackage.getEInt(), "y", null, 0, 1, Asset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAsset_Name(), ecorePackage.getEString(), "name", null, 0, 1, Asset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAsset_X(), ecorePackage.getEInt(), "x", null, 1, 1, Asset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAsset_Y(), ecorePackage.getEInt(), "y", null, 1, 1, Asset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAsset_AssetId(), ecorePackage.getEString(), "assetId", null, 1, 1, Asset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getAsset__Init(), null, "init", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -824,6 +875,7 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 		initEDataType(assetArrayEDataType, Asset[].class, "AssetArray", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(graphics2DEDataType, Graphics2D.class, "Graphics2D", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(cellArrayEDataType, Cell[][][].class, "CellArray", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(colorEDataType, Color.class, "Color", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

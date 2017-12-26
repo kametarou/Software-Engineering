@@ -160,6 +160,15 @@ public class GraphicsPackageImpl extends EPackageImpl implements GraphicsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getImageProcess__Scaling__Graphics2D_int() {
+		return imageProcessEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EDataType getMapImage() {
 		return mapImageEDataType;
 	}
@@ -204,6 +213,7 @@ public class GraphicsPackageImpl extends EPackageImpl implements GraphicsPackage
 		imageProcessEClass = createEClass(IMAGE_PROCESS);
 		createEAttribute(imageProcessEClass, IMAGE_PROCESS__OPACITY);
 		createEOperation(imageProcessEClass, IMAGE_PROCESS___BLENDING__GRAPHICS2D_AREAVECTOR_INT);
+		createEOperation(imageProcessEClass, IMAGE_PROCESS___SCALING__GRAPHICS2D_INT);
 
 		// Create data types
 		mapImageEDataType = createEDataType(MAP_IMAGE);
@@ -250,6 +260,11 @@ public class GraphicsPackageImpl extends EPackageImpl implements GraphicsPackage
 		addEParameter(op, this.getMapImage(), "wholeMap", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theMappingPackage.getAreaVector(), "renewArea", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "currentLayer", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "scale", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getImageProcess__Scaling__Graphics2D_int(), theMappingPackage.getGraphics2D(), "scaling", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theMappingPackage.getGraphics2D(), "wholeMap", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "scale", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Initialize data types
 		initEDataType(mapImageEDataType, Graphics2D[].class, "MapImage", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);

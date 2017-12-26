@@ -2,6 +2,7 @@
  */
 package soft.mapping.impl;
 
+import java.awt.Color;
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -20,6 +21,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import soft.mapping.AreaVector;
 import soft.mapping.Asset;
 import soft.mapping.Cell;
+import soft.mapping.MappingFactory;
 import soft.mapping.MappingPackage;
 import soft.mapping.Position;
 
@@ -35,6 +37,7 @@ import soft.mapping.Position;
  *   <li>{@link soft.mapping.impl.CellImpl#getMyAsset <em>My Asset</em>}</li>
  *   <li>{@link soft.mapping.impl.CellImpl#getMyAssetArea <em>My Asset Area</em>}</li>
  *   <li>{@link soft.mapping.impl.CellImpl#getReferenceCell <em>Reference Cell</em>}</li>
+ *   <li>{@link soft.mapping.impl.CellImpl#getCellColor <em>Cell Color</em>}</li>
  * </ul>
  *
  * @generated
@@ -74,6 +77,26 @@ public class CellImpl extends MinimalEObjectImpl.Container implements Cell {
 	 * @ordered
 	 */
 	protected Cell referenceCell;
+
+	/**
+	 * The default value of the '{@link #getCellColor() <em>Cell Color</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCellColor()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Color CELL_COLOR_EDEFAULT = (Color)MappingFactory.eINSTANCE.createFromString(MappingPackage.eINSTANCE.getColor(), "");
+
+	/**
+	 * The cached value of the '{@link #getCellColor() <em>Cell Color</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCellColor()
+	 * @generated
+	 * @ordered
+	 */
+	protected Color cellColor = CELL_COLOR_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -254,6 +277,27 @@ public class CellImpl extends MinimalEObjectImpl.Container implements Cell {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Color getCellColor() {
+		return cellColor;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCellColor(Color newCellColor) {
+		Color oldCellColor = cellColor;
+		cellColor = newCellColor;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MappingPackage.CELL__CELL_COLOR, oldCellColor, cellColor));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public void init(final int x, final int y) {
 		Position myPos = new PositionImpl();
 		
@@ -341,6 +385,8 @@ public class CellImpl extends MinimalEObjectImpl.Container implements Cell {
 			case MappingPackage.CELL__REFERENCE_CELL:
 				if (resolve) return getReferenceCell();
 				return basicGetReferenceCell();
+			case MappingPackage.CELL__CELL_COLOR:
+				return getCellColor();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -364,6 +410,9 @@ public class CellImpl extends MinimalEObjectImpl.Container implements Cell {
 				return;
 			case MappingPackage.CELL__REFERENCE_CELL:
 				setReferenceCell((Cell)newValue);
+				return;
+			case MappingPackage.CELL__CELL_COLOR:
+				setCellColor((Color)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -389,6 +438,9 @@ public class CellImpl extends MinimalEObjectImpl.Container implements Cell {
 			case MappingPackage.CELL__REFERENCE_CELL:
 				setReferenceCell((Cell)null);
 				return;
+			case MappingPackage.CELL__CELL_COLOR:
+				setCellColor(CELL_COLOR_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -409,6 +461,8 @@ public class CellImpl extends MinimalEObjectImpl.Container implements Cell {
 				return myAssetArea != null;
 			case MappingPackage.CELL__REFERENCE_CELL:
 				return referenceCell != null;
+			case MappingPackage.CELL__CELL_COLOR:
+				return CELL_COLOR_EDEFAULT == null ? cellColor != null : !CELL_COLOR_EDEFAULT.equals(cellColor);
 		}
 		return super.eIsSet(featureID);
 	}

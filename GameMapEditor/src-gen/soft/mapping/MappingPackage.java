@@ -116,13 +116,31 @@ public interface MappingPackage extends EPackage {
 	int MAP__ASSETS_SET = 4;
 
 	/**
+	 * The feature id for the '<em><b>Mapheight</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAP__MAPHEIGHT = 5;
+
+	/**
+	 * The feature id for the '<em><b>Mapwidth</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAP__MAPWIDTH = 6;
+
+	/**
 	 * The number of structural features of the '<em>Map</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAP_FEATURE_COUNT = 5;
+	int MAP_FEATURE_COUNT = 7;
 
 	/**
 	 * The operation id for the '<em>Init</em>' operation.
@@ -307,13 +325,22 @@ public interface MappingPackage extends EPackage {
 	int CELL__REFERENCE_CELL = MainPackage.SERIALIZABLE_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Cell Color</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CELL__CELL_COLOR = MainPackage.SERIALIZABLE_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Cell</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CELL_FEATURE_COUNT = MainPackage.SERIALIZABLE_FEATURE_COUNT + 4;
+	int CELL_FEATURE_COUNT = MainPackage.SERIALIZABLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The operation id for the '<em>Init</em>' operation.
@@ -572,13 +599,13 @@ public interface MappingPackage extends EPackage {
 	int ASSET__Y = 2;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Asset Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSET__NAME = 3;
+	int ASSET__ASSET_ID = 3;
 
 	/**
 	 * The number of structural features of the '<em>Asset</em>' class.
@@ -634,6 +661,17 @@ public interface MappingPackage extends EPackage {
 	 * @generated
 	 */
 	int CELL_ARRAY = 9;
+
+
+	/**
+	 * The meta object id for the '<em>Color</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see java.awt.Color
+	 * @see soft.mapping.impl.MappingPackageImpl#getColor()
+	 * @generated
+	 */
+	int COLOR = 10;
 
 
 	/**
@@ -700,6 +738,28 @@ public interface MappingPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getMap_AssetsSet();
+
+	/**
+	 * Returns the meta object for the attribute '{@link soft.mapping.Map#getMapheight <em>Mapheight</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Mapheight</em>'.
+	 * @see soft.mapping.Map#getMapheight()
+	 * @see #getMap()
+	 * @generated
+	 */
+	EAttribute getMap_Mapheight();
+
+	/**
+	 * Returns the meta object for the attribute '{@link soft.mapping.Map#getMapwidth <em>Mapwidth</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Mapwidth</em>'.
+	 * @see soft.mapping.Map#getMapwidth()
+	 * @see #getMap()
+	 * @generated
+	 */
+	EAttribute getMap_Mapwidth();
 
 	/**
 	 * Returns the meta object for the '{@link soft.mapping.Map#init(int, int) <em>Init</em>}' operation.
@@ -877,6 +937,17 @@ public interface MappingPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getCell_ReferenceCell();
+
+	/**
+	 * Returns the meta object for the attribute '{@link soft.mapping.Cell#getCellColor <em>Cell Color</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Cell Color</em>'.
+	 * @see soft.mapping.Cell#getCellColor()
+	 * @see #getCell()
+	 * @generated
+	 */
+	EAttribute getCell_CellColor();
 
 	/**
 	 * Returns the meta object for the '{@link soft.mapping.Cell#init(int, int) <em>Init</em>}' operation.
@@ -1101,15 +1172,15 @@ public interface MappingPackage extends EPackage {
 	EAttribute getAsset_Y();
 
 	/**
-	 * Returns the meta object for the attribute '{@link soft.mapping.Asset#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link soft.mapping.Asset#getAssetId <em>Asset Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see soft.mapping.Asset#getName()
+	 * @return the meta object for the attribute '<em>Asset Id</em>'.
+	 * @see soft.mapping.Asset#getAssetId()
 	 * @see #getAsset()
 	 * @generated
 	 */
-	EAttribute getAsset_Name();
+	EAttribute getAsset_AssetId();
 
 	/**
 	 * Returns the meta object for the '{@link soft.mapping.Asset#init() <em>Init</em>}' operation.
@@ -1151,6 +1222,17 @@ public interface MappingPackage extends EPackage {
 	 * @generated
 	 */
 	EDataType getCellArray();
+
+	/**
+	 * Returns the meta object for data type '{@link java.awt.Color <em>Color</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Color</em>'.
+	 * @see java.awt.Color
+	 * @model instanceClass="java.awt.Color"
+	 * @generated
+	 */
+	EDataType getColor();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1224,6 +1306,22 @@ public interface MappingPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute MAP__ASSETS_SET = eINSTANCE.getMap_AssetsSet();
+
+		/**
+		 * The meta object literal for the '<em><b>Mapheight</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MAP__MAPHEIGHT = eINSTANCE.getMap_Mapheight();
+
+		/**
+		 * The meta object literal for the '<em><b>Mapwidth</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MAP__MAPWIDTH = eINSTANCE.getMap_Mapwidth();
 
 		/**
 		 * The meta object literal for the '<em><b>Init</b></em>' operation.
@@ -1364,6 +1462,14 @@ public interface MappingPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CELL__REFERENCE_CELL = eINSTANCE.getCell_ReferenceCell();
+
+		/**
+		 * The meta object literal for the '<em><b>Cell Color</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CELL__CELL_COLOR = eINSTANCE.getCell_CellColor();
 
 		/**
 		 * The meta object literal for the '<em><b>Init</b></em>' operation.
@@ -1542,12 +1648,12 @@ public interface MappingPackage extends EPackage {
 		EAttribute ASSET__Y = eINSTANCE.getAsset_Y();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Asset Id</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ASSET__NAME = eINSTANCE.getAsset_Name();
+		EAttribute ASSET__ASSET_ID = eINSTANCE.getAsset_AssetId();
 
 		/**
 		 * The meta object literal for the '<em><b>Init</b></em>' operation.
@@ -1584,6 +1690,16 @@ public interface MappingPackage extends EPackage {
 		 * @generated
 		 */
 		EDataType CELL_ARRAY = eINSTANCE.getCellArray();
+
+		/**
+		 * The meta object literal for the '<em>Color</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see java.awt.Color
+		 * @see soft.mapping.impl.MappingPackageImpl#getColor()
+		 * @generated
+		 */
+		EDataType COLOR = eINSTANCE.getColor();
 
 	}
 

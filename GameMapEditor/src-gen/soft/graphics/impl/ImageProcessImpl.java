@@ -89,7 +89,18 @@ public class ImageProcessImpl extends MinimalEObjectImpl.Container implements Im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Graphics2D blending(Graphics2D[] wholeMap, AreaVector renewArea, int currentLayer) {
+	public Graphics2D blending(Graphics2D[] wholeMap, AreaVector renewArea, int currentLayer, int scale) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Graphics2D scaling(Graphics2D wholeMap, int scale) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -162,7 +173,9 @@ public class ImageProcessImpl extends MinimalEObjectImpl.Container implements Im
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 			case GraphicsPackage.IMAGE_PROCESS___BLENDING__GRAPHICS2D_AREAVECTOR_INT:
-				return blending((Graphics2D[])arguments.get(0), (AreaVector)arguments.get(1), (Integer)arguments.get(2));
+				return blending((Graphics2D[])arguments.get(0), (AreaVector)arguments.get(1), (Integer)arguments.get(2), (Integer)arguments.get(3));
+			case GraphicsPackage.IMAGE_PROCESS___SCALING__GRAPHICS2D_INT:
+				return scaling((Graphics2D)arguments.get(0), (Integer)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

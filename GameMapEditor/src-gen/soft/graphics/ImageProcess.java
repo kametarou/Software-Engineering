@@ -57,6 +57,14 @@ public interface ImageProcess extends EObject {
 	 * @model dataType="soft.mapping.Graphics2D" wholeMapDataType="soft.graphics.MapImage"
 	 * @generated
 	 */
-	Graphics2D blending(Graphics2D[] wholeMap, AreaVector renewArea, int currentLayer);
+	Graphics2D blending(Graphics2D[] wholeMap, AreaVector renewArea, int currentLayer, int scale);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model dataType="soft.mapping.Graphics2D" wholeMapDataType="soft.mapping.Graphics2D"
+	 * @generated
+	 */
+	Graphics2D scaling(Graphics2D wholeMap, int scale);
 
 } // ImageProcess

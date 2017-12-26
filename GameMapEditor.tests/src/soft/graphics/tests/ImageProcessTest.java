@@ -16,7 +16,8 @@ import soft.graphics.ImageProcess;
  * <p>
  * The following operations are tested:
  * <ul>
- *   <li>{@link soft.graphics.ImageProcess#blending(java.awt.Graphics2D[], soft.mapping.AreaVector, int) <em>Blending</em>}</li>
+ *   <li>{@link soft.graphics.ImageProcess#blending(java.awt.Graphics2D[], soft.mapping.AreaVector, int, int) <em>Blending</em>}</li>
+ *   <li>{@link soft.graphics.ImageProcess#scaling(java.awt.Graphics2D, int) <em>Scaling</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -93,13 +94,26 @@ public class ImageProcessTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link soft.graphics.ImageProcess#blending(java.awt.Graphics2D[], soft.mapping.AreaVector, int) <em>Blending</em>}' operation.
+	 * Tests the '{@link soft.graphics.ImageProcess#blending(java.awt.Graphics2D[], soft.mapping.AreaVector, int, int) <em>Blending</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see soft.graphics.ImageProcess#blending(java.awt.Graphics2D[], soft.mapping.AreaVector, int)
+	 * @see soft.graphics.ImageProcess#blending(java.awt.Graphics2D[], soft.mapping.AreaVector, int, int)
 	 * @generated
 	 */
 	public void testBlending__Graphics2D_AreaVector_int() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link soft.graphics.ImageProcess#scaling(java.awt.Graphics2D, int) <em>Scaling</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see soft.graphics.ImageProcess#scaling(java.awt.Graphics2D, int)
+	 * @generated
+	 */
+	public void testScaling__Graphics2D_int() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

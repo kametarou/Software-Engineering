@@ -2,6 +2,7 @@
  */
 package soft.mapping.impl;
 
+import java.awt.Color;
 import java.awt.Graphics2D;
 
 import org.eclipse.emf.ecore.EClass;
@@ -84,6 +85,8 @@ public class MappingFactoryImpl extends EFactoryImpl implements MappingFactory {
 				return createGraphics2DFromString(eDataType, initialValue);
 			case MappingPackage.CELL_ARRAY:
 				return createCellArrayFromString(eDataType, initialValue);
+			case MappingPackage.COLOR:
+				return createColorFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -103,6 +106,8 @@ public class MappingFactoryImpl extends EFactoryImpl implements MappingFactory {
 				return convertGraphics2DToString(eDataType, instanceValue);
 			case MappingPackage.CELL_ARRAY:
 				return convertCellArrayToString(eDataType, instanceValue);
+			case MappingPackage.COLOR:
+				return convertColorToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -220,6 +225,24 @@ public class MappingFactoryImpl extends EFactoryImpl implements MappingFactory {
 	 */
 	public String convertCellArrayToString(EDataType eDataType, Object instanceValue) {
 		return super.convertToString(instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Color createColorFromString(EDataType eDataType, String initialValue) {
+		return (Color)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertColorToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
 	}
 
 	/**

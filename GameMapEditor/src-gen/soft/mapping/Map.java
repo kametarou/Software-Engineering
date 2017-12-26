@@ -18,6 +18,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link soft.mapping.Map#getCells <em>Cells</em>}</li>
  *   <li>{@link soft.mapping.Map#getMaxLayer <em>Max Layer</em>}</li>
  *   <li>{@link soft.mapping.Map#getAssetsSet <em>Assets Set</em>}</li>
+ *   <li>{@link soft.mapping.Map#getMapheight <em>Mapheight</em>}</li>
+ *   <li>{@link soft.mapping.Map#getMapwidth <em>Mapwidth</em>}</li>
  * </ul>
  *
  * @see soft.mapping.MappingPackage#getMap()
@@ -145,6 +147,60 @@ public interface Map extends EObject {
 	 * @generated
 	 */
 	void setAssetsSet(Asset[] value);
+
+	/**
+	 * Returns the value of the '<em><b>Mapheight</b></em>' attribute.
+	 * The default value is <code>"20"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Mapheight</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Mapheight</em>' attribute.
+	 * @see #setMapheight(int)
+	 * @see soft.mapping.MappingPackage#getMap_Mapheight()
+	 * @model default="20" required="true"
+	 * @generated
+	 */
+	int getMapheight();
+
+	/**
+	 * Sets the value of the '{@link soft.mapping.Map#getMapheight <em>Mapheight</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Mapheight</em>' attribute.
+	 * @see #getMapheight()
+	 * @generated
+	 */
+	void setMapheight(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Mapwidth</b></em>' attribute.
+	 * The default value is <code>"20"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Mapwidth</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Mapwidth</em>' attribute.
+	 * @see #setMapwidth(int)
+	 * @see soft.mapping.MappingPackage#getMap_Mapwidth()
+	 * @model default="20" required="true"
+	 * @generated
+	 */
+	int getMapwidth();
+
+	/**
+	 * Sets the value of the '{@link soft.mapping.Map#getMapwidth <em>Mapwidth</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Mapwidth</em>' attribute.
+	 * @see #getMapwidth()
+	 * @generated
+	 */
+	void setMapwidth(int value);
 
 	/**
 	 * <!-- begin-user-doc -->

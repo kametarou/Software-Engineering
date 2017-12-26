@@ -3,6 +3,7 @@
 package soft.mapping.provider;
 
 
+import java.awt.Color;
 import java.util.Collection;
 import java.util.List;
 
@@ -18,7 +19,10 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
+import org.eclipse.emf.edit.provider.ViewerNotification;
+import soft.mapping.Cell;
 import soft.mapping.MappingPackage;
 
 /**
@@ -59,6 +63,7 @@ public class CellItemProvider
 			addMyAssetPropertyDescriptor(object);
 			addMyAssetAreaPropertyDescriptor(object);
 			addReferenceCellPropertyDescriptor(object);
+			addCellColorPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -130,6 +135,28 @@ public class CellItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Cell Color feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCellColorPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Cell_cellColor_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Cell_cellColor_feature", "_UI_Cell_type"),
+				 MappingPackage.Literals.CELL__CELL_COLOR,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns Cell.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -148,7 +175,11 @@ public class CellItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Cell_type");
+		Color labelValue = ((Cell)object).getCellColor();
+		String label = labelValue == null ? null : labelValue.toString();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Cell_type") :
+			getString("_UI_Cell_type") + " " + label;
 	}
 	
 
@@ -162,6 +193,12 @@ public class CellItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(Cell.class)) {
+			case MappingPackage.CELL__CELL_COLOR:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

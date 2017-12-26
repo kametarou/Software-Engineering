@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link soft.mapping.Asset#getMyGraphics2d <em>My Graphics2d</em>}</li>
  *   <li>{@link soft.mapping.Asset#getX <em>X</em>}</li>
  *   <li>{@link soft.mapping.Asset#getY <em>Y</em>}</li>
- *   <li>{@link soft.mapping.Asset#getName <em>Name</em>}</li>
+ *   <li>{@link soft.mapping.Asset#getAssetId <em>Asset Id</em>}</li>
  * </ul>
  *
  * @see soft.mapping.MappingPackage#getAsset()
@@ -64,7 +64,7 @@ public interface Asset extends EObject {
 	 * @return the value of the '<em>X</em>' attribute.
 	 * @see #setX(int)
 	 * @see soft.mapping.MappingPackage#getAsset_X()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	int getX();
@@ -90,7 +90,7 @@ public interface Asset extends EObject {
 	 * @return the value of the '<em>Y</em>' attribute.
 	 * @see #setY(int)
 	 * @see soft.mapping.MappingPackage#getAsset_Y()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	int getY();
@@ -106,30 +106,30 @@ public interface Asset extends EObject {
 	void setY(int value);
 
 	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * Returns the value of the '<em><b>Asset Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Asset Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see soft.mapping.MappingPackage#getAsset_Name()
-	 * @model
+	 * @return the value of the '<em>Asset Id</em>' attribute.
+	 * @see #setAssetId(String)
+	 * @see soft.mapping.MappingPackage#getAsset_AssetId()
+	 * @model required="true"
 	 * @generated
 	 */
-	String getName();
+	String getAssetId();
 
 	/**
-	 * Sets the value of the '{@link soft.mapping.Asset#getName <em>Name</em>}' attribute.
+	 * Sets the value of the '{@link soft.mapping.Asset#getAssetId <em>Asset Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
+	 * @param value the new value of the '<em>Asset Id</em>' attribute.
+	 * @see #getAssetId()
 	 * @generated
 	 */
-	void setName(String value);
+	void setAssetId(String value);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -28,7 +28,7 @@ import soft.mapping.MappingPackage;
  *   <li>{@link soft.mapping.impl.AssetImpl#getMyGraphics2d <em>My Graphics2d</em>}</li>
  *   <li>{@link soft.mapping.impl.AssetImpl#getX <em>X</em>}</li>
  *   <li>{@link soft.mapping.impl.AssetImpl#getY <em>Y</em>}</li>
- *   <li>{@link soft.mapping.impl.AssetImpl#getName <em>Name</em>}</li>
+ *   <li>{@link soft.mapping.impl.AssetImpl#getAssetId <em>Asset Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -95,24 +95,24 @@ public abstract class AssetImpl extends MinimalEObjectImpl.Container implements 
 	protected int y = Y_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The default value of the '{@link #getAssetId() <em>Asset Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getAssetId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAME_EDEFAULT = null;
+	protected static final String ASSET_ID_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The cached value of the '{@link #getAssetId() <em>Asset Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getAssetId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String name = NAME_EDEFAULT;
+	protected String assetId = ASSET_ID_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -201,8 +201,8 @@ public abstract class AssetImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getName() {
-		return name;
+	public String getAssetId() {
+		return assetId;
 	}
 
 	/**
@@ -210,11 +210,11 @@ public abstract class AssetImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
+	public void setAssetId(String newAssetId) {
+		String oldAssetId = assetId;
+		assetId = newAssetId;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MappingPackage.ASSET__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, MappingPackage.ASSET__ASSET_ID, oldAssetId, assetId));
 	}
 
 	/**
@@ -242,8 +242,8 @@ public abstract class AssetImpl extends MinimalEObjectImpl.Container implements 
 				return getX();
 			case MappingPackage.ASSET__Y:
 				return getY();
-			case MappingPackage.ASSET__NAME:
-				return getName();
+			case MappingPackage.ASSET__ASSET_ID:
+				return getAssetId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -265,8 +265,8 @@ public abstract class AssetImpl extends MinimalEObjectImpl.Container implements 
 			case MappingPackage.ASSET__Y:
 				setY((Integer)newValue);
 				return;
-			case MappingPackage.ASSET__NAME:
-				setName((String)newValue);
+			case MappingPackage.ASSET__ASSET_ID:
+				setAssetId((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -289,8 +289,8 @@ public abstract class AssetImpl extends MinimalEObjectImpl.Container implements 
 			case MappingPackage.ASSET__Y:
 				setY(Y_EDEFAULT);
 				return;
-			case MappingPackage.ASSET__NAME:
-				setName(NAME_EDEFAULT);
+			case MappingPackage.ASSET__ASSET_ID:
+				setAssetId(ASSET_ID_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -310,8 +310,8 @@ public abstract class AssetImpl extends MinimalEObjectImpl.Container implements 
 				return x != X_EDEFAULT;
 			case MappingPackage.ASSET__Y:
 				return y != Y_EDEFAULT;
-			case MappingPackage.ASSET__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case MappingPackage.ASSET__ASSET_ID:
+				return ASSET_ID_EDEFAULT == null ? assetId != null : !ASSET_ID_EDEFAULT.equals(assetId);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -347,8 +347,8 @@ public abstract class AssetImpl extends MinimalEObjectImpl.Container implements 
 		result.append(x);
 		result.append(", y: ");
 		result.append(y);
-		result.append(", name: ");
-		result.append(name);
+		result.append(", assetId: ");
+		result.append(assetId);
 		result.append(')');
 		return result.toString();
 	}

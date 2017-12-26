@@ -95,13 +95,22 @@ public interface GraphicsPackage extends EPackage {
 	int IMAGE_PROCESS___BLENDING__GRAPHICS2D_AREAVECTOR_INT = 0;
 
 	/**
+	 * The operation id for the '<em>Scaling</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_PROCESS___SCALING__GRAPHICS2D_INT = 1;
+
+	/**
 	 * The number of operations of the '<em>Image Process</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_PROCESS_OPERATION_COUNT = 1;
+	int IMAGE_PROCESS_OPERATION_COUNT = 2;
 
 	/**
 	 * The meta object id for the '<em>Map Image</em>' data type.
@@ -144,14 +153,24 @@ public interface GraphicsPackage extends EPackage {
 	EAttribute getImageProcess_Opacity();
 
 	/**
-	 * Returns the meta object for the '{@link soft.graphics.ImageProcess#blending(java.awt.Graphics2D[], soft.mapping.AreaVector, int) <em>Blending</em>}' operation.
+	 * Returns the meta object for the '{@link soft.graphics.ImageProcess#blending(java.awt.Graphics2D[], soft.mapping.AreaVector, int, int) <em>Blending</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Blending</em>' operation.
-	 * @see soft.graphics.ImageProcess#blending(java.awt.Graphics2D[], soft.mapping.AreaVector, int)
+	 * @see soft.graphics.ImageProcess#blending(java.awt.Graphics2D[], soft.mapping.AreaVector, int, int)
 	 * @generated
 	 */
 	EOperation getImageProcess__Blending__Graphics2D_AreaVector_int();
+
+	/**
+	 * Returns the meta object for the '{@link soft.graphics.ImageProcess#scaling(java.awt.Graphics2D, int) <em>Scaling</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Scaling</em>' operation.
+	 * @see soft.graphics.ImageProcess#scaling(java.awt.Graphics2D, int)
+	 * @generated
+	 */
+	EOperation getImageProcess__Scaling__Graphics2D_int();
 
 	/**
 	 * Returns the meta object for data type '<em>Map Image</em>'.
@@ -221,6 +240,14 @@ public interface GraphicsPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation IMAGE_PROCESS___BLENDING__GRAPHICS2D_AREAVECTOR_INT = eINSTANCE.getImageProcess__Blending__Graphics2D_AreaVector_int();
+
+		/**
+		 * The meta object literal for the '<em><b>Scaling</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IMAGE_PROCESS___SCALING__GRAPHICS2D_INT = eINSTANCE.getImageProcess__Scaling__Graphics2D_int();
 
 		/**
 		 * The meta object literal for the '<em>Map Image</em>' data type.

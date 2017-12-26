@@ -3,6 +3,7 @@
 package soft.mapping.provider;
 
 
+import java.awt.Graphics2D;
 import java.util.Collection;
 import java.util.List;
 
@@ -63,7 +64,7 @@ public class AssetItemProvider
 			addMyGraphics2dPropertyDescriptor(object);
 			addXPropertyDescriptor(object);
 			addYPropertyDescriptor(object);
-			addNamePropertyDescriptor(object);
+			addAssetIdPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -135,19 +136,19 @@ public class AssetItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Name feature.
+	 * This adds a property descriptor for the Asset Id feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNamePropertyDescriptor(Object object) {
+	protected void addAssetIdPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Asset_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Asset_name_feature", "_UI_Asset_type"),
-				 MappingPackage.Literals.ASSET__NAME,
+				 getString("_UI_Asset_assetId_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Asset_assetId_feature", "_UI_Asset_type"),
+				 MappingPackage.Literals.ASSET__ASSET_ID,
 				 true,
 				 false,
 				 false,
@@ -175,7 +176,8 @@ public class AssetItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Asset)object).getName();
+		Graphics2D labelValue = ((Asset)object).getMyGraphics2d();
+		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Asset_type") :
 			getString("_UI_Asset_type") + " " + label;
@@ -197,7 +199,7 @@ public class AssetItemProvider
 			case MappingPackage.ASSET__MY_GRAPHICS2D:
 			case MappingPackage.ASSET__X:
 			case MappingPackage.ASSET__Y:
-			case MappingPackage.ASSET__NAME:
+			case MappingPackage.ASSET__ASSET_ID:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
