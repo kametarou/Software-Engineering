@@ -143,6 +143,11 @@
         <eParameters name="wholeMap" eType="#//graphics/MapImage"/>
         <eParameters name="renewArea" eType="#//mapping/AreaVector"/>
         <eParameters name="currentLayer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        <eParameters name="scale" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </eOperations>
+      <eOperations name="scaling" eType="#//mapping/Graphics2D">
+        <eParameters name="wholeMap" eType="#//mapping/Graphics2D"/>
+        <eParameters name="scale" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="opacity" eType="#//graphics/FloatArray"/>
     </eClassifiers>
