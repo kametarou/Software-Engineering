@@ -157,13 +157,20 @@
         <eParameters name="wholeMap" eType="#//mapping/Graphics2D"/>
         <eParameters name="scale" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
       </eOperations>
-      <eOperations name="backgroundFilter" eType="#//mapping/Graphics2D">
-        <eParameters name="origin" eType="#//mapping/Graphics2D"/>
-        <eParameters name="color" eType="#//mapping/Color"/>
-      </eOperations>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="opacity" eType="#//graphics/FloatArray"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EDataType" name="MapImage" instanceClassName="java.awt.Graphics2D[]"/>
     <eClassifiers xsi:type="ecore:EDataType" name="FloatArray" instanceTypeName="EFloat[]"/>
+    <eClassifiers xsi:type="ecore:EClass" name="AssetProcess">
+      <eOperations name="backgroundFilter" eType="#//mapping/Graphics2D">
+        <eParameters name="origin" eType="#//mapping/Graphics2D"/>
+        <eParameters name="color" eType="#//mapping/Color"/>
+      </eOperations>
+      <eOperations name="normalizeAsset" eType="#//mapping/Graphics2D">
+        <eParameters name="asset" eType="#//mapping/Asset"/>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="thumbnailX" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="thumbnailY" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
   </eSubpackages>
 </ecore:EPackage>
