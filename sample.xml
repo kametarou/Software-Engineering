@@ -20,6 +20,13 @@
   </asset>
 </assets>
 <map>
+  <meta>
+    <size>
+      <width>3</width>
+      <hight>3</hight>
+      <maxdepth>3</maxdepth>
+    </size>
+  </meta>
   <layer depth="1">
     <row>
       <cell>
