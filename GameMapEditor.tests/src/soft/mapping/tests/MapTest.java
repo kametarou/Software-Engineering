@@ -11,14 +11,13 @@ import soft.mapping.MappingFactory;
 import soft.mapping.Position;
 
 /**
- * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Map</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A test case for the model object
+ * '<em><b>Map</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following operations are tested:
  * <ul>
  *   <li>{@link soft.mapping.Map#init(int, int) <em>Init</em>}</li>
- *   <li>{@link soft.mapping.Map#setLayer(int) <em>Set Layer</em>}</li>
+ *   <li>{@link soft.mapping.Map#getCellFromCurrentLayer(int, int) <em>Get Cell From Current Layer</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -26,16 +25,15 @@ import soft.mapping.Position;
 public class MapTest extends TestCase {
 
 	/**
-	 * The fixture for this Map test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The fixture for this Map test case. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
 	 * @generated
 	 */
 	protected Map fixture = null;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -54,8 +52,8 @@ public class MapTest extends TestCase {
 
 	/**
 	 * Sets the fixture for this Map test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	protected void setFixture(Map fixture) {
@@ -64,8 +62,8 @@ public class MapTest extends TestCase {
 
 	/**
 	 * Returns the fixture for this Map test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	protected Map getFixture() {
@@ -73,8 +71,7 @@ public class MapTest extends TestCase {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
@@ -84,8 +81,7 @@ public class MapTest extends TestCase {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */
@@ -96,40 +92,41 @@ public class MapTest extends TestCase {
 
 	/**
 	 * Tests the '{@link soft.mapping.Map#init(int, int) <em>Init</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see soft.mapping.Map#init(int, int)
 	 * @generated NOT
 	 */
 	public void testInit__int_int() {
-		
-		
+
 		Map myMap = fixture;
 		myMap.init(100, 100);
-		//should test the size of map
-        Position myPos;
-		for(int x = 0; x<100;x++) {
-			for(int y=0; y<100; y++) {
-                                    myPos = myMap.getCells()[x][y].getPosition();
-				assertEquals(myPos.getX(),x);
-                assertEquals(myPos.getY(),y);
-                assertEquals(myPos.getMyCell(),myMap.getCells()[x][y]);
-				//System.out.println(myMap.getCells()[x][y].toString());
+		// should test the size of map
+		Position myPos;
+		for (int x = 0; x < 100; x++) {
+			for (int y = 0; y < 100; y++) {
+				for (int z = 0; z <= 3; z++) {
+					myPos = myMap.getCells()[x][y][z].getPosition();
+					assertEquals(myPos.getX(), x);
+					assertEquals(myPos.getY(), y);
+					assertEquals(myPos.getMyCell(), myMap.getCells()[x][y]);
+					// System.out.println(myMap.getCells()[x][y].toString());
+				}
 			}
 		}
 	}
 
 	/**
-	 * Tests the '{@link soft.mapping.Map#setLayer(int) <em>Set Layer</em>}' operation.
+	 * Tests the '{@link soft.mapping.Map#getCellFromCurrentLayer(int, int) <em>Get Cell From Current Layer</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see soft.mapping.Map#setLayer(int)
+	 * @see soft.mapping.Map#getCellFromCurrentLayer(int, int)
 	 * @generated
 	 */
-	public void testSetLayer__int() {
+	public void testGetCellFromCurrentLayer__int_int() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
 
-} //MapTest
+} // MapTest

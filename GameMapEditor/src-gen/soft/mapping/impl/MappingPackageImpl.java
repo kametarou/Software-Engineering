@@ -177,7 +177,7 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMap_OpLogs() {
+	public EReference getMap_MyLogs() {
 		return (EReference)mapEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -222,7 +222,7 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getMap__SetLayer__int() {
+	public EOperation getMap__GetCellFromCurrentLayer__int_int() {
 		return mapEClass.getEOperations().get(1);
 	}
 
@@ -323,6 +323,33 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 	 */
 	public EReference getCell_Position() {
 		return (EReference)cellEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getCell_MyAsset() {
+		return (EReference)cellEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getCell_MyAssetArea() {
+		return (EReference)cellEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getCell_ReferenceCell() {
+		return (EReference)cellEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -552,12 +579,12 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 
 		// Create classes and their features
 		mapEClass = createEClass(MAP);
-		createEReference(mapEClass, MAP__OP_LOGS);
+		createEReference(mapEClass, MAP__MY_LOGS);
 		createEAttribute(mapEClass, MAP__CURRENT_LAYER);
 		createEAttribute(mapEClass, MAP__CELLS);
 		createEAttribute(mapEClass, MAP__MAX_LAYER);
 		createEOperation(mapEClass, MAP___INIT__INT_INT);
-		createEOperation(mapEClass, MAP___SET_LAYER__INT);
+		createEOperation(mapEClass, MAP___GET_CELL_FROM_CURRENT_LAYER__INT_INT);
 
 		logsEClass = createEClass(LOGS);
 		createEReference(logsEClass, LOGS__MAPS);
@@ -571,6 +598,9 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 
 		cellEClass = createEClass(CELL);
 		createEReference(cellEClass, CELL__POSITION);
+		createEReference(cellEClass, CELL__MY_ASSET);
+		createEReference(cellEClass, CELL__MY_ASSET_AREA);
+		createEReference(cellEClass, CELL__REFERENCE_CELL);
 		createEOperation(cellEClass, CELL___INIT__INT_INT);
 		createEOperation(cellEClass, CELL___TO_STRING);
 
@@ -637,7 +667,7 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(mapEClass, Map.class, "Map", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMap_OpLogs(), this.getLogs(), null, "opLogs", null, 1, 1, Map.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMap_MyLogs(), this.getLogs(), null, "myLogs", null, 1, 1, Map.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMap_CurrentLayer(), ecorePackage.getEInt(), "currentLayer", "0", 0, 1, Map.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMap_Cells(), this.getCellArray(), "cells", null, 1, 1, Map.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMap_MaxLayer(), ecorePackage.getEInt(), "maxLayer", "3", 1, 1, Map.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -646,8 +676,9 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 		addEParameter(op, ecorePackage.getEInt(), "height", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "width", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getMap__SetLayer__int(), ecorePackage.getEBoolean(), "setLayer", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEInt(), "layer", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getMap__GetCellFromCurrentLayer__int_int(), this.getCell(), "getCellFromCurrentLayer", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "x", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "y", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(logsEClass, Logs.class, "Logs", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLogs_Maps(), this.getMap(), null, "maps", null, 0, -1, Logs.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -667,6 +698,9 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 
 		initEClass(cellEClass, Cell.class, "Cell", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCell_Position(), this.getPosition(), this.getPosition_MyCell(), "position", null, 1, 1, Cell.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCell_MyAsset(), this.getAsset(), null, "myAsset", null, 0, 1, Cell.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCell_MyAssetArea(), this.getAreaVector(), null, "myAssetArea", null, 0, 1, Cell.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCell_ReferenceCell(), this.getCell(), null, "referenceCell", null, 0, 1, Cell.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = initEOperation(getCell__Init__int_int(), null, "init", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "x", 1, 1, IS_UNIQUE, IS_ORDERED);
@@ -702,7 +736,7 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 
 		// Initialize data types
 		initEDataType(graphics2DEDataType, Graphics2D.class, "Graphics2D", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(cellArrayEDataType, Cell[][].class, "CellArray", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(cellArrayEDataType, Cell[][][].class, "CellArray", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

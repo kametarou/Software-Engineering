@@ -198,8 +198,8 @@ public class MappingFactoryImpl extends EFactoryImpl implements MappingFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Cell[][] createCellArrayFromString(EDataType eDataType, String initialValue) {
-		return (Cell[][])super.createFromString(initialValue);
+	public Cell[][][] createCellArrayFromString(EDataType eDataType, String initialValue) {
+		return (Cell[][][])super.createFromString(initialValue);
 	}
 
 	/**

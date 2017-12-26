@@ -60,7 +60,7 @@ public class MapItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addOpLogsPropertyDescriptor(object);
+			addMyLogsPropertyDescriptor(object);
 			addCurrentLayerPropertyDescriptor(object);
 			addCellsPropertyDescriptor(object);
 			addMaxLayerPropertyDescriptor(object);
@@ -69,19 +69,19 @@ public class MapItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Op Logs feature.
+	 * This adds a property descriptor for the My Logs feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addOpLogsPropertyDescriptor(Object object) {
+	protected void addMyLogsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Map_opLogs_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Map_opLogs_feature", "_UI_Map_type"),
-				 MappingPackage.Literals.MAP__OP_LOGS,
+				 getString("_UI_Map_myLogs_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Map_myLogs_feature", "_UI_Map_type"),
+				 MappingPackage.Literals.MAP__MY_LOGS,
 				 false,
 				 false,
 				 false,
