@@ -114,14 +114,17 @@
   <eSubpackages name="fileio" nsURI="/Users/ayumi/SE" nsPrefix="fileio">
     <eClassifiers xsi:type="ecore:EClass" name="XmlWriter">
       <eOperations name="init"/>
-      <eOperations name="xml2map" eType="#//mapping/Map">
+      <eOperations name="map2xml">
         <eParameters name="filepath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="XmlReader">
       <eOperations name="init"/>
-      <eOperations name="map2xml">
+      <eOperations name="xml2map" eType="#//mapping/Map">
         <eParameters name="filepath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
+      <eOperations name="xml2assets" eType="#//mapping/Asset">
+        <eParameters name="filepath"/>
       </eOperations>
     </eClassifiers>
   </eSubpackages>
