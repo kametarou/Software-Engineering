@@ -25,31 +25,31 @@ import soft.mapping.MappingPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link soft.mapping.impl.AssetImpl#getTest <em>Test</em>}</li>
+ *   <li>{@link soft.mapping.impl.AssetImpl#getMyGraphics2d <em>My Graphics2d</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class AssetImpl extends MinimalEObjectImpl.Container implements Asset {
+public abstract class AssetImpl extends MinimalEObjectImpl.Container implements Asset {
 	/**
-	 * The default value of the '{@link #getTest() <em>Test</em>}' attribute.
+	 * The default value of the '{@link #getMyGraphics2d() <em>My Graphics2d</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTest()
+	 * @see #getMyGraphics2d()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Graphics2D TEST_EDEFAULT = (Graphics2D)MappingFactory.eINSTANCE.createFromString(MappingPackage.eINSTANCE.getGraphics2D(), "");
+	protected static final Graphics2D MY_GRAPHICS2D_EDEFAULT = (Graphics2D)MappingFactory.eINSTANCE.createFromString(MappingPackage.eINSTANCE.getGraphics2D(), "");
 
 	/**
-	 * The cached value of the '{@link #getTest() <em>Test</em>}' attribute.
+	 * The cached value of the '{@link #getMyGraphics2d() <em>My Graphics2d</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTest()
+	 * @see #getMyGraphics2d()
 	 * @generated
 	 * @ordered
 	 */
-	protected Graphics2D test = TEST_EDEFAULT;
+	protected Graphics2D myGraphics2d = MY_GRAPHICS2D_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -75,8 +75,8 @@ public class AssetImpl extends MinimalEObjectImpl.Container implements Asset {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Graphics2D getTest() {
-		return test;
+	public Graphics2D getMyGraphics2d() {
+		return myGraphics2d;
 	}
 
 	/**
@@ -84,11 +84,11 @@ public class AssetImpl extends MinimalEObjectImpl.Container implements Asset {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTest(Graphics2D newTest) {
-		Graphics2D oldTest = test;
-		test = newTest;
+	public void setMyGraphics2d(Graphics2D newMyGraphics2d) {
+		Graphics2D oldMyGraphics2d = myGraphics2d;
+		myGraphics2d = newMyGraphics2d;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MappingPackage.ASSET__TEST, oldTest, test));
+			eNotify(new ENotificationImpl(this, Notification.SET, MappingPackage.ASSET__MY_GRAPHICS2D, oldMyGraphics2d, myGraphics2d));
 	}
 
 	/**
@@ -110,8 +110,8 @@ public class AssetImpl extends MinimalEObjectImpl.Container implements Asset {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case MappingPackage.ASSET__TEST:
-				return getTest();
+			case MappingPackage.ASSET__MY_GRAPHICS2D:
+				return getMyGraphics2d();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -124,8 +124,8 @@ public class AssetImpl extends MinimalEObjectImpl.Container implements Asset {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case MappingPackage.ASSET__TEST:
-				setTest((Graphics2D)newValue);
+			case MappingPackage.ASSET__MY_GRAPHICS2D:
+				setMyGraphics2d((Graphics2D)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -139,8 +139,8 @@ public class AssetImpl extends MinimalEObjectImpl.Container implements Asset {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case MappingPackage.ASSET__TEST:
-				setTest(TEST_EDEFAULT);
+			case MappingPackage.ASSET__MY_GRAPHICS2D:
+				setMyGraphics2d(MY_GRAPHICS2D_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -154,8 +154,8 @@ public class AssetImpl extends MinimalEObjectImpl.Container implements Asset {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case MappingPackage.ASSET__TEST:
-				return TEST_EDEFAULT == null ? test != null : !TEST_EDEFAULT.equals(test);
+			case MappingPackage.ASSET__MY_GRAPHICS2D:
+				return MY_GRAPHICS2D_EDEFAULT == null ? myGraphics2d != null : !MY_GRAPHICS2D_EDEFAULT.equals(myGraphics2d);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -185,8 +185,8 @@ public class AssetImpl extends MinimalEObjectImpl.Container implements Asset {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (test: ");
-		result.append(test);
+		result.append(" (myGraphics2d: ");
+		result.append(myGraphics2d);
 		result.append(')');
 		return result.toString();
 	}

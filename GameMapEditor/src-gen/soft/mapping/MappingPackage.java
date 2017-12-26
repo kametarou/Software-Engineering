@@ -527,13 +527,13 @@ public interface MappingPackage extends EPackage {
 	int ASSET = 6;
 
 	/**
-	 * The feature id for the '<em><b>Test</b></em>' attribute.
+	 * The feature id for the '<em><b>My Graphics2d</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSET__TEST = 0;
+	int ASSET__MY_GRAPHICS2D = 0;
 
 	/**
 	 * The number of structural features of the '<em>Asset</em>' class.
@@ -563,6 +563,98 @@ public interface MappingPackage extends EPackage {
 	int ASSET_OPERATION_COUNT = 1;
 
 	/**
+	 * The meta object id for the '{@link soft.mapping.impl.ColorAssetImpl <em>Color Asset</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see soft.mapping.impl.ColorAssetImpl
+	 * @see soft.mapping.impl.MappingPackageImpl#getColorAsset()
+	 * @generated
+	 */
+	int COLOR_ASSET = 7;
+
+	/**
+	 * The feature id for the '<em><b>My Graphics2d</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLOR_ASSET__MY_GRAPHICS2D = ASSET__MY_GRAPHICS2D;
+
+	/**
+	 * The number of structural features of the '<em>Color Asset</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLOR_ASSET_FEATURE_COUNT = ASSET_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Init</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLOR_ASSET___INIT = ASSET___INIT;
+
+	/**
+	 * The number of operations of the '<em>Color Asset</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLOR_ASSET_OPERATION_COUNT = ASSET_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link soft.mapping.impl.ImageAssetImpl <em>Image Asset</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see soft.mapping.impl.ImageAssetImpl
+	 * @see soft.mapping.impl.MappingPackageImpl#getImageAsset()
+	 * @generated
+	 */
+	int IMAGE_ASSET = 8;
+
+	/**
+	 * The feature id for the '<em><b>My Graphics2d</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_ASSET__MY_GRAPHICS2D = ASSET__MY_GRAPHICS2D;
+
+	/**
+	 * The number of structural features of the '<em>Image Asset</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_ASSET_FEATURE_COUNT = ASSET_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Init</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_ASSET___INIT = ASSET___INIT;
+
+	/**
+	 * The number of operations of the '<em>Image Asset</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_ASSET_OPERATION_COUNT = ASSET_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '<em>Graphics2 D</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -570,7 +662,7 @@ public interface MappingPackage extends EPackage {
 	 * @see soft.mapping.impl.MappingPackageImpl#getGraphics2D()
 	 * @generated
 	 */
-	int GRAPHICS2_D = 7;
+	int GRAPHICS2_D = 9;
 
 	/**
 	 * The meta object id for the '<em>Cell Array</em>' data type.
@@ -579,7 +671,7 @@ public interface MappingPackage extends EPackage {
 	 * @see soft.mapping.impl.MappingPackageImpl#getCellArray()
 	 * @generated
 	 */
-	int CELL_ARRAY = 8;
+	int CELL_ARRAY = 10;
 
 
 	/**
@@ -993,15 +1085,15 @@ public interface MappingPackage extends EPackage {
 	EClass getAsset();
 
 	/**
-	 * Returns the meta object for the attribute '{@link soft.mapping.Asset#getTest <em>Test</em>}'.
+	 * Returns the meta object for the attribute '{@link soft.mapping.Asset#getMyGraphics2d <em>My Graphics2d</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Test</em>'.
-	 * @see soft.mapping.Asset#getTest()
+	 * @return the meta object for the attribute '<em>My Graphics2d</em>'.
+	 * @see soft.mapping.Asset#getMyGraphics2d()
 	 * @see #getAsset()
 	 * @generated
 	 */
-	EAttribute getAsset_Test();
+	EAttribute getAsset_MyGraphics2d();
 
 	/**
 	 * Returns the meta object for the '{@link soft.mapping.Asset#init() <em>Init</em>}' operation.
@@ -1012,6 +1104,26 @@ public interface MappingPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getAsset__Init();
+
+	/**
+	 * Returns the meta object for class '{@link soft.mapping.ColorAsset <em>Color Asset</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Color Asset</em>'.
+	 * @see soft.mapping.ColorAsset
+	 * @generated
+	 */
+	EClass getColorAsset();
+
+	/**
+	 * Returns the meta object for class '{@link soft.mapping.ImageAsset <em>Image Asset</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Image Asset</em>'.
+	 * @see soft.mapping.ImageAsset
+	 * @generated
+	 */
+	EClass getImageAsset();
 
 	/**
 	 * Returns the meta object for data type '{@link java.awt.Graphics2D <em>Graphics2 D</em>}'.
@@ -1384,12 +1496,12 @@ public interface MappingPackage extends EPackage {
 		EClass ASSET = eINSTANCE.getAsset();
 
 		/**
-		 * The meta object literal for the '<em><b>Test</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>My Graphics2d</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ASSET__TEST = eINSTANCE.getAsset_Test();
+		EAttribute ASSET__MY_GRAPHICS2D = eINSTANCE.getAsset_MyGraphics2d();
 
 		/**
 		 * The meta object literal for the '<em><b>Init</b></em>' operation.
@@ -1398,6 +1510,26 @@ public interface MappingPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation ASSET___INIT = eINSTANCE.getAsset__Init();
+
+		/**
+		 * The meta object literal for the '{@link soft.mapping.impl.ColorAssetImpl <em>Color Asset</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see soft.mapping.impl.ColorAssetImpl
+		 * @see soft.mapping.impl.MappingPackageImpl#getColorAsset()
+		 * @generated
+		 */
+		EClass COLOR_ASSET = eINSTANCE.getColorAsset();
+
+		/**
+		 * The meta object literal for the '{@link soft.mapping.impl.ImageAssetImpl <em>Image Asset</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see soft.mapping.impl.ImageAssetImpl
+		 * @see soft.mapping.impl.MappingPackageImpl#getImageAsset()
+		 * @generated
+		 */
+		EClass IMAGE_ASSET = eINSTANCE.getImageAsset();
 
 		/**
 		 * The meta object literal for the '<em>Graphics2 D</em>' data type.

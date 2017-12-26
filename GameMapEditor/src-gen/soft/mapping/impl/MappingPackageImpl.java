@@ -20,6 +20,8 @@ import soft.main.impl.MainPackageImpl;
 import soft.mapping.AreaVector;
 import soft.mapping.Asset;
 import soft.mapping.Cell;
+import soft.mapping.ColorAsset;
+import soft.mapping.ImageAsset;
 import soft.mapping.Logs;
 import soft.mapping.Map;
 import soft.mapping.MappingFactory;
@@ -82,6 +84,20 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 	 * @generated
 	 */
 	private EClass assetEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass colorAssetEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass imageAssetEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -519,7 +535,7 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAsset_Test() {
+	public EAttribute getAsset_MyGraphics2d() {
 		return (EAttribute)assetEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -530,6 +546,24 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 	 */
 	public EOperation getAsset__Init() {
 		return assetEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getColorAsset() {
+		return colorAssetEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getImageAsset() {
+		return imageAssetEClass;
 	}
 
 	/**
@@ -623,8 +657,12 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 		createEOperation(areaVectorEClass, AREA_VECTOR___INIT);
 
 		assetEClass = createEClass(ASSET);
-		createEAttribute(assetEClass, ASSET__TEST);
+		createEAttribute(assetEClass, ASSET__MY_GRAPHICS2D);
 		createEOperation(assetEClass, ASSET___INIT);
+
+		colorAssetEClass = createEClass(COLOR_ASSET);
+
+		imageAssetEClass = createEClass(IMAGE_ASSET);
 
 		// Create data types
 		graphics2DEDataType = createEDataType(GRAPHICS2_D);
@@ -664,6 +702,8 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 		// Add supertypes to classes
 		cellEClass.getESuperTypes().add(theMainPackage.getSerializable());
 		positionEClass.getESuperTypes().add(theMainPackage.getSerializable());
+		colorAssetEClass.getESuperTypes().add(this.getAsset());
+		imageAssetEClass.getESuperTypes().add(this.getAsset());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(mapEClass, Map.class, "Map", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -729,10 +769,14 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 
 		initEOperation(getAreaVector__Init(), null, "init", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(assetEClass, Asset.class, "Asset", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAsset_Test(), this.getGraphics2D(), "test", "", 0, 1, Asset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(assetEClass, Asset.class, "Asset", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getAsset_MyGraphics2d(), this.getGraphics2D(), "myGraphics2d", "", 0, 1, Asset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getAsset__Init(), null, "init", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(colorAssetEClass, ColorAsset.class, "ColorAsset", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(imageAssetEClass, ImageAsset.class, "ImageAsset", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize data types
 		initEDataType(graphics2DEDataType, Graphics2D.class, "Graphics2D", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);

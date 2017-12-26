@@ -112,6 +112,20 @@ public class MappingSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case MappingPackage.COLOR_ASSET: {
+				ColorAsset colorAsset = (ColorAsset)theEObject;
+				T result = caseColorAsset(colorAsset);
+				if (result == null) result = caseAsset(colorAsset);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case MappingPackage.IMAGE_ASSET: {
+				ImageAsset imageAsset = (ImageAsset)theEObject;
+				T result = caseImageAsset(imageAsset);
+				if (result == null) result = caseAsset(imageAsset);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -218,6 +232,36 @@ public class MappingSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseAsset(Asset object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Color Asset</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Color Asset</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseColorAsset(ColorAsset object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Image Asset</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Image Asset</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseImageAsset(ImageAsset object) {
 		return null;
 	}
 

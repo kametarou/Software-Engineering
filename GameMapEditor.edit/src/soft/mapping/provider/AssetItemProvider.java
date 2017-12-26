@@ -62,25 +62,25 @@ public class AssetItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addTestPropertyDescriptor(object);
+			addMyGraphics2dPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Test feature.
+	 * This adds a property descriptor for the My Graphics2d feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addTestPropertyDescriptor(Object object) {
+	protected void addMyGraphics2dPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Asset_test_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Asset_test_feature", "_UI_Asset_type"),
-				 MappingPackage.Literals.ASSET__TEST,
+				 getString("_UI_Asset_myGraphics2d_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Asset_myGraphics2d_feature", "_UI_Asset_type"),
+				 MappingPackage.Literals.ASSET__MY_GRAPHICS2D,
 				 true,
 				 false,
 				 false,
@@ -108,7 +108,7 @@ public class AssetItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		Graphics2D labelValue = ((Asset)object).getTest();
+		Graphics2D labelValue = ((Asset)object).getMyGraphics2d();
 		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Asset_type") :
@@ -128,7 +128,7 @@ public class AssetItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Asset.class)) {
-			case MappingPackage.ASSET__TEST:
+			case MappingPackage.ASSET__MY_GRAPHICS2D:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

@@ -3,11 +3,7 @@
 package soft.mapping.tests;
 
 import junit.framework.TestCase;
-
-import junit.textui.TestRunner;
-
 import soft.mapping.Asset;
-import soft.mapping.MappingFactory;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,7 +17,7 @@ import soft.mapping.MappingFactory;
  * </p>
  * @generated
  */
-public class AssetTest extends TestCase {
+public abstract class AssetTest extends TestCase {
 
 	/**
 	 * The fixture for this Asset test case.
@@ -30,15 +26,6 @@ public class AssetTest extends TestCase {
 	 * @generated
 	 */
 	protected Asset fixture = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static void main(String[] args) {
-		TestRunner.run(AssetTest.class);
-	}
 
 	/**
 	 * Constructs a new Asset test case with the given name.
@@ -68,28 +55,6 @@ public class AssetTest extends TestCase {
 	 */
 	protected Asset getFixture() {
 		return fixture;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see junit.framework.TestCase#setUp()
-	 * @generated
-	 */
-	@Override
-	protected void setUp() throws Exception {
-		setFixture(MappingFactory.eINSTANCE.createAsset());
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see junit.framework.TestCase#tearDown()
-	 * @generated
-	 */
-	@Override
-	protected void tearDown() throws Exception {
-		setFixture(null);
 	}
 
 	/**

@@ -37,7 +37,8 @@ public class MappingTests extends TestSuite {
 		suite.addTestSuite(PositionTest.class);
 		suite.addTestSuite(OperationTest.class);
 		suite.addTestSuite(AreaVectorTest.class);
-		suite.addTestSuite(AssetTest.class);
+		suite.addTestSuite(ColorAssetTest.class);
+		suite.addTestSuite(ImageAssetTest.class);
 		return suite;
 	}
 
