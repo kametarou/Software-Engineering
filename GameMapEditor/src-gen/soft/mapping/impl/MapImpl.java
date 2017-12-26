@@ -330,14 +330,14 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 	 * @generated
 	 */
 	public void init(final int height, final int width) {
-			cells = new Cell[width][height][3];
+			cells = new Cell[3][width][height];
 		
-				for (int x = 0; x < width; x++) {
-					for (int y = 0; y < height; y++) {
-						for (int z = 0; z < 3; z++) {
+				for (int z = 0; z < 3; z++) {
+					for (int x = 0; x < width; x++) {
+						for (int y = 0; y < height; y++) {
 							CellImpl myCell = new CellImpl();
 							myCell.init(x, y);
-							cells[x][y][z] = myCell;
+							cells[z][x][y] = myCell;
 						}
 					}
 				}

@@ -242,4 +242,10 @@ public class AreaVectorImpl extends MinimalEObjectImpl.Container implements Area
 		return super.eInvoke(operationID, arguments);
 	}
 
+	@Override
+	public void init(int start, int end) {
+		// TODO Auto-generated method stub
+		
+	}
+
 } //AreaVectorImpl

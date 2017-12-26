@@ -205,7 +205,7 @@ public interface Map extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\tcells = new Cell[width][height][3];\n\n\t\tfor (int x = 0; x &lt; width; x++) {\n\t\t\tfor (int y = 0; y &lt; height; y++) {\n\t\t\t\tfor (int z = 0; z &lt; 3; z++) {\n\t\t\t\t\tCellImpl myCell = new CellImpl();\n\t\t\t\t\tmyCell.init(x, y);\n\t\t\t\t\tcells[x][y][z] = myCell;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\tmyLogs = new LogsImpl();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\tcells = new Cell[3][width][height];\n\n\t\tfor (int z = 0; z &lt; 3; z++) {\n\t\t\tfor (int x = 0; x &lt; width; x++) {\n\t\t\t\tfor (int y = 0; y &lt; height; y++) {\n\t\t\t\t\tCellImpl myCell = new CellImpl();\n\t\t\t\t\tmyCell.init(x, y);\n\t\t\t\t\tcells[z][x][y] = myCell;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\tmyLogs = new LogsImpl();'"
 	 * @generated
 	 */
 	void init(int height, int width);
