@@ -137,6 +137,7 @@
       <eOperations name="blending" eType="#//mapping/Graphics2D">
         <eParameters name="wholeMap" eType="#//graphics/MapImage"/>
         <eParameters name="renewArea" eType="#//mapping/AreaVector"/>
+        <eParameters name="currentLayer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
       </eOperations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EDataType" name="MapImage" instanceClassName="java.awt.Graphics2D[]"/>
