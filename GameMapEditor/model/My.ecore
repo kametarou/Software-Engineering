@@ -108,4 +108,18 @@
     <eClassifiers xsi:type="ecore:EClass" name="MouseListener" instanceClassName="java.awt.event.MouseListener"
         abstract="true" interface="true"/>
   </eSubpackages>
+  <eSubpackages name="fileio" nsURI="/Users/ayumi/SE" nsPrefix="fileio">
+    <eClassifiers xsi:type="ecore:EClass" name="XmlWriter">
+      <eOperations name="init"/>
+      <eOperations name="xml2map" eType="#//mapping/Map">
+        <eParameters name="filepath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="XmlReader">
+      <eOperations name="init"/>
+      <eOperations name="map2xml">
+        <eParameters name="filepath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
+    </eClassifiers>
+  </eSubpackages>
 </ecore:EPackage>
