@@ -26,7 +26,7 @@ public interface XmlWriter extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model filepathRequired="true"
 	 * @generated
 	 */
 	void map2xml(String filepath);

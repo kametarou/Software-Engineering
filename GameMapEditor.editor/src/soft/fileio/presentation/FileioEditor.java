@@ -158,6 +158,7 @@ import soft.fileio.provider.FileioItemProviderAdapterFactory;
 
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 
+import soft.graphics.provider.GraphicsItemProviderAdapterFactory;
 import soft.main.provider.MainItemProviderAdapterFactory;
 
 import soft.mapping.presentation.MyEditorPlugin;
@@ -707,6 +708,7 @@ public class FileioEditor
 		adapterFactory.addAdapterFactory(new MappingItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new MainItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new FileioItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new GraphicsItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
 		// Create the command stack that will notify this editor as commands are executed.

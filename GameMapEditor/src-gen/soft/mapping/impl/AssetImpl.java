@@ -26,6 +26,9 @@ import soft.mapping.MappingPackage;
  * </p>
  * <ul>
  *   <li>{@link soft.mapping.impl.AssetImpl#getMyGraphics2d <em>My Graphics2d</em>}</li>
+ *   <li>{@link soft.mapping.impl.AssetImpl#getX <em>X</em>}</li>
+ *   <li>{@link soft.mapping.impl.AssetImpl#getY <em>Y</em>}</li>
+ *   <li>{@link soft.mapping.impl.AssetImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -50,6 +53,66 @@ public abstract class AssetImpl extends MinimalEObjectImpl.Container implements 
 	 * @ordered
 	 */
 	protected Graphics2D myGraphics2d = MY_GRAPHICS2D_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getX() <em>X</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getX()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int X_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getX() <em>X</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getX()
+	 * @generated
+	 * @ordered
+	 */
+	protected int x = X_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getY() <em>Y</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getY()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int Y_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getY() <em>Y</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getY()
+	 * @generated
+	 * @ordered
+	 */
+	protected int y = Y_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -96,6 +159,69 @@ public abstract class AssetImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getX() {
+		return x;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setX(int newX) {
+		int oldX = x;
+		x = newX;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MappingPackage.ASSET__X, oldX, x));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getY() {
+		return y;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setY(int newY) {
+		int oldY = y;
+		y = newY;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MappingPackage.ASSET__Y, oldY, y));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MappingPackage.ASSET__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public void init() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -112,6 +238,12 @@ public abstract class AssetImpl extends MinimalEObjectImpl.Container implements 
 		switch (featureID) {
 			case MappingPackage.ASSET__MY_GRAPHICS2D:
 				return getMyGraphics2d();
+			case MappingPackage.ASSET__X:
+				return getX();
+			case MappingPackage.ASSET__Y:
+				return getY();
+			case MappingPackage.ASSET__NAME:
+				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -126,6 +258,15 @@ public abstract class AssetImpl extends MinimalEObjectImpl.Container implements 
 		switch (featureID) {
 			case MappingPackage.ASSET__MY_GRAPHICS2D:
 				setMyGraphics2d((Graphics2D)newValue);
+				return;
+			case MappingPackage.ASSET__X:
+				setX((Integer)newValue);
+				return;
+			case MappingPackage.ASSET__Y:
+				setY((Integer)newValue);
+				return;
+			case MappingPackage.ASSET__NAME:
+				setName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -142,6 +283,15 @@ public abstract class AssetImpl extends MinimalEObjectImpl.Container implements 
 			case MappingPackage.ASSET__MY_GRAPHICS2D:
 				setMyGraphics2d(MY_GRAPHICS2D_EDEFAULT);
 				return;
+			case MappingPackage.ASSET__X:
+				setX(X_EDEFAULT);
+				return;
+			case MappingPackage.ASSET__Y:
+				setY(Y_EDEFAULT);
+				return;
+			case MappingPackage.ASSET__NAME:
+				setName(NAME_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -156,6 +306,12 @@ public abstract class AssetImpl extends MinimalEObjectImpl.Container implements 
 		switch (featureID) {
 			case MappingPackage.ASSET__MY_GRAPHICS2D:
 				return MY_GRAPHICS2D_EDEFAULT == null ? myGraphics2d != null : !MY_GRAPHICS2D_EDEFAULT.equals(myGraphics2d);
+			case MappingPackage.ASSET__X:
+				return x != X_EDEFAULT;
+			case MappingPackage.ASSET__Y:
+				return y != Y_EDEFAULT;
+			case MappingPackage.ASSET__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -187,6 +343,12 @@ public abstract class AssetImpl extends MinimalEObjectImpl.Container implements 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (myGraphics2d: ");
 		result.append(myGraphics2d);
+		result.append(", x: ");
+		result.append(x);
+		result.append(", y: ");
+		result.append(y);
+		result.append(", name: ");
+		result.append(name);
 		result.append(')');
 		return result.toString();
 	}

@@ -3,8 +3,6 @@
 package soft.mapping.provider;
 
 
-import java.awt.Graphics2D;
-
 import java.util.Collection;
 import java.util.List;
 
@@ -63,6 +61,9 @@ public class AssetItemProvider
 			super.getPropertyDescriptors(object);
 
 			addMyGraphics2dPropertyDescriptor(object);
+			addXPropertyDescriptor(object);
+			addYPropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -90,6 +91,72 @@ public class AssetItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the X feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addXPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Asset_x_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Asset_x_feature", "_UI_Asset_type"),
+				 MappingPackage.Literals.ASSET__X,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Y feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addYPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Asset_y_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Asset_y_feature", "_UI_Asset_type"),
+				 MappingPackage.Literals.ASSET__Y,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Asset_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Asset_name_feature", "_UI_Asset_type"),
+				 MappingPackage.Literals.ASSET__NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns Asset.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -108,8 +175,7 @@ public class AssetItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		Graphics2D labelValue = ((Asset)object).getMyGraphics2d();
-		String label = labelValue == null ? null : labelValue.toString();
+		String label = ((Asset)object).getName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Asset_type") :
 			getString("_UI_Asset_type") + " " + label;
@@ -129,6 +195,9 @@ public class AssetItemProvider
 
 		switch (notification.getFeatureID(Asset.class)) {
 			case MappingPackage.ASSET__MY_GRAPHICS2D:
+			case MappingPackage.ASSET__X:
+			case MappingPackage.ASSET__Y:
+			case MappingPackage.ASSET__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

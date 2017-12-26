@@ -65,8 +65,6 @@ public class MappingFactoryImpl extends EFactoryImpl implements MappingFactory {
 			case MappingPackage.POSITION: return createPosition();
 			case MappingPackage.OPERATION: return createOperation();
 			case MappingPackage.AREA_VECTOR: return createAreaVector();
-			case MappingPackage.COLOR_ASSET: return createColorAsset();
-			case MappingPackage.IMAGE_ASSET: return createImageAsset();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -80,6 +78,8 @@ public class MappingFactoryImpl extends EFactoryImpl implements MappingFactory {
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
+			case MappingPackage.ASSET_ARRAY:
+				return createAssetArrayFromString(eDataType, initialValue);
 			case MappingPackage.GRAPHICS2_D:
 				return createGraphics2DFromString(eDataType, initialValue);
 			case MappingPackage.CELL_ARRAY:
@@ -97,6 +97,8 @@ public class MappingFactoryImpl extends EFactoryImpl implements MappingFactory {
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
+			case MappingPackage.ASSET_ARRAY:
+				return convertAssetArrayToString(eDataType, instanceValue);
 			case MappingPackage.GRAPHICS2_D:
 				return convertGraphics2DToString(eDataType, instanceValue);
 			case MappingPackage.CELL_ARRAY:
@@ -171,9 +173,8 @@ public class MappingFactoryImpl extends EFactoryImpl implements MappingFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ColorAsset createColorAsset() {
-		ColorAssetImpl colorAsset = new ColorAssetImpl();
-		return colorAsset;
+	public Asset[] createAssetArrayFromString(EDataType eDataType, String initialValue) {
+		return (Asset[])super.createFromString(initialValue);
 	}
 
 	/**
@@ -181,9 +182,8 @@ public class MappingFactoryImpl extends EFactoryImpl implements MappingFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ImageAsset createImageAsset() {
-		ImageAssetImpl imageAsset = new ImageAssetImpl();
-		return imageAsset;
+	public String convertAssetArrayToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(instanceValue);
 	}
 
 	/**

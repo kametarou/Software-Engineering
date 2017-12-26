@@ -28,7 +28,7 @@ public interface XmlReader extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model filepathRequired="true"
 	 * @generated
 	 */
 	Map xml2map(String filepath);

@@ -121,10 +121,10 @@ public class XmlReaderTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link soft.fileio.XmlReader#xml2assets() <em>Xml2assets</em>}' operation.
+	 * Tests the '{@link soft.fileio.XmlReader#xml2assets(java.lang.String) <em>Xml2assets</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see soft.fileio.XmlReader#xml2assets()
+	 * @see soft.fileio.XmlReader#xml2assets(java.lang.String)
 	 * @generated
 	 */
 	public void testXml2assets__String() {

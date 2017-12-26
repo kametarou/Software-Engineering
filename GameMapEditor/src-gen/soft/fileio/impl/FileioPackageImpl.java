@@ -13,6 +13,8 @@ import soft.fileio.FileioPackage;
 import soft.fileio.XmlReader;
 import soft.fileio.XmlWriter;
 
+import soft.graphics.GraphicsPackage;
+import soft.graphics.impl.GraphicsPackageImpl;
 import soft.main.MainPackage;
 
 import soft.main.impl.MainPackageImpl;
@@ -91,16 +93,19 @@ public class FileioPackageImpl extends EPackageImpl implements FileioPackage {
 		// Obtain or create and register interdependencies
 		MappingPackageImpl theMappingPackage = (MappingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(MappingPackage.eNS_URI) instanceof MappingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(MappingPackage.eNS_URI) : MappingPackage.eINSTANCE);
 		MainPackageImpl theMainPackage = (MainPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(MainPackage.eNS_URI) instanceof MainPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(MainPackage.eNS_URI) : MainPackage.eINSTANCE);
+		GraphicsPackageImpl theGraphicsPackage = (GraphicsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(GraphicsPackage.eNS_URI) instanceof GraphicsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(GraphicsPackage.eNS_URI) : GraphicsPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theFileioPackage.createPackageContents();
 		theMappingPackage.createPackageContents();
 		theMainPackage.createPackageContents();
+		theGraphicsPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theFileioPackage.initializePackageContents();
 		theMappingPackage.initializePackageContents();
 		theMainPackage.initializePackageContents();
+		theGraphicsPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theFileioPackage.freeze();
@@ -250,14 +255,14 @@ public class FileioPackageImpl extends EPackageImpl implements FileioPackage {
 		initEOperation(getXmlWriter__Init(), null, "init", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		EOperation op = initEOperation(getXmlWriter__Map2xml__String(), null, "map2xml", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "filepath", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "filepath", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(xmlReaderEClass, XmlReader.class, "XmlReader", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEOperation(getXmlReader__Init(), null, "init", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = initEOperation(getXmlReader__Xml2map__String(), theMappingPackage.getMap(), "xml2map", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "filepath", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "filepath", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = initEOperation(getXmlReader__Xml2assets__String(), theMappingPackage.getAsset(), "xml2assets", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "filepath", 1, 1, IS_UNIQUE, IS_ORDERED);

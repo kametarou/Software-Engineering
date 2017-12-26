@@ -16,6 +16,9 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link soft.mapping.Asset#getMyGraphics2d <em>My Graphics2d</em>}</li>
+ *   <li>{@link soft.mapping.Asset#getX <em>X</em>}</li>
+ *   <li>{@link soft.mapping.Asset#getY <em>Y</em>}</li>
+ *   <li>{@link soft.mapping.Asset#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see soft.mapping.MappingPackage#getAsset()
@@ -49,6 +52,84 @@ public interface Asset extends EObject {
 	 * @generated
 	 */
 	void setMyGraphics2d(Graphics2D value);
+
+	/**
+	 * Returns the value of the '<em><b>X</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>X</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>X</em>' attribute.
+	 * @see #setX(int)
+	 * @see soft.mapping.MappingPackage#getAsset_X()
+	 * @model
+	 * @generated
+	 */
+	int getX();
+
+	/**
+	 * Sets the value of the '{@link soft.mapping.Asset#getX <em>X</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>X</em>' attribute.
+	 * @see #getX()
+	 * @generated
+	 */
+	void setX(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Y</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Y</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Y</em>' attribute.
+	 * @see #setY(int)
+	 * @see soft.mapping.MappingPackage#getAsset_Y()
+	 * @model
+	 * @generated
+	 */
+	int getY();
+
+	/**
+	 * Sets the value of the '{@link soft.mapping.Asset#getY <em>Y</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Y</em>' attribute.
+	 * @see #getY()
+	 * @generated
+	 */
+	void setY(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see soft.mapping.MappingPackage#getAsset_Name()
+	 * @model
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * Sets the value of the '{@link soft.mapping.Asset#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(String value);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -18,6 +18,7 @@ import soft.mapping.Position;
  * <ul>
  *   <li>{@link soft.mapping.Map#init(int, int) <em>Init</em>}</li>
  *   <li>{@link soft.mapping.Map#getCellFromCurrentLayer(int, int) <em>Get Cell From Current Layer</em>}</li>
+ *   <li>{@link soft.mapping.Map#getCellFromSpecifiedLayer(int, int, int) <em>Get Cell From Specified Layer</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -124,6 +125,19 @@ public class MapTest extends TestCase {
 	 * @generated
 	 */
 	public void testGetCellFromCurrentLayer__int_int() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link soft.mapping.Map#getCellFromSpecifiedLayer(int, int, int) <em>Get Cell From Specified Layer</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see soft.mapping.Map#getCellFromSpecifiedLayer(int, int, int)
+	 * @generated
+	 */
+	public void testGetCellFromSpecifiedLayer__int_int_int() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

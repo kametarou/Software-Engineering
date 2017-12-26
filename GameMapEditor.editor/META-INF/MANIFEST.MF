@@ -9,6 +9,7 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: soft.fileio.presentation,
+ soft.graphics.presentation,
  soft.main.presentation,
  soft.mapping.presentation
 Require-Bundle: org.eclipse.core.runtime,
