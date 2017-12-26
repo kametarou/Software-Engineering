@@ -2,6 +2,7 @@
  */
 package soft.mapping;
 
+import java.awt.Color;
 import java.io.Serializable;
 
 import org.eclipse.emf.ecore.EObject;
@@ -19,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link soft.mapping.Cell#getMyAsset <em>My Asset</em>}</li>
  *   <li>{@link soft.mapping.Cell#getMyAssetArea <em>My Asset Area</em>}</li>
  *   <li>{@link soft.mapping.Cell#getReferenceCell <em>Reference Cell</em>}</li>
+ *   <li>{@link soft.mapping.Cell#getCellColor <em>Cell Color</em>}</li>
  * </ul>
  *
  * @see soft.mapping.MappingPackage#getCell()
@@ -131,6 +133,33 @@ public interface Cell extends EObject, Serializable {
 	 * @generated
 	 */
 	void setReferenceCell(Cell value);
+
+	/**
+	 * Returns the value of the '<em><b>Cell Color</b></em>' attribute.
+	 * The default value is <code>""</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Cell Color</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Cell Color</em>' attribute.
+	 * @see #setCellColor(Color)
+	 * @see soft.mapping.MappingPackage#getCell_CellColor()
+	 * @model default="" dataType="soft.mapping.Color" required="true"
+	 * @generated
+	 */
+	Color getCellColor();
+
+	/**
+	 * Sets the value of the '{@link soft.mapping.Cell#getCellColor <em>Cell Color</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Cell Color</em>' attribute.
+	 * @see #getCellColor()
+	 * @generated
+	 */
+	void setCellColor(Color value);
 
 	/**
 	 * <!-- begin-user-doc -->

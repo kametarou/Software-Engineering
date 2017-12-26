@@ -15,6 +15,8 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import soft.fileio.FileioPackage;
 import soft.fileio.impl.FileioPackageImpl;
+import soft.graphics.GraphicsPackage;
+import soft.graphics.impl.GraphicsPackageImpl;
 import soft.main.Editor;
 import soft.main.File;
 import soft.main.MainFactory;
@@ -154,16 +156,19 @@ public class MainPackageImpl extends EPackageImpl implements MainPackage {
 		// Obtain or create and register interdependencies
 		MappingPackageImpl theMappingPackage = (MappingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(MappingPackage.eNS_URI) instanceof MappingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(MappingPackage.eNS_URI) : MappingPackage.eINSTANCE);
 		FileioPackageImpl theFileioPackage = (FileioPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(FileioPackage.eNS_URI) instanceof FileioPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(FileioPackage.eNS_URI) : FileioPackage.eINSTANCE);
+		GraphicsPackageImpl theGraphicsPackage = (GraphicsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(GraphicsPackage.eNS_URI) instanceof GraphicsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(GraphicsPackage.eNS_URI) : GraphicsPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theMainPackage.createPackageContents();
 		theMappingPackage.createPackageContents();
 		theFileioPackage.createPackageContents();
+		theGraphicsPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theMainPackage.initializePackageContents();
 		theMappingPackage.initializePackageContents();
 		theFileioPackage.initializePackageContents();
+		theGraphicsPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theMainPackage.freeze();

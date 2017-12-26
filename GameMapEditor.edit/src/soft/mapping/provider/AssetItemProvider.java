@@ -4,7 +4,6 @@ package soft.mapping.provider;
 
 
 import java.awt.Graphics2D;
-
 import java.util.Collection;
 import java.util.List;
 
@@ -63,6 +62,9 @@ public class AssetItemProvider
 			super.getPropertyDescriptors(object);
 
 			addMyGraphics2dPropertyDescriptor(object);
+			addXPropertyDescriptor(object);
+			addYPropertyDescriptor(object);
+			addAssetIdPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -81,6 +83,72 @@ public class AssetItemProvider
 				 getString("_UI_Asset_myGraphics2d_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Asset_myGraphics2d_feature", "_UI_Asset_type"),
 				 MappingPackage.Literals.ASSET__MY_GRAPHICS2D,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the X feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addXPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Asset_x_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Asset_x_feature", "_UI_Asset_type"),
+				 MappingPackage.Literals.ASSET__X,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Y feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addYPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Asset_y_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Asset_y_feature", "_UI_Asset_type"),
+				 MappingPackage.Literals.ASSET__Y,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Asset Id feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAssetIdPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Asset_assetId_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Asset_assetId_feature", "_UI_Asset_type"),
+				 MappingPackage.Literals.ASSET__ASSET_ID,
 				 true,
 				 false,
 				 false,
@@ -129,6 +197,9 @@ public class AssetItemProvider
 
 		switch (notification.getFeatureID(Asset.class)) {
 			case MappingPackage.ASSET__MY_GRAPHICS2D:
+			case MappingPackage.ASSET__X:
+			case MappingPackage.ASSET__Y:
+			case MappingPackage.ASSET__ASSET_ID:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

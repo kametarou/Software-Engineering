@@ -90,4 +90,32 @@
       </editor>
    </extension>
 
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated My -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="soft.graphics.presentation.GraphicsModelWizardID"
+            name="%_UI_GraphicsModelWizard_label"
+            class="soft.graphics.presentation.GraphicsModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/GraphicsModelFile.gif">
+         <description>%_UI_GraphicsModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated My -->
+      <editor
+            id="soft.graphics.presentation.GraphicsEditorID"
+            name="%_UI_GraphicsEditor_label"
+            icon="icons/full/obj16/GraphicsModelFile.gif"
+            extensions="graphics"
+            class="soft.graphics.presentation.GraphicsEditor"
+            contributorClass="soft.graphics.presentation.GraphicsActionBarContributor">
+      </editor>
+   </extension>
+
 </plugin>

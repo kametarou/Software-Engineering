@@ -29,4 +29,12 @@
             class="soft.fileio.FileioPackage"
             genModel="model/My.genmodel"/>
    </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated My -->
+      <package
+            uri="/Users/tkn/class/software-engineering"
+            class="soft.graphics.GraphicsPackage"
+            genModel="model/My.genmodel"/>
+   </extension>
 </plugin>

@@ -29,7 +29,14 @@
           eType="#//mapping/CellArray"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxLayer" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="3"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="assetsSet" lowerBound="1"
+          eType="#//mapping/AssetArray"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="mapheight" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="20"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="mapwidth" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="20"/>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EDataType" name="AssetArray" instanceClassName="soft.mapping.Asset[]"/>
     <eClassifiers xsi:type="ecore:EClass" name="Logs">
       <eOperations name="undo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       <eOperations name="redo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -63,6 +70,8 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="myAsset" eType="#//mapping/Asset"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="myAssetArea" eType="#//mapping/AreaVector"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="referenceCell" eType="#//mapping/Cell"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="cellColor" lowerBound="1"
+          eType="#//mapping/Color" defaultValueLiteral=""/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Position" eSuperTypes="#//main/Serializable">
       <eOperations name="init"/>
@@ -87,9 +96,14 @@
       <eOperations name="init"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="myGraphics2d" eType="#//mapping/Graphics2D"
           defaultValueLiteral=""/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="assetId" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EDataType" name="Graphics2D" instanceClassName="java.awt.Graphics2D"/>
     <eClassifiers xsi:type="ecore:EDataType" name="CellArray" instanceClassName="soft.mapping.Cell[][][]"/>
+    <eClassifiers xsi:type="ecore:EDataType" name="Color" instanceClassName="java.awt.Color"/>
   </eSubpackages>
   <eSubpackages name="main" nsURI="/Users/ysakanaka/HomeWork/SEClass/GameMapEditor/src/main"
       nsPrefix="main">

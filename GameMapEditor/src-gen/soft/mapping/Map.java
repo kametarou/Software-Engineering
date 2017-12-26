@@ -17,6 +17,9 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link soft.mapping.Map#getCurrentLayer <em>Current Layer</em>}</li>
  *   <li>{@link soft.mapping.Map#getCells <em>Cells</em>}</li>
  *   <li>{@link soft.mapping.Map#getMaxLayer <em>Max Layer</em>}</li>
+ *   <li>{@link soft.mapping.Map#getAssetsSet <em>Assets Set</em>}</li>
+ *   <li>{@link soft.mapping.Map#getMapheight <em>Mapheight</em>}</li>
+ *   <li>{@link soft.mapping.Map#getMapwidth <em>Mapwidth</em>}</li>
  * </ul>
  *
  * @see soft.mapping.MappingPackage#getMap()
@@ -120,6 +123,86 @@ public interface Map extends EObject {
 	void setMaxLayer(int value);
 
 	/**
+	 * Returns the value of the '<em><b>Assets Set</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Assets Set</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Assets Set</em>' attribute.
+	 * @see #setAssetsSet(Asset[])
+	 * @see soft.mapping.MappingPackage#getMap_AssetsSet()
+	 * @model dataType="soft.mapping.AssetArray" required="true"
+	 * @generated
+	 */
+	Asset[] getAssetsSet();
+
+	/**
+	 * Sets the value of the '{@link soft.mapping.Map#getAssetsSet <em>Assets Set</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Assets Set</em>' attribute.
+	 * @see #getAssetsSet()
+	 * @generated
+	 */
+	void setAssetsSet(Asset[] value);
+
+	/**
+	 * Returns the value of the '<em><b>Mapheight</b></em>' attribute.
+	 * The default value is <code>"20"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Mapheight</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Mapheight</em>' attribute.
+	 * @see #setMapheight(int)
+	 * @see soft.mapping.MappingPackage#getMap_Mapheight()
+	 * @model default="20" required="true"
+	 * @generated
+	 */
+	int getMapheight();
+
+	/**
+	 * Sets the value of the '{@link soft.mapping.Map#getMapheight <em>Mapheight</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Mapheight</em>' attribute.
+	 * @see #getMapheight()
+	 * @generated
+	 */
+	void setMapheight(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Mapwidth</b></em>' attribute.
+	 * The default value is <code>"20"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Mapwidth</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Mapwidth</em>' attribute.
+	 * @see #setMapwidth(int)
+	 * @see soft.mapping.MappingPackage#getMap_Mapwidth()
+	 * @model default="20" required="true"
+	 * @generated
+	 */
+	int getMapwidth();
+
+	/**
+	 * Sets the value of the '{@link soft.mapping.Map#getMapwidth <em>Mapwidth</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Mapwidth</em>' attribute.
+	 * @see #getMapwidth()
+	 * @generated
+	 */
+	void setMapwidth(int value);
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\tcells = new Cell[width][height][3];\n\n\t\tfor (int x = 0; x &lt; width; x++) {\n\t\t\tfor (int y = 0; y &lt; height; y++) {\n\t\t\t\tfor (int z = 0; z &lt; 3; z++) {\n\t\t\t\t\tCellImpl myCell = new CellImpl();\n\t\t\t\t\tmyCell.init(x, y);\n\t\t\t\t\tcells[x][y][z] = myCell;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\tmyLogs = new LogsImpl();'"
@@ -134,5 +217,13 @@ public interface Map extends EObject {
 	 * @generated
 	 */
 	Cell getCellFromCurrentLayer(int x, int y);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	Cell getCellFromSpecifiedLayer(int x, int y, int layer);
 
 } // Map

@@ -8,6 +8,7 @@ import junit.framework.TestSuite;
 import junit.textui.TestRunner;
 
 import soft.fileio.tests.FileioTests;
+import soft.graphics.tests.GraphicsTests;
 import soft.main.tests.MainTests;
 
 /**
@@ -37,6 +38,7 @@ public class MyAllTests extends TestSuite {
 		suite.addTest(MappingTests.suite());
 		suite.addTest(MainTests.suite());
 		suite.addTest(FileioTests.suite());
+		suite.addTest(GraphicsTests.suite());
 		return suite;
 	}
 

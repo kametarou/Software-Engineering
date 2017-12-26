@@ -2,6 +2,7 @@
  */
 package soft.mapping.impl;
 
+import java.awt.Color;
 import java.awt.Graphics2D;
 
 import org.eclipse.emf.ecore.EClass;
@@ -65,8 +66,6 @@ public class MappingFactoryImpl extends EFactoryImpl implements MappingFactory {
 			case MappingPackage.POSITION: return createPosition();
 			case MappingPackage.OPERATION: return createOperation();
 			case MappingPackage.AREA_VECTOR: return createAreaVector();
-			case MappingPackage.COLOR_ASSET: return createColorAsset();
-			case MappingPackage.IMAGE_ASSET: return createImageAsset();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -80,10 +79,14 @@ public class MappingFactoryImpl extends EFactoryImpl implements MappingFactory {
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
+			case MappingPackage.ASSET_ARRAY:
+				return createAssetArrayFromString(eDataType, initialValue);
 			case MappingPackage.GRAPHICS2_D:
 				return createGraphics2DFromString(eDataType, initialValue);
 			case MappingPackage.CELL_ARRAY:
 				return createCellArrayFromString(eDataType, initialValue);
+			case MappingPackage.COLOR:
+				return createColorFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -97,10 +100,14 @@ public class MappingFactoryImpl extends EFactoryImpl implements MappingFactory {
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
+			case MappingPackage.ASSET_ARRAY:
+				return convertAssetArrayToString(eDataType, instanceValue);
 			case MappingPackage.GRAPHICS2_D:
 				return convertGraphics2DToString(eDataType, instanceValue);
 			case MappingPackage.CELL_ARRAY:
 				return convertCellArrayToString(eDataType, instanceValue);
+			case MappingPackage.COLOR:
+				return convertColorToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -171,9 +178,8 @@ public class MappingFactoryImpl extends EFactoryImpl implements MappingFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ColorAsset createColorAsset() {
-		ColorAssetImpl colorAsset = new ColorAssetImpl();
-		return colorAsset;
+	public Asset[] createAssetArrayFromString(EDataType eDataType, String initialValue) {
+		return (Asset[])super.createFromString(initialValue);
 	}
 
 	/**
@@ -181,9 +187,8 @@ public class MappingFactoryImpl extends EFactoryImpl implements MappingFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ImageAsset createImageAsset() {
-		ImageAssetImpl imageAsset = new ImageAssetImpl();
-		return imageAsset;
+	public String convertAssetArrayToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(instanceValue);
 	}
 
 	/**
@@ -220,6 +225,24 @@ public class MappingFactoryImpl extends EFactoryImpl implements MappingFactory {
 	 */
 	public String convertCellArrayToString(EDataType eDataType, Object instanceValue) {
 		return super.convertToString(instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Color createColorFromString(EDataType eDataType, String initialValue) {
+		return (Color)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertColorToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
 	}
 
 	/**

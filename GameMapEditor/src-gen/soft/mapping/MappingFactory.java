@@ -76,24 +76,6 @@ public interface MappingFactory extends EFactory {
 	AreaVector createAreaVector();
 
 	/**
-	 * Returns a new object of class '<em>Color Asset</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Color Asset</em>'.
-	 * @generated
-	 */
-	ColorAsset createColorAsset();
-
-	/**
-	 * Returns a new object of class '<em>Image Asset</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Image Asset</em>'.
-	 * @generated
-	 */
-	ImageAsset createImageAsset();
-
-	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

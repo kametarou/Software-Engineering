@@ -98,14 +98,6 @@ public class MappingAdapterFactory extends AdapterFactoryImpl {
 				return createAssetAdapter();
 			}
 			@Override
-			public Adapter caseColorAsset(ColorAsset object) {
-				return createColorAssetAdapter();
-			}
-			@Override
-			public Adapter caseImageAsset(ImageAsset object) {
-				return createImageAssetAdapter();
-			}
-			@Override
 			public Adapter caseSerializable(Serializable object) {
 				return createSerializableAdapter();
 			}
@@ -224,34 +216,6 @@ public class MappingAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAssetAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link soft.mapping.ColorAsset <em>Color Asset</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see soft.mapping.ColorAsset
-	 * @generated
-	 */
-	public Adapter createColorAssetAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link soft.mapping.ImageAsset <em>Image Asset</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see soft.mapping.ImageAsset
-	 * @generated
-	 */
-	public Adapter createImageAssetAdapter() {
 		return null;
 	}
 
