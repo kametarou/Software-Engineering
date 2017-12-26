@@ -157,6 +157,10 @@
         <eParameters name="wholeMap" eType="#//mapping/Graphics2D"/>
         <eParameters name="scale" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
       </eOperations>
+      <eOperations name="backgroundFilter" eType="#//mapping/Graphics2D">
+        <eParameters name="origin" eType="#//mapping/Graphics2D"/>
+        <eParameters name="color" eType="#//mapping/Color"/>
+      </eOperations>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="opacity" eType="#//graphics/FloatArray"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EDataType" name="MapImage" instanceClassName="java.awt.Graphics2D[]"/>
