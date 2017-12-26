@@ -125,4 +125,13 @@
       </eOperations>
     </eClassifiers>
   </eSubpackages>
+  <eSubpackages name="graphics" nsURI="/Users/tkn/class/software-engineering" nsPrefix="graphics">
+    <eClassifiers xsi:type="ecore:EClass" name="ImageProcess">
+      <eOperations name="blending" eType="#//mapping/Graphics2D">
+        <eParameters name="wholeMap" eType="#//graphics/MapImage"/>
+        <eParameters name="renewArea" eType="#//mapping/AreaVector"/>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EDataType" name="MapImage" instanceClassName="java.awt.Graphics2D[]"/>
+  </eSubpackages>
 </ecore:EPackage>
