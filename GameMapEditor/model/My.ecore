@@ -139,7 +139,9 @@
         <eParameters name="renewArea" eType="#//mapping/AreaVector"/>
         <eParameters name="currentLayer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
       </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="opacity" eType="#//graphics/FloatArray"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EDataType" name="MapImage" instanceClassName="java.awt.Graphics2D[]"/>
+    <eClassifiers xsi:type="ecore:EDataType" name="FloatArray" instanceTypeName="EFloat[]"/>
   </eSubpackages>
 </ecore:EPackage>
