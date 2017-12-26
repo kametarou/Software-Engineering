@@ -19,6 +19,7 @@
       <eOperations name="getCellFromSpecifiedLayer" eType="#//mapping/Cell">
         <eParameters name="x" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
         <eParameters name="y" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        <eParameters name="layer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="myLogs" lowerBound="1"
           eType="#//mapping/Logs" changeable="false"/>
@@ -89,8 +90,6 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EDataType" name="Graphics2D" instanceClassName="java.awt.Graphics2D"/>
     <eClassifiers xsi:type="ecore:EDataType" name="CellArray" instanceClassName="soft.mapping.Cell[][][]"/>
-    <eClassifiers xsi:type="ecore:EClass" name="ColorAsset" eSuperTypes="#//mapping/Asset"/>
-    <eClassifiers xsi:type="ecore:EClass" name="ImageAsset" eSuperTypes="#//mapping/Asset"/>
   </eSubpackages>
   <eSubpackages name="main" nsURI="/Users/ysakanaka/HomeWork/SEClass/GameMapEditor/src/main"
       nsPrefix="main">
