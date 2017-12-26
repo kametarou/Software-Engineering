@@ -83,10 +83,10 @@ public class CellImpl extends MinimalEObjectImpl.Container implements Cell {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getCellColor()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
-	protected static final Color CELL_COLOR_EDEFAULT = (Color)MappingFactory.eINSTANCE.createFromString(MappingPackage.eINSTANCE.getColor(), "");
+	protected static final Color CELL_COLOR_EDEFAULT = Color.WHITE;
 
 	/**
 	 * The cached value of the '{@link #getCellColor() <em>Cell Color</em>}' attribute.
