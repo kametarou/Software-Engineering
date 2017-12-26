@@ -84,13 +84,13 @@ public interface FileioPackage extends EPackage {
 	int XML_WRITER___INIT = 0;
 
 	/**
-	 * The operation id for the '<em>Xml2map</em>' operation.
+	 * The operation id for the '<em>Map2xml</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int XML_WRITER___XML2MAP__STRING = 1;
+	int XML_WRITER___MAP2XML__STRING = 1;
 
 	/**
 	 * The number of operations of the '<em>Xml Writer</em>' class.
@@ -130,13 +130,22 @@ public interface FileioPackage extends EPackage {
 	int XML_READER___INIT = 0;
 
 	/**
-	 * The operation id for the '<em>Map2xml</em>' operation.
+	 * The operation id for the '<em>Xml2map</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int XML_READER___MAP2XML = 1;
+	int XML_READER___XML2MAP__STRING = 1;
+
+	/**
+	 * The operation id for the '<em>Xml2assets</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int XML_READER___XML2ASSETS__STRING = 2;
 
 	/**
 	 * The number of operations of the '<em>Xml Reader</em>' class.
@@ -145,7 +154,7 @@ public interface FileioPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int XML_READER_OPERATION_COUNT = 2;
+	int XML_READER_OPERATION_COUNT = 3;
 
 
 	/**
@@ -169,14 +178,14 @@ public interface FileioPackage extends EPackage {
 	EOperation getXmlWriter__Init();
 
 	/**
-	 * Returns the meta object for the '{@link soft.fileio.XmlWriter#xml2map(java.lang.String) <em>Xml2map</em>}' operation.
+	 * Returns the meta object for the '{@link soft.fileio.XmlWriter#map2xml(java.lang.String) <em>Map2xml</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Xml2map</em>' operation.
-	 * @see soft.fileio.XmlWriter#xml2map(java.lang.String)
+	 * @return the meta object for the '<em>Map2xml</em>' operation.
+	 * @see soft.fileio.XmlWriter#map2xml(java.lang.String)
 	 * @generated
 	 */
-	EOperation getXmlWriter__Xml2map__String();
+	EOperation getXmlWriter__Map2xml__String();
 
 	/**
 	 * Returns the meta object for class '{@link soft.fileio.XmlReader <em>Xml Reader</em>}'.
@@ -199,14 +208,24 @@ public interface FileioPackage extends EPackage {
 	EOperation getXmlReader__Init();
 
 	/**
-	 * Returns the meta object for the '{@link soft.fileio.XmlReader#map2xml() <em>Map2xml</em>}' operation.
+	 * Returns the meta object for the '{@link soft.fileio.XmlReader#xml2map(java.lang.String) <em>Xml2map</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Map2xml</em>' operation.
-	 * @see soft.fileio.XmlReader#map2xml()
+	 * @return the meta object for the '<em>Xml2map</em>' operation.
+	 * @see soft.fileio.XmlReader#xml2map(java.lang.String)
 	 * @generated
 	 */
-	EOperation getXmlReader__Map2xml();
+	EOperation getXmlReader__Xml2map__String();
+
+	/**
+	 * Returns the meta object for the '{@link soft.fileio.XmlReader#xml2assets(java.lang.String) <em>Xml2assets</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Xml2assets</em>' operation.
+	 * @see soft.fileio.XmlReader#xml2assets(java.lang.String)
+	 * @generated
+	 */
+	EOperation getXmlReader__Xml2assets__String();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -250,12 +269,12 @@ public interface FileioPackage extends EPackage {
 		EOperation XML_WRITER___INIT = eINSTANCE.getXmlWriter__Init();
 
 		/**
-		 * The meta object literal for the '<em><b>Xml2map</b></em>' operation.
+		 * The meta object literal for the '<em><b>Map2xml</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation XML_WRITER___XML2MAP__STRING = eINSTANCE.getXmlWriter__Xml2map__String();
+		EOperation XML_WRITER___MAP2XML__STRING = eINSTANCE.getXmlWriter__Map2xml__String();
 
 		/**
 		 * The meta object literal for the '{@link soft.fileio.impl.XmlReaderImpl <em>Xml Reader</em>}' class.
@@ -276,12 +295,20 @@ public interface FileioPackage extends EPackage {
 		EOperation XML_READER___INIT = eINSTANCE.getXmlReader__Init();
 
 		/**
-		 * The meta object literal for the '<em><b>Map2xml</b></em>' operation.
+		 * The meta object literal for the '<em><b>Xml2map</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation XML_READER___MAP2XML = eINSTANCE.getXmlReader__Map2xml();
+		EOperation XML_READER___XML2MAP__STRING = eINSTANCE.getXmlReader__Xml2map__String();
+
+		/**
+		 * The meta object literal for the '<em><b>Xml2assets</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation XML_READER___XML2ASSETS__STRING = eINSTANCE.getXmlReader__Xml2assets__String();
 
 	}
 

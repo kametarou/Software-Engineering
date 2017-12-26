@@ -4,8 +4,6 @@ package soft.fileio;
 
 import org.eclipse.emf.ecore.EObject;
 
-import soft.mapping.Map;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Xml Writer</b></em>'.
@@ -31,6 +29,6 @@ public interface XmlWriter extends EObject {
 	 * @model
 	 * @generated
 	 */
-	Map xml2map(String filepath);
+	void map2xml(String filepath);
 
 } // XmlWriter

@@ -134,7 +134,7 @@ public class FileioPackageImpl extends EPackageImpl implements FileioPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getXmlWriter__Xml2map__String() {
+	public EOperation getXmlWriter__Map2xml__String() {
 		return xmlWriterEClass.getEOperations().get(1);
 	}
 
@@ -161,8 +161,17 @@ public class FileioPackageImpl extends EPackageImpl implements FileioPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getXmlReader__Map2xml() {
+	public EOperation getXmlReader__Xml2map__String() {
 		return xmlReaderEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getXmlReader__Xml2assets__String() {
+		return xmlReaderEClass.getEOperations().get(2);
 	}
 
 	/**
@@ -195,11 +204,12 @@ public class FileioPackageImpl extends EPackageImpl implements FileioPackage {
 		// Create classes and their features
 		xmlWriterEClass = createEClass(XML_WRITER);
 		createEOperation(xmlWriterEClass, XML_WRITER___INIT);
-		createEOperation(xmlWriterEClass, XML_WRITER___XML2MAP__STRING);
+		createEOperation(xmlWriterEClass, XML_WRITER___MAP2XML__STRING);
 
 		xmlReaderEClass = createEClass(XML_READER);
 		createEOperation(xmlReaderEClass, XML_READER___INIT);
-		createEOperation(xmlReaderEClass, XML_READER___MAP2XML);
+		createEOperation(xmlReaderEClass, XML_READER___XML2MAP__STRING);
+		createEOperation(xmlReaderEClass, XML_READER___XML2ASSETS__STRING);
 	}
 
 	/**
@@ -239,14 +249,18 @@ public class FileioPackageImpl extends EPackageImpl implements FileioPackage {
 
 		initEOperation(getXmlWriter__Init(), null, "init", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		EOperation op = initEOperation(getXmlWriter__Xml2map__String(), theMappingPackage.getMap(), "xml2map", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = initEOperation(getXmlWriter__Map2xml__String(), null, "map2xml", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "filepath", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(xmlReaderEClass, XmlReader.class, "XmlReader", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEOperation(getXmlReader__Init(), null, "init", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getXmlReader__Map2xml(), null, "map2xml", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getXmlReader__Xml2map__String(), theMappingPackage.getMap(), "xml2map", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "filepath", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getXmlReader__Xml2assets__String(), theMappingPackage.getAsset(), "xml2assets", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "filepath", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

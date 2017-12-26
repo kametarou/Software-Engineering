@@ -3,6 +3,8 @@
 package soft.fileio;
 
 import org.eclipse.emf.ecore.EObject;
+import soft.mapping.Asset;
+import soft.mapping.Map;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,6 +31,14 @@ public interface XmlReader extends EObject {
 	 * @model
 	 * @generated
 	 */
-	void map2xml(String filepath);
+	Map xml2map(String filepath);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model filepathRequired="true"
+	 * @generated
+	 */
+	Asset xml2assets(String filepath);
 
 } // XmlReader

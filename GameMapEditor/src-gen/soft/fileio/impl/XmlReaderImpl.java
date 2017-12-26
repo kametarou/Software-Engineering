@@ -12,6 +12,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import soft.fileio.FileioPackage;
 import soft.fileio.XmlReader;
+import soft.mapping.Asset;
+import soft.mapping.Map;
 
 /**
  * <!-- begin-user-doc -->
@@ -56,7 +58,18 @@ public class XmlReaderImpl extends MinimalEObjectImpl.Container implements XmlRe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void map2xml() {
+	public Map xml2map(String filepath) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Asset xml2assets(String filepath) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -73,9 +86,10 @@ public class XmlReaderImpl extends MinimalEObjectImpl.Container implements XmlRe
 			case FileioPackage.XML_READER___INIT:
 				init();
 				return null;
-			case FileioPackage.XML_READER___MAP2XML:
-				map2xml();
-				return null;
+			case FileioPackage.XML_READER___XML2MAP__STRING:
+				return xml2map((String)arguments.get(0));
+			case FileioPackage.XML_READER___XML2ASSETS__STRING:
+				return xml2assets((String)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

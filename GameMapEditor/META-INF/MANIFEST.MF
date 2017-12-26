@@ -7,7 +7,10 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: soft.main,
+Export-Package: soft.fileio,
+ soft.fileio.impl,
+ soft.fileio.util,
+ soft.main,
  soft.main.impl,
  soft.main.util,
  soft.mapping,

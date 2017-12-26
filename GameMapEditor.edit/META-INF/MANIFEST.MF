@@ -8,7 +8,8 @@ Bundle-Activator: soft.mapping.provider.MyEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: soft.main.provider,
+Export-Package: soft.fileio.provider,
+ soft.main.provider,
  soft.mapping.provider
 Require-Bundle: org.eclipse.core.runtime,
  GameMapEditor;visibility:=reexport,

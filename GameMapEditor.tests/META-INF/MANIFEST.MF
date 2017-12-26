@@ -7,7 +7,8 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: soft.main.tests,
+Export-Package: soft.fileio.tests,
+ soft.main.tests,
  soft.mapping.tests
 Require-Bundle: org.eclipse.core.runtime,
  GameMapEditor;visibility:=reexport,

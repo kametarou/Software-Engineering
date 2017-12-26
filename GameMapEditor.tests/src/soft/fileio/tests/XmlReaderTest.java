@@ -18,7 +18,7 @@ import soft.fileio.XmlReader;
  * <ul>
  *   <li>{@link soft.fileio.XmlReader#init() <em>Init</em>}</li>
  *   <li>{@link soft.fileio.XmlReader#xml2map(java.lang.String) <em>Xml2map</em>}</li>
- *   <li>{@link soft.fileio.XmlReader#xml2assets() <em>Xml2assets</em>}</li>
+ *   <li>{@link soft.fileio.XmlReader#xml2assets(java.lang.String) <em>Xml2assets</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -127,7 +127,7 @@ public class XmlReaderTest extends TestCase {
 	 * @see soft.fileio.XmlReader#xml2assets()
 	 * @generated
 	 */
-	public void testXml2assets() {
+	public void testXml2assets__String() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

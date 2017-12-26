@@ -13,6 +13,8 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import soft.fileio.FileioPackage;
+import soft.fileio.impl.FileioPackageImpl;
 import soft.main.MainPackage;
 
 import soft.main.impl.MainPackageImpl;
@@ -161,14 +163,17 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 
 		// Obtain or create and register interdependencies
 		MainPackageImpl theMainPackage = (MainPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(MainPackage.eNS_URI) instanceof MainPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(MainPackage.eNS_URI) : MainPackage.eINSTANCE);
+		FileioPackageImpl theFileioPackage = (FileioPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(FileioPackage.eNS_URI) instanceof FileioPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(FileioPackage.eNS_URI) : FileioPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theMappingPackage.createPackageContents();
 		theMainPackage.createPackageContents();
+		theFileioPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theMappingPackage.initializePackageContents();
 		theMainPackage.initializePackageContents();
+		theFileioPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theMappingPackage.freeze();

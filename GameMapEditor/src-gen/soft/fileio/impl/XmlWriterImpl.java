@@ -13,8 +13,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import soft.fileio.FileioPackage;
 import soft.fileio.XmlWriter;
 
-import soft.mapping.Map;
-
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Xml Writer</b></em>'.
@@ -58,7 +56,7 @@ public class XmlWriterImpl extends MinimalEObjectImpl.Container implements XmlWr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Map xml2map(String filepath) {
+	public void map2xml(String filepath) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -75,8 +73,9 @@ public class XmlWriterImpl extends MinimalEObjectImpl.Container implements XmlWr
 			case FileioPackage.XML_WRITER___INIT:
 				init();
 				return null;
-			case FileioPackage.XML_WRITER___XML2MAP__STRING:
-				return xml2map((String)arguments.get(0));
+			case FileioPackage.XML_WRITER___MAP2XML__STRING:
+				map2xml((String)arguments.get(0));
+				return null;
 		}
 		return super.eInvoke(operationID, arguments);
 	}
