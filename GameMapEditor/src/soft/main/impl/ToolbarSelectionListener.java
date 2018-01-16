@@ -19,6 +19,8 @@ public class ToolbarSelectionListener implements SelectionListener {
         System.out.println(source.getData()+" was selected");
         if(source.getData()!=null && source.getData().equals("update")) {
         	  mapArea.redraw();;
+        } else if (source.getData()!=null && source.getData().equals("delete")){
+        	  // set to delete mode
         }
 	}
 
