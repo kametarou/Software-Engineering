@@ -49,24 +49,6 @@ public interface MainFactory extends EFactory {
 	Window createWindow();
 
 	/**
-	 * Returns a new object of class '<em>My Mouse Motion Listener</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>My Mouse Motion Listener</em>'.
-	 * @generated
-	 */
-	MyMouseMotionListener createMyMouseMotionListener();
-
-	/**
-	 * Returns a new object of class '<em>My Keyboard Listener</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>My Keyboard Listener</em>'.
-	 * @generated
-	 */
-	MyKeyboardListener createMyKeyboardListener();
-
-	/**
 	 * Returns a new object of class '<em>File</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

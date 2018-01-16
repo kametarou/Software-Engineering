@@ -31,6 +31,15 @@ public interface GraphicsFactory extends EFactory {
 	ImageProcess createImageProcess();
 
 	/**
+	 * Returns a new object of class '<em>Asset Process</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Asset Process</em>'.
+	 * @generated
+	 */
+	AssetProcess createAssetProcess();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

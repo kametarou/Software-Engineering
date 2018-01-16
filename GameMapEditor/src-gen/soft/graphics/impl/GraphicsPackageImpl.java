@@ -16,6 +16,7 @@ import soft.fileio.FileioPackage;
 
 import soft.fileio.impl.FileioPackageImpl;
 
+import soft.graphics.AssetProcess;
 import soft.graphics.GraphicsFactory;
 import soft.graphics.GraphicsPackage;
 import soft.graphics.ImageProcess;
@@ -41,6 +42,13 @@ public class GraphicsPackageImpl extends EPackageImpl implements GraphicsPackage
 	 * @generated
 	 */
 	private EClass imageProcessEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass assetProcessEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -151,7 +159,7 @@ public class GraphicsPackageImpl extends EPackageImpl implements GraphicsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getImageProcess__Blending__Graphics2D_AreaVector_int() {
+	public EOperation getImageProcess__Blending__Graphics2D_AreaVector_int_int() {
 		return imageProcessEClass.getEOperations().get(0);
 	}
 
@@ -162,6 +170,51 @@ public class GraphicsPackageImpl extends EPackageImpl implements GraphicsPackage
 	 */
 	public EOperation getImageProcess__Scaling__Graphics2D_int() {
 		return imageProcessEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAssetProcess() {
+		return assetProcessEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAssetProcess_ThumbnailX() {
+		return (EAttribute)assetProcessEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAssetProcess_ThumbnailY() {
+		return (EAttribute)assetProcessEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getAssetProcess__BackgroundFilter__Graphics2D_Color() {
+		return assetProcessEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getAssetProcess__NormalizeAsset__Asset() {
+		return assetProcessEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -212,8 +265,14 @@ public class GraphicsPackageImpl extends EPackageImpl implements GraphicsPackage
 		// Create classes and their features
 		imageProcessEClass = createEClass(IMAGE_PROCESS);
 		createEAttribute(imageProcessEClass, IMAGE_PROCESS__OPACITY);
-		createEOperation(imageProcessEClass, IMAGE_PROCESS___BLENDING__GRAPHICS2D_AREAVECTOR_INT);
+		createEOperation(imageProcessEClass, IMAGE_PROCESS___BLENDING__GRAPHICS2D_AREAVECTOR_INT_INT);
 		createEOperation(imageProcessEClass, IMAGE_PROCESS___SCALING__GRAPHICS2D_INT);
+
+		assetProcessEClass = createEClass(ASSET_PROCESS);
+		createEAttribute(assetProcessEClass, ASSET_PROCESS__THUMBNAIL_X);
+		createEAttribute(assetProcessEClass, ASSET_PROCESS__THUMBNAIL_Y);
+		createEOperation(assetProcessEClass, ASSET_PROCESS___BACKGROUND_FILTER__GRAPHICS2D_COLOR);
+		createEOperation(assetProcessEClass, ASSET_PROCESS___NORMALIZE_ASSET__ASSET);
 
 		// Create data types
 		mapImageEDataType = createEDataType(MAP_IMAGE);
@@ -256,7 +315,7 @@ public class GraphicsPackageImpl extends EPackageImpl implements GraphicsPackage
 		initEClass(imageProcessEClass, ImageProcess.class, "ImageProcess", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getImageProcess_Opacity(), this.getFloatArray(), "opacity", null, 0, 1, ImageProcess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		EOperation op = initEOperation(getImageProcess__Blending__Graphics2D_AreaVector_int(), theMappingPackage.getGraphics2D(), "blending", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = initEOperation(getImageProcess__Blending__Graphics2D_AreaVector_int_int(), theMappingPackage.getGraphics2D(), "blending", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getMapImage(), "wholeMap", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theMappingPackage.getAreaVector(), "renewArea", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "currentLayer", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -265,6 +324,17 @@ public class GraphicsPackageImpl extends EPackageImpl implements GraphicsPackage
 		op = initEOperation(getImageProcess__Scaling__Graphics2D_int(), theMappingPackage.getGraphics2D(), "scaling", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theMappingPackage.getGraphics2D(), "wholeMap", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "scale", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(assetProcessEClass, AssetProcess.class, "AssetProcess", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getAssetProcess_ThumbnailX(), ecorePackage.getEInt(), "thumbnailX", null, 0, 1, AssetProcess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAssetProcess_ThumbnailY(), ecorePackage.getEInt(), "thumbnailY", null, 0, 1, AssetProcess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		op = initEOperation(getAssetProcess__BackgroundFilter__Graphics2D_Color(), theMappingPackage.getGraphics2D(), "backgroundFilter", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theMappingPackage.getGraphics2D(), "origin", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theMappingPackage.getColor(), "color", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getAssetProcess__NormalizeAsset__Asset(), theMappingPackage.getGraphics2D(), "normalizeAsset", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theMappingPackage.getAsset(), "asset", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Initialize data types
 		initEDataType(mapImageEDataType, Graphics2D[].class, "MapImage", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);

@@ -13,13 +13,13 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import soft.mapping.AreaVector;
+import soft.mapping.MappingFactory;
 import soft.mapping.MappingPackage;
 import soft.mapping.Position;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Area Vector</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Area
+ * Vector</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
@@ -32,9 +32,9 @@ import soft.mapping.Position;
  */
 public class AreaVectorImpl extends MinimalEObjectImpl.Container implements AreaVector {
 	/**
-	 * The cached value of the '{@link #getStart() <em>Start</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The cached value of the '{@link #getStart() <em>Start</em>}' reference. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getStart()
 	 * @generated
 	 * @ordered
@@ -42,9 +42,9 @@ public class AreaVectorImpl extends MinimalEObjectImpl.Container implements Area
 	protected Position start;
 
 	/**
-	 * The cached value of the '{@link #getEnd() <em>End</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The cached value of the '{@link #getEnd() <em>End</em>}' reference. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getEnd()
 	 * @generated
 	 * @ordered
@@ -52,8 +52,7 @@ public class AreaVectorImpl extends MinimalEObjectImpl.Container implements Area
 	protected Position end;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected AreaVectorImpl() {
@@ -61,8 +60,7 @@ public class AreaVectorImpl extends MinimalEObjectImpl.Container implements Area
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -71,8 +69,7 @@ public class AreaVectorImpl extends MinimalEObjectImpl.Container implements Area
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public Position getStart() {
@@ -88,8 +85,7 @@ public class AreaVectorImpl extends MinimalEObjectImpl.Container implements Area
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public Position basicGetStart() {
@@ -97,8 +93,7 @@ public class AreaVectorImpl extends MinimalEObjectImpl.Container implements Area
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setStart(Position newStart) {
@@ -109,8 +104,7 @@ public class AreaVectorImpl extends MinimalEObjectImpl.Container implements Area
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public Position getEnd() {
@@ -126,8 +120,7 @@ public class AreaVectorImpl extends MinimalEObjectImpl.Container implements Area
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public Position basicGetEnd() {
@@ -135,8 +128,7 @@ public class AreaVectorImpl extends MinimalEObjectImpl.Container implements Area
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setEnd(Position newEnd) {
@@ -147,19 +139,19 @@ public class AreaVectorImpl extends MinimalEObjectImpl.Container implements Area
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
 	 */
 	public void init() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		this.start = MappingFactory.eINSTANCE.createPosition();
+		this.end = MappingFactory.eINSTANCE.createPosition();
+		start.init();
+		end.init();
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -176,8 +168,7 @@ public class AreaVectorImpl extends MinimalEObjectImpl.Container implements Area
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -194,8 +185,7 @@ public class AreaVectorImpl extends MinimalEObjectImpl.Container implements Area
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -212,8 +202,7 @@ public class AreaVectorImpl extends MinimalEObjectImpl.Container implements Area
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -228,8 +217,7 @@ public class AreaVectorImpl extends MinimalEObjectImpl.Container implements Area
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -242,10 +230,4 @@ public class AreaVectorImpl extends MinimalEObjectImpl.Container implements Area
 		return super.eInvoke(operationID, arguments);
 	}
 
-	@Override
-	public void init(int start, int end) {
-		// TODO Auto-generated method stub
-		
-	}
-
-} //AreaVectorImpl
+} // AreaVectorImpl

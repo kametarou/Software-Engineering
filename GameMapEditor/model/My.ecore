@@ -114,18 +114,10 @@
     <eClassifiers xsi:type="ecore:EClass" name="Window">
       <eOperations name="init"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="MyMouseMotionListener" eSuperTypes="#//main/MouseMotionListener #//main/MouseListener"/>
-    <eClassifiers xsi:type="ecore:EClass" name="MyKeyboardListener" eSuperTypes="#//main/KeyListener"/>
     <eClassifiers xsi:type="ecore:EClass" name="File">
       <eOperations name="makeNewFile"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Serializable" instanceClassName="java.io.Serializable"
-        abstract="true" interface="true"/>
-    <eClassifiers xsi:type="ecore:EClass" name="MouseMotionListener" instanceClassName="java.awt.event.MouseMotionListener"
-        abstract="true" interface="true"/>
-    <eClassifiers xsi:type="ecore:EClass" name="KeyListener" instanceClassName="java.awt.event.KeyListener"
-        abstract="true" interface="true"/>
-    <eClassifiers xsi:type="ecore:EClass" name="MouseListener" instanceClassName="java.awt.event.MouseListener"
         abstract="true" interface="true"/>
   </eSubpackages>
   <eSubpackages name="fileio" nsURI="/Users/ayumi/SE" nsPrefix="fileio">

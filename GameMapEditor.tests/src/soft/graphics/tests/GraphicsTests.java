@@ -32,6 +32,7 @@ public class GraphicsTests extends TestSuite {
 	public static Test suite() {
 		TestSuite suite = new GraphicsTests("graphics Tests");
 		suite.addTestSuite(ImageProcessTest.class);
+		suite.addTestSuite(AssetProcessTest.class);
 		return suite;
 	}
 

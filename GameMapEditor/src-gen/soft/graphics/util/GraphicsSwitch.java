@@ -72,6 +72,12 @@ public class GraphicsSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case GraphicsPackage.ASSET_PROCESS: {
+				AssetProcess assetProcess = (AssetProcess)theEObject;
+				T result = caseAssetProcess(assetProcess);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -88,6 +94,21 @@ public class GraphicsSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseImageProcess(ImageProcess object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Asset Process</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Asset Process</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAssetProcess(AssetProcess object) {
 		return null;
 	}
 

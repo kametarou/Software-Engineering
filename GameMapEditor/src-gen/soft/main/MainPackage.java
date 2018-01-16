@@ -158,118 +158,6 @@ public interface MainPackage extends EPackage {
 	int WINDOW_OPERATION_COUNT = 1;
 
 	/**
-	 * The meta object id for the '{@link java.awt.event.MouseMotionListener <em>Mouse Motion Listener</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see java.awt.event.MouseMotionListener
-	 * @see soft.main.impl.MainPackageImpl#getMouseMotionListener()
-	 * @generated
-	 */
-	int MOUSE_MOTION_LISTENER = 7;
-
-	/**
-	 * The number of structural features of the '<em>Mouse Motion Listener</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MOUSE_MOTION_LISTENER_FEATURE_COUNT = 0;
-
-	/**
-	 * The number of operations of the '<em>Mouse Motion Listener</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MOUSE_MOTION_LISTENER_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link soft.main.impl.MyMouseMotionListenerImpl <em>My Mouse Motion Listener</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see soft.main.impl.MyMouseMotionListenerImpl
-	 * @see soft.main.impl.MainPackageImpl#getMyMouseMotionListener()
-	 * @generated
-	 */
-	int MY_MOUSE_MOTION_LISTENER = 3;
-
-	/**
-	 * The number of structural features of the '<em>My Mouse Motion Listener</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MY_MOUSE_MOTION_LISTENER_FEATURE_COUNT = MOUSE_MOTION_LISTENER_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>My Mouse Motion Listener</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MY_MOUSE_MOTION_LISTENER_OPERATION_COUNT = MOUSE_MOTION_LISTENER_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link java.awt.event.KeyListener <em>Key Listener</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see java.awt.event.KeyListener
-	 * @see soft.main.impl.MainPackageImpl#getKeyListener()
-	 * @generated
-	 */
-	int KEY_LISTENER = 8;
-
-	/**
-	 * The number of structural features of the '<em>Key Listener</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int KEY_LISTENER_FEATURE_COUNT = 0;
-
-	/**
-	 * The number of operations of the '<em>Key Listener</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int KEY_LISTENER_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link soft.main.impl.MyKeyboardListenerImpl <em>My Keyboard Listener</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see soft.main.impl.MyKeyboardListenerImpl
-	 * @see soft.main.impl.MainPackageImpl#getMyKeyboardListener()
-	 * @generated
-	 */
-	int MY_KEYBOARD_LISTENER = 4;
-
-	/**
-	 * The number of structural features of the '<em>My Keyboard Listener</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MY_KEYBOARD_LISTENER_FEATURE_COUNT = KEY_LISTENER_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>My Keyboard Listener</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MY_KEYBOARD_LISTENER_OPERATION_COUNT = KEY_LISTENER_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link soft.main.impl.FileImpl <em>File</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -277,7 +165,7 @@ public interface MainPackage extends EPackage {
 	 * @see soft.main.impl.MainPackageImpl#getFile()
 	 * @generated
 	 */
-	int FILE = 5;
+	int FILE = 3;
 
 	/**
 	 * The number of structural features of the '<em>File</em>' class.
@@ -314,7 +202,7 @@ public interface MainPackage extends EPackage {
 	 * @see soft.main.impl.MainPackageImpl#getSerializable()
 	 * @generated
 	 */
-	int SERIALIZABLE = 6;
+	int SERIALIZABLE = 4;
 
 	/**
 	 * The number of structural features of the '<em>Serializable</em>' class.
@@ -333,35 +221,6 @@ public interface MainPackage extends EPackage {
 	 * @ordered
 	 */
 	int SERIALIZABLE_OPERATION_COUNT = 0;
-
-
-	/**
-	 * The meta object id for the '{@link java.awt.event.MouseListener <em>Mouse Listener</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see java.awt.event.MouseListener
-	 * @see soft.main.impl.MainPackageImpl#getMouseListener()
-	 * @generated
-	 */
-	int MOUSE_LISTENER = 9;
-
-	/**
-	 * The number of structural features of the '<em>Mouse Listener</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MOUSE_LISTENER_FEATURE_COUNT = 0;
-
-	/**
-	 * The number of operations of the '<em>Mouse Listener</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MOUSE_LISTENER_OPERATION_COUNT = 0;
 
 
 	/**
@@ -415,26 +274,6 @@ public interface MainPackage extends EPackage {
 	EOperation getWindow__Init();
 
 	/**
-	 * Returns the meta object for class '{@link soft.main.MyMouseMotionListener <em>My Mouse Motion Listener</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>My Mouse Motion Listener</em>'.
-	 * @see soft.main.MyMouseMotionListener
-	 * @generated
-	 */
-	EClass getMyMouseMotionListener();
-
-	/**
-	 * Returns the meta object for class '{@link soft.main.MyKeyboardListener <em>My Keyboard Listener</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>My Keyboard Listener</em>'.
-	 * @see soft.main.MyKeyboardListener
-	 * @generated
-	 */
-	EClass getMyKeyboardListener();
-
-	/**
 	 * Returns the meta object for class '{@link soft.main.File <em>File</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -464,39 +303,6 @@ public interface MainPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getSerializable();
-
-	/**
-	 * Returns the meta object for class '{@link java.awt.event.MouseMotionListener <em>Mouse Motion Listener</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Mouse Motion Listener</em>'.
-	 * @see java.awt.event.MouseMotionListener
-	 * @model instanceClass="java.awt.event.MouseMotionListener"
-	 * @generated
-	 */
-	EClass getMouseMotionListener();
-
-	/**
-	 * Returns the meta object for class '{@link java.awt.event.KeyListener <em>Key Listener</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Key Listener</em>'.
-	 * @see java.awt.event.KeyListener
-	 * @model instanceClass="java.awt.event.KeyListener"
-	 * @generated
-	 */
-	EClass getKeyListener();
-
-	/**
-	 * Returns the meta object for class '{@link java.awt.event.MouseListener <em>Mouse Listener</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Mouse Listener</em>'.
-	 * @see java.awt.event.MouseListener
-	 * @model instanceClass="java.awt.event.MouseListener"
-	 * @generated
-	 */
-	EClass getMouseListener();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -568,26 +374,6 @@ public interface MainPackage extends EPackage {
 		EOperation WINDOW___INIT = eINSTANCE.getWindow__Init();
 
 		/**
-		 * The meta object literal for the '{@link soft.main.impl.MyMouseMotionListenerImpl <em>My Mouse Motion Listener</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see soft.main.impl.MyMouseMotionListenerImpl
-		 * @see soft.main.impl.MainPackageImpl#getMyMouseMotionListener()
-		 * @generated
-		 */
-		EClass MY_MOUSE_MOTION_LISTENER = eINSTANCE.getMyMouseMotionListener();
-
-		/**
-		 * The meta object literal for the '{@link soft.main.impl.MyKeyboardListenerImpl <em>My Keyboard Listener</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see soft.main.impl.MyKeyboardListenerImpl
-		 * @see soft.main.impl.MainPackageImpl#getMyKeyboardListener()
-		 * @generated
-		 */
-		EClass MY_KEYBOARD_LISTENER = eINSTANCE.getMyKeyboardListener();
-
-		/**
 		 * The meta object literal for the '{@link soft.main.impl.FileImpl <em>File</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -614,36 +400,6 @@ public interface MainPackage extends EPackage {
 		 * @generated
 		 */
 		EClass SERIALIZABLE = eINSTANCE.getSerializable();
-
-		/**
-		 * The meta object literal for the '{@link java.awt.event.MouseMotionListener <em>Mouse Motion Listener</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see java.awt.event.MouseMotionListener
-		 * @see soft.main.impl.MainPackageImpl#getMouseMotionListener()
-		 * @generated
-		 */
-		EClass MOUSE_MOTION_LISTENER = eINSTANCE.getMouseMotionListener();
-
-		/**
-		 * The meta object literal for the '{@link java.awt.event.KeyListener <em>Key Listener</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see java.awt.event.KeyListener
-		 * @see soft.main.impl.MainPackageImpl#getKeyListener()
-		 * @generated
-		 */
-		EClass KEY_LISTENER = eINSTANCE.getKeyListener();
-
-		/**
-		 * The meta object literal for the '{@link java.awt.event.MouseListener <em>Mouse Listener</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see java.awt.event.MouseListener
-		 * @see soft.main.impl.MainPackageImpl#getMouseListener()
-		 * @generated
-		 */
-		EClass MOUSE_LISTENER = eINSTANCE.getMouseListener();
 
 	}
 

@@ -60,6 +60,7 @@ public class GraphicsFactoryImpl extends EFactoryImpl implements GraphicsFactory
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case GraphicsPackage.IMAGE_PROCESS: return createImageProcess();
+			case GraphicsPackage.ASSET_PROCESS: return createAssetProcess();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -107,6 +108,16 @@ public class GraphicsFactoryImpl extends EFactoryImpl implements GraphicsFactory
 	public ImageProcess createImageProcess() {
 		ImageProcessImpl imageProcess = new ImageProcessImpl();
 		return imageProcess;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AssetProcess createAssetProcess() {
+		AssetProcessImpl assetProcess = new AssetProcessImpl();
+		return assetProcess;
 	}
 
 	/**

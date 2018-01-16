@@ -2,9 +2,6 @@
  */
 package soft.main.util;
 
-import java.awt.event.KeyListener;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseMotionListener;
 import java.io.Serializable;
 
 import org.eclipse.emf.common.notify.Adapter;
@@ -85,32 +82,12 @@ public class MainAdapterFactory extends AdapterFactoryImpl {
 				return createWindowAdapter();
 			}
 			@Override
-			public Adapter caseMyMouseMotionListener(MyMouseMotionListener object) {
-				return createMyMouseMotionListenerAdapter();
-			}
-			@Override
-			public Adapter caseMyKeyboardListener(MyKeyboardListener object) {
-				return createMyKeyboardListenerAdapter();
-			}
-			@Override
 			public Adapter caseFile(File object) {
 				return createFileAdapter();
 			}
 			@Override
 			public Adapter caseSerializable(Serializable object) {
 				return createSerializableAdapter();
-			}
-			@Override
-			public Adapter caseMouseMotionListener(MouseMotionListener object) {
-				return createMouseMotionListenerAdapter();
-			}
-			@Override
-			public Adapter caseKeyListener(KeyListener object) {
-				return createKeyListenerAdapter();
-			}
-			@Override
-			public Adapter caseMouseListener(MouseListener object) {
-				return createMouseListenerAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -175,34 +152,6 @@ public class MainAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link soft.main.MyMouseMotionListener <em>My Mouse Motion Listener</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see soft.main.MyMouseMotionListener
-	 * @generated
-	 */
-	public Adapter createMyMouseMotionListenerAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link soft.main.MyKeyboardListener <em>My Keyboard Listener</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see soft.main.MyKeyboardListener
-	 * @generated
-	 */
-	public Adapter createMyKeyboardListenerAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link soft.main.File <em>File</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -227,48 +176,6 @@ public class MainAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSerializableAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link java.awt.event.MouseMotionListener <em>Mouse Motion Listener</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see java.awt.event.MouseMotionListener
-	 * @generated
-	 */
-	public Adapter createMouseMotionListenerAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link java.awt.event.KeyListener <em>Key Listener</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see java.awt.event.KeyListener
-	 * @generated
-	 */
-	public Adapter createKeyListenerAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link java.awt.event.MouseListener <em>Mouse Listener</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see java.awt.event.MouseListener
-	 * @generated
-	 */
-	public Adapter createMouseListenerAdapter() {
 		return null;
 	}
 

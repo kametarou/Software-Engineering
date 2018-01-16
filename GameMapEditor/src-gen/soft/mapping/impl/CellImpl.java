@@ -21,7 +21,6 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import soft.mapping.AreaVector;
 import soft.mapping.Asset;
 import soft.mapping.Cell;
-import soft.mapping.MappingFactory;
 import soft.mapping.MappingPackage;
 import soft.mapping.Position;
 

@@ -95,6 +95,29 @@ public class GraphicsItemProviderAdapterFactory extends GraphicsAdapterFactory i
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link soft.graphics.AssetProcess} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AssetProcessItemProvider assetProcessItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link soft.graphics.AssetProcess}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAssetProcessAdapter() {
+		if (assetProcessItemProvider == null) {
+			assetProcessItemProvider = new AssetProcessItemProvider(this);
+		}
+
+		return assetProcessItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -194,6 +217,7 @@ public class GraphicsItemProviderAdapterFactory extends GraphicsAdapterFactory i
 	 */
 	public void dispose() {
 		if (imageProcessItemProvider != null) imageProcessItemProvider.dispose();
+		if (assetProcessItemProvider != null) assetProcessItemProvider.dispose();
 	}
 
 }

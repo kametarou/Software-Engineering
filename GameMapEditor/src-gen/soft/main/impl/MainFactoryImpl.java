@@ -59,8 +59,6 @@ public class MainFactoryImpl extends EFactoryImpl implements MainFactory {
 			case MainPackage.MY_GAME_MAP_EDITOR: return createMyGameMapEditor();
 			case MainPackage.EDITOR: return createEditor();
 			case MainPackage.WINDOW: return createWindow();
-			case MainPackage.MY_MOUSE_MOTION_LISTENER: return createMyMouseMotionListener();
-			case MainPackage.MY_KEYBOARD_LISTENER: return createMyKeyboardListener();
 			case MainPackage.FILE: return createFile();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -95,26 +93,6 @@ public class MainFactoryImpl extends EFactoryImpl implements MainFactory {
 	public Window createWindow() {
 		WindowImpl window = new WindowImpl();
 		return window;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MyMouseMotionListener createMyMouseMotionListener() {
-		MyMouseMotionListenerImpl myMouseMotionListener = new MyMouseMotionListenerImpl();
-		return myMouseMotionListener;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MyKeyboardListener createMyKeyboardListener() {
-		MyKeyboardListenerImpl myKeyboardListener = new MyKeyboardListenerImpl();
-		return myKeyboardListener;
 	}
 
 	/**

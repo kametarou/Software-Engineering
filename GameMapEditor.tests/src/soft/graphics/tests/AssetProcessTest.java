@@ -6,31 +6,31 @@ import junit.framework.TestCase;
 
 import junit.textui.TestRunner;
 
+import soft.graphics.AssetProcess;
 import soft.graphics.GraphicsFactory;
-import soft.graphics.ImageProcess;
 
 /**
  * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Image Process</b></em>'.
+ * A test case for the model object '<em><b>Asset Process</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following operations are tested:
  * <ul>
- *   <li>{@link soft.graphics.ImageProcess#blending(java.awt.Graphics2D[], soft.mapping.AreaVector, int, int) <em>Blending</em>}</li>
- *   <li>{@link soft.graphics.ImageProcess#scaling(java.awt.Graphics2D, int) <em>Scaling</em>}</li>
+ *   <li>{@link soft.graphics.AssetProcess#backgroundFilter(java.awt.Graphics2D, java.awt.Color) <em>Background Filter</em>}</li>
+ *   <li>{@link soft.graphics.AssetProcess#normalizeAsset(soft.mapping.Asset) <em>Normalize Asset</em>}</li>
  * </ul>
  * </p>
  * @generated
  */
-public class ImageProcessTest extends TestCase {
+public class AssetProcessTest extends TestCase {
 
 	/**
-	 * The fixture for this Image Process test case.
+	 * The fixture for this Asset Process test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ImageProcess fixture = null;
+	protected AssetProcess fixture = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -38,36 +38,36 @@ public class ImageProcessTest extends TestCase {
 	 * @generated
 	 */
 	public static void main(String[] args) {
-		TestRunner.run(ImageProcessTest.class);
+		TestRunner.run(AssetProcessTest.class);
 	}
 
 	/**
-	 * Constructs a new Image Process test case with the given name.
+	 * Constructs a new Asset Process test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ImageProcessTest(String name) {
+	public AssetProcessTest(String name) {
 		super(name);
 	}
 
 	/**
-	 * Sets the fixture for this Image Process test case.
+	 * Sets the fixture for this Asset Process test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void setFixture(ImageProcess fixture) {
+	protected void setFixture(AssetProcess fixture) {
 		this.fixture = fixture;
 	}
 
 	/**
-	 * Returns the fixture for this Image Process test case.
+	 * Returns the fixture for this Asset Process test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ImageProcess getFixture() {
+	protected AssetProcess getFixture() {
 		return fixture;
 	}
 
@@ -79,7 +79,7 @@ public class ImageProcessTest extends TestCase {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(GraphicsFactory.eINSTANCE.createImageProcess());
+		setFixture(GraphicsFactory.eINSTANCE.createAssetProcess());
 	}
 
 	/**
@@ -94,29 +94,29 @@ public class ImageProcessTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link soft.graphics.ImageProcess#blending(java.awt.Graphics2D[], soft.mapping.AreaVector, int, int) <em>Blending</em>}' operation.
+	 * Tests the '{@link soft.graphics.AssetProcess#backgroundFilter(java.awt.Graphics2D, java.awt.Color) <em>Background Filter</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see soft.graphics.ImageProcess#blending(java.awt.Graphics2D[], soft.mapping.AreaVector, int, int)
+	 * @see soft.graphics.AssetProcess#backgroundFilter(java.awt.Graphics2D, java.awt.Color)
 	 * @generated
 	 */
-	public void testBlending__Graphics2D_AreaVector_int_int() {
+	public void testBackgroundFilter__Graphics2D_Color() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
 
 	/**
-	 * Tests the '{@link soft.graphics.ImageProcess#scaling(java.awt.Graphics2D, int) <em>Scaling</em>}' operation.
+	 * Tests the '{@link soft.graphics.AssetProcess#normalizeAsset(soft.mapping.Asset) <em>Normalize Asset</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see soft.graphics.ImageProcess#scaling(java.awt.Graphics2D, int)
+	 * @see soft.graphics.AssetProcess#normalizeAsset(soft.mapping.Asset)
 	 * @generated
 	 */
-	public void testScaling__Graphics2D_int() {
+	public void testNormalizeAsset__Asset() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
 
-} //ImageProcessTest
+} //AssetProcessTest

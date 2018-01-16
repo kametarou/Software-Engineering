@@ -141,52 +141,6 @@ public class MainItemProviderAdapterFactory extends MainAdapterFactory implement
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link soft.main.MyMouseMotionListener} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected MyMouseMotionListenerItemProvider myMouseMotionListenerItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link soft.main.MyMouseMotionListener}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createMyMouseMotionListenerAdapter() {
-		if (myMouseMotionListenerItemProvider == null) {
-			myMouseMotionListenerItemProvider = new MyMouseMotionListenerItemProvider(this);
-		}
-
-		return myMouseMotionListenerItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link soft.main.MyKeyboardListener} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected MyKeyboardListenerItemProvider myKeyboardListenerItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link soft.main.MyKeyboardListener}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createMyKeyboardListenerAdapter() {
-		if (myKeyboardListenerItemProvider == null) {
-			myKeyboardListenerItemProvider = new MyKeyboardListenerItemProvider(this);
-		}
-
-		return myKeyboardListenerItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link soft.main.File} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -311,8 +265,6 @@ public class MainItemProviderAdapterFactory extends MainAdapterFactory implement
 		if (myGameMapEditorItemProvider != null) myGameMapEditorItemProvider.dispose();
 		if (editorItemProvider != null) editorItemProvider.dispose();
 		if (windowItemProvider != null) windowItemProvider.dispose();
-		if (myMouseMotionListenerItemProvider != null) myMouseMotionListenerItemProvider.dispose();
-		if (myKeyboardListenerItemProvider != null) myKeyboardListenerItemProvider.dispose();
 		if (fileItemProvider != null) fileItemProvider.dispose();
 	}
 

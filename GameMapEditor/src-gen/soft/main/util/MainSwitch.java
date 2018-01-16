@@ -2,9 +2,6 @@
  */
 package soft.main.util;
 
-import java.awt.event.KeyListener;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseMotionListener;
 import java.io.Serializable;
 
 import org.eclipse.emf.ecore.EObject;
@@ -89,21 +86,6 @@ public class MainSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case MainPackage.MY_MOUSE_MOTION_LISTENER: {
-				MyMouseMotionListener myMouseMotionListener = (MyMouseMotionListener)theEObject;
-				T result = caseMyMouseMotionListener(myMouseMotionListener);
-				if (result == null) result = caseMouseMotionListener(myMouseMotionListener);
-				if (result == null) result = caseMouseListener(myMouseMotionListener);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case MainPackage.MY_KEYBOARD_LISTENER: {
-				MyKeyboardListener myKeyboardListener = (MyKeyboardListener)theEObject;
-				T result = caseMyKeyboardListener(myKeyboardListener);
-				if (result == null) result = caseKeyListener(myKeyboardListener);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case MainPackage.FILE: {
 				File file = (File)theEObject;
 				T result = caseFile(file);
@@ -113,24 +95,6 @@ public class MainSwitch<T> extends Switch<T> {
 			case MainPackage.SERIALIZABLE: {
 				Serializable serializable = (Serializable)theEObject;
 				T result = caseSerializable(serializable);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case MainPackage.MOUSE_MOTION_LISTENER: {
-				MouseMotionListener mouseMotionListener = (MouseMotionListener)theEObject;
-				T result = caseMouseMotionListener(mouseMotionListener);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case MainPackage.KEY_LISTENER: {
-				KeyListener keyListener = (KeyListener)theEObject;
-				T result = caseKeyListener(keyListener);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case MainPackage.MOUSE_LISTENER: {
-				MouseListener mouseListener = (MouseListener)theEObject;
-				T result = caseMouseListener(mouseListener);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -184,36 +148,6 @@ public class MainSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>My Mouse Motion Listener</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>My Mouse Motion Listener</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseMyMouseMotionListener(MyMouseMotionListener object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>My Keyboard Listener</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>My Keyboard Listener</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseMyKeyboardListener(MyKeyboardListener object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>File</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -240,51 +174,6 @@ public class MainSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSerializable(Serializable object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Mouse Motion Listener</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Mouse Motion Listener</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseMouseMotionListener(MouseMotionListener object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Key Listener</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Key Listener</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseKeyListener(KeyListener object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Mouse Listener</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Mouse Listener</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseMouseListener(MouseListener object) {
 		return null;
 	}
 

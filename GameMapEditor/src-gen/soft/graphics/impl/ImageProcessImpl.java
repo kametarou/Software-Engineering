@@ -172,7 +172,7 @@ public class ImageProcessImpl extends MinimalEObjectImpl.Container implements Im
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case GraphicsPackage.IMAGE_PROCESS___BLENDING__GRAPHICS2D_AREAVECTOR_INT:
+			case GraphicsPackage.IMAGE_PROCESS___BLENDING__GRAPHICS2D_AREAVECTOR_INT_INT:
 				return blending((Graphics2D[])arguments.get(0), (AreaVector)arguments.get(1), (Integer)arguments.get(2), (Integer)arguments.get(3));
 			case GraphicsPackage.IMAGE_PROCESS___SCALING__GRAPHICS2D_INT:
 				return scaling((Graphics2D)arguments.get(0), (Integer)arguments.get(1));
