@@ -2,7 +2,11 @@
  */
 package soft.fileio;
 
+import java.io.IOException;
+
 import org.eclipse.emf.ecore.EObject;
+import org.xml.sax.SAXException;
+
 import soft.mapping.Asset;
 import soft.mapping.Map;
 
@@ -28,10 +32,12 @@ public interface XmlReader extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @throws IOException 
+	 * @throws SAXException 
 	 * @model filepathRequired="true"
 	 * @generated
 	 */
-	Map xml2map(String filepath);
+	Map xml2map(String filepath) throws SAXException, IOException;
 
 	/**
 	 * <!-- begin-user-doc -->
