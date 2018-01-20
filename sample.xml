@@ -20,15 +20,12 @@
   </asset>
 </assets>
 <map>
-  <meta>
-    <size>
+  <metaInfo>
       <width>3</width>
       <hight>3</hight>
       <maxdepth>3</maxdepth>
-    </size>
-  </meta>
+  </metaInfo>
   <layer depth="1">
-    <row rowIndex=0>
       <cell colIndex=0>
         <assetid>1</assetid>
         <color></color>
@@ -44,8 +41,6 @@
         <color></color>
         <relX>0</relX><relY>0</relY>
       </cell>
-    </row>
-    <row rowIndex=1>
       <cell colIndex=0>
         <assetid>1</assetid>
         <color></color>
@@ -61,8 +56,6 @@
         <color></color>
         <relX>0</relX><relY>0</relY>
       </cell>
-    </row>
-    <row rowIndex=2>
       <cell colIndex=0>
         <assetid>3</assetid>
         <color></color>
@@ -78,10 +71,8 @@
         <color></color>
         <relX>0</relX><relY>0</relY>
       </cell>
-    </row>
   </layer>
   <layer depth="2">
-    <row rowIndex=0>
       <cell colIndex=0>
         <assetid>1</assetid><color></color>
         <relX>0</relX><relY>0</relY>
@@ -94,8 +85,6 @@
         <assetid>2</assetid><color></color>
         <relX>0</relX><relY>0</relY>
       </cell>
-    </row>
-    <row rowIndex=1>
       <cell colIndex=0>
         <assetid>1</assetid><color></color>
         <relX>0</relX>
@@ -111,8 +100,6 @@
         <relX>0</relX>
         <relY>0</relY>
       </cell>
-    </row>
-    <row rowIndex=2>
       <cell>
         <assetid>3</assetid><color></color>
         <relX>0</relX>
@@ -128,10 +115,8 @@
         <relX>0</relX>
         <relY>0</relY>
       </cell>
-    </row>
   </layer>
   <layer depth="3">
-    <row rowIndex=0>
       <cell colIndex=0>
         <assetid>1</assetid><color></color>
         <relX>0</relX>
@@ -147,8 +132,6 @@
         <relX>0</relX>
         <relY>0</relY>
       </cell>
-    </row>
-    <row rowIndex=1>
       <cell colIndex=0>
         <assetid>1</assetid><color></color>
         <relX>0</relX>
@@ -164,8 +147,6 @@
         <relX>0</relX>
         <relY>0</relY>
       </cell>
-    </row>
-    <row rowIndex=2>
       <cell colIndex=0>
         <assetid>3</assetid><color></color>
         <relX>0</relX>
@@ -181,6 +162,5 @@
         <relX>0</relX>
         <relY>0</relY>
       </cell>
-    </row>
   </layer>
 </map>
