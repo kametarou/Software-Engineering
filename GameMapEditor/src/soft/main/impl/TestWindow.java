@@ -94,40 +94,48 @@ public class TestWindow {
 		toolBar.setBackground(SWTResourceManager.getColor(SWT.COLOR_WIDGET_LIGHT_SHADOW));
 		toolBar.setBounds(0, 0, 98, 129);
 
+				ToolItem toolItem_3 = new ToolItem(toolBar, SWT.NONE);
+				toolItem_3.setWidth(2);
+				toolItem_3.setImage(SWTResourceManager.getImage("images/erase.jpeg"));
+				toolItem_3.addSelectionListener(myListener);
 
-
-		ToolItem tltmNewItem = new ToolItem(toolBar, SWT.NONE);
-		tltmNewItem.setWidth(2);
-		tltmNewItem.setImage(SWTResourceManager.getImage("images/erase.jpeg"));
-		tltmNewItem.addSelectionListener(myListener);
-
-		ToolItem tltmNewItem_1 = new ToolItem(toolBar, SWT.NONE);
-		tltmNewItem_1.setWidth(2);
-		tltmNewItem_1.setImage(SWTResourceManager.getImage("images/redo.jpeg"));
-		tltmNewItem_1.addSelectionListener(myListener);
+				toolItem_3.setData("delete");
 
 		ToolItem tltmNewItem_2 = new ToolItem(toolBar, SWT.NONE);
 		tltmNewItem_2.setWidth(2);
 		tltmNewItem_2.setImage(SWTResourceManager.getImage("images/undo.jpeg"));
 		tltmNewItem_2.addSelectionListener(myListener);
 
-		tltmNewItem_2.setData("update");
+		tltmNewItem_2.setData("undo");
+
+						ToolItem tltmNewItem_1 = new ToolItem(toolBar, SWT.NONE);
+						tltmNewItem_1.setWidth(2);
+						tltmNewItem_1.setImage(SWTResourceManager.getImage("images/redo.jpeg"));
+						tltmNewItem_1.addSelectionListener(myListener);
+
+						tltmNewItem_1.setData("redo");
 
 		ToolItem toolItem = new ToolItem(toolBar, SWT.NONE);
 		toolItem.setWidth(2);
 		toolItem.setImage(SWTResourceManager.getImage("images/erase.jpeg"));
+		toolItem.addSelectionListener(myListener);
+
+		toolItem.setData("delete2");
 
 		ToolItem toolItem_1 = new ToolItem(toolBar, SWT.NONE);
 		toolItem_1.setWidth(2);
-		toolItem_1.setImage(SWTResourceManager.getImage("images/erase.jpeg"));
+		toolItem_1.setImage(SWTResourceManager.getImage("images/new_file.jpeg"));
+		toolItem_1.addSelectionListener(myListener);
+
+		toolItem_1.setData("newFile");
 
 		ToolItem toolItem_2 = new ToolItem(toolBar, SWT.NONE);
 		toolItem_2.setWidth(2);
-		toolItem_2.setImage(SWTResourceManager.getImage("images/erase.jpeg"));
+		toolItem_2.setImage(SWTResourceManager.getImage("images/move.jpeg"));
+		toolItem_2.addSelectionListener(myListener);
 
-		ToolItem toolItem_3 = new ToolItem(toolBar, SWT.NONE);
-		toolItem_3.setWidth(2);
-		toolItem_3.setImage(SWTResourceManager.getImage("images/erase.jpeg"));
+		toolItem_2.setData("moveMood");
+
 		Composite assets = new Composite(shlMapBuilder, SWT.NONE);
 		assets.setBounds(342, 145, 98, 123);
 
