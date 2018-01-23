@@ -14,14 +14,15 @@ public class ToolbarSelectionListener implements SelectionListener {
 
 	@Override
 	public void widgetSelected(SelectionEvent e) {
-		// TODO 自動生成されたメソッド・スタブ
 		ToolItem source = (ToolItem) e.getSource();
         System.out.println(source.getData()+" was selected");
         if(source.getData()!=null && source.getData().equals("update")) {
-        	  mapArea.redraw();;
+        	  mapArea.redraw();
         } else if (source.getData()!=null && source.getData().equals("delete")){
         	  // set to delete mode
-        }
+        } else if (source.getData()!=null && source.getData().equals("delete")) {
+
+      }
 	}
 
 	@Override

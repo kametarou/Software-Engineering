@@ -32,19 +32,6 @@ public class TestWindow {
 		shlMapBuilder.setText("Map Builder");
 
 
-		Menu menu = new Menu(shlMapBuilder, SWT.BAR);
-		shlMapBuilder.setMenuBar(menu);
-
-		MenuItem mntmFile = new MenuItem(menu, SWT.CASCADE);
-		mntmFile.setText("File");
-
-		Menu filecascade = new Menu(mntmFile);
-		mntmFile.setMenu(filecascade);
-
-		MenuItem newfile = new MenuItem(filecascade, SWT.NONE);
-		newfile.setText("New File");
-
-
 		MapDrawer mapArea = new MapDrawer(shlMapBuilder, SWT.NONE);
 		mapArea.setBackground(SWTResourceManager.getColor(SWT.COLOR_DARK_GRAY));
 		mapArea.setBounds(10, 10, 326, 258);
@@ -81,9 +68,55 @@ public class TestWindow {
 				System.out.println(e.x+" "+e.y);
 				System.out.println(area.getCellAt(e.x, e.y));
 			}
-
 		});
 
+		MenubarSelectionListener myMenuListener = new MenubarSelectionListener(mapArea);
+
+		Menu menu = new Menu(shlMapBuilder, SWT.BAR);
+		shlMapBuilder.setMenuBar(menu);
+
+		MenuItem mntmFile = new MenuItem(menu, SWT.CASCADE);
+		mntmFile.setText("File");
+
+		Menu filecascade = new Menu(mntmFile);
+		mntmFile.setMenu(filecascade);
+
+		MenuItem newfile = new MenuItem(filecascade, SWT.NONE);
+		newfile.setText("New File");
+		newfile.addSelectionListener(myMenuListener);
+
+		newfile.setData("NewFileMenu");
+
+		MenuItem openfile = new MenuItem(filecascade, SWT.NONE);
+		openfile.setText("Open File");
+		openfile.addSelectionListener(myMenuListener);
+
+		openfile.setData("OpenFileMenu");
+
+		MenuItem savefile = new MenuItem(filecascade, SWT.NONE);
+		savefile.setText("Save File");
+		savefile.addSelectionListener(myMenuListener);
+
+		savefile.setData("SaveFileMenu");
+
+		MenuItem deletefile = new MenuItem(filecascade, SWT.NONE);
+		deletefile.setText("Delete File");
+		deletefile.addSelectionListener(myMenuListener);
+
+		deletefile.setData("DeleteFileMenu");
+
+
+		MenuItem importfile = new MenuItem(filecascade, SWT.NONE);
+		importfile.setText("Import File");
+		importfile.addSelectionListener(myMenuListener);
+
+		importfile.setData("import")
+		;
+		MenuItem exportfile = new MenuItem(filecascade, SWT.NONE);
+		exportfile.setText("Export File");
+		exportfile.addSelectionListener(myMenuListener);
+
+		exportfile.setData("export");
 		ToolbarSelectionListener myListener = new ToolbarSelectionListener(mapArea);
 
 
@@ -94,50 +127,54 @@ public class TestWindow {
 		toolBar.setBackground(SWTResourceManager.getColor(SWT.COLOR_WIDGET_LIGHT_SHADOW));
 		toolBar.setBounds(0, 0, 98, 129);
 
-				ToolItem toolItem_3 = new ToolItem(toolBar, SWT.NONE);
-				toolItem_3.setWidth(2);
-				toolItem_3.setImage(SWTResourceManager.getImage("images/erase.jpeg"));
-				toolItem_3.addSelectionListener(myListener);
+				ToolItem deleteButton = new ToolItem(toolBar, SWT.NONE);
+				deleteButton.setWidth(2);
+				deleteButton.setImage(SWTResourceManager.getImage("images/erase.jpeg"));
+				deleteButton.addSelectionListener(myListener);
 
-				toolItem_3.setData("delete");
+				deleteButton.setData("delete");
 
-		ToolItem tltmNewItem_2 = new ToolItem(toolBar, SWT.NONE);
-		tltmNewItem_2.setWidth(2);
-		tltmNewItem_2.setImage(SWTResourceManager.getImage("images/undo.jpeg"));
-		tltmNewItem_2.addSelectionListener(myListener);
+		ToolItem undoButton = new ToolItem(toolBar, SWT.NONE);
+		undoButton.setWidth(2);
+		undoButton.setImage(SWTResourceManager.getImage("images/undo.jpeg"));
+		undoButton.addSelectionListener(myListener);
 
-		tltmNewItem_2.setData("undo");
+		undoButton.setData("undo");
 
-						ToolItem tltmNewItem_1 = new ToolItem(toolBar, SWT.NONE);
-						tltmNewItem_1.setWidth(2);
-						tltmNewItem_1.setImage(SWTResourceManager.getImage("images/redo.jpeg"));
-						tltmNewItem_1.addSelectionListener(myListener);
+						ToolItem redoButton = new ToolItem(toolBar, SWT.NONE);
+						redoButton.setWidth(2);
+						redoButton.setImage(SWTResourceManager.getImage("images/redo.jpeg"));
+						redoButton.addSelectionListener(myListener);
 
-						tltmNewItem_1.setData("redo");
+						redoButton.setData("redo");
 
-		ToolItem toolItem = new ToolItem(toolBar, SWT.NONE);
-		toolItem.setWidth(2);
-		toolItem.setImage(SWTResourceManager.getImage("images/erase.jpeg"));
-		toolItem.addSelectionListener(myListener);
+		ToolItem delete2Button = new ToolItem(toolBar, SWT.NONE);
+		delete2Button.setWidth(2);
+		delete2Button.setImage(SWTResourceManager.getImage("images/erase.jpeg"));
+		delete2Button.addSelectionListener(myListener);
 
-		toolItem.setData("delete2");
+		delete2Button.setData("delete2");
 
-		ToolItem toolItem_1 = new ToolItem(toolBar, SWT.NONE);
-		toolItem_1.setWidth(2);
-		toolItem_1.setImage(SWTResourceManager.getImage("images/new_file.jpeg"));
-		toolItem_1.addSelectionListener(myListener);
+		ToolItem newFileButton = new ToolItem(toolBar, SWT.NONE);
+		newFileButton.setWidth(2);
+		newFileButton.setImage(SWTResourceManager.getImage("images/new_file.jpeg"));
+		newFileButton.addSelectionListener(myListener);
 
-		toolItem_1.setData("newFile");
+		newFileButton.setData("newFile");
 
-		ToolItem toolItem_2 = new ToolItem(toolBar, SWT.NONE);
-		toolItem_2.setWidth(2);
-		toolItem_2.setImage(SWTResourceManager.getImage("images/move.jpeg"));
-		toolItem_2.addSelectionListener(myListener);
+		ToolItem moveMoodButton = new ToolItem(toolBar, SWT.NONE);
+		moveMoodButton.setWidth(2);
+		moveMoodButton.setImage(SWTResourceManager.getImage("images/move.jpeg"));
+		moveMoodButton.addSelectionListener(myListener);
 
-		toolItem_2.setData("moveMood");
+		moveMoodButton.setData("moveMood");
 
 		Composite assets = new Composite(shlMapBuilder, SWT.NONE);
 		assets.setBounds(342, 145, 98, 123);
+
+		ToolBar asset1 = new ToolBar(assets, SWT.WRAP | SWT.RIGHT);
+		asset1.setBackground(SWTResourceManager.getColor(SWT.COLOR_WIDGET_LIGHT_SHADOW));
+		asset1.setBounds(0, 0, 98, 123);
 
 		shlMapBuilder.open();
 		shlMapBuilder.layout();
