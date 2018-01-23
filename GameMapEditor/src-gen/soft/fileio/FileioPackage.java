@@ -232,13 +232,40 @@ public interface FileioPackage extends EPackage {
 	int MY_IMAGE_WRITER_FEATURE_COUNT = 0;
 
 	/**
+	 * The operation id for the '<em>Init</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MY_IMAGE_WRITER___INIT = 0;
+
+	/**
+	 * The operation id for the '<em>Graphics2 D2image</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MY_IMAGE_WRITER___GRAPHICS2_D2IMAGE__GRAPHICS2D = 1;
+
+	/**
+	 * The operation id for the '<em>Asset2graphics2 D</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MY_IMAGE_WRITER___ASSET2GRAPHICS2_D__ASSET = 2;
+
+	/**
 	 * The number of operations of the '<em>My Image Writer</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MY_IMAGE_WRITER_OPERATION_COUNT = 0;
+	int MY_IMAGE_WRITER_OPERATION_COUNT = 3;
 
 	/**
 	 * Returns the meta object for class '{@link soft.fileio.XmlWriter <em>Xml Writer</em>}'.
@@ -359,6 +386,36 @@ public interface FileioPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getMyImageWriter();
+
+	/**
+	 * Returns the meta object for the '{@link soft.fileio.MyImageWriter#init() <em>Init</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Init</em>' operation.
+	 * @see soft.fileio.MyImageWriter#init()
+	 * @generated
+	 */
+	EOperation getMyImageWriter__Init();
+
+	/**
+	 * Returns the meta object for the '{@link soft.fileio.MyImageWriter#graphics2D2image(java.awt.Graphics2D) <em>Graphics2 D2image</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Graphics2 D2image</em>' operation.
+	 * @see soft.fileio.MyImageWriter#graphics2D2image(java.awt.Graphics2D)
+	 * @generated
+	 */
+	EOperation getMyImageWriter__Graphics2D2image__Graphics2D();
+
+	/**
+	 * Returns the meta object for the '{@link soft.fileio.MyImageWriter#asset2graphics2D(soft.mapping.Asset) <em>Asset2graphics2 D</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Asset2graphics2 D</em>' operation.
+	 * @see soft.fileio.MyImageWriter#asset2graphics2D(soft.mapping.Asset)
+	 * @generated
+	 */
+	EOperation getMyImageWriter__Asset2graphics2D__Asset();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -486,6 +543,30 @@ public interface FileioPackage extends EPackage {
 		 * @generated
 		 */
 		EClass MY_IMAGE_WRITER = eINSTANCE.getMyImageWriter();
+
+		/**
+		 * The meta object literal for the '<em><b>Init</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation MY_IMAGE_WRITER___INIT = eINSTANCE.getMyImageWriter__Init();
+
+		/**
+		 * The meta object literal for the '<em><b>Graphics2 D2image</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation MY_IMAGE_WRITER___GRAPHICS2_D2IMAGE__GRAPHICS2D = eINSTANCE.getMyImageWriter__Graphics2D2image__Graphics2D();
+
+		/**
+		 * The meta object literal for the '<em><b>Asset2graphics2 D</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation MY_IMAGE_WRITER___ASSET2GRAPHICS2_D__ASSET = eINSTANCE.getMyImageWriter__Asset2graphics2D__Asset();
 
 	}
 

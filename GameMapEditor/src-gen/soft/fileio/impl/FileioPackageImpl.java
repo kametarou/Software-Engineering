@@ -245,6 +245,33 @@ public class FileioPackageImpl extends EPackageImpl implements FileioPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getMyImageWriter__Init() {
+		return myImageWriterEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getMyImageWriter__Graphics2D2image__Graphics2D() {
+		return myImageWriterEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getMyImageWriter__Asset2graphics2D__Asset() {
+		return myImageWriterEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public FileioFactory getFileioFactory() {
 		return (FileioFactory)getEFactoryInstance();
 	}
@@ -283,6 +310,9 @@ public class FileioPackageImpl extends EPackageImpl implements FileioPackage {
 		createEOperation(myImageReaderEClass, MY_IMAGE_READER___IMAGE2ASSET__STRING);
 
 		myImageWriterEClass = createEClass(MY_IMAGE_WRITER);
+		createEOperation(myImageWriterEClass, MY_IMAGE_WRITER___INIT);
+		createEOperation(myImageWriterEClass, MY_IMAGE_WRITER___GRAPHICS2_D2IMAGE__GRAPHICS2D);
+		createEOperation(myImageWriterEClass, MY_IMAGE_WRITER___ASSET2GRAPHICS2_D__ASSET);
 	}
 
 	/**
@@ -346,6 +376,14 @@ public class FileioPackageImpl extends EPackageImpl implements FileioPackage {
 		addEParameter(op, ecorePackage.getEString(), "filename", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(myImageWriterEClass, MyImageWriter.class, "MyImageWriter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEOperation(getMyImageWriter__Init(), null, "init", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getMyImageWriter__Graphics2D2image__Graphics2D(), null, "graphics2D2image", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theMappingPackage.getGraphics2D(), "g", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getMyImageWriter__Asset2graphics2D__Asset(), null, "asset2graphics2D", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theMappingPackage.getAsset(), "asset", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

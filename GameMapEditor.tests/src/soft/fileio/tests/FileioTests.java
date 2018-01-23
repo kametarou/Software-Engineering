@@ -34,6 +34,7 @@ public class FileioTests extends TestSuite {
 		suite.addTestSuite(XmlWriterTest.class);
 		suite.addTestSuite(XmlReaderTest.class);
 		suite.addTestSuite(MyImageReaderTest.class);
+		suite.addTestSuite(MyImageWriterTest.class);
 		return suite;
 	}
 

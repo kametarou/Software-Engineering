@@ -2,7 +2,9 @@
  */
 package soft.fileio;
 
+import java.awt.Graphics2D;
 import org.eclipse.emf.ecore.EObject;
+import soft.mapping.Asset;
 
 /**
  * <!-- begin-user-doc -->
@@ -15,4 +17,28 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface MyImageWriter extends EObject {
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void init();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model gDataType="soft.mapping.Graphics2D" gRequired="true"
+	 * @generated
+	 */
+	void graphics2D2image(Graphics2D g);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model assetRequired="true"
+	 * @generated
+	 */
+	void asset2graphics2D(Asset asset);
 } // MyImageWriter

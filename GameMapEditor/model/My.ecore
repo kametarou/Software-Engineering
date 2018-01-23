@@ -145,7 +145,15 @@
         <eParameters name="filename" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="MyImageWriter"/>
+    <eClassifiers xsi:type="ecore:EClass" name="MyImageWriter">
+      <eOperations name="init"/>
+      <eOperations name="graphics2D2image">
+        <eParameters name="g" lowerBound="1" eType="#//mapping/Graphics2D"/>
+      </eOperations>
+      <eOperations name="asset2graphics2D">
+        <eParameters name="asset" lowerBound="1" eType="#//mapping/Asset"/>
+      </eOperations>
+    </eClassifiers>
   </eSubpackages>
   <eSubpackages name="graphics" nsURI="/Users/tkn/class/software-engineering" nsPrefix="graphics">
     <eClassifiers xsi:type="ecore:EClass" name="ImageProcess">
