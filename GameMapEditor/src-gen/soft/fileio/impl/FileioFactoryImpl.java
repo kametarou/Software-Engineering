@@ -58,6 +58,8 @@ public class FileioFactoryImpl extends EFactoryImpl implements FileioFactory {
 		switch (eClass.getClassifierID()) {
 			case FileioPackage.XML_WRITER: return createXmlWriter();
 			case FileioPackage.XML_READER: return createXmlReader();
+			case FileioPackage.MY_IMAGE_READER: return createMyImageReader();
+			case FileioPackage.MY_IMAGE_WRITER: return createMyImageWriter();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -81,6 +83,26 @@ public class FileioFactoryImpl extends EFactoryImpl implements FileioFactory {
 	public XmlReader createXmlReader() {
 		XmlReaderImpl xmlReader = new XmlReaderImpl();
 		return xmlReader;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MyImageReader createMyImageReader() {
+		MyImageReaderImpl myImageReader = new MyImageReaderImpl();
+		return myImageReader;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MyImageWriter createMyImageWriter() {
+		MyImageWriterImpl myImageWriter = new MyImageWriterImpl();
+		return myImageWriter;
 	}
 
 	/**

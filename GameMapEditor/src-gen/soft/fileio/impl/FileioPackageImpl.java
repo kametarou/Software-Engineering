@@ -10,6 +10,8 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import soft.fileio.FileioFactory;
 import soft.fileio.FileioPackage;
+import soft.fileio.MyImageReader;
+import soft.fileio.MyImageWriter;
 import soft.fileio.XmlReader;
 import soft.fileio.XmlWriter;
 
@@ -43,6 +45,20 @@ public class FileioPackageImpl extends EPackageImpl implements FileioPackage {
 	 * @generated
 	 */
 	private EClass xmlReaderEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass myImageReaderEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass myImageWriterEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -184,6 +200,51 @@ public class FileioPackageImpl extends EPackageImpl implements FileioPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getMyImageReader() {
+		return myImageReaderEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getMyImageReader__Init() {
+		return myImageReaderEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getMyImageReader__Image2graphics2D__String() {
+		return myImageReaderEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getMyImageReader__Image2asset__String() {
+		return myImageReaderEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getMyImageWriter() {
+		return myImageWriterEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public FileioFactory getFileioFactory() {
 		return (FileioFactory)getEFactoryInstance();
 	}
@@ -215,6 +276,13 @@ public class FileioPackageImpl extends EPackageImpl implements FileioPackage {
 		createEOperation(xmlReaderEClass, XML_READER___INIT);
 		createEOperation(xmlReaderEClass, XML_READER___XML2MAP__STRING);
 		createEOperation(xmlReaderEClass, XML_READER___XML2ASSETS__STRING);
+
+		myImageReaderEClass = createEClass(MY_IMAGE_READER);
+		createEOperation(myImageReaderEClass, MY_IMAGE_READER___INIT);
+		createEOperation(myImageReaderEClass, MY_IMAGE_READER___IMAGE2GRAPHICS2_D__STRING);
+		createEOperation(myImageReaderEClass, MY_IMAGE_READER___IMAGE2ASSET__STRING);
+
+		myImageWriterEClass = createEClass(MY_IMAGE_WRITER);
 	}
 
 	/**
@@ -266,6 +334,18 @@ public class FileioPackageImpl extends EPackageImpl implements FileioPackage {
 
 		op = initEOperation(getXmlReader__Xml2assets__String(), theMappingPackage.getAsset(), "xml2assets", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "filepath", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(myImageReaderEClass, MyImageReader.class, "MyImageReader", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEOperation(getMyImageReader__Init(), null, "init", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getMyImageReader__Image2graphics2D__String(), theMappingPackage.getGraphics2D(), "image2graphics2D", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "filename", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getMyImageReader__Image2asset__String(), theMappingPackage.getAsset(), "image2asset", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "filename", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(myImageWriterEClass, MyImageWriter.class, "MyImageWriter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

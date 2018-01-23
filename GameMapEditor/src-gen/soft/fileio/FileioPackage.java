@@ -158,6 +158,89 @@ public interface FileioPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link soft.fileio.impl.MyImageReaderImpl <em>My Image Reader</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see soft.fileio.impl.MyImageReaderImpl
+	 * @see soft.fileio.impl.FileioPackageImpl#getMyImageReader()
+	 * @generated
+	 */
+	int MY_IMAGE_READER = 2;
+
+	/**
+	 * The number of structural features of the '<em>My Image Reader</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MY_IMAGE_READER_FEATURE_COUNT = 0;
+
+	/**
+	 * The operation id for the '<em>Init</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MY_IMAGE_READER___INIT = 0;
+
+	/**
+	 * The operation id for the '<em>Image2graphics2 D</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MY_IMAGE_READER___IMAGE2GRAPHICS2_D__STRING = 1;
+
+	/**
+	 * The operation id for the '<em>Image2asset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MY_IMAGE_READER___IMAGE2ASSET__STRING = 2;
+
+	/**
+	 * The number of operations of the '<em>My Image Reader</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MY_IMAGE_READER_OPERATION_COUNT = 3;
+
+	/**
+	 * The meta object id for the '{@link soft.fileio.impl.MyImageWriterImpl <em>My Image Writer</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see soft.fileio.impl.MyImageWriterImpl
+	 * @see soft.fileio.impl.FileioPackageImpl#getMyImageWriter()
+	 * @generated
+	 */
+	int MY_IMAGE_WRITER = 3;
+
+	/**
+	 * The number of structural features of the '<em>My Image Writer</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MY_IMAGE_WRITER_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>My Image Writer</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MY_IMAGE_WRITER_OPERATION_COUNT = 0;
+
+	/**
 	 * Returns the meta object for class '{@link soft.fileio.XmlWriter <em>Xml Writer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -226,6 +309,56 @@ public interface FileioPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getXmlReader__Xml2assets__String();
+
+	/**
+	 * Returns the meta object for class '{@link soft.fileio.MyImageReader <em>My Image Reader</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>My Image Reader</em>'.
+	 * @see soft.fileio.MyImageReader
+	 * @generated
+	 */
+	EClass getMyImageReader();
+
+	/**
+	 * Returns the meta object for the '{@link soft.fileio.MyImageReader#init() <em>Init</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Init</em>' operation.
+	 * @see soft.fileio.MyImageReader#init()
+	 * @generated
+	 */
+	EOperation getMyImageReader__Init();
+
+	/**
+	 * Returns the meta object for the '{@link soft.fileio.MyImageReader#image2graphics2D(java.lang.String) <em>Image2graphics2 D</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Image2graphics2 D</em>' operation.
+	 * @see soft.fileio.MyImageReader#image2graphics2D(java.lang.String)
+	 * @generated
+	 */
+	EOperation getMyImageReader__Image2graphics2D__String();
+
+	/**
+	 * Returns the meta object for the '{@link soft.fileio.MyImageReader#image2asset(java.lang.String) <em>Image2asset</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Image2asset</em>' operation.
+	 * @see soft.fileio.MyImageReader#image2asset(java.lang.String)
+	 * @generated
+	 */
+	EOperation getMyImageReader__Image2asset__String();
+
+	/**
+	 * Returns the meta object for class '{@link soft.fileio.MyImageWriter <em>My Image Writer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>My Image Writer</em>'.
+	 * @see soft.fileio.MyImageWriter
+	 * @generated
+	 */
+	EClass getMyImageWriter();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -309,6 +442,50 @@ public interface FileioPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation XML_READER___XML2ASSETS__STRING = eINSTANCE.getXmlReader__Xml2assets__String();
+
+		/**
+		 * The meta object literal for the '{@link soft.fileio.impl.MyImageReaderImpl <em>My Image Reader</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see soft.fileio.impl.MyImageReaderImpl
+		 * @see soft.fileio.impl.FileioPackageImpl#getMyImageReader()
+		 * @generated
+		 */
+		EClass MY_IMAGE_READER = eINSTANCE.getMyImageReader();
+
+		/**
+		 * The meta object literal for the '<em><b>Init</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation MY_IMAGE_READER___INIT = eINSTANCE.getMyImageReader__Init();
+
+		/**
+		 * The meta object literal for the '<em><b>Image2graphics2 D</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation MY_IMAGE_READER___IMAGE2GRAPHICS2_D__STRING = eINSTANCE.getMyImageReader__Image2graphics2D__String();
+
+		/**
+		 * The meta object literal for the '<em><b>Image2asset</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation MY_IMAGE_READER___IMAGE2ASSET__STRING = eINSTANCE.getMyImageReader__Image2asset__String();
+
+		/**
+		 * The meta object literal for the '{@link soft.fileio.impl.MyImageWriterImpl <em>My Image Writer</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see soft.fileio.impl.MyImageWriterImpl
+		 * @see soft.fileio.impl.FileioPackageImpl#getMyImageWriter()
+		 * @generated
+		 */
+		EClass MY_IMAGE_WRITER = eINSTANCE.getMyImageWriter();
 
 	}
 

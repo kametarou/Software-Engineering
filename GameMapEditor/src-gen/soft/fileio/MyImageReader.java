@@ -2,25 +2,23 @@
  */
 package soft.fileio;
 
-import java.io.IOException;
+import java.awt.Graphics2D;
 
 import org.eclipse.emf.ecore.EObject;
-import org.xml.sax.SAXException;
 
 import soft.mapping.Asset;
-import soft.mapping.Map;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Xml Reader</b></em>'.
+ * A representation of the model object '<em><b>My Image Reader</b></em>'.
  * <!-- end-user-doc -->
  *
  *
- * @see soft.fileio.FileioPackage#getXmlReader()
+ * @see soft.fileio.FileioPackage#getMyImageReader()
  * @model
  * @generated
  */
-public interface XmlReader extends EObject {
+public interface MyImageReader extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -32,17 +30,17 @@ public interface XmlReader extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model filepathRequired="true"
+	 * @model dataType="soft.mapping.Graphics2D" filenameRequired="true"
 	 * @generated
 	 */
-	Map xml2map(String filepath) throws SAXException, IOException;
+	Graphics2D image2graphics2D(String filename);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model filepathRequired="true"
+	 * @model filenameRequired="true"
 	 * @generated
 	 */
-	Asset xml2assets(String filepath);
+	Asset image2asset(String filename);
 
-} // XmlReader
+} // MyImageReader

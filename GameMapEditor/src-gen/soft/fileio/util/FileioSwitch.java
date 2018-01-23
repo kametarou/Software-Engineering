@@ -78,6 +78,18 @@ public class FileioSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case FileioPackage.MY_IMAGE_READER: {
+				MyImageReader myImageReader = (MyImageReader)theEObject;
+				T result = caseMyImageReader(myImageReader);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case FileioPackage.MY_IMAGE_WRITER: {
+				MyImageWriter myImageWriter = (MyImageWriter)theEObject;
+				T result = caseMyImageWriter(myImageWriter);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -109,6 +121,36 @@ public class FileioSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseXmlReader(XmlReader object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>My Image Reader</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>My Image Reader</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMyImageReader(MyImageReader object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>My Image Writer</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>My Image Writer</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMyImageWriter(MyImageWriter object) {
 		return null;
 	}
 

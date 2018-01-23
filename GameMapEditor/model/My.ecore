@@ -136,6 +136,16 @@
         <eParameters name="filepath" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MyImageReader">
+      <eOperations name="init"/>
+      <eOperations name="image2graphics2D" eType="#//mapping/Graphics2D">
+        <eParameters name="filename" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
+      <eOperations name="image2asset" eType="#//mapping/Asset">
+        <eParameters name="filename" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MyImageWriter"/>
   </eSubpackages>
   <eSubpackages name="graphics" nsURI="/Users/tkn/class/software-engineering" nsPrefix="graphics">
     <eClassifiers xsi:type="ecore:EClass" name="ImageProcess">

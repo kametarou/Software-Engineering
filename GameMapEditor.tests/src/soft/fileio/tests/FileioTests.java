@@ -33,6 +33,7 @@ public class FileioTests extends TestSuite {
 		TestSuite suite = new FileioTests("fileio Tests");
 		suite.addTestSuite(XmlWriterTest.class);
 		suite.addTestSuite(XmlReaderTest.class);
+		suite.addTestSuite(MyImageReaderTest.class);
 		return suite;
 	}
 

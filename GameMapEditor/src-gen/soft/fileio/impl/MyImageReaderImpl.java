@@ -2,6 +2,8 @@
  */
 package soft.fileio.impl;
 
+import java.awt.Graphics2D;
+
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.util.EList;
@@ -11,22 +13,24 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import soft.fileio.FileioPackage;
-import soft.fileio.XmlWriter;
+import soft.fileio.MyImageReader;
+
+import soft.mapping.Asset;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Xml Writer</b></em>'.
+ * An implementation of the model object '<em><b>My Image Reader</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class XmlWriterImpl extends MinimalEObjectImpl.Container implements XmlWriter {
+public class MyImageReaderImpl extends MinimalEObjectImpl.Container implements MyImageReader {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected XmlWriterImpl() {
+	protected MyImageReaderImpl() {
 		super();
 	}
 
@@ -37,7 +41,7 @@ public class XmlWriterImpl extends MinimalEObjectImpl.Container implements XmlWr
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return FileioPackage.Literals.XML_WRITER;
+		return FileioPackage.Literals.MY_IMAGE_READER;
 	}
 
 	/**
@@ -54,9 +58,20 @@ public class XmlWriterImpl extends MinimalEObjectImpl.Container implements XmlWr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
-	public void map2xml(String filepath) {
+	public Graphics2D image2graphics2D(String filename) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Asset image2asset(String filename) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -70,14 +85,15 @@ public class XmlWriterImpl extends MinimalEObjectImpl.Container implements XmlWr
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case FileioPackage.XML_WRITER___INIT:
+			case FileioPackage.MY_IMAGE_READER___INIT:
 				init();
 				return null;
-			case FileioPackage.XML_WRITER___MAP2XML__STRING:
-				map2xml((String)arguments.get(0));
-				return null;
+			case FileioPackage.MY_IMAGE_READER___IMAGE2GRAPHICS2_D__STRING:
+				return image2graphics2D((String)arguments.get(0));
+			case FileioPackage.MY_IMAGE_READER___IMAGE2ASSET__STRING:
+				return image2asset((String)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
 
-} //XmlWriterImpl
+} //MyImageReaderImpl

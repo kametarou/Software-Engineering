@@ -40,6 +40,24 @@ public interface FileioFactory extends EFactory {
 	XmlReader createXmlReader();
 
 	/**
+	 * Returns a new object of class '<em>My Image Reader</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>My Image Reader</em>'.
+	 * @generated
+	 */
+	MyImageReader createMyImageReader();
+
+	/**
+	 * Returns a new object of class '<em>My Image Writer</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>My Image Writer</em>'.
+	 * @generated
+	 */
+	MyImageWriter createMyImageWriter();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

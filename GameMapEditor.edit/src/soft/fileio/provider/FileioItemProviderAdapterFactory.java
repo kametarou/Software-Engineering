@@ -118,6 +118,52 @@ public class FileioItemProviderAdapterFactory extends FileioAdapterFactory imple
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link soft.fileio.MyImageReader} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MyImageReaderItemProvider myImageReaderItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link soft.fileio.MyImageReader}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMyImageReaderAdapter() {
+		if (myImageReaderItemProvider == null) {
+			myImageReaderItemProvider = new MyImageReaderItemProvider(this);
+		}
+
+		return myImageReaderItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link soft.fileio.MyImageWriter} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MyImageWriterItemProvider myImageWriterItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link soft.fileio.MyImageWriter}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMyImageWriterAdapter() {
+		if (myImageWriterItemProvider == null) {
+			myImageWriterItemProvider = new MyImageWriterItemProvider(this);
+		}
+
+		return myImageWriterItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -218,6 +264,8 @@ public class FileioItemProviderAdapterFactory extends FileioAdapterFactory imple
 	public void dispose() {
 		if (xmlWriterItemProvider != null) xmlWriterItemProvider.dispose();
 		if (xmlReaderItemProvider != null) xmlReaderItemProvider.dispose();
+		if (myImageReaderItemProvider != null) myImageReaderItemProvider.dispose();
+		if (myImageWriterItemProvider != null) myImageWriterItemProvider.dispose();
 	}
 
 }

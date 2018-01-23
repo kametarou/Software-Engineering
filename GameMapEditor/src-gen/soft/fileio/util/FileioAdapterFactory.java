@@ -76,6 +76,14 @@ public class FileioAdapterFactory extends AdapterFactoryImpl {
 				return createXmlReaderAdapter();
 			}
 			@Override
+			public Adapter caseMyImageReader(MyImageReader object) {
+				return createMyImageReaderAdapter();
+			}
+			@Override
+			public Adapter caseMyImageWriter(MyImageWriter object) {
+				return createMyImageWriterAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -120,6 +128,34 @@ public class FileioAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createXmlReaderAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link soft.fileio.MyImageReader <em>My Image Reader</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see soft.fileio.MyImageReader
+	 * @generated
+	 */
+	public Adapter createMyImageReaderAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link soft.fileio.MyImageWriter <em>My Image Writer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see soft.fileio.MyImageWriter
+	 * @generated
+	 */
+	public Adapter createMyImageWriterAdapter() {
 		return null;
 	}
 
