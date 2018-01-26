@@ -241,12 +241,14 @@ public class OperationImpl extends MinimalEObjectImpl.Container implements Opera
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void init() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		// TODO: set constant value
+		this.layer = -1;
+		this.area = null;
+		this.beforeMap = null;
+		this.afterMap = null;
 	}
 
 	/**

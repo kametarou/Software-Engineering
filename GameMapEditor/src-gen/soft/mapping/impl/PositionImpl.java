@@ -258,12 +258,13 @@ public class PositionImpl extends MinimalEObjectImpl.Container implements Positi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void init() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		// TODO set constant value
+		this.x = -1;
+		this.y = -1;
+		this.myCell = null;
 	}
 
 	/**

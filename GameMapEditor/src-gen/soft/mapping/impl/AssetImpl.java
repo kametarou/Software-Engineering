@@ -220,12 +220,14 @@ public abstract class AssetImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void init() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		// TODO: set constant value
+		this.myGraphics2d = null;
+		this.x = -1;
+		this.y = -1;
+		this.assetId = null;
 	}
 
 	/**
