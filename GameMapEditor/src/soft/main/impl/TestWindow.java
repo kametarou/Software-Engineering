@@ -1,5 +1,7 @@
 package soft.main.impl;
 
+import java.awt.Color;
+
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.MouseEvent;
 import org.eclipse.swt.events.MouseListener;
@@ -14,6 +16,7 @@ import org.eclipse.swt.widgets.ToolBar;
 import org.eclipse.swt.widgets.ToolItem;
 import org.eclipse.wb.swt.SWTResourceManager;
 
+import soft.mapping.Cell;
 import soft.mapping.Map;
 import soft.mapping.MappingFactory;
 
@@ -28,15 +31,23 @@ public class TestWindow {
 		Display display = Display.getDefault();
 		Shell shlMapBuilder = new Shell();
 		shlMapBuilder.setBackground(SWTResourceManager.getColor(232, 232, 232));
-		shlMapBuilder.setSize(450, 300);
+		shlMapBuilder.setSize(600, 450);
+
 		shlMapBuilder.setText("Map Builder");
 
-
+		int mapW = 10;
+		int mapH = 10;
+		int cellL = 30;
 		MapDrawer mapArea = new MapDrawer(shlMapBuilder, SWT.NONE);
 		mapArea.setBackground(SWTResourceManager.getColor(SWT.COLOR_DARK_GRAY));
-		mapArea.setBounds(10, 10, 326, 258);
+		mapArea.setBounds(10, 10, mapW*cellL, mapH*cellL);
+
 		Map map = MappingFactory.eINSTANCE.createMap();
-		map.init(5, 6);
+		map.init(mapW, mapH);
+
+		Cell myCell = map.getCellFromCurrentLayer(0, 0);
+		myCell.setCellColor(new Color(255,0,0));
+
 		mapArea.setMap(map);
 
 		mapArea.addPaintListener(new PaintListener() {

@@ -16,11 +16,11 @@ public class ToolbarSelectionListener implements SelectionListener {
 	public void widgetSelected(SelectionEvent e) {
 		ToolItem source = (ToolItem) e.getSource();
         System.out.println(source.getData()+" was selected");
-        if(source.getData()!=null && source.getData().equals("update")) {
+        if(source.getData()!=null && source.getData().equals("redo")) {
         	  mapArea.redraw();
         } else if (source.getData()!=null && source.getData().equals("delete")){
-        	  // set to delete mode
-        } else if (source.getData()!=null && source.getData().equals("delete")) {
+
+        } else if (source.getData()!=null && source.getData().equals("delete2")) {
 
       }
 	}

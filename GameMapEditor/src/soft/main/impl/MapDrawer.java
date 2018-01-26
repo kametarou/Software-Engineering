@@ -50,13 +50,21 @@ public class MapDrawer extends Canvas {
 
 			Color c = gc.getForeground();
 			gc.setForeground(new Color(c.getDevice(),255,255,255));
+			int r,g,b;
+
 
             for(int x = 0; x < width; x++) {
             	  for(int y = 0; y < height; y++) {
-            		  gc.drawRectangle(realw/width*x, realh/height*y, realw/width, realh/height);
+            		  r = myMap.getCellFromCurrentLayer(x, y).getCellColor().getRed();
+            		  g = myMap.getCellFromCurrentLayer(x, y).getCellColor().getGreen();
+            		  b = myMap.getCellFromCurrentLayer(x, y).getCellColor().getBlue();
+            		  if(x == 0 && y == 0)
+            			  System.out.print(r + "," + g + "," + b);
+            		  gc.setBackground(new Color(c.getDevice(), r, g, b));
+            		  gc.fillRectangle(realw/width*x, realh/height*y, realw/width, realh/height);
             	  }
             }
-            gc.setForeground(c);
+
 			return true;
 
 	}
