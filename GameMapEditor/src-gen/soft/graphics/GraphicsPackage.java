@@ -177,13 +177,23 @@ public interface GraphicsPackage extends EPackage {
 	int ASSET_PROCESS_OPERATION_COUNT = 2;
 
 	/**
+	 * The meta object id for the '<em>Color</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see java.awt.Color
+	 * @see soft.graphics.impl.GraphicsPackageImpl#getColor()
+	 * @generated
+	 */
+	int COLOR = 2;
+
+	/**
 	 * The meta object id for the '<em>Map Image</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see soft.graphics.impl.GraphicsPackageImpl#getMapImage()
 	 * @generated
 	 */
-	int MAP_IMAGE = 2;
+	int MAP_IMAGE = 3;
 
 	/**
 	 * The meta object id for the '<em>Float Array</em>' data type.
@@ -192,7 +202,7 @@ public interface GraphicsPackage extends EPackage {
 	 * @see soft.graphics.impl.GraphicsPackageImpl#getFloatArray()
 	 * @generated
 	 */
-	int FLOAT_ARRAY = 3;
+	int FLOAT_ARRAY = 4;
 
 
 	/**
@@ -287,6 +297,17 @@ public interface GraphicsPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getAssetProcess__NormalizeAsset__Asset();
+
+	/**
+	 * Returns the meta object for data type '{@link java.awt.Color <em>Color</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Color</em>'.
+	 * @see java.awt.Color
+	 * @model instanceClass="java.awt.Color"
+	 * @generated
+	 */
+	EDataType getColor();
 
 	/**
 	 * Returns the meta object for data type '<em>Map Image</em>'.
@@ -406,6 +427,16 @@ public interface GraphicsPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation ASSET_PROCESS___NORMALIZE_ASSET__ASSET = eINSTANCE.getAssetProcess__NormalizeAsset__Asset();
+
+		/**
+		 * The meta object literal for the '<em>Color</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see java.awt.Color
+		 * @see soft.graphics.impl.GraphicsPackageImpl#getColor()
+		 * @generated
+		 */
+		EDataType COLOR = eINSTANCE.getColor();
 
 		/**
 		 * The meta object literal for the '<em>Map Image</em>' data type.

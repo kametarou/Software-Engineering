@@ -134,13 +134,22 @@ public interface MappingPackage extends EPackage {
 	int MAP__MAPWIDTH = 6;
 
 	/**
+	 * The feature id for the '<em><b>Mydevice</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAP__MYDEVICE = 7;
+
+	/**
 	 * The number of structural features of the '<em>Map</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAP_FEATURE_COUNT = 7;
+	int MAP_FEATURE_COUNT = 8;
 
 	/**
 	 * The operation id for the '<em>Init</em>' operation.
@@ -667,11 +676,22 @@ public interface MappingPackage extends EPackage {
 	 * The meta object id for the '<em>Color</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see java.awt.Color
+	 * @see org.eclipse.swt.graphics.Color
 	 * @see soft.mapping.impl.MappingPackageImpl#getColor()
 	 * @generated
 	 */
 	int COLOR = 10;
+
+
+	/**
+	 * The meta object id for the '<em>Device</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.swt.graphics.Device
+	 * @see soft.mapping.impl.MappingPackageImpl#getDevice()
+	 * @generated
+	 */
+	int DEVICE = 11;
 
 
 	/**
@@ -762,11 +782,22 @@ public interface MappingPackage extends EPackage {
 	EAttribute getMap_Mapwidth();
 
 	/**
-	 * Returns the meta object for the '{@link soft.mapping.Map#init(int, int) <em>Init</em>}' operation.
+	 * Returns the meta object for the attribute '{@link soft.mapping.Map#getMydevice <em>Mydevice</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Mydevice</em>'.
+	 * @see soft.mapping.Map#getMydevice()
+	 * @see #getMap()
+	 * @generated
+	 */
+	EAttribute getMap_Mydevice();
+
+	/**
+	 * Returns the meta object for the '{@link soft.mapping.Map#init(int, int, org.eclipse.swt.graphics.Device) <em>Init</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Init</em>' operation.
-	 * @see soft.mapping.Map#init(int, int)
+	 * @see soft.mapping.Map#init(int, int, org.eclipse.swt.graphics.Device)
 	 * @generated
 	 */
 	EOperation getMap__Init__int_int();
@@ -950,11 +981,11 @@ public interface MappingPackage extends EPackage {
 	EAttribute getCell_CellColor();
 
 	/**
-	 * Returns the meta object for the '{@link soft.mapping.Cell#init(int, int) <em>Init</em>}' operation.
+	 * Returns the meta object for the '{@link soft.mapping.Cell#init(int, int, org.eclipse.swt.graphics.Device) <em>Init</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Init</em>' operation.
-	 * @see soft.mapping.Cell#init(int, int)
+	 * @see soft.mapping.Cell#init(int, int, org.eclipse.swt.graphics.Device)
 	 * @generated
 	 */
 	EOperation getCell__Init__int_int();
@@ -1224,15 +1255,26 @@ public interface MappingPackage extends EPackage {
 	EDataType getCellArray();
 
 	/**
-	 * Returns the meta object for data type '{@link java.awt.Color <em>Color</em>}'.
+	 * Returns the meta object for data type '{@link org.eclipse.swt.graphics.Color <em>Color</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for data type '<em>Color</em>'.
-	 * @see java.awt.Color
-	 * @model instanceClass="java.awt.Color"
+	 * @see org.eclipse.swt.graphics.Color
+	 * @model instanceClass="org.eclipse.swt.graphics.Color"
 	 * @generated
 	 */
 	EDataType getColor();
+
+	/**
+	 * Returns the meta object for data type '{@link org.eclipse.swt.graphics.Device <em>Device</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Device</em>'.
+	 * @see org.eclipse.swt.graphics.Device
+	 * @model instanceClass="org.eclipse.swt.graphics.Device"
+	 * @generated
+	 */
+	EDataType getDevice();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1322,6 +1364,14 @@ public interface MappingPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute MAP__MAPWIDTH = eINSTANCE.getMap_Mapwidth();
+
+		/**
+		 * The meta object literal for the '<em><b>Mydevice</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MAP__MYDEVICE = eINSTANCE.getMap_Mydevice();
 
 		/**
 		 * The meta object literal for the '<em><b>Init</b></em>' operation.
@@ -1695,11 +1745,21 @@ public interface MappingPackage extends EPackage {
 		 * The meta object literal for the '<em>Color</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see java.awt.Color
+		 * @see org.eclipse.swt.graphics.Color
 		 * @see soft.mapping.impl.MappingPackageImpl#getColor()
 		 * @generated
 		 */
 		EDataType COLOR = eINSTANCE.getColor();
+
+		/**
+		 * The meta object literal for the '<em>Device</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.swt.graphics.Device
+		 * @see soft.mapping.impl.MappingPackageImpl#getDevice()
+		 * @generated
+		 */
+		EDataType DEVICE = eINSTANCE.getDevice();
 
 	}
 

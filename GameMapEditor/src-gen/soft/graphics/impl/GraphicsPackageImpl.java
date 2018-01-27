@@ -2,6 +2,7 @@
  */
 package soft.graphics.impl;
 
+import java.awt.Color;
 import java.awt.Graphics2D;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -49,6 +50,13 @@ public class GraphicsPackageImpl extends EPackageImpl implements GraphicsPackage
 	 * @generated
 	 */
 	private EClass assetProcessEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType colorEDataType = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -222,6 +230,15 @@ public class GraphicsPackageImpl extends EPackageImpl implements GraphicsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EDataType getColor() {
+		return colorEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EDataType getMapImage() {
 		return mapImageEDataType;
 	}
@@ -275,6 +292,7 @@ public class GraphicsPackageImpl extends EPackageImpl implements GraphicsPackage
 		createEOperation(assetProcessEClass, ASSET_PROCESS___NORMALIZE_ASSET__ASSET);
 
 		// Create data types
+		colorEDataType = createEDataType(COLOR);
 		mapImageEDataType = createEDataType(MAP_IMAGE);
 		floatArrayEDataType = createEDataType(FLOAT_ARRAY);
 	}
@@ -331,12 +349,13 @@ public class GraphicsPackageImpl extends EPackageImpl implements GraphicsPackage
 
 		op = initEOperation(getAssetProcess__BackgroundFilter__Graphics2D_Color(), theMappingPackage.getGraphics2D(), "backgroundFilter", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theMappingPackage.getGraphics2D(), "origin", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theMappingPackage.getColor(), "color", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getColor(), "color", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = initEOperation(getAssetProcess__NormalizeAsset__Asset(), theMappingPackage.getGraphics2D(), "normalizeAsset", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theMappingPackage.getAsset(), "asset", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Initialize data types
+		initEDataType(colorEDataType, Color.class, "Color", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(mapImageEDataType, Graphics2D[].class, "MapImage", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(floatArrayEDataType, Object[].class, "FloatArray", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 

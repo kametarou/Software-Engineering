@@ -2,6 +2,7 @@
  */
 package soft.graphics.impl;
 
+import java.awt.Color;
 import java.awt.Graphics2D;
 
 import org.eclipse.emf.ecore.EClass;
@@ -74,6 +75,8 @@ public class GraphicsFactoryImpl extends EFactoryImpl implements GraphicsFactory
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
+			case GraphicsPackage.COLOR:
+				return createColorFromString(eDataType, initialValue);
 			case GraphicsPackage.MAP_IMAGE:
 				return createMapImageFromString(eDataType, initialValue);
 			case GraphicsPackage.FLOAT_ARRAY:
@@ -91,6 +94,8 @@ public class GraphicsFactoryImpl extends EFactoryImpl implements GraphicsFactory
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
+			case GraphicsPackage.COLOR:
+				return convertColorToString(eDataType, instanceValue);
 			case GraphicsPackage.MAP_IMAGE:
 				return convertMapImageToString(eDataType, instanceValue);
 			case GraphicsPackage.FLOAT_ARRAY:
@@ -118,6 +123,24 @@ public class GraphicsFactoryImpl extends EFactoryImpl implements GraphicsFactory
 	public AssetProcess createAssetProcess() {
 		AssetProcessImpl assetProcess = new AssetProcessImpl();
 		return assetProcess;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Color createColorFromString(EDataType eDataType, String initialValue) {
+		return (Color)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertColorToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
 	}
 
 	/**

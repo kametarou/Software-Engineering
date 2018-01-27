@@ -2,7 +2,6 @@
  */
 package soft.mapping.impl;
 
-import java.awt.Color;
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -17,10 +16,13 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.Device;
 
 import soft.mapping.AreaVector;
 import soft.mapping.Asset;
 import soft.mapping.Cell;
+import soft.mapping.MappingFactory;
 import soft.mapping.MappingPackage;
 import soft.mapping.Position;
 
@@ -85,8 +87,8 @@ public class CellImpl extends MinimalEObjectImpl.Container implements Cell {
 	 * @generated NOT
 	 * @ordered
 	 */
-	protected static final Color CELL_COLOR_EDEFAULT = Color.WHITE;
-
+	protected static final Color CELL_COLOR_EDEFAULT = (Color)MappingFactory.eINSTANCE.createFromString(MappingPackage.eINSTANCE.getColor(), "NULL");
+	//protected static final Color CELL_COLOR_EDEFAULT = new Color(null, 0, 0, 0);
 	/**
 	 * The cached value of the '{@link #getCellColor() <em>Cell Color</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -95,7 +97,7 @@ public class CellImpl extends MinimalEObjectImpl.Container implements Cell {
 	 * @generated
 	 * @ordered
 	 */
-	protected Color cellColor = CELL_COLOR_EDEFAULT;
+	protected Color cellColor; //= CELL_COLOR_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -295,9 +297,9 @@ public class CellImpl extends MinimalEObjectImpl.Container implements Cell {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public void init(final int x, final int y) {
+	public void init(final int x, final int y, final Device mydevice) {
 		Position myPos = new PositionImpl();
 		
 		myPos.setX(x);
@@ -309,6 +311,8 @@ public class CellImpl extends MinimalEObjectImpl.Container implements Cell {
 		myAsset = null;
 		myAssetArea = null;
 		referenceCell = null;
+		
+		setCellColor(new org.eclipse.swt.graphics.Color(mydevice, 255, 255, 255));
 	}
 
 	/**
@@ -475,7 +479,7 @@ public class CellImpl extends MinimalEObjectImpl.Container implements Cell {
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 			case MappingPackage.CELL___INIT__INT_INT:
-				init((Integer)arguments.get(0), (Integer)arguments.get(1));
+				init((Integer)arguments.get(0), (Integer)arguments.get(1), (Device)arguments.get(2));
 				return null;
 			case MappingPackage.CELL___TO_STRING:
 				return toString();

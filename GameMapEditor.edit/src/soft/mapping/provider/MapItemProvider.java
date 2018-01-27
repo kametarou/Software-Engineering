@@ -67,6 +67,7 @@ public class MapItemProvider
 			addAssetsSetPropertyDescriptor(object);
 			addMapheightPropertyDescriptor(object);
 			addMapwidthPropertyDescriptor(object);
+			addMydevicePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -226,6 +227,28 @@ public class MapItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Mydevice feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addMydevicePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Map_mydevice_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Map_mydevice_feature", "_UI_Map_type"),
+				 MappingPackage.Literals.MAP__MYDEVICE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns Map.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -267,6 +290,7 @@ public class MapItemProvider
 			case MappingPackage.MAP__ASSETS_SET:
 			case MappingPackage.MAP__MAPHEIGHT:
 			case MappingPackage.MAP__MAPWIDTH:
+			case MappingPackage.MAP__MYDEVICE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

@@ -7,10 +7,11 @@
     <eClassifiers xsi:type="ecore:EClass" name="Map">
       <eOperations name="init">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="body" value="&#x9;cells = new Cell[3][width][height];&#xA;&#xA;&#x9;&#x9;for (int z = 0; z &lt; 3; z++) {&#xA;&#x9;&#x9;&#x9;for (int x = 0; x &lt; width; x++) {&#xA;&#x9;&#x9;&#x9;&#x9;for (int y = 0; y &lt; height; y++) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;CellImpl myCell = new CellImpl();&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;myCell.init(x, y);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;cells[z][x][y] = myCell;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;myLogs = new LogsImpl();"/>
+          <details key="body" value="&#x9;cells = new Cell[3][width][height];&#xA;&#xA;&#x9;&#x9;for (int z = 0; z &lt; 3; z++) {&#xA;&#x9;&#x9;&#x9;for (int x = 0; x &lt; width; x++) {&#xA;&#x9;&#x9;&#x9;&#x9;for (int y = 0; y &lt; height; y++) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;CellImpl myCell = new CellImpl();&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;myCell.init(x, y);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;cells[z][x][y] = myCell;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;myLogs = new LogsImpl();&#xA;&#x9;&#x9;mydevice = mydev;"/>
         </eAnnotations>
         <eParameters name="height" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
         <eParameters name="width" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        <eParameters name="mydev" eType="#//mapping/Device"/>
       </eOperations>
       <eOperations name="getCellFromCurrentLayer" eType="#//mapping/Cell">
         <eParameters name="x" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -35,6 +36,7 @@
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="20"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="mapwidth" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="20"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="mydevice" eType="#//mapping/Device"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EDataType" name="AssetArray" instanceClassName="soft.mapping.Asset[]"/>
     <eClassifiers xsi:type="ecore:EClass" name="Logs">
@@ -59,6 +61,7 @@
         </eAnnotations>
         <eParameters name="x" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
         <eParameters name="y" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        <eParameters name="mydevice" eType="#//mapping/Device"/>
       </eOperations>
       <eOperations name="toString" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -103,7 +106,8 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EDataType" name="Graphics2D" instanceClassName="java.awt.Graphics2D"/>
     <eClassifiers xsi:type="ecore:EDataType" name="CellArray" instanceClassName="soft.mapping.Cell[][][]"/>
-    <eClassifiers xsi:type="ecore:EDataType" name="Color" instanceClassName="java.awt.Color"/>
+    <eClassifiers xsi:type="ecore:EDataType" name="Color" instanceClassName="org.eclipse.swt.graphics.Color"/>
+    <eClassifiers xsi:type="ecore:EDataType" name="Device" instanceClassName="org.eclipse.swt.graphics.Device"/>
   </eSubpackages>
   <eSubpackages name="main" nsURI="/Users/ysakanaka/HomeWork/SEClass/GameMapEditor/src/main"
       nsPrefix="main">
@@ -156,6 +160,7 @@
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="graphics" nsURI="/Users/tkn/class/software-engineering" nsPrefix="graphics">
+    <eClassifiers xsi:type="ecore:EDataType" name="Color" instanceClassName="java.awt.Color"/>
     <eClassifiers xsi:type="ecore:EClass" name="ImageProcess">
       <eOperations name="blending" eType="#//mapping/Graphics2D">
         <eParameters name="wholeMap" eType="#//graphics/MapImage"/>
@@ -174,7 +179,7 @@
     <eClassifiers xsi:type="ecore:EClass" name="AssetProcess">
       <eOperations name="backgroundFilter" eType="#//mapping/Graphics2D">
         <eParameters name="origin" eType="#//mapping/Graphics2D"/>
-        <eParameters name="color" eType="#//mapping/Color"/>
+        <eParameters name="color" eType="#//graphics/Color"/>
       </eOperations>
       <eOperations name="normalizeAsset" eType="#//mapping/Graphics2D">
         <eParameters name="asset" eType="#//mapping/Asset"/>

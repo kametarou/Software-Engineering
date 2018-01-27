@@ -16,7 +16,7 @@ import soft.mapping.Position;
  * <p>
  * The following operations are tested:
  * <ul>
- *   <li>{@link soft.mapping.Map#init(int, int) <em>Init</em>}</li>
+ *   <li>{@link soft.mapping.Map#init(int, int, org.eclipse.swt.graphics.Device) <em>Init</em>}</li>
  *   <li>{@link soft.mapping.Map#getCellFromCurrentLayer(int, int) <em>Get Cell From Current Layer</em>}</li>
  *   <li>{@link soft.mapping.Map#getCellFromSpecifiedLayer(int, int, int) <em>Get Cell From Specified Layer</em>}</li>
  * </ul>

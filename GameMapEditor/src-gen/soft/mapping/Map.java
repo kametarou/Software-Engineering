@@ -3,6 +3,7 @@
 package soft.mapping;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.swt.graphics.Device;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,6 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link soft.mapping.Map#getAssetsSet <em>Assets Set</em>}</li>
  *   <li>{@link soft.mapping.Map#getMapheight <em>Mapheight</em>}</li>
  *   <li>{@link soft.mapping.Map#getMapwidth <em>Mapwidth</em>}</li>
+ *   <li>{@link soft.mapping.Map#getMydevice <em>Mydevice</em>}</li>
  * </ul>
  *
  * @see soft.mapping.MappingPackage#getMap()
@@ -203,12 +205,39 @@ public interface Map extends EObject {
 	void setMapwidth(int value);
 
 	/**
+	 * Returns the value of the '<em><b>Mydevice</b></em>' attribute.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Mydevice</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\tcells = new Cell[3][width][height];\n\n\t\tfor (int z = 0; z &lt; 3; z++) {\n\t\t\tfor (int x = 0; x &lt; width; x++) {\n\t\t\t\tfor (int y = 0; y &lt; height; y++) {\n\t\t\t\t\tCellImpl myCell = new CellImpl();\n\t\t\t\t\tmyCell.init(x, y);\n\t\t\t\t\tcells[z][x][y] = myCell;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\tmyLogs = new LogsImpl();'"
+	 * @return the value of the '<em>Mydevice</em>' attribute.
+	 * @see #setMydevice(Device)
+	 * @see soft.mapping.MappingPackage#getMap_Mydevice()
+	 * @model dataType="soft.mapping.Device"
 	 * @generated
 	 */
-	void init(int height, int width);
+	Device getMydevice();
+
+	/**
+	 * Sets the value of the '{@link soft.mapping.Map#getMydevice <em>Mydevice</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Mydevice</em>' attribute.
+	 * @see #getMydevice()
+	 * @generated
+	 */
+	void setMydevice(Device value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model mydevDataType="soft.mapping.Device"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\tcells = new Cell[3][width][height];\n\n\t\tfor (int z = 0; z &lt; 3; z++) {\n\t\t\tfor (int x = 0; x &lt; width; x++) {\n\t\t\t\tfor (int y = 0; y &lt; height; y++) {\n\t\t\t\t\tCellImpl myCell = new CellImpl();\n\t\t\t\t\tmyCell.init(x, y);\n\t\t\t\t\tcells[z][x][y] = myCell;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\tmyLogs = new LogsImpl();\n\t\tmydevice = mydev;'"
+	 * @generated
+	 */
+	void init(int height, int width, Device mydev);
 
 	/**
 	 * <!-- begin-user-doc -->

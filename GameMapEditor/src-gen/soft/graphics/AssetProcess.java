@@ -82,7 +82,7 @@ public interface AssetProcess extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="soft.mapping.Graphics2D" originDataType="soft.mapping.Graphics2D" colorDataType="soft.mapping.Color"
+	 * @model dataType="soft.mapping.Graphics2D" originDataType="soft.mapping.Graphics2D" colorDataType="soft.graphics.Color"
 	 * @generated
 	 */
 	Graphics2D backgroundFilter(Graphics2D origin, Color color);

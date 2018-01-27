@@ -2,7 +2,6 @@
  */
 package soft.mapping.impl;
 
-import java.awt.Color;
 import java.awt.Graphics2D;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -14,6 +13,8 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.Device;
 import soft.fileio.FileioPackage;
 import soft.fileio.impl.FileioPackageImpl;
 import soft.graphics.GraphicsPackage;
@@ -115,6 +116,13 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 	 * @generated
 	 */
 	private EDataType colorEDataType = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType deviceEDataType = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -258,6 +266,15 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 	 */
 	public EAttribute getMap_Mapwidth() {
 		return (EAttribute)mapEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getMap_Mydevice() {
+		return (EAttribute)mapEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -670,6 +687,15 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EDataType getDevice() {
+		return deviceEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public MappingFactory getMappingFactory() {
 		return (MappingFactory)getEFactoryInstance();
 	}
@@ -701,6 +727,7 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 		createEAttribute(mapEClass, MAP__ASSETS_SET);
 		createEAttribute(mapEClass, MAP__MAPHEIGHT);
 		createEAttribute(mapEClass, MAP__MAPWIDTH);
+		createEAttribute(mapEClass, MAP__MYDEVICE);
 		createEOperation(mapEClass, MAP___INIT__INT_INT);
 		createEOperation(mapEClass, MAP___GET_CELL_FROM_CURRENT_LAYER__INT_INT);
 		createEOperation(mapEClass, MAP___GET_CELL_FROM_SPECIFIED_LAYER__INT_INT_INT);
@@ -754,6 +781,7 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 		graphics2DEDataType = createEDataType(GRAPHICS2_D);
 		cellArrayEDataType = createEDataType(CELL_ARRAY);
 		colorEDataType = createEDataType(COLOR);
+		deviceEDataType = createEDataType(DEVICE);
 	}
 
 	/**
@@ -799,10 +827,12 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 		initEAttribute(getMap_AssetsSet(), this.getAssetArray(), "assetsSet", null, 1, 1, Map.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMap_Mapheight(), ecorePackage.getEInt(), "mapheight", "20", 1, 1, Map.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMap_Mapwidth(), ecorePackage.getEInt(), "mapwidth", "20", 1, 1, Map.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMap_Mydevice(), this.getDevice(), "mydevice", null, 0, 1, Map.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		EOperation op = initEOperation(getMap__Init__int_int(), null, "init", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "height", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "width", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getDevice(), "mydev", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = initEOperation(getMap__GetCellFromCurrentLayer__int_int(), this.getCell(), "getCellFromCurrentLayer", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "x", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -839,6 +869,7 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 		op = initEOperation(getCell__Init__int_int(), null, "init", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "x", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "y", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getDevice(), "mydevice", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEOperation(getCell__ToString(), ecorePackage.getEString(), "toString", 1, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -876,6 +907,7 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 		initEDataType(graphics2DEDataType, Graphics2D.class, "Graphics2D", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(cellArrayEDataType, Cell[][][].class, "CellArray", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(colorEDataType, Color.class, "Color", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(deviceEDataType, Device.class, "Device", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

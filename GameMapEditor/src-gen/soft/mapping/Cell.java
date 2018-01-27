@@ -2,10 +2,11 @@
  */
 package soft.mapping;
 
-import java.awt.Color;
 import java.io.Serializable;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.Device;
 
 /**
  * <!-- begin-user-doc -->
@@ -164,11 +165,11 @@ public interface Cell extends EObject, Serializable {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model xRequired="true" yRequired="true"
+	 * @model xRequired="true" yRequired="true" mydeviceDataType="soft.mapping.Device"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='Position myPos = new PositionImpl();\n\nmyPos.setX(x);\nmyPos.setY(y);\nmyPos.setMyCell(this);\n\nthis.setPosition(myPos);\n\nmyAsset = null;\nmyAssetArea = null;\nreferenceCell = null;'"
 	 * @generated
 	 */
-	void init(int x, int y);
+	void init(int x, int y, Device mydevice);
 
 	/**
 	 * <!-- begin-user-doc -->

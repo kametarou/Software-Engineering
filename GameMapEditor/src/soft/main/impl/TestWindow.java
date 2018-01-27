@@ -1,6 +1,5 @@
 package soft.main.impl;
 
-import java.awt.Color;
 
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.MouseEvent;
@@ -41,12 +40,14 @@ public class TestWindow {
 		MapDrawer mapArea = new MapDrawer(shlMapBuilder, SWT.NONE);
 		mapArea.setBackground(SWTResourceManager.getColor(SWT.COLOR_DARK_GRAY));
 		mapArea.setBounds(10, 10, mapW*cellL, mapH*cellL);
+		
+		org.eclipse.swt.graphics.Color c = mapArea.getBackground();
 
 		Map map = MappingFactory.eINSTANCE.createMap();
-		map.init(mapW, mapH);
+		map.init(mapW, mapH, c.getDevice());
 
 		Cell myCell = map.getCellFromCurrentLayer(0, 0);
-		myCell.setCellColor(new Color(255,0,0));
+		myCell.setCellColor(new org.eclipse.swt.graphics.Color(map.getMydevice(),255,0,0));
 
 		mapArea.setMap(map);
 

@@ -16,7 +16,7 @@ import soft.mapping.MappingFactory;
  * <p>
  * The following operations are tested:
  * <ul>
- *   <li>{@link soft.mapping.Cell#init(int, int) <em>Init</em>}</li>
+ *   <li>{@link soft.mapping.Cell#init(int, int, org.eclipse.swt.graphics.Device) <em>Init</em>}</li>
  *   <li>{@link soft.mapping.Cell#toString() <em>To String</em>}</li>
  * </ul>
  * </p>
@@ -94,10 +94,10 @@ public class CellTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link soft.mapping.Cell#init(int, int) <em>Init</em>}' operation.
+	 * Tests the '{@link soft.mapping.Cell#init(int, int, org.eclipse.swt.graphics.Device) <em>Init</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see soft.mapping.Cell#init(int, int)
+	 * @see soft.mapping.Cell#init(int, int, org.eclipse.swt.graphics.Device)
 	 * @generated
 	 */
 	public void testInit__int_int() {

@@ -2,7 +2,6 @@
  */
 package soft.mapping.impl;
 
-import java.awt.Color;
 import java.awt.Graphics2D;
 
 import org.eclipse.emf.ecore.EClass;
@@ -14,6 +13,8 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
+import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.Device;
 import soft.mapping.*;
 
 /**
@@ -87,6 +88,8 @@ public class MappingFactoryImpl extends EFactoryImpl implements MappingFactory {
 				return createCellArrayFromString(eDataType, initialValue);
 			case MappingPackage.COLOR:
 				return createColorFromString(eDataType, initialValue);
+			case MappingPackage.DEVICE:
+				return createDeviceFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -108,6 +111,8 @@ public class MappingFactoryImpl extends EFactoryImpl implements MappingFactory {
 				return convertCellArrayToString(eDataType, instanceValue);
 			case MappingPackage.COLOR:
 				return convertColorToString(eDataType, instanceValue);
+			case MappingPackage.DEVICE:
+				return convertDeviceToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -230,10 +235,17 @@ public class MappingFactoryImpl extends EFactoryImpl implements MappingFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
+	// TODO check whether case is problem
 	public Color createColorFromString(EDataType eDataType, String initialValue) {
-		return (Color)super.createFromString(eDataType, initialValue);
+		switch (initialValue) {
+		case "NULL":
+			return new Color(null, 255, 255, 255);
+		default:
+			return (Color)super.createFromString(eDataType, initialValue);
+		}
+		
 	}
 
 	/**
@@ -242,6 +254,24 @@ public class MappingFactoryImpl extends EFactoryImpl implements MappingFactory {
 	 * @generated
 	 */
 	public String convertColorToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Device createDeviceFromString(EDataType eDataType, String initialValue) {
+		return (Device)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertDeviceToString(EDataType eDataType, Object instanceValue) {
 		return super.convertToString(eDataType, instanceValue);
 	}
 

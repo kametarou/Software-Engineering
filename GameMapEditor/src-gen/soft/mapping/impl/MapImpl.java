@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.swt.graphics.Device;
 import soft.mapping.Asset;
 import soft.mapping.Cell;
 import soft.mapping.Logs;
@@ -34,6 +35,7 @@ import soft.mapping.MappingPackage;
  *   <li>{@link soft.mapping.impl.MapImpl#getAssetsSet <em>Assets Set</em>}</li>
  *   <li>{@link soft.mapping.impl.MapImpl#getMapheight <em>Mapheight</em>}</li>
  *   <li>{@link soft.mapping.impl.MapImpl#getMapwidth <em>Mapwidth</em>}</li>
+ *   <li>{@link soft.mapping.impl.MapImpl#getMydevice <em>Mydevice</em>}</li>
  * </ul>
  *
  * @generated
@@ -163,6 +165,26 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 	 * @ordered
 	 */
 	protected int mapwidth = MAPWIDTH_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getMydevice() <em>Mydevice</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMydevice()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Device MYDEVICE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getMydevice() <em>Mydevice</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMydevice()
+	 * @generated
+	 * @ordered
+	 */
+	protected Device mydevice = MYDEVICE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -326,23 +348,46 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void init(final int height, final int width) {
+	public Device getMydevice() {
+		return mydevice;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMydevice(Device newMydevice) {
+		Device oldMydevice = mydevice;
+		mydevice = newMydevice;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MappingPackage.MAP__MYDEVICE, oldMydevice, mydevice));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void init(final int height, final int width, final Device mydev) {
 			cells = new Cell[3][width][height];
 		
 				for (int z = 0; z < 3; z++) {
 					for (int x = 0; x < width; x++) {
 						for (int y = 0; y < height; y++) {
 							CellImpl myCell = new CellImpl();
-							myCell.init(x, y);
+							myCell.init(x, y, mydev);
 							cells[z][x][y] = myCell;
 						}
 					}
 				}
 		
 				myLogs = new LogsImpl();
+				mydevice = mydev;
 	}
 
 	/**
@@ -387,6 +432,8 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 				return getMapheight();
 			case MappingPackage.MAP__MAPWIDTH:
 				return getMapwidth();
+			case MappingPackage.MAP__MYDEVICE:
+				return getMydevice();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -415,6 +462,9 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 				return;
 			case MappingPackage.MAP__MAPWIDTH:
 				setMapwidth((Integer)newValue);
+				return;
+			case MappingPackage.MAP__MYDEVICE:
+				setMydevice((Device)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -445,6 +495,9 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 			case MappingPackage.MAP__MAPWIDTH:
 				setMapwidth(MAPWIDTH_EDEFAULT);
 				return;
+			case MappingPackage.MAP__MYDEVICE:
+				setMydevice(MYDEVICE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -470,6 +523,8 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 				return mapheight != MAPHEIGHT_EDEFAULT;
 			case MappingPackage.MAP__MAPWIDTH:
 				return mapwidth != MAPWIDTH_EDEFAULT;
+			case MappingPackage.MAP__MYDEVICE:
+				return MYDEVICE_EDEFAULT == null ? mydevice != null : !MYDEVICE_EDEFAULT.equals(mydevice);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -482,7 +537,7 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 			case MappingPackage.MAP___INIT__INT_INT:
-				init((Integer)arguments.get(0), (Integer)arguments.get(1));
+				init((Integer)arguments.get(0), (Integer)arguments.get(1), (Device)arguments.get(2));
 				return null;
 			case MappingPackage.MAP___GET_CELL_FROM_CURRENT_LAYER__INT_INT:
 				return getCellFromCurrentLayer((Integer)arguments.get(0), (Integer)arguments.get(1));
@@ -513,6 +568,8 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 		result.append(mapheight);
 		result.append(", mapwidth: ");
 		result.append(mapwidth);
+		result.append(", mydevice: ");
+		result.append(mydevice);
 		result.append(')');
 		return result.toString();
 	}
