@@ -2,7 +2,6 @@
  */
 package soft.fileio.impl;
 
-import java.awt.Color;
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
@@ -10,12 +9,14 @@ import java.lang.reflect.InvocationTargetException;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-
+import mapping.AreaVector;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.widgets.Display;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -28,6 +29,7 @@ import soft.mapping.Asset;
 import soft.mapping.Cell;
 import soft.mapping.Map;
 import soft.mapping.MappingFactory;
+import soft.mapping.Position;
 
 /**
  * <!-- begin-user-doc -->
@@ -79,6 +81,7 @@ public class XmlReaderImpl extends MinimalEObjectImpl.Container implements XmlRe
 		
 		//create map
 		MappingFactory factory = MappingFactory.eINSTANCE;
+		Map map = factory.createMap();
 		
 		//open file
 		File f = new File("./sampleMap.xml");
@@ -102,18 +105,40 @@ public class XmlReaderImpl extends MinimalEObjectImpl.Container implements XmlRe
 				Node layer = cellarrayNode.item(depth);
 				NodeList cells = layer.getChildNodes();
 				for(int i = 0; i < cells.getLength();i++) {
+					Element el = (Element) cells.item(i);
 					int x = i%width;
 					int y = i/width;
 					Cell c = factory.createCell();
-					// TODO set appropriate asset to the sell
-					c.setCellColor(new Color(255,255,255)); //for test
+					// assign properties to the cell c
+					//(1)position
+					Position p = factory.createPosition();
+					p.init();
+					p.setX(x);p.setY(y);
+					c.setPosition(p);
+					
+					//(2)referenceCell
+					int refx = Integer.valueOf(el.getElementsByTagName("refCellX").item(0).getTextContent());
+					int refy = Integer.valueOf(el.getElementsByTagName("refCellY").item(0).getTextContent());
+					c.setReferenceCell(cellarray[depth][refx][refy]);
+					
+					//(3)cellColor or Asset
+					String colorNum = el.getElementsByTagName("color").item(0).getTextContent();
+					if(colorNum==null) {//set Aseet
+						// TODO implement here
+						c.setMyAsset(null);
+						c.setMyAssetArea(null);
+					}else {
+					//convert string into 3 integers(r,g,b)
+						int rgb = Integer.valueOf(colorNum);
+						int r=rgb>>>16; int g=(rgb<<8)>>>16; int b=(rgb<<16)>>>16;
+						c.setCellColor(new Color(Display.getCurrent(), r,g,b)); 
+					}
 					
 					cellarray[depth][x][y]=c;
 				}
 			}
 			
-			//create map
-			Map map = factory.createMap();
+			
 			map.setMapheight(height);
 			map.setMapwidth(width);
 			map.setMaxLayer(maxlayer);
