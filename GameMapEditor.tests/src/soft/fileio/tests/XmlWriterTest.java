@@ -17,7 +17,7 @@ import soft.fileio.XmlWriter;
  * The following operations are tested:
  * <ul>
  *   <li>{@link soft.fileio.XmlWriter#init() <em>Init</em>}</li>
- *   <li>{@link soft.fileio.XmlWriter#map2xml(java.lang.String) <em>Map2xml</em>}</li>
+ *   <li>{@link soft.fileio.XmlWriter#map2xml(java.lang.String, soft.mapping.Map) <em>Map2xml</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -107,13 +107,13 @@ public class XmlWriterTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link soft.fileio.XmlWriter#map2xml(java.lang.String) <em>Map2xml</em>}' operation.
+	 * Tests the '{@link soft.fileio.XmlWriter#map2xml(java.lang.String, soft.mapping.Map) <em>Map2xml</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see soft.fileio.XmlWriter#map2xml(java.lang.String)
+	 * @see soft.fileio.XmlWriter#map2xml(java.lang.String, soft.mapping.Map)
 	 * @generated
 	 */
-	public void testMap2xml__String() {
+	public void testMap2xml__String_Map() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

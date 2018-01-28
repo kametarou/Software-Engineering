@@ -129,6 +129,7 @@
       <eOperations name="init"/>
       <eOperations name="map2xml">
         <eParameters name="filepath" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters name="map" lowerBound="1" eType="#//mapping/Map"/>
       </eOperations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="XmlReader">

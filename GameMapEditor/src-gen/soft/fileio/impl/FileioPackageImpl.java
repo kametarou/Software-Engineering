@@ -155,7 +155,7 @@ public class FileioPackageImpl extends EPackageImpl implements FileioPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getXmlWriter__Map2xml__String() {
+	public EOperation getXmlWriter__Map2xml__String_Map() {
 		return xmlWriterEClass.getEOperations().get(1);
 	}
 
@@ -297,7 +297,7 @@ public class FileioPackageImpl extends EPackageImpl implements FileioPackage {
 		// Create classes and their features
 		xmlWriterEClass = createEClass(XML_WRITER);
 		createEOperation(xmlWriterEClass, XML_WRITER___INIT);
-		createEOperation(xmlWriterEClass, XML_WRITER___MAP2XML__STRING);
+		createEOperation(xmlWriterEClass, XML_WRITER___MAP2XML__STRING_MAP);
 
 		xmlReaderEClass = createEClass(XML_READER);
 		createEOperation(xmlReaderEClass, XML_READER___INIT);
@@ -352,8 +352,9 @@ public class FileioPackageImpl extends EPackageImpl implements FileioPackage {
 
 		initEOperation(getXmlWriter__Init(), null, "init", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		EOperation op = initEOperation(getXmlWriter__Map2xml__String(), null, "map2xml", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = initEOperation(getXmlWriter__Map2xml__String_Map(), null, "map2xml", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "filepath", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theMappingPackage.getMap(), "map", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(xmlReaderEClass, XmlReader.class, "XmlReader", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
