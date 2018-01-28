@@ -3,8 +3,12 @@
 package soft.fileio.impl;
 
 import java.awt.Graphics2D;
-
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
+
+import javax.imageio.ImageIO;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -16,6 +20,7 @@ import soft.fileio.FileioPackage;
 import soft.fileio.MyImageReader;
 
 import soft.mapping.Asset;
+import soft.mapping.ImageAsset;
 
 /**
  * <!-- begin-user-doc -->
@@ -69,12 +74,26 @@ public class MyImageReaderImpl extends MinimalEObjectImpl.Container implements M
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public Asset image2asset(String filename) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		
+		BufferedImage readImage;
+		ImageAsset a ;
+		File f = new File(filename);
+		try {
+			readImage=ImageIO.read(f);
+			//TODO create new Asset and set readImage.
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			a=null;
+		}
+		//return a;
+		return null;
+		//throw new UnsupportedOperationException();
 	}
 
 	/**
