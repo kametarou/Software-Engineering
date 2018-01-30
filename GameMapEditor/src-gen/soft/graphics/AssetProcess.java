@@ -3,6 +3,7 @@
 package soft.graphics;
 
 import java.awt.image.BufferedImage;
+
 import org.eclipse.emf.ecore.EObject;
 
 import soft.mapping.Asset;

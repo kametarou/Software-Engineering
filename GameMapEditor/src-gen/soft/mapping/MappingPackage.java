@@ -197,13 +197,22 @@ public interface MappingPackage extends EPackage {
 	int MAP___ADD_LOG__OPERATION = 4;
 
 	/**
+	 * The operation id for the '<em>Add Asset To Assets Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAP___ADD_ASSET_TO_ASSETS_SET__ASSET = 5;
+
+	/**
 	 * The number of operations of the '<em>Map</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAP_OPERATION_COUNT = 5;
+	int MAP_OPERATION_COUNT = 6;
 
 	/**
 	 * The meta object id for the '{@link soft.mapping.impl.LogsImpl <em>Logs</em>}' class.
@@ -608,13 +617,13 @@ public interface MappingPackage extends EPackage {
 	int ASSET = 6;
 
 	/**
-	 * The feature id for the '<em><b>My Graphics2d</b></em>' attribute.
+	 * The feature id for the '<em><b>My Buffered Image</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSET__MY_GRAPHICS2D = 0;
+	int ASSET__MY_BUFFERED_IMAGE = 0;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -681,13 +690,13 @@ public interface MappingPackage extends EPackage {
 	int IMAGE_ASSET = 7;
 
 	/**
-	 * The feature id for the '<em><b>My Graphics2d</b></em>' attribute.
+	 * The feature id for the '<em><b>My Buffered Image</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_ASSET__MY_GRAPHICS2D = ASSET__MY_GRAPHICS2D;
+	int IMAGE_ASSET__MY_BUFFERED_IMAGE = ASSET__MY_BUFFERED_IMAGE;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -754,13 +763,13 @@ public interface MappingPackage extends EPackage {
 	int COLOR_ASSET = 8;
 
 	/**
-	 * The feature id for the '<em><b>My Graphics2d</b></em>' attribute.
+	 * The feature id for the '<em><b>My Buffered Image</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COLOR_ASSET__MY_GRAPHICS2D = ASSET__MY_GRAPHICS2D;
+	int COLOR_ASSET__MY_BUFFERED_IMAGE = ASSET__MY_BUFFERED_IMAGE;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -1014,6 +1023,16 @@ public interface MappingPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getMap__AddLog__Operation();
+
+	/**
+	 * Returns the meta object for the '{@link soft.mapping.Map#addAssetToAssetsSet(soft.mapping.Asset) <em>Add Asset To Assets Set</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Add Asset To Assets Set</em>' operation.
+	 * @see soft.mapping.Map#addAssetToAssetsSet(soft.mapping.Asset)
+	 * @generated
+	 */
+	EOperation getMap__AddAssetToAssetsSet__Asset();
 
 	/**
 	 * Returns the meta object for class '{@link soft.mapping.Logs <em>Logs</em>}'.
@@ -1373,15 +1392,15 @@ public interface MappingPackage extends EPackage {
 	EClass getAsset();
 
 	/**
-	 * Returns the meta object for the attribute '{@link soft.mapping.Asset#getMyGraphics2d <em>My Graphics2d</em>}'.
+	 * Returns the meta object for the attribute '{@link soft.mapping.Asset#getMyBufferedImage <em>My Buffered Image</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>My Graphics2d</em>'.
-	 * @see soft.mapping.Asset#getMyGraphics2d()
+	 * @return the meta object for the attribute '<em>My Buffered Image</em>'.
+	 * @see soft.mapping.Asset#getMyBufferedImage()
 	 * @see #getAsset()
 	 * @generated
 	 */
-	EAttribute getAsset_MyGraphics2d();
+	EAttribute getAsset_MyBufferedImage();
 
 	/**
 	 * Returns the meta object for the attribute '{@link soft.mapping.Asset#getX <em>X</em>}'.
@@ -1635,6 +1654,14 @@ public interface MappingPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation MAP___ADD_LOG__OPERATION = eINSTANCE.getMap__AddLog__Operation();
+
+		/**
+		 * The meta object literal for the '<em><b>Add Asset To Assets Set</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation MAP___ADD_ASSET_TO_ASSETS_SET__ASSET = eINSTANCE.getMap__AddAssetToAssetsSet__Asset();
 
 		/**
 		 * The meta object literal for the '{@link soft.mapping.impl.LogsImpl <em>Logs</em>}' class.
@@ -1921,12 +1948,12 @@ public interface MappingPackage extends EPackage {
 		EClass ASSET = eINSTANCE.getAsset();
 
 		/**
-		 * The meta object literal for the '<em><b>My Graphics2d</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>My Buffered Image</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ASSET__MY_GRAPHICS2D = eINSTANCE.getAsset_MyGraphics2d();
+		EAttribute ASSET__MY_BUFFERED_IMAGE = eINSTANCE.getAsset_MyBufferedImage();
 
 		/**
 		 * The meta object literal for the '<em><b>X</b></em>' attribute feature.

@@ -29,6 +29,9 @@
       <eOperations name="addLog">
         <eParameters name="operation" eType="#//mapping/Operation"/>
       </eOperations>
+      <eOperations name="addAssetToAssetsSet">
+        <eParameters name="asset" eType="#//mapping/Asset"/>
+      </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="myLogs" lowerBound="1"
           eType="#//mapping/Logs" changeable="false"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="currentLayer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
@@ -109,7 +112,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Asset" abstract="true">
       <eOperations name="init"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="myGraphics2d" eType="#//mapping/Graphics2D"
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="myBufferedImage" eType="#//graphics/BufferedImage"
           defaultValueLiteral=""/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>

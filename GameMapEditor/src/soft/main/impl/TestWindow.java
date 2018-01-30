@@ -23,6 +23,8 @@ import soft.mapping.MappingFactory;
 
 public class TestWindow {
 
+	static boolean pushingCButton = false;
+	static boolean pushingEButton = false;
 	/**
 	 * Launch the application.
 	 * @param args
@@ -33,7 +35,6 @@ public class TestWindow {
 		Shell shlMapBuilder = new Shell();
 		shlMapBuilder.setBackground(SWTResourceManager.getColor(232, 232, 232));
 		shlMapBuilder.setSize(900, 650);
-
 		shlMapBuilder.setText("Map Builder");
 
 		MessageBox box1 = new MessageBox(shlMapBuilder,SWT.YES|SWT.NO);
@@ -59,7 +60,6 @@ public class TestWindow {
 
 		Map map = MappingFactory.eINSTANCE.createMap();
 		map.init(mapW, mapH, c.getDevice());
-
 		mapArea.setMap(map);
 
 		mapArea.addPaintListener(new PaintListener() {
@@ -69,16 +69,21 @@ public class TestWindow {
 	    });
 
 		mapArea.addMouseListener(new MouseListener() {
-
 			@Override
 			public void mouseDoubleClick(MouseEvent e) {
 				// TODO 自動生成されたメソッド・スタブ
-
 			}
 
 			@Override
 			public void mouseDown(MouseEvent e) {
+				MapDrawer area = (MapDrawer) e.getSource();
 				// TODO 自動生成されたメソッド・スタブ
+				 if(area.mode == MapDrawer.ADD_COLOR ) {
+					 pushingCButton = true;
+				 }
+				 else if (area.mode == MapDrawer.ERASE) {
+					 pushingEButton = true;
+				 }
 			}
 
 			@Override
@@ -92,6 +97,7 @@ public class TestWindow {
                 		cell.setCellColor(new Color(area.getDisplay(),area.color.getRGB()));
                 		area.redraw();
                 	}
+                	pushingCButton = false;
                 	//Logging
                 } else if (area.mode == MapDrawer.ERASE) {
                 	Cell cell = area.getCellAt(e.x, e.y);
@@ -99,10 +105,9 @@ public class TestWindow {
 					area.myMap.deleteCellFromCurrentLayer(cell.getPosition().getX(), cell.getPosition().getY());
                 	    area.redraw();
                 	  }
+                	  pushingEButton = false;
 				}
                 else {
-
-
 				System.out.println(e.x+" "+e.y);
 				System.out.println(area.getCellAt(e.x, e.y));
                 }
@@ -112,6 +117,26 @@ public class TestWindow {
 		mapArea.addMouseMoveListener(new MouseMoveListener() {
 			  public void mouseMove(MouseEvent e){
 			    //マウスが移動したときの処理
+				  MapDrawer area = (MapDrawer) e.getSource();
+				  if (pushingCButton == true) {
+		                if(area.mode == MapDrawer.ADD_COLOR) {
+		                	// add asset
+		                	Cell cell = area.getCellAt(e.x, e.y);
+		                	if(cell != null) {
+		                		cell.setCellColor(new Color(area.getDisplay(),area.color.getRGB()));
+		                		area.redraw();
+		                	}
+		              }
+				  }
+				  else if (pushingEButton == true) {
+					  if (area.mode == MapDrawer.ERASE) {
+		                	Cell cell = area.getCellAt(e.x, e.y);
+		                	  if(cell != null) {
+							area.myMap.deleteCellFromCurrentLayer(cell.getPosition().getX(), cell.getPosition().getY());
+		                	    area.redraw();
+		                	  }
+					  }
+				  }
 			  }
 			});
 

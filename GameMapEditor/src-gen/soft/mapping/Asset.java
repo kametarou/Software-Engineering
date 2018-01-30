@@ -2,8 +2,7 @@
  */
 package soft.mapping;
 
-import java.awt.Graphics2D;
-
+import java.awt.image.BufferedImage;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -15,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link soft.mapping.Asset#getMyGraphics2d <em>My Graphics2d</em>}</li>
+ *   <li>{@link soft.mapping.Asset#getMyBufferedImage <em>My Buffered Image</em>}</li>
  *   <li>{@link soft.mapping.Asset#getX <em>X</em>}</li>
  *   <li>{@link soft.mapping.Asset#getY <em>Y</em>}</li>
  *   <li>{@link soft.mapping.Asset#getAssetId <em>Asset Id</em>}</li>
@@ -27,31 +26,31 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Asset extends EObject {
 	/**
-	 * Returns the value of the '<em><b>My Graphics2d</b></em>' attribute.
+	 * Returns the value of the '<em><b>My Buffered Image</b></em>' attribute.
 	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>My Graphics2d</em>' attribute isn't clear,
+	 * If the meaning of the '<em>My Buffered Image</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>My Graphics2d</em>' attribute.
-	 * @see #setMyGraphics2d(Graphics2D)
-	 * @see soft.mapping.MappingPackage#getAsset_MyGraphics2d()
-	 * @model default="" dataType="soft.mapping.Graphics2D"
+	 * @return the value of the '<em>My Buffered Image</em>' attribute.
+	 * @see #setMyBufferedImage(BufferedImage)
+	 * @see soft.mapping.MappingPackage#getAsset_MyBufferedImage()
+	 * @model default="" dataType="soft.graphics.BufferedImage"
 	 * @generated
 	 */
-	Graphics2D getMyGraphics2d();
+	BufferedImage getMyBufferedImage();
 
 	/**
-	 * Sets the value of the '{@link soft.mapping.Asset#getMyGraphics2d <em>My Graphics2d</em>}' attribute.
+	 * Sets the value of the '{@link soft.mapping.Asset#getMyBufferedImage <em>My Buffered Image</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>My Graphics2d</em>' attribute.
-	 * @see #getMyGraphics2d()
+	 * @param value the new value of the '<em>My Buffered Image</em>' attribute.
+	 * @see #getMyBufferedImage()
 	 * @generated
 	 */
-	void setMyGraphics2d(Graphics2D value);
+	void setMyBufferedImage(BufferedImage value);
 
 	/**
 	 * Returns the value of the '<em><b>X</b></em>' attribute.

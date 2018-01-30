@@ -17,6 +17,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.swt.graphics.Device;
 import org.eclipse.swt.widgets.Display;
 
+import soft.fileio.FileioFactory;
+import soft.fileio.MyImageReader;
 import soft.mapping.Asset;
 import soft.mapping.Cell;
 import soft.mapping.Logs;
@@ -114,10 +116,10 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getAssetsSet()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
-	protected static final Asset[] ASSETS_SET_EDEFAULT = null;
+	protected static final Asset[] ASSETS_SET_EDEFAULT = new Asset[100];
 
 	/**
 	 * The cached value of the '{@link #getAssetsSet() <em>Assets Set</em>}' attribute.
@@ -391,6 +393,11 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 		
 				myLogs = new LogsImpl();
 				mydevice = mydev;
+				
+				MyImageReader myImageReader = FileioFactory.eINSTANCE.createMyImageReader();
+				assetsSet[0] = myImageReader.image2asset("images/flower.png");
+				assetsSet[1] = myImageReader.image2asset("images/pointer.png");
+				
 	}
 
 	/**
@@ -444,6 +451,17 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 	 * @generated
 	 */
 	public void addLog(Operation operation) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void addAssetToAssetsSet(Asset asset) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -587,6 +605,9 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 				return null;
 			case MappingPackage.MAP___ADD_LOG__OPERATION:
 				addLog((Operation)arguments.get(0));
+				return null;
+			case MappingPackage.MAP___ADD_ASSET_TO_ASSETS_SET__ASSET:
+				addAssetToAssetsSet((Asset)arguments.get(0));
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);

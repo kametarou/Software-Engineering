@@ -343,6 +343,15 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getMap__AddAssetToAssetsSet__Asset() {
+		return mapEClass.getEOperations().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getLogs() {
 		return logsEClass;
 	}
@@ -649,7 +658,7 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAsset_MyGraphics2d() {
+	public EAttribute getAsset_MyBufferedImage() {
 		return (EAttribute)assetEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -794,6 +803,7 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 		createEOperation(mapEClass, MAP___GET_CELL_FROM_SPECIFIED_LAYER__INT_INT_INT);
 		createEOperation(mapEClass, MAP___DELETE_CELL_FROM_CURRENT_LAYER__INT_INT);
 		createEOperation(mapEClass, MAP___ADD_LOG__OPERATION);
+		createEOperation(mapEClass, MAP___ADD_ASSET_TO_ASSETS_SET__ASSET);
 
 		logsEClass = createEClass(LOGS);
 		createEReference(logsEClass, LOGS__MAPS);
@@ -834,7 +844,7 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 		createEOperation(areaVectorEClass, AREA_VECTOR___INIT);
 
 		assetEClass = createEClass(ASSET);
-		createEAttribute(assetEClass, ASSET__MY_GRAPHICS2D);
+		createEAttribute(assetEClass, ASSET__MY_BUFFERED_IMAGE);
 		createEAttribute(assetEClass, ASSET__X);
 		createEAttribute(assetEClass, ASSET__Y);
 		createEAttribute(assetEClass, ASSET__ASSET_ID);
@@ -877,6 +887,7 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 
 		// Obtain other dependent packages
 		MainPackage theMainPackage = (MainPackage)EPackage.Registry.INSTANCE.getEPackage(MainPackage.eNS_URI);
+		GraphicsPackage theGraphicsPackage = (GraphicsPackage)EPackage.Registry.INSTANCE.getEPackage(GraphicsPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -919,6 +930,9 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 
 		op = initEOperation(getMap__AddLog__Operation(), null, "addLog", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getOperation(), "operation", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getMap__AddAssetToAssetsSet__Asset(), null, "addAssetToAssetsSet", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getAsset(), "asset", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(logsEClass, Logs.class, "Logs", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLogs_Maps(), this.getMap(), null, "maps", null, 0, -1, Logs.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -976,7 +990,7 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 		initEOperation(getAreaVector__Init(), null, "init", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(assetEClass, Asset.class, "Asset", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAsset_MyGraphics2d(), this.getGraphics2D(), "myGraphics2d", "", 0, 1, Asset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAsset_MyBufferedImage(), theGraphicsPackage.getBufferedImage(), "myBufferedImage", "", 0, 1, Asset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAsset_X(), ecorePackage.getEInt(), "x", null, 1, 1, Asset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAsset_Y(), ecorePackage.getEInt(), "y", null, 1, 1, Asset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAsset_AssetId(), ecorePackage.getEString(), "assetId", null, 1, 1, Asset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
