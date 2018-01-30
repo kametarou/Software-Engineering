@@ -26,4 +26,12 @@ public interface AssetProcess extends EObject {
 	 */
 	Asset createAsset(BufferedImage image, String name);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model dataType="soft.mapping.AssetArray"
+	 * @generated
+	 */
+	Asset[] initialAssetArray();
+
 } // AssetProcess

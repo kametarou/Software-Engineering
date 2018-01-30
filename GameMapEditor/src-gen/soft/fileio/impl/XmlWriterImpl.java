@@ -2,14 +2,20 @@
  */
 package soft.fileio.impl;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.lang.reflect.InvocationTargetException;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
@@ -64,14 +70,24 @@ public class XmlWriterImpl extends MinimalEObjectImpl.Container implements XmlWr
 		throw new UnsupportedOperationException();
 	}
 
-	public void write(File f, Document d) throws FileNotFoundException, TransformerException {
+	public void write(File f, Document d) throws TransformerException, IOException {
+		StringWriter sw = new StringWriter();
 		TransformerFactory transFactory = TransformerFactory.newInstance();
 		Transformer transformer = transFactory.newTransformer();
+		transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+	    transformer.setOutputProperty(OutputKeys.METHOD, "xml");
+	    
 		FileOutputStream os = new FileOutputStream(f);
 
 		DOMSource source = new DOMSource(d);
 		StreamResult result = new StreamResult(os);
+		transformer.transform(source, new StreamResult(sw));
 		transformer.transform(source, result);
+		os.close();
+		//PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(f,true)));
+		//pw.print(sw.toString());
+		//pw.write("aaaaa");
+		//pw.close();
 	}
 
 	/**
@@ -144,17 +160,26 @@ public class XmlWriterImpl extends MinimalEObjectImpl.Container implements XmlWr
 			}
 			
 			File file = new File(filepath);
-			//write(file, document);
+			if (file != null && file.canWrite()) {
+				write(file, document);
+			}else {
+				file.createNewFile();
+				write(file,document);
+			}
+			
 		} catch (ParserConfigurationException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();}
-//		} catch (FileNotFoundException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		} catch (TransformerException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
+			e.printStackTrace();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (TransformerException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 		// throw new UnsupportedOperationException();
 	}

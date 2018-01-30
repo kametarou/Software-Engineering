@@ -205,6 +205,7 @@ public class MappingFactoryImpl extends EFactoryImpl implements MappingFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	public Asset[] createAssetArrayFromString(EDataType eDataType, String initialValue) {
 		return (Asset[])super.createFromString(initialValue);
 	}
