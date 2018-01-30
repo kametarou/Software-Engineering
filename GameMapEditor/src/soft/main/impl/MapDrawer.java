@@ -11,6 +11,11 @@ import soft.mapping.Map;
 public class MapDrawer extends Canvas {
 
 	Map myMap;
+	int mode = SELECT;
+	Color color = new Color(this.getDisplay(), 255, 255, 255);
+	static int ADD_ASSET = 0;
+	static int SELECT = 1;
+	static int ERASE = 2;
 
 	public MapDrawer(Composite parent, int style) {
 		super(parent, style);
@@ -68,4 +73,5 @@ public class MapDrawer extends Canvas {
 			return true;
 
 	}
+
 }

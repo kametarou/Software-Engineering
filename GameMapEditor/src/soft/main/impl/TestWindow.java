@@ -6,6 +6,7 @@ import org.eclipse.swt.events.MouseEvent;
 import org.eclipse.swt.events.MouseListener;
 import org.eclipse.swt.events.PaintEvent;
 import org.eclipse.swt.events.PaintListener;
+import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Menu;
@@ -40,7 +41,7 @@ public class TestWindow {
 		MapDrawer mapArea = new MapDrawer(shlMapBuilder, SWT.NONE);
 		mapArea.setBackground(SWTResourceManager.getColor(SWT.COLOR_DARK_GRAY));
 		mapArea.setBounds(10, 10, mapW*cellL, mapH*cellL);
-		
+
 		org.eclipse.swt.graphics.Color c = mapArea.getBackground();
 
 		Map map = MappingFactory.eINSTANCE.createMap();
@@ -74,11 +75,21 @@ public class TestWindow {
 			@Override
 			public void mouseUp(MouseEvent e) {
 				// TODO 自動生成されたメソッド・スタブ
-
 				MapDrawer area = (MapDrawer) e.getSource();
+                if(area.mode == MapDrawer.ADD_ASSET ) {
+                	// add asset
+                	Cell cell = area.getCellAt(e.x, e.y);
+                	if(cell != null) {
+                		cell.setCellColor(new Color(area.getDisplay(),area.color.getRGB()));
+                		area.redraw();
+                	}
+                	//Logging
+                } else {
+
 
 				System.out.println(e.x+" "+e.y);
 				System.out.println(area.getCellAt(e.x, e.y));
+                }
 			}
 		});
 
@@ -160,12 +171,12 @@ public class TestWindow {
 
 						redoButton.setData("redo");
 
-		ToolItem delete2Button = new ToolItem(toolBar, SWT.NONE);
-		delete2Button.setWidth(2);
-		delete2Button.setImage(SWTResourceManager.getImage("images/erase.jpeg"));
-		delete2Button.addSelectionListener(myListener);
+		ToolItem ColorButton = new ToolItem(toolBar, SWT.NONE);
+		ColorButton.setWidth(2);
+		ColorButton.setImage(SWTResourceManager.getImage("images/erase.jpeg"));
+		ColorButton.addSelectionListener(myListener);
 
-		delete2Button.setData("delete2");
+		ColorButton.setData("color");
 
 		ToolItem newFileButton = new ToolItem(toolBar, SWT.NONE);
 		newFileButton.setWidth(2);
@@ -179,7 +190,7 @@ public class TestWindow {
 		moveMoodButton.setImage(SWTResourceManager.getImage("images/move.jpeg"));
 		moveMoodButton.addSelectionListener(myListener);
 
-		moveMoodButton.setData("moveMood");
+		moveMoodButton.setData("addasset");
 
 		Composite assets = new Composite(shlMapBuilder, SWT.NONE);
 		assets.setBounds(342, 145, 98, 123);
