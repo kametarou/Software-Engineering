@@ -117,6 +117,8 @@
     <eClassifiers xsi:type="ecore:EDataType" name="CellArray" instanceClassName="soft.mapping.Cell[][][]"/>
     <eClassifiers xsi:type="ecore:EDataType" name="Color" instanceClassName="org.eclipse.swt.graphics.Color"/>
     <eClassifiers xsi:type="ecore:EDataType" name="Device" instanceClassName="org.eclipse.swt.graphics.Device"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ImageAsset" eSuperTypes="#//mapping/Asset"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ColorAsset" eSuperTypes="#//mapping/Asset"/>
   </eSubpackages>
   <eSubpackages name="main" nsURI="/Users/ysakanaka/HomeWork/SEClass/GameMapEditor/src/main"
       nsPrefix="main">

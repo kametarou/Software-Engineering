@@ -67,6 +67,8 @@ public class MappingFactoryImpl extends EFactoryImpl implements MappingFactory {
 			case MappingPackage.POSITION: return createPosition();
 			case MappingPackage.OPERATION: return createOperation();
 			case MappingPackage.AREA_VECTOR: return createAreaVector();
+			case MappingPackage.IMAGE_ASSET: return createImageAsset();
+			case MappingPackage.COLOR_ASSET: return createColorAsset();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -176,6 +178,26 @@ public class MappingFactoryImpl extends EFactoryImpl implements MappingFactory {
 	public AreaVector createAreaVector() {
 		AreaVectorImpl areaVector = new AreaVectorImpl();
 		return areaVector;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ImageAsset createImageAsset() {
+		ImageAssetImpl imageAsset = new ImageAssetImpl();
+		return imageAsset;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ColorAsset createColorAsset() {
+		ColorAssetImpl colorAsset = new ColorAssetImpl();
+		return colorAsset;
 	}
 
 	/**

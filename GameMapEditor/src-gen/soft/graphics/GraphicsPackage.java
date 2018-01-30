@@ -92,7 +92,7 @@ public interface GraphicsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_PROCESS___BLENDING__GRAPHICS2D_AREAVECTOR_INT_INT = 0;
+	int IMAGE_PROCESS___BLENDING__BUFFEREDIMAGE_AREAVECTOR_INT_INT = 0;
 
 	/**
 	 * The operation id for the '<em>Scaling</em>' operation.
@@ -101,7 +101,7 @@ public interface GraphicsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_PROCESS___SCALING__GRAPHICS2D_INT = 1;
+	int IMAGE_PROCESS___SCALING__BUFFEREDIMAGE_INT = 1;
 
 	/**
 	 * The number of operations of the '<em>Image Process</em>' class.
@@ -123,49 +123,22 @@ public interface GraphicsPackage extends EPackage {
 	int ASSET_PROCESS = 1;
 
 	/**
-	 * The feature id for the '<em><b>Thumbnail X</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSET_PROCESS__THUMBNAIL_X = 0;
-
-	/**
-	 * The feature id for the '<em><b>Thumbnail Y</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSET_PROCESS__THUMBNAIL_Y = 1;
-
-	/**
 	 * The number of structural features of the '<em>Asset Process</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSET_PROCESS_FEATURE_COUNT = 2;
+	int ASSET_PROCESS_FEATURE_COUNT = 0;
 
 	/**
-	 * The operation id for the '<em>Background Filter</em>' operation.
+	 * The operation id for the '<em>Create Asset</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSET_PROCESS___BACKGROUND_FILTER__GRAPHICS2D_COLOR = 0;
-
-	/**
-	 * The operation id for the '<em>Normalize Asset</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSET_PROCESS___NORMALIZE_ASSET__ASSET = 1;
+	int ASSET_PROCESS___CREATE_ASSET__BUFFEREDIMAGE_STRING = 0;
 
 	/**
 	 * The number of operations of the '<em>Asset Process</em>' class.
@@ -174,7 +147,7 @@ public interface GraphicsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSET_PROCESS_OPERATION_COUNT = 2;
+	int ASSET_PROCESS_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '<em>Color</em>' data type.
@@ -187,22 +160,24 @@ public interface GraphicsPackage extends EPackage {
 	int COLOR = 2;
 
 	/**
-	 * The meta object id for the '<em>Map Image</em>' data type.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see soft.graphics.impl.GraphicsPackageImpl#getMapImage()
-	 * @generated
-	 */
-	int MAP_IMAGE = 3;
-
-	/**
 	 * The meta object id for the '<em>Float Array</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see soft.graphics.impl.GraphicsPackageImpl#getFloatArray()
 	 * @generated
 	 */
-	int FLOAT_ARRAY = 4;
+	int FLOAT_ARRAY = 3;
+
+
+	/**
+	 * The meta object id for the '<em>Buffered Image</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see java.awt.image.BufferedImage
+	 * @see soft.graphics.impl.GraphicsPackageImpl#getBufferedImage()
+	 * @generated
+	 */
+	int BUFFERED_IMAGE = 4;
 
 
 	/**
@@ -227,24 +202,24 @@ public interface GraphicsPackage extends EPackage {
 	EAttribute getImageProcess_Opacity();
 
 	/**
-	 * Returns the meta object for the '{@link soft.graphics.ImageProcess#blending(java.awt.Graphics2D[], soft.mapping.AreaVector, int, int) <em>Blending</em>}' operation.
+	 * Returns the meta object for the '{@link soft.graphics.ImageProcess#blending(java.awt.image.BufferedImage, soft.mapping.AreaVector, int, int) <em>Blending</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Blending</em>' operation.
-	 * @see soft.graphics.ImageProcess#blending(java.awt.Graphics2D[], soft.mapping.AreaVector, int, int)
+	 * @see soft.graphics.ImageProcess#blending(java.awt.image.BufferedImage, soft.mapping.AreaVector, int, int)
 	 * @generated
 	 */
-	EOperation getImageProcess__Blending__Graphics2D_AreaVector_int_int();
+	EOperation getImageProcess__Blending__BufferedImage_AreaVector_int_int();
 
 	/**
-	 * Returns the meta object for the '{@link soft.graphics.ImageProcess#scaling(java.awt.Graphics2D, int) <em>Scaling</em>}' operation.
+	 * Returns the meta object for the '{@link soft.graphics.ImageProcess#scaling(java.awt.image.BufferedImage, int) <em>Scaling</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Scaling</em>' operation.
-	 * @see soft.graphics.ImageProcess#scaling(java.awt.Graphics2D, int)
+	 * @see soft.graphics.ImageProcess#scaling(java.awt.image.BufferedImage, int)
 	 * @generated
 	 */
-	EOperation getImageProcess__Scaling__Graphics2D_int();
+	EOperation getImageProcess__Scaling__BufferedImage_int();
 
 	/**
 	 * Returns the meta object for class '{@link soft.graphics.AssetProcess <em>Asset Process</em>}'.
@@ -257,46 +232,14 @@ public interface GraphicsPackage extends EPackage {
 	EClass getAssetProcess();
 
 	/**
-	 * Returns the meta object for the attribute '{@link soft.graphics.AssetProcess#getThumbnailX <em>Thumbnail X</em>}'.
+	 * Returns the meta object for the '{@link soft.graphics.AssetProcess#createAsset(java.awt.image.BufferedImage, java.lang.String) <em>Create Asset</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Thumbnail X</em>'.
-	 * @see soft.graphics.AssetProcess#getThumbnailX()
-	 * @see #getAssetProcess()
+	 * @return the meta object for the '<em>Create Asset</em>' operation.
+	 * @see soft.graphics.AssetProcess#createAsset(java.awt.image.BufferedImage, java.lang.String)
 	 * @generated
 	 */
-	EAttribute getAssetProcess_ThumbnailX();
-
-	/**
-	 * Returns the meta object for the attribute '{@link soft.graphics.AssetProcess#getThumbnailY <em>Thumbnail Y</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Thumbnail Y</em>'.
-	 * @see soft.graphics.AssetProcess#getThumbnailY()
-	 * @see #getAssetProcess()
-	 * @generated
-	 */
-	EAttribute getAssetProcess_ThumbnailY();
-
-	/**
-	 * Returns the meta object for the '{@link soft.graphics.AssetProcess#backgroundFilter(java.awt.Graphics2D, java.awt.Color) <em>Background Filter</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Background Filter</em>' operation.
-	 * @see soft.graphics.AssetProcess#backgroundFilter(java.awt.Graphics2D, java.awt.Color)
-	 * @generated
-	 */
-	EOperation getAssetProcess__BackgroundFilter__Graphics2D_Color();
-
-	/**
-	 * Returns the meta object for the '{@link soft.graphics.AssetProcess#normalizeAsset(soft.mapping.Asset) <em>Normalize Asset</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Normalize Asset</em>' operation.
-	 * @see soft.graphics.AssetProcess#normalizeAsset(soft.mapping.Asset)
-	 * @generated
-	 */
-	EOperation getAssetProcess__NormalizeAsset__Asset();
+	EOperation getAssetProcess__CreateAsset__BufferedImage_String();
 
 	/**
 	 * Returns the meta object for data type '{@link java.awt.Color <em>Color</em>}'.
@@ -310,24 +253,25 @@ public interface GraphicsPackage extends EPackage {
 	EDataType getColor();
 
 	/**
-	 * Returns the meta object for data type '<em>Map Image</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for data type '<em>Map Image</em>'.
-	 * @model instanceClass="java.awt.Graphics2D[]"
-	 * @generated
-	 */
-	EDataType getMapImage();
-
-	/**
 	 * Returns the meta object for data type '<em>Float Array</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for data type '<em>Float Array</em>'.
-	 * @model instanceClass="java.lang.Object[]"
+	 * @model instanceClass="java.lang.Object[][]"
 	 * @generated
 	 */
 	EDataType getFloatArray();
+
+	/**
+	 * Returns the meta object for data type '{@link java.awt.image.BufferedImage <em>Buffered Image</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Buffered Image</em>'.
+	 * @see java.awt.image.BufferedImage
+	 * @model instanceClass="java.awt.image.BufferedImage"
+	 * @generated
+	 */
+	EDataType getBufferedImage();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -376,7 +320,7 @@ public interface GraphicsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IMAGE_PROCESS___BLENDING__GRAPHICS2D_AREAVECTOR_INT_INT = eINSTANCE.getImageProcess__Blending__Graphics2D_AreaVector_int_int();
+		EOperation IMAGE_PROCESS___BLENDING__BUFFEREDIMAGE_AREAVECTOR_INT_INT = eINSTANCE.getImageProcess__Blending__BufferedImage_AreaVector_int_int();
 
 		/**
 		 * The meta object literal for the '<em><b>Scaling</b></em>' operation.
@@ -384,7 +328,7 @@ public interface GraphicsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IMAGE_PROCESS___SCALING__GRAPHICS2D_INT = eINSTANCE.getImageProcess__Scaling__Graphics2D_int();
+		EOperation IMAGE_PROCESS___SCALING__BUFFEREDIMAGE_INT = eINSTANCE.getImageProcess__Scaling__BufferedImage_int();
 
 		/**
 		 * The meta object literal for the '{@link soft.graphics.impl.AssetProcessImpl <em>Asset Process</em>}' class.
@@ -397,36 +341,12 @@ public interface GraphicsPackage extends EPackage {
 		EClass ASSET_PROCESS = eINSTANCE.getAssetProcess();
 
 		/**
-		 * The meta object literal for the '<em><b>Thumbnail X</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Create Asset</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ASSET_PROCESS__THUMBNAIL_X = eINSTANCE.getAssetProcess_ThumbnailX();
-
-		/**
-		 * The meta object literal for the '<em><b>Thumbnail Y</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ASSET_PROCESS__THUMBNAIL_Y = eINSTANCE.getAssetProcess_ThumbnailY();
-
-		/**
-		 * The meta object literal for the '<em><b>Background Filter</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ASSET_PROCESS___BACKGROUND_FILTER__GRAPHICS2D_COLOR = eINSTANCE.getAssetProcess__BackgroundFilter__Graphics2D_Color();
-
-		/**
-		 * The meta object literal for the '<em><b>Normalize Asset</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ASSET_PROCESS___NORMALIZE_ASSET__ASSET = eINSTANCE.getAssetProcess__NormalizeAsset__Asset();
+		EOperation ASSET_PROCESS___CREATE_ASSET__BUFFEREDIMAGE_STRING = eINSTANCE.getAssetProcess__CreateAsset__BufferedImage_String();
 
 		/**
 		 * The meta object literal for the '<em>Color</em>' data type.
@@ -439,15 +359,6 @@ public interface GraphicsPackage extends EPackage {
 		EDataType COLOR = eINSTANCE.getColor();
 
 		/**
-		 * The meta object literal for the '<em>Map Image</em>' data type.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see soft.graphics.impl.GraphicsPackageImpl#getMapImage()
-		 * @generated
-		 */
-		EDataType MAP_IMAGE = eINSTANCE.getMapImage();
-
-		/**
 		 * The meta object literal for the '<em>Float Array</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -455,6 +366,16 @@ public interface GraphicsPackage extends EPackage {
 		 * @generated
 		 */
 		EDataType FLOAT_ARRAY = eINSTANCE.getFloatArray();
+
+		/**
+		 * The meta object literal for the '<em>Buffered Image</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see java.awt.image.BufferedImage
+		 * @see soft.graphics.impl.GraphicsPackageImpl#getBufferedImage()
+		 * @generated
+		 */
+		EDataType BUFFERED_IMAGE = eINSTANCE.getBufferedImage();
 
 	}
 

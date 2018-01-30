@@ -436,9 +436,6 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 		cells[currentLayer][x][y].setCellColor(new org.eclipse.swt.graphics.Color(mydevice, 255, 255, 255));
 		System.out.println("call delete");
 		
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**

@@ -3,8 +3,7 @@
 package soft.graphics.impl;
 
 import java.awt.Color;
-import java.awt.Graphics2D;
-
+import java.awt.image.BufferedImage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -63,14 +62,14 @@ public class GraphicsPackageImpl extends EPackageImpl implements GraphicsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EDataType mapImageEDataType = null;
+	private EDataType floatArrayEDataType = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EDataType floatArrayEDataType = null;
+	private EDataType bufferedImageEDataType = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -167,7 +166,7 @@ public class GraphicsPackageImpl extends EPackageImpl implements GraphicsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getImageProcess__Blending__Graphics2D_AreaVector_int_int() {
+	public EOperation getImageProcess__Blending__BufferedImage_AreaVector_int_int() {
 		return imageProcessEClass.getEOperations().get(0);
 	}
 
@@ -176,7 +175,7 @@ public class GraphicsPackageImpl extends EPackageImpl implements GraphicsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getImageProcess__Scaling__Graphics2D_int() {
+	public EOperation getImageProcess__Scaling__BufferedImage_int() {
 		return imageProcessEClass.getEOperations().get(1);
 	}
 
@@ -194,35 +193,8 @@ public class GraphicsPackageImpl extends EPackageImpl implements GraphicsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAssetProcess_ThumbnailX() {
-		return (EAttribute)assetProcessEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAssetProcess_ThumbnailY() {
-		return (EAttribute)assetProcessEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getAssetProcess__BackgroundFilter__Graphics2D_Color() {
+	public EOperation getAssetProcess__CreateAsset__BufferedImage_String() {
 		return assetProcessEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getAssetProcess__NormalizeAsset__Asset() {
-		return assetProcessEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -239,8 +211,8 @@ public class GraphicsPackageImpl extends EPackageImpl implements GraphicsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EDataType getMapImage() {
-		return mapImageEDataType;
+	public EDataType getFloatArray() {
+		return floatArrayEDataType;
 	}
 
 	/**
@@ -248,8 +220,8 @@ public class GraphicsPackageImpl extends EPackageImpl implements GraphicsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EDataType getFloatArray() {
-		return floatArrayEDataType;
+	public EDataType getBufferedImage() {
+		return bufferedImageEDataType;
 	}
 
 	/**
@@ -282,19 +254,16 @@ public class GraphicsPackageImpl extends EPackageImpl implements GraphicsPackage
 		// Create classes and their features
 		imageProcessEClass = createEClass(IMAGE_PROCESS);
 		createEAttribute(imageProcessEClass, IMAGE_PROCESS__OPACITY);
-		createEOperation(imageProcessEClass, IMAGE_PROCESS___BLENDING__GRAPHICS2D_AREAVECTOR_INT_INT);
-		createEOperation(imageProcessEClass, IMAGE_PROCESS___SCALING__GRAPHICS2D_INT);
+		createEOperation(imageProcessEClass, IMAGE_PROCESS___BLENDING__BUFFEREDIMAGE_AREAVECTOR_INT_INT);
+		createEOperation(imageProcessEClass, IMAGE_PROCESS___SCALING__BUFFEREDIMAGE_INT);
 
 		assetProcessEClass = createEClass(ASSET_PROCESS);
-		createEAttribute(assetProcessEClass, ASSET_PROCESS__THUMBNAIL_X);
-		createEAttribute(assetProcessEClass, ASSET_PROCESS__THUMBNAIL_Y);
-		createEOperation(assetProcessEClass, ASSET_PROCESS___BACKGROUND_FILTER__GRAPHICS2D_COLOR);
-		createEOperation(assetProcessEClass, ASSET_PROCESS___NORMALIZE_ASSET__ASSET);
+		createEOperation(assetProcessEClass, ASSET_PROCESS___CREATE_ASSET__BUFFEREDIMAGE_STRING);
 
 		// Create data types
 		colorEDataType = createEDataType(COLOR);
-		mapImageEDataType = createEDataType(MAP_IMAGE);
 		floatArrayEDataType = createEDataType(FLOAT_ARRAY);
+		bufferedImageEDataType = createEDataType(BUFFERED_IMAGE);
 	}
 
 	/**
@@ -333,31 +302,26 @@ public class GraphicsPackageImpl extends EPackageImpl implements GraphicsPackage
 		initEClass(imageProcessEClass, ImageProcess.class, "ImageProcess", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getImageProcess_Opacity(), this.getFloatArray(), "opacity", null, 0, 1, ImageProcess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		EOperation op = initEOperation(getImageProcess__Blending__Graphics2D_AreaVector_int_int(), theMappingPackage.getGraphics2D(), "blending", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getMapImage(), "wholeMap", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = initEOperation(getImageProcess__Blending__BufferedImage_AreaVector_int_int(), this.getBufferedImage(), "blending", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getBufferedImage(), "wholeMap", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theMappingPackage.getAreaVector(), "renewArea", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "currentLayer", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "scale", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getImageProcess__Scaling__Graphics2D_int(), theMappingPackage.getGraphics2D(), "scaling", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theMappingPackage.getGraphics2D(), "wholeMap", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getImageProcess__Scaling__BufferedImage_int(), this.getBufferedImage(), "scaling", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getBufferedImage(), "wholeMap", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "scale", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(assetProcessEClass, AssetProcess.class, "AssetProcess", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAssetProcess_ThumbnailX(), ecorePackage.getEInt(), "thumbnailX", null, 0, 1, AssetProcess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAssetProcess_ThumbnailY(), ecorePackage.getEInt(), "thumbnailY", null, 0, 1, AssetProcess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		op = initEOperation(getAssetProcess__BackgroundFilter__Graphics2D_Color(), theMappingPackage.getGraphics2D(), "backgroundFilter", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theMappingPackage.getGraphics2D(), "origin", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getColor(), "color", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getAssetProcess__NormalizeAsset__Asset(), theMappingPackage.getGraphics2D(), "normalizeAsset", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theMappingPackage.getAsset(), "asset", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getAssetProcess__CreateAsset__BufferedImage_String(), theMappingPackage.getAsset(), "createAsset", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getBufferedImage(), "image", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Initialize data types
 		initEDataType(colorEDataType, Color.class, "Color", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(mapImageEDataType, Graphics2D[].class, "MapImage", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(floatArrayEDataType, Object[].class, "FloatArray", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(floatArrayEDataType, Object[][].class, "FloatArray", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(bufferedImageEDataType, BufferedImage.class, "BufferedImage", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -16,8 +16,7 @@ import soft.graphics.GraphicsFactory;
  * <p>
  * The following operations are tested:
  * <ul>
- *   <li>{@link soft.graphics.AssetProcess#backgroundFilter(java.awt.Graphics2D, java.awt.Color) <em>Background Filter</em>}</li>
- *   <li>{@link soft.graphics.AssetProcess#normalizeAsset(soft.mapping.Asset) <em>Normalize Asset</em>}</li>
+ *   <li>{@link soft.graphics.AssetProcess#createAsset(java.awt.image.BufferedImage, java.lang.String) <em>Create Asset</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -94,26 +93,13 @@ public class AssetProcessTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link soft.graphics.AssetProcess#backgroundFilter(java.awt.Graphics2D, java.awt.Color) <em>Background Filter</em>}' operation.
+	 * Tests the '{@link soft.graphics.AssetProcess#createAsset(java.awt.image.BufferedImage, java.lang.String) <em>Create Asset</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see soft.graphics.AssetProcess#backgroundFilter(java.awt.Graphics2D, java.awt.Color)
+	 * @see soft.graphics.AssetProcess#createAsset(java.awt.image.BufferedImage, java.lang.String)
 	 * @generated
 	 */
-	public void testBackgroundFilter__Graphics2D_Color() {
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link soft.graphics.AssetProcess#normalizeAsset(soft.mapping.Asset) <em>Normalize Asset</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see soft.graphics.AssetProcess#normalizeAsset(soft.mapping.Asset)
-	 * @generated
-	 */
-	public void testNormalizeAsset__Asset() {
+	public void testCreateAsset__BufferedImage_String() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
