@@ -22,6 +22,8 @@ public class ToolbarSelectionListener implements SelectionListener {
         System.out.println(source.getData()+" was selected");
         if(source.getData()!=null && source.getData().equals("redo")) {
         	  mapArea.redraw();
+        } else if (source.getData() != null && source.getData().equals("undo")) {
+
         } else if (source.getData()!=null && source.getData().equals("color")){
         	 ColorDialog dlg = new ColorDialog(mapArea.getShell());
         	 dlg.setRGB(mapArea.color.getRGB());
