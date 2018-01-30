@@ -2,8 +2,7 @@
  */
 package soft.graphics.impl;
 
-import java.awt.Graphics2D;
-
+import java.awt.image.BufferedImage;
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -42,7 +41,7 @@ public class ImageProcessImpl extends MinimalEObjectImpl.Container implements Im
 	 * @generated
 	 * @ordered
 	 */
-	protected Object[] opacity;
+	protected Object[][] opacity;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -68,7 +67,7 @@ public class ImageProcessImpl extends MinimalEObjectImpl.Container implements Im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Object[] getOpacity() {
+	public Object[][] getOpacity() {
 		return opacity;
 	}
 
@@ -77,8 +76,8 @@ public class ImageProcessImpl extends MinimalEObjectImpl.Container implements Im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setOpacity(Object[] newOpacity) {
-		Object[] oldOpacity = opacity;
+	public void setOpacity(Object[][] newOpacity) {
+		Object[][] oldOpacity = opacity;
 		opacity = newOpacity;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, GraphicsPackage.IMAGE_PROCESS__OPACITY, oldOpacity, opacity));
@@ -89,7 +88,7 @@ public class ImageProcessImpl extends MinimalEObjectImpl.Container implements Im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Graphics2D blending(Graphics2D[] wholeMap, AreaVector renewArea, int currentLayer, int scale) {
+	public BufferedImage blending(BufferedImage wholeMap, AreaVector renewArea, int currentLayer, int scale) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -100,7 +99,7 @@ public class ImageProcessImpl extends MinimalEObjectImpl.Container implements Im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Graphics2D scaling(Graphics2D wholeMap, int scale) {
+	public BufferedImage scaling(BufferedImage wholeMap, int scale) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -129,7 +128,7 @@ public class ImageProcessImpl extends MinimalEObjectImpl.Container implements Im
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case GraphicsPackage.IMAGE_PROCESS__OPACITY:
-				setOpacity((Object[])newValue);
+				setOpacity((Object[][])newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -144,7 +143,7 @@ public class ImageProcessImpl extends MinimalEObjectImpl.Container implements Im
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case GraphicsPackage.IMAGE_PROCESS__OPACITY:
-				setOpacity((Object[])null);
+				setOpacity((Object[][])null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -172,10 +171,10 @@ public class ImageProcessImpl extends MinimalEObjectImpl.Container implements Im
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case GraphicsPackage.IMAGE_PROCESS___BLENDING__GRAPHICS2D_AREAVECTOR_INT_INT:
-				return blending((Graphics2D[])arguments.get(0), (AreaVector)arguments.get(1), (Integer)arguments.get(2), (Integer)arguments.get(3));
-			case GraphicsPackage.IMAGE_PROCESS___SCALING__GRAPHICS2D_INT:
-				return scaling((Graphics2D)arguments.get(0), (Integer)arguments.get(1));
+			case GraphicsPackage.IMAGE_PROCESS___BLENDING__BUFFEREDIMAGE_AREAVECTOR_INT_INT:
+				return blending((BufferedImage)arguments.get(0), (AreaVector)arguments.get(1), (Integer)arguments.get(2), (Integer)arguments.get(3));
+			case GraphicsPackage.IMAGE_PROCESS___SCALING__BUFFEREDIMAGE_INT:
+				return scaling((BufferedImage)arguments.get(0), (Integer)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

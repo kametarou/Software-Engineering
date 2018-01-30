@@ -10,21 +10,13 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
-
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
-import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import soft.graphics.AssetProcess;
-import soft.graphics.GraphicsPackage;
-
 import soft.mapping.provider.MyEditPlugin;
 
 /**
@@ -62,54 +54,8 @@ public class AssetProcessItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addThumbnailXPropertyDescriptor(object);
-			addThumbnailYPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Thumbnail X feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addThumbnailXPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_AssetProcess_thumbnailX_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AssetProcess_thumbnailX_feature", "_UI_AssetProcess_type"),
-				 GraphicsPackage.Literals.ASSET_PROCESS__THUMBNAIL_X,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Thumbnail Y feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addThumbnailYPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_AssetProcess_thumbnailY_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AssetProcess_thumbnailY_feature", "_UI_AssetProcess_type"),
-				 GraphicsPackage.Literals.ASSET_PROCESS__THUMBNAIL_Y,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -131,8 +77,7 @@ public class AssetProcessItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		AssetProcess assetProcess = (AssetProcess)object;
-		return getString("_UI_AssetProcess_type") + " " + assetProcess.getThumbnailX();
+		return getString("_UI_AssetProcess_type");
 	}
 	
 
@@ -146,13 +91,6 @@ public class AssetProcessItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(AssetProcess.class)) {
-			case GraphicsPackage.ASSET_PROCESS__THUMBNAIL_X:
-			case GraphicsPackage.ASSET_PROCESS__THUMBNAIL_Y:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 

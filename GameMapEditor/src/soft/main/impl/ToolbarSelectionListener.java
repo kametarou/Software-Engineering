@@ -38,8 +38,8 @@ public class ToolbarSelectionListener implements SelectionListener {
                mapArea.color = new Color(mapArea.getDisplay(), rgb);
                //colorLabel.setBackground(color);
              }
-        } else if (source.getData()!=null && source.getData().equals("delete2")) {
-
+        } else if (source.getData()!=null && source.getData().equals("delete")) {
+        		mapArea.mode = MapDrawer.ERASE;
       }else if (source.getData()!=null && source.getData().equals("addasset")) {
          mapArea.mode = MapDrawer.ADD_ASSET;
       }

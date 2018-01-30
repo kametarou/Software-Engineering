@@ -108,7 +108,7 @@ public class ImageProcessItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		Object[] labelValue = ((ImageProcess)object).getOpacity();
+		Object[][] labelValue = ((ImageProcess)object).getOpacity();
 		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ?
 			getString("_UI_ImageProcess_type") :

@@ -255,4 +255,12 @@ public interface Map extends EObject {
 	 */
 	Cell getCellFromSpecifiedLayer(int x, int y, int layer);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void deleteCellFromCurrentLayer(int x, int y);
+
 } // Map

@@ -210,6 +210,52 @@ public class MappingItemProviderAdapterFactory extends MappingAdapterFactory imp
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link soft.mapping.ImageAsset} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ImageAssetItemProvider imageAssetItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link soft.mapping.ImageAsset}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createImageAssetAdapter() {
+		if (imageAssetItemProvider == null) {
+			imageAssetItemProvider = new ImageAssetItemProvider(this);
+		}
+
+		return imageAssetItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link soft.mapping.ColorAsset} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ColorAssetItemProvider colorAssetItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link soft.mapping.ColorAsset}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createColorAssetAdapter() {
+		if (colorAssetItemProvider == null) {
+			colorAssetItemProvider = new ColorAssetItemProvider(this);
+		}
+
+		return colorAssetItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -314,6 +360,8 @@ public class MappingItemProviderAdapterFactory extends MappingAdapterFactory imp
 		if (positionItemProvider != null) positionItemProvider.dispose();
 		if (operationItemProvider != null) operationItemProvider.dispose();
 		if (areaVectorItemProvider != null) areaVectorItemProvider.dispose();
+		if (imageAssetItemProvider != null) imageAssetItemProvider.dispose();
+		if (colorAssetItemProvider != null) colorAssetItemProvider.dispose();
 	}
 
 }

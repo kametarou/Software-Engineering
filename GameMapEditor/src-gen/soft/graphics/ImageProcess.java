@@ -2,8 +2,7 @@
  */
 package soft.graphics;
 
-import java.awt.Graphics2D;
-
+import java.awt.image.BufferedImage;
 import org.eclipse.emf.ecore.EObject;
 
 import soft.mapping.AreaVector;
@@ -34,12 +33,12 @@ public interface ImageProcess extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Opacity</em>' attribute.
-	 * @see #setOpacity(Object[])
+	 * @see #setOpacity(Object[][])
 	 * @see soft.graphics.GraphicsPackage#getImageProcess_Opacity()
 	 * @model dataType="soft.graphics.FloatArray"
 	 * @generated
 	 */
-	Object[] getOpacity();
+	Object[][] getOpacity();
 
 	/**
 	 * Sets the value of the '{@link soft.graphics.ImageProcess#getOpacity <em>Opacity</em>}' attribute.
@@ -49,22 +48,22 @@ public interface ImageProcess extends EObject {
 	 * @see #getOpacity()
 	 * @generated
 	 */
-	void setOpacity(Object[] value);
+	void setOpacity(Object[][] value);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="soft.mapping.Graphics2D" wholeMapDataType="soft.graphics.MapImage"
+	 * @model dataType="soft.graphics.BufferedImage" wholeMapDataType="soft.graphics.BufferedImage"
 	 * @generated
 	 */
-	Graphics2D blending(Graphics2D[] wholeMap, AreaVector renewArea, int currentLayer, int scale);
+	BufferedImage blending(BufferedImage wholeMap, AreaVector renewArea, int currentLayer, int scale);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="soft.mapping.Graphics2D" wholeMapDataType="soft.mapping.Graphics2D"
+	 * @model dataType="soft.graphics.BufferedImage" wholeMapDataType="soft.graphics.BufferedImage"
 	 * @generated
 	 */
-	Graphics2D scaling(Graphics2D wholeMap, int scale);
+	BufferedImage scaling(BufferedImage wholeMap, int scale);
 
 } // ImageProcess

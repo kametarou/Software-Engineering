@@ -81,7 +81,14 @@ public class TestWindow {
                 		area.redraw();
                 	}
                 	//Logging
-                } else {
+                } else if (area.mode == MapDrawer.ERASE) {
+                	Cell cell = area.getCellAt(e.x, e.y);
+                	  if(cell != null) {
+					area.myMap.deleteCellFromCurrentLayer(cell.getPosition().getX(), cell.getPosition().getY());
+                	    area.redraw();
+                	  }
+				}
+                else {
 
 
 				System.out.println(e.x+" "+e.y);

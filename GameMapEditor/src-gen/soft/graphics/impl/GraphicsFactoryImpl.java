@@ -3,8 +3,7 @@
 package soft.graphics.impl;
 
 import java.awt.Color;
-import java.awt.Graphics2D;
-
+import java.awt.image.BufferedImage;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -77,10 +76,10 @@ public class GraphicsFactoryImpl extends EFactoryImpl implements GraphicsFactory
 		switch (eDataType.getClassifierID()) {
 			case GraphicsPackage.COLOR:
 				return createColorFromString(eDataType, initialValue);
-			case GraphicsPackage.MAP_IMAGE:
-				return createMapImageFromString(eDataType, initialValue);
 			case GraphicsPackage.FLOAT_ARRAY:
 				return createFloatArrayFromString(eDataType, initialValue);
+			case GraphicsPackage.BUFFERED_IMAGE:
+				return createBufferedImageFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -96,10 +95,10 @@ public class GraphicsFactoryImpl extends EFactoryImpl implements GraphicsFactory
 		switch (eDataType.getClassifierID()) {
 			case GraphicsPackage.COLOR:
 				return convertColorToString(eDataType, instanceValue);
-			case GraphicsPackage.MAP_IMAGE:
-				return convertMapImageToString(eDataType, instanceValue);
 			case GraphicsPackage.FLOAT_ARRAY:
 				return convertFloatArrayToString(eDataType, instanceValue);
+			case GraphicsPackage.BUFFERED_IMAGE:
+				return convertBufferedImageToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -148,26 +147,8 @@ public class GraphicsFactoryImpl extends EFactoryImpl implements GraphicsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Graphics2D[] createMapImageFromString(EDataType eDataType, String initialValue) {
-		return (Graphics2D[])super.createFromString(initialValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertMapImageToString(EDataType eDataType, Object instanceValue) {
-		return super.convertToString(instanceValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Object[] createFloatArrayFromString(EDataType eDataType, String initialValue) {
-		return (Object[])super.createFromString(initialValue);
+	public Object[][] createFloatArrayFromString(EDataType eDataType, String initialValue) {
+		return (Object[][])super.createFromString(initialValue);
 	}
 
 	/**
@@ -177,6 +158,24 @@ public class GraphicsFactoryImpl extends EFactoryImpl implements GraphicsFactory
 	 */
 	public String convertFloatArrayToString(EDataType eDataType, Object instanceValue) {
 		return super.convertToString(instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BufferedImage createBufferedImageFromString(EDataType eDataType, String initialValue) {
+		return (BufferedImage)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertBufferedImageToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
 	}
 
 	/**
