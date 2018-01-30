@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import soft.graphics.AssetProcess;
 import soft.graphics.GraphicsPackage;
 import soft.mapping.Asset;
+import soft.mapping.MappingFactory;
 
 /**
  * <!-- begin-user-doc -->
@@ -45,7 +46,7 @@ public class AssetProcessImpl extends MinimalEObjectImpl.Container implements As
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public Asset createAsset(BufferedImage image, string name) {
+	public Asset createAsset(BufferedImage image, String name) {
 		int orgWidth = image.getWidth();
 		int orgHeight = image.getHeight();
 		boolean width32 = orgWidth % 32 == 0;
@@ -88,11 +89,11 @@ public class AssetProcessImpl extends MinimalEObjectImpl.Container implements As
 				assetImage.setRGB(i, j, 0);
 		}
 
-		Asset asset = factory.createAsset();
-		asset.myBufferedImage = assetImage;
-		asset.x = x;
-		asset.y = y;
-		asset.assetId = name;
+		Asset asset = MappingFactory.eINSTANCE.createImageAsset();
+		asset.setAssetId(name);
+		asset.setX(x);
+		asset.setY(y);
+		asset.setMyBufferedImage(assetImage);
 		return asset;
 	}
 

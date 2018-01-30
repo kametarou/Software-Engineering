@@ -3,8 +3,7 @@
 package soft.mapping.provider;
 
 
-import java.awt.Graphics2D;
-
+import java.awt.image.BufferedImage;
 import java.util.Collection;
 import java.util.List;
 
@@ -66,7 +65,7 @@ public class ImageAssetItemProvider extends AssetItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		Graphics2D labelValue = ((ImageAsset)object).getMyGraphics2d();
+		BufferedImage labelValue = ((ImageAsset)object).getMyBufferedImage();
 		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ?
 			getString("_UI_ImageAsset_type") :

@@ -2,8 +2,7 @@
  */
 package soft.mapping.impl;
 
-import java.awt.Graphics2D;
-
+import java.awt.image.BufferedImage;
 import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -13,8 +12,9 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import soft.graphics.GraphicsFactory;
+import soft.graphics.GraphicsPackage;
 import soft.mapping.Asset;
-import soft.mapping.MappingFactory;
 import soft.mapping.MappingPackage;
 
 /**
@@ -25,7 +25,7 @@ import soft.mapping.MappingPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link soft.mapping.impl.AssetImpl#getMyGraphics2d <em>My Graphics2d</em>}</li>
+ *   <li>{@link soft.mapping.impl.AssetImpl#getMyBufferedImage <em>My Buffered Image</em>}</li>
  *   <li>{@link soft.mapping.impl.AssetImpl#getX <em>X</em>}</li>
  *   <li>{@link soft.mapping.impl.AssetImpl#getY <em>Y</em>}</li>
  *   <li>{@link soft.mapping.impl.AssetImpl#getAssetId <em>Asset Id</em>}</li>
@@ -35,24 +35,24 @@ import soft.mapping.MappingPackage;
  */
 public abstract class AssetImpl extends MinimalEObjectImpl.Container implements Asset {
 	/**
-	 * The default value of the '{@link #getMyGraphics2d() <em>My Graphics2d</em>}' attribute.
+	 * The default value of the '{@link #getMyBufferedImage() <em>My Buffered Image</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMyGraphics2d()
+	 * @see #getMyBufferedImage()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Graphics2D MY_GRAPHICS2D_EDEFAULT = (Graphics2D)MappingFactory.eINSTANCE.createFromString(MappingPackage.eINSTANCE.getGraphics2D(), "");
+	protected static final BufferedImage MY_BUFFERED_IMAGE_EDEFAULT = (BufferedImage)GraphicsFactory.eINSTANCE.createFromString(GraphicsPackage.eINSTANCE.getBufferedImage(), "");
 
 	/**
-	 * The cached value of the '{@link #getMyGraphics2d() <em>My Graphics2d</em>}' attribute.
+	 * The cached value of the '{@link #getMyBufferedImage() <em>My Buffered Image</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMyGraphics2d()
+	 * @see #getMyBufferedImage()
 	 * @generated
 	 * @ordered
 	 */
-	protected Graphics2D myGraphics2d = MY_GRAPHICS2D_EDEFAULT;
+	protected BufferedImage myBufferedImage = MY_BUFFERED_IMAGE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getX() <em>X</em>}' attribute.
@@ -138,8 +138,8 @@ public abstract class AssetImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Graphics2D getMyGraphics2d() {
-		return myGraphics2d;
+	public BufferedImage getMyBufferedImage() {
+		return myBufferedImage;
 	}
 
 	/**
@@ -147,11 +147,11 @@ public abstract class AssetImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMyGraphics2d(Graphics2D newMyGraphics2d) {
-		Graphics2D oldMyGraphics2d = myGraphics2d;
-		myGraphics2d = newMyGraphics2d;
+	public void setMyBufferedImage(BufferedImage newMyBufferedImage) {
+		BufferedImage oldMyBufferedImage = myBufferedImage;
+		myBufferedImage = newMyBufferedImage;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MappingPackage.ASSET__MY_GRAPHICS2D, oldMyGraphics2d, myGraphics2d));
+			eNotify(new ENotificationImpl(this, Notification.SET, MappingPackage.ASSET__MY_BUFFERED_IMAGE, oldMyBufferedImage, myBufferedImage));
 	}
 
 	/**
@@ -224,7 +224,7 @@ public abstract class AssetImpl extends MinimalEObjectImpl.Container implements 
 	 */
 	public void init() {
 		// TODO: set constant value
-		this.myGraphics2d = null;
+		this.myBufferedImage = null;
 		this.x = -1;
 		this.y = -1;
 		this.assetId = null;
@@ -238,8 +238,8 @@ public abstract class AssetImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case MappingPackage.ASSET__MY_GRAPHICS2D:
-				return getMyGraphics2d();
+			case MappingPackage.ASSET__MY_BUFFERED_IMAGE:
+				return getMyBufferedImage();
 			case MappingPackage.ASSET__X:
 				return getX();
 			case MappingPackage.ASSET__Y:
@@ -258,8 +258,8 @@ public abstract class AssetImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case MappingPackage.ASSET__MY_GRAPHICS2D:
-				setMyGraphics2d((Graphics2D)newValue);
+			case MappingPackage.ASSET__MY_BUFFERED_IMAGE:
+				setMyBufferedImage((BufferedImage)newValue);
 				return;
 			case MappingPackage.ASSET__X:
 				setX((Integer)newValue);
@@ -282,8 +282,8 @@ public abstract class AssetImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case MappingPackage.ASSET__MY_GRAPHICS2D:
-				setMyGraphics2d(MY_GRAPHICS2D_EDEFAULT);
+			case MappingPackage.ASSET__MY_BUFFERED_IMAGE:
+				setMyBufferedImage(MY_BUFFERED_IMAGE_EDEFAULT);
 				return;
 			case MappingPackage.ASSET__X:
 				setX(X_EDEFAULT);
@@ -306,8 +306,8 @@ public abstract class AssetImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case MappingPackage.ASSET__MY_GRAPHICS2D:
-				return MY_GRAPHICS2D_EDEFAULT == null ? myGraphics2d != null : !MY_GRAPHICS2D_EDEFAULT.equals(myGraphics2d);
+			case MappingPackage.ASSET__MY_BUFFERED_IMAGE:
+				return MY_BUFFERED_IMAGE_EDEFAULT == null ? myBufferedImage != null : !MY_BUFFERED_IMAGE_EDEFAULT.equals(myBufferedImage);
 			case MappingPackage.ASSET__X:
 				return x != X_EDEFAULT;
 			case MappingPackage.ASSET__Y:
@@ -343,8 +343,8 @@ public abstract class AssetImpl extends MinimalEObjectImpl.Container implements 
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (myGraphics2d: ");
-		result.append(myGraphics2d);
+		result.append(" (myBufferedImage: ");
+		result.append(myBufferedImage);
 		result.append(", x: ");
 		result.append(x);
 		result.append(", y: ");
