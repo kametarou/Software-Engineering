@@ -168,30 +168,25 @@
   <eSubpackages name="graphics" nsURI="/Users/tkn/class/software-engineering" nsPrefix="graphics">
     <eClassifiers xsi:type="ecore:EDataType" name="Color" instanceClassName="java.awt.Color"/>
     <eClassifiers xsi:type="ecore:EClass" name="ImageProcess">
-      <eOperations name="blending" eType="#//mapping/Graphics2D">
-        <eParameters name="wholeMap" eType="#//graphics/MapImage"/>
+      <eOperations name="blending" eType="#//graphics/BufferedImage">
+        <eParameters name="wholeMap" eType="#//graphics/BufferedImage"/>
         <eParameters name="renewArea" eType="#//mapping/AreaVector"/>
         <eParameters name="currentLayer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
         <eParameters name="scale" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
       </eOperations>
-      <eOperations name="scaling" eType="#//mapping/Graphics2D">
-        <eParameters name="wholeMap" eType="#//mapping/Graphics2D"/>
+      <eOperations name="scaling" eType="#//graphics/BufferedImage">
+        <eParameters name="wholeMap" eType="#//graphics/BufferedImage"/>
         <eParameters name="scale" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="opacity" eType="#//graphics/FloatArray"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EDataType" name="MapImage" instanceClassName="java.awt.Graphics2D[]"/>
-    <eClassifiers xsi:type="ecore:EDataType" name="FloatArray" instanceTypeName="EFloat[]"/>
+    <eClassifiers xsi:type="ecore:EDataType" name="FloatArray" instanceTypeName="EFloat[][]"/>
     <eClassifiers xsi:type="ecore:EClass" name="AssetProcess">
-      <eOperations name="backgroundFilter" eType="#//mapping/Graphics2D">
-        <eParameters name="origin" eType="#//mapping/Graphics2D"/>
-        <eParameters name="color" eType="#//graphics/Color"/>
+      <eOperations name="createAsset" eType="#//mapping/Asset">
+        <eParameters name="image" eType="#//graphics/BufferedImage"/>
+        <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
-      <eOperations name="normalizeAsset" eType="#//mapping/Graphics2D">
-        <eParameters name="asset" eType="#//mapping/Asset"/>
-      </eOperations>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="thumbnailX" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="thumbnailY" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EDataType" name="BufferedImage" instanceClassName="java.awt.image.BufferedImage"/>
   </eSubpackages>
 </ecore:EPackage>
