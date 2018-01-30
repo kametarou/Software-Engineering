@@ -47,9 +47,6 @@ public class TestWindow {
 		Map map = MappingFactory.eINSTANCE.createMap();
 		map.init(mapW, mapH, c.getDevice());
 
-		Cell myCell = map.getCellFromCurrentLayer(0, 0);
-		myCell.setCellColor(new org.eclipse.swt.graphics.Color(map.getMydevice(),255,0,0));
-
 		mapArea.setMap(map);
 
 		mapArea.addPaintListener(new PaintListener() {
@@ -142,62 +139,58 @@ public class TestWindow {
 		exportfile.setData("export");
 		ToolbarSelectionListener myListener = new ToolbarSelectionListener(mapArea);
 
-
-		Composite tools = new Composite(shlMapBuilder, SWT.NONE);
-		tools.setBounds(342, 10, 98, 129);
-
-		ToolBar toolBar = new ToolBar(tools, SWT.WRAP | SWT.RIGHT);
-		toolBar.setBackground(SWTResourceManager.getColor(SWT.COLOR_WIDGET_LIGHT_SHADOW));
-		toolBar.setBounds(0, 0, 98, 129);
-
-				ToolItem deleteButton = new ToolItem(toolBar, SWT.NONE);
-				deleteButton.setWidth(2);
-				deleteButton.setImage(SWTResourceManager.getImage("images/erase.jpeg"));
-				deleteButton.addSelectionListener(myListener);
-
-				deleteButton.setData("delete");
-
-		ToolItem undoButton = new ToolItem(toolBar, SWT.NONE);
-		undoButton.setWidth(2);
-		undoButton.setImage(SWTResourceManager.getImage("images/undo.jpeg"));
-		undoButton.addSelectionListener(myListener);
-
-		undoButton.setData("undo");
-
-						ToolItem redoButton = new ToolItem(toolBar, SWT.NONE);
-						redoButton.setWidth(2);
-						redoButton.setImage(SWTResourceManager.getImage("images/redo.jpeg"));
-						redoButton.addSelectionListener(myListener);
-
-						redoButton.setData("redo");
-
-		ToolItem ColorButton = new ToolItem(toolBar, SWT.NONE);
-		ColorButton.setWidth(2);
-		ColorButton.setImage(SWTResourceManager.getImage("images/erase.jpeg"));
-		ColorButton.addSelectionListener(myListener);
-
-		ColorButton.setData("color");
-
-		ToolItem newFileButton = new ToolItem(toolBar, SWT.NONE);
-		newFileButton.setWidth(2);
-		newFileButton.setImage(SWTResourceManager.getImage("images/new_file.jpeg"));
-		newFileButton.addSelectionListener(myListener);
-
-		newFileButton.setData("newFile");
-
-		ToolItem moveMoodButton = new ToolItem(toolBar, SWT.NONE);
-		moveMoodButton.setWidth(2);
-		moveMoodButton.setImage(SWTResourceManager.getImage("images/move.jpeg"));
-		moveMoodButton.addSelectionListener(myListener);
-
-		moveMoodButton.setData("addasset");
-
 		Composite assets = new Composite(shlMapBuilder, SWT.NONE);
 		assets.setBounds(342, 145, 98, 123);
 
 		ToolBar asset1 = new ToolBar(assets, SWT.WRAP | SWT.RIGHT);
 		asset1.setBackground(SWTResourceManager.getColor(SWT.COLOR_WIDGET_LIGHT_SHADOW));
 		asset1.setBounds(0, 0, 98, 123);
+
+				ToolBar toolBar = new ToolBar(shlMapBuilder, SWT.WRAP | SWT.RIGHT);
+				toolBar.setBounds(342, 10, 140, 129);
+				toolBar.setBackground(SWTResourceManager.getColor(SWT.COLOR_WIDGET_LIGHT_SHADOW));
+
+								ToolItem deleteButton = new ToolItem(toolBar, SWT.NONE);
+								deleteButton.setWidth(2);
+								deleteButton.setImage(SWTResourceManager.getImage("images/erase.jpeg"));
+								deleteButton.addSelectionListener(myListener);
+
+								deleteButton.setData("delete");
+
+								ToolItem undoButton = new ToolItem(toolBar, SWT.NONE);
+								undoButton.setWidth(2);
+								undoButton.setImage(SWTResourceManager.getImage("images/undo.jpeg"));
+								undoButton.addSelectionListener(myListener);
+
+								undoButton.setData("undo");
+
+								ToolItem redoButton = new ToolItem(toolBar, SWT.NONE);
+								redoButton.setWidth(2);
+								redoButton.setImage(SWTResourceManager.getImage("images/redo.jpeg"));
+								redoButton.addSelectionListener(myListener);
+
+								redoButton.setData("redo");
+
+								ToolItem ColorButton = new ToolItem(toolBar, SWT.NONE);
+								ColorButton.setWidth(2);
+								ColorButton.setImage(SWTResourceManager.getImage("images/color.jpeg"));
+								ColorButton.addSelectionListener(myListener);
+
+								ColorButton.setData("color");
+
+								ToolItem newFileButton = new ToolItem(toolBar, SWT.NONE);
+								newFileButton.setWidth(2);
+								newFileButton.setImage(SWTResourceManager.getImage("images/paint.jpeg"));
+								newFileButton.addSelectionListener(myListener);
+
+								newFileButton.setData("addasset");
+
+								ToolItem moveMoodButton = new ToolItem(toolBar, SWT.NONE);
+								moveMoodButton.setWidth(2);
+								moveMoodButton.setImage(SWTResourceManager.getImage("images/move.jpeg"));
+								moveMoodButton.addSelectionListener(myListener);
+
+								moveMoodButton.setData("move");
 
 		shlMapBuilder.open();
 		shlMapBuilder.layout();
