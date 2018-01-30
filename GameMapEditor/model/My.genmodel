@@ -37,6 +37,10 @@
           <genParameters ecoreParameter="My.ecore#//mapping/Map/getCellFromSpecifiedLayer/y"/>
           <genParameters ecoreParameter="My.ecore#//mapping/Map/getCellFromSpecifiedLayer/layer"/>
         </genOperations>
+        <genOperations ecoreOperation="My.ecore#//mapping/Map/deleteCellFromCurrentLayer">
+          <genParameters ecoreParameter="My.ecore#//mapping/Map/deleteCellFromCurrentLayer/x"/>
+          <genParameters ecoreParameter="My.ecore#//mapping/Map/deleteCellFromCurrentLayer/y"/>
+        </genOperations>
       </genClasses>
       <genClasses ecoreClass="My.ecore#//mapping/Logs">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference My.ecore#//mapping/Logs/maps"/>
@@ -102,6 +106,8 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute My.ecore#//mapping/Asset/assetId"/>
         <genOperations ecoreOperation="My.ecore#//mapping/Asset/init"/>
       </genClasses>
+      <genClasses ecoreClass="My.ecore#//mapping/ImageAsset"/>
+      <genClasses ecoreClass="My.ecore#//mapping/ColorAsset"/>
     </nestedGenPackages>
     <nestedGenPackages prefix="Main" basePackage="soft" disposableProviderFactory="true"
         ecorePackage="My.ecore#//main">
@@ -177,6 +183,7 @@
           <genParameters ecoreParameter="My.ecore#//graphics/AssetProcess/createAsset/image"/>
           <genParameters ecoreParameter="My.ecore#//graphics/AssetProcess/createAsset/name"/>
         </genOperations>
+        <genOperations ecoreOperation="My.ecore#//graphics/AssetProcess/initialAssetArray"/>
       </genClasses>
     </nestedGenPackages>
   </genPackages>

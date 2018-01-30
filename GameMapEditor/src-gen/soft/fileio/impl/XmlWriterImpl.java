@@ -28,6 +28,7 @@ import soft.fileio.FileioPackage;
 import soft.fileio.XmlWriter;
 import soft.mapping.Cell;
 import soft.mapping.Map;
+import soft.mapping.Position;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>Xml
@@ -98,49 +99,62 @@ public class XmlWriterImpl extends MinimalEObjectImpl.Container implements XmlWr
 			metaInfo.appendChild(height);
 			metaInfo.appendChild(width);
 			metaInfo.appendChild(maxlayer);
-
+			
 			// cellArrays
 			Element array = document.createElement("cellarray");
-			for (int d = 0; d < map.getMaxLayer(); d++) {
-				for (int y = 0; y < map.getMapheight(); y++) {
-					for (int x = 0; x < map.getMapwidth(); x++) {
-						Cell c = map.getCellFromSpecifiedLayer(x, y, d);
+			//for (int d = 0; d < map.getMaxLayer(); d++) {
+			for (int d = 0; d < 1; d++) {
+//				for (int y = 0; y < map.getMapheight(); y++) {
+				for (int y = 0; y <10; y++) {
+//					for (int x = 0; x < map.getMapwidth(); x++) {
+					for (int x = 0; x < 10; x++) {
+						//Cell c = map.getCellFromSpecifiedLayer(x, y, d);ほんとはこっち
+						Cell c = map.getCellFromCurrentLayer(x, y);
+						
 						Element cEl = document.createElement("cell");
 						//referenceCell
 						Element refx = document.createElement("refCellX");
-						refx.appendChild(document.createTextNode(String.valueOf(c.getReferenceCell().getPosition().getX())));
 						Element refy = document.createElement("refCellY");
-						refy.appendChild(document.createTextNode(String.valueOf(c.getReferenceCell().getPosition().getY())));
+						
+						Cell rc = c.getReferenceCell();
+						if(rc==null) {
+							refx.appendChild(document.createTextNode(""));
+							refy.appendChild(document.createTextNode(""));
+						}else{
+						Position p = c.getReferenceCell().getPosition();
+						refx.appendChild(document.createTextNode(String.valueOf(p.getX())));
+						refy.appendChild(document.createTextNode(String.valueOf(p.getY())));
+						}
 						cEl.appendChild(refx);cEl.appendChild(refy);
 						//cellColor or Asset
-						if(c.getCellColor()!=null) {
-							Element color = document.createElement("color");
-							int red = c.getCellColor().getRed();
-							int green = c.getCellColor().getGreen();
-							int blue = c.getCellColor().getBlue();
-							int rgb = red*256*256+green*256+blue;
-							color.appendChild(document.createTextNode(String.valueOf(rgb)));
-							cEl.appendChild(color);
-						}else {
-							Element assetid = document.createElement("assetid");
-							assetid.appendChild(document.createTextNode(c.getMyAsset().getAssetId()));
-						}
+//						if(c.getCellColor()!=null) {
+//							Element color = document.createElement("color");
+//							int red = c.getCellColor().getRed();
+//							int green = c.getCellColor().getGreen();
+//							int blue = c.getCellColor().getBlue();
+//							int rgb = red*256*256+green*256+blue;
+//							color.appendChild(document.createTextNode(String.valueOf(rgb)));
+//							cEl.appendChild(color);
+//						}else {
+//							Element assetid = document.createElement("assetid");
+//							assetid.appendChild(document.createTextNode(c.getMyAsset().getAssetId()));
+//						}
 					}
 				}
 			}
-
+			
 			File file = new File(filepath);
-			write(file, document);
+			//write(file, document);
 		} catch (ParserConfigurationException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (TransformerException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+			e.printStackTrace();}
+//		} catch (FileNotFoundException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} catch (TransformerException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 
 		// throw new UnsupportedOperationException();
 	}

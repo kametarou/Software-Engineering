@@ -18,7 +18,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import soft.fileio.FileioPackage;
 import soft.fileio.MyImageReader;
-
+import soft.graphics.AssetProcess;
+import soft.graphics.GraphicsFactory;
 import soft.mapping.Asset;
 import soft.mapping.ImageAsset;
 
@@ -66,6 +67,7 @@ public class MyImageReaderImpl extends MinimalEObjectImpl.Container implements M
 	 * @generated
 	 */
 	public Graphics2D image2graphics2D(String filename) {
+		
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -81,18 +83,20 @@ public class MyImageReaderImpl extends MinimalEObjectImpl.Container implements M
 		// Ensure that you remove @generated or mark it @generated NOT
 		
 		BufferedImage readImage;
-		ImageAsset a ;
+		Asset a ;
 		File f = new File(filename);
 		try {
 			readImage=ImageIO.read(f);
+			AssetProcess ap = GraphicsFactory.eINSTANCE.createAssetProcess();
+			a=ap.createAsset(readImage, filename);
 			//TODO create new Asset and set readImage.
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			a=null;
 		}
-		//return a;
-		return null;
+		return a;
+		//return null;
 		//throw new UnsupportedOperationException();
 	}
 

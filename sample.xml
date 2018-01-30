@@ -1,166 +1,80 @@
 <?xml version="1.0",excording="UTF-8"?>
+
 <assets>
-  <asset id="1">
-    <imagepath>"../assets/hoge.png"</imagepath>
-    <thumbnail>"../thumbnail/hoge.png"</thumbnail>
-    <sizex>2</sizex>
-    <sizey>2</sizey>
-  </asset>
-  <asset id="2">
-    <imagepath>"../assets/fuga.png"</imagepath>
-    <thumbnail>"../thumbnail/fuga.png"</thumbnail>
-    <sizex>1</sizex>
-    <sizey>1</sizey>
-  </asset>
-  <asset id="3">
-    <imagepath>"../assets/shiba.png"</imagepath>
-    <thumbnail>"../thumbnail/shiba.png"</thumbnail>
-    <sizex>1</sizex>
-    <sizey>1</sizey>
-  </asset>
+	<asset id="1">
+		<imagepath>"../assets/hoge.png"</imagepath>
+		<thumbnail>"../thumbnail/hoge.png"</thumbnail>
+		<sizex>2</sizex>
+		<sizey>2</sizey>
+	</asset>
+	<asset id="2">
+		<imagepath>"../assets/fuga.png"</imagepath>
+		<thumbnail>"../thumbnail/fuga.png"</thumbnail>
+		<sizex>1</sizex>
+		<sizey>1</sizey>
+	</asset>
+	<asset id="3">
+		<imagepath>"../assets/shiba.png"</imagepath>
+		<thumbnail>"../thumbnail/shiba.png"</thumbnail>
+		<sizex>1</sizex>
+		<sizey>1</sizey>
+	</asset>
 </assets>
-<map>
-  <metaInfo>
-      <width>3</width>
-      <hight>3</hight>
-      <maxdepth>3</maxdepth>
-  </metaInfo>
-  <layer depth="1">
-      <cell colIndex=0>
-        <assetid>1</assetid>
-        <color></color>
-        <relX>0</relX><relY>0</relY>
-      </cell>
-      <cell colIndex=1>
-        <assetid>1</assetid>
-        <color></color>
-        <relX>1</relX><relY>0</relY>
-      </cell>
-      <cell colIndex=2>
-        <assetid>2</assetid>
-        <color></color>
-        <relX>0</relX><relY>0</relY>
-      </cell>
-      <cell colIndex=0>
-        <assetid>1</assetid>
-        <color></color>
-        <relX>0</relX><relY>1</relY>
-      </cell>
-      <cell colIndex=1>
-        <assetid>1</assetid>
-        <color></color>
-        <relX>1</relX><relY>1</relY>
-      </cell>
-      <cell colIndex=2>
-        <assetid>2</assetid>
-        <color></color>
-        <relX>0</relX><relY>0</relY>
-      </cell>
-      <cell colIndex=0>
-        <assetid>3</assetid>
-        <color></color>
-        <relX>0</relX><relY>0</relY>
-      </cell>
-      <cell colIndex=1>
-        <assetid>3</assetid>
-        <color></color>
-        <relX>1</relX><relY>0</relY>
-      </cell>
-      <cell colIndex=2>
-        <assetid>2</assetid>
-        <color></color>
-        <relX>0</relX><relY>0</relY>
-      </cell>
-  </layer>
-  <layer depth="2">
-      <cell colIndex=0>
-        <assetid>1</assetid><color></color>
-        <relX>0</relX><relY>0</relY>
-      </cell>
-      <cell colIndex=1>
-        <assetid>1</assetid><color></color>
-        <relX>1</relX><relY>0</relY>
-      </cell>
-      <cell colIndex=2>
-        <assetid>2</assetid><color></color>
-        <relX>0</relX><relY>0</relY>
-      </cell>
-      <cell colIndex=0>
-        <assetid>1</assetid><color></color>
-        <relX>0</relX>
-        <relY>1</relY>
-      </cell>
-      <cell colIndex=1>
-        <assetid>1</assetid><color></color>
-        <relX>1</relX>
-        <relY>1</relY>
-      </cell>
-      <cell colIndex=2>
-        <assetid>2</assetid><color></color>
-        <relX>0</relX>
-        <relY>0</relY>
-      </cell>
-      <cell>
-        <assetid>3</assetid><color></color>
-        <relX>0</relX>
-        <relY>0</relY>
-      </cell>
-      <cell>
-        <assetid>3</assetid><color></color>
-        <relX>1</relX>
-        <relY>0</relY>
-      </cell>
-      <cell>
-        <assetid>2</assetid><color></color>
-        <relX>0</relX>
-        <relY>0</relY>
-      </cell>
-  </layer>
-  <layer depth="3">
-      <cell colIndex=0>
-        <assetid>1</assetid><color></color>
-        <relX>0</relX>
-        <relY>0</relY>
-      </cell>
-      <cell colIndex=1>
-        <assetid>1</assetid><color></color>
-        <relX>1</relX>
-        <relY>0</relY>
-      </cell>
-      <cell colIndex=2>
-        <assetid>2</assetid><color></color>
-        <relX>0</relX>
-        <relY>0</relY>
-      </cell>
-      <cell colIndex=0>
-        <assetid>1</assetid><color></color>
-        <relX>0</relX>
-        <relY>1</relY>
-      </cell>
-      <cell colIndex=1>
-        <assetid>1</assetid><color></color>
-        <relX>1</relX>
-        <relY>1</relY>
-      </cell>
-      <cell colIndex=2>
-        <assetid>2</assetid><color></color>
-        <relX>0</relX>
-        <relY>0</relY>
-      </cell>
-      <cell colIndex=0>
-        <assetid>3</assetid><color></color>
-        <relX>0</relX>
-        <relY>0</relY>
-      </cell>
-      <cell colIndex=1>
-        <assetid>3</assetid><color></color>
-        <relX>1</relX>
-        <relY>0</relY>
-      </cell>
-      <cell colIndex=2>
-        <assetid>2</assetid><color></color>
-        <relX>0</relX>
-        <relY>0</relY>
-      </cell>
-  </layer>
+
+<metaInfo>
+	<width>3</width>
+	<hight>3</hight>
+	<maxdepth>3</maxdepth>
+</metaInfo>
+<layer depth="1">
+	<cell>
+		<refCellX>0</refCellX>
+		<refCellY>0</refCellY>
+		<color>100000</color>
+	</cell>
+	<cell>
+		<refCellX>0</refCellX>
+		<refCellY>0</refCellY>
+		<color>100000</color>
+	</cell>
+	<cell>
+		<refCellX>0</refCellX>
+		<refCellY>0</refCellY>
+		<color>100000</color>
+	</cell>
+</layer>
+<layer depth="2">
+	<cell>
+		<refCellX>0</refCellX>
+		<refCellY>0</refCellY>
+		<color>100000</color>
+	</cell>
+	<cell>
+		<refCellX>0</refCellX>
+		<refCellY>0</refCellY>
+		<color>100000</color>
+	</cell>
+	<cell>
+		<refCellX>0</refCellX>
+		<refCellY>0</refCellY>
+		<color>100000</color>
+	</cell>
+</layer>
+<layer depth="3">
+	<cell>
+		<refCellX>0</refCellX>
+		<refCellY>0</refCellY>
+		<color>100000</color>
+	</cell>
+	<cell>
+		<refCellX>0</refCellX>
+		<refCellY>0</refCellY>
+		<color>100000</color>
+	</cell>
+	<cell>
+		<refCellX>0</refCellX>
+		<refCellY>0</refCellY>
+		<color>100000</color>
+	</cell>
+	</layer>	
 </map>
