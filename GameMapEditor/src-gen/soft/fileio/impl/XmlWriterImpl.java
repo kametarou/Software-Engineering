@@ -2,14 +2,10 @@
  */
 package soft.fileio.impl;
 
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.StringWriter;
 import java.lang.reflect.InvocationTargetException;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -45,6 +41,7 @@ import soft.mapping.Position;
 public class XmlWriterImpl extends MinimalEObjectImpl.Container implements XmlWriter {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected XmlWriterImpl() {
@@ -53,6 +50,7 @@ public class XmlWriterImpl extends MinimalEObjectImpl.Container implements XmlWr
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -62,6 +60,7 @@ public class XmlWriterImpl extends MinimalEObjectImpl.Container implements XmlWr
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void init() {
@@ -71,23 +70,17 @@ public class XmlWriterImpl extends MinimalEObjectImpl.Container implements XmlWr
 	}
 
 	public void write(File f, Document d) throws TransformerException, IOException {
-		StringWriter sw = new StringWriter();
 		TransformerFactory transFactory = TransformerFactory.newInstance();
 		Transformer transformer = transFactory.newTransformer();
 		transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-	    transformer.setOutputProperty(OutputKeys.METHOD, "xml");
-	    
+		transformer.setOutputProperty(OutputKeys.METHOD, "xml");
+
 		FileOutputStream os = new FileOutputStream(f);
 
 		DOMSource source = new DOMSource(d);
 		StreamResult result = new StreamResult(os);
-		transformer.transform(source, new StreamResult(sw));
 		transformer.transform(source, result);
 		os.close();
-		//PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(f,true)));
-		//pw.print(sw.toString());
-		//pw.write("aaaaa");
-		//pw.close();
 	}
 
 	/**
@@ -115,58 +108,66 @@ public class XmlWriterImpl extends MinimalEObjectImpl.Container implements XmlWr
 			metaInfo.appendChild(height);
 			metaInfo.appendChild(width);
 			metaInfo.appendChild(maxlayer);
-			
+			document.appendChild(metaInfo);
+
 			// cellArrays
 			Element array = document.createElement("cellarray");
-			//for (int d = 0; d < map.getMaxLayer(); d++) {
+			//document.appendChild(array);
+			// for (int d = 0; d < map.getMaxLayer(); d++) {
 			for (int d = 0; d < 1; d++) {
-//				for (int y = 0; y < map.getMapheight(); y++) {
-				for (int y = 0; y <10; y++) {
-//					for (int x = 0; x < map.getMapwidth(); x++) {
+				// for (int y = 0; y < map.getMapheight(); y++) {
+				for (int y = 0; y < 10; y++) {
+					// for (int x = 0; x < map.getMapwidth(); x++) {
 					for (int x = 0; x < 10; x++) {
-						//Cell c = map.getCellFromSpecifiedLayer(x, y, d);ほんとはこっち
+						// Cell c = map.getCellFromSpecifiedLayer(x, y, d);ほんとはこっち
 						Cell c = map.getCellFromCurrentLayer(x, y);
-						
+
 						Element cEl = document.createElement("cell");
-						//referenceCell
+						// referenceCell
 						Element refx = document.createElement("refCellX");
 						Element refy = document.createElement("refCellY");
-						
 						Cell rc = c.getReferenceCell();
-						if(rc==null) {
-							refx.appendChild(document.createTextNode(""));
-							refy.appendChild(document.createTextNode(""));
-						}else{
-						Position p = c.getReferenceCell().getPosition();
-						refx.appendChild(document.createTextNode(String.valueOf(p.getX())));
-						refy.appendChild(document.createTextNode(String.valueOf(p.getY())));
+						if (rc == null) {
+							//refx.appendChild(document.createTextNode(""));
+							//refy.appendChild(document.createTextNode(""));
+							refx.setTextContent("");
+							refy.setTextContent("");
+						} else {
+							Position p = c.getReferenceCell().getPosition();
+							//refx.appendChild(document.createTextNode(String.valueOf(p.getX())));
+							refx.setTextContent(String.valueOf(p.getX()));
+							//refy.appendChild(document.createTextNode(String.valueOf(p.getY())));
+							refy.setTextContent(String.valueOf(p.getY()));
 						}
-						cEl.appendChild(refx);cEl.appendChild(refy);
-						//cellColor or Asset
-//						if(c.getCellColor()!=null) {
-//							Element color = document.createElement("color");
-//							int red = c.getCellColor().getRed();
-//							int green = c.getCellColor().getGreen();
-//							int blue = c.getCellColor().getBlue();
-//							int rgb = red*256*256+green*256+blue;
-//							color.appendChild(document.createTextNode(String.valueOf(rgb)));
-//							cEl.appendChild(color);
-//						}else {
-//							Element assetid = document.createElement("assetid");
-//							assetid.appendChild(document.createTextNode(c.getMyAsset().getAssetId()));
-//						}
+						cEl.appendChild(refx);
+						cEl.appendChild(refy);
+						// cellColor or Asset
+						// if(c.getCellColor()!=null) {
+						// Element color = document.createElement("color");
+						// int red = c.getCellColor().getRed();
+						// int green = c.getCellColor().getGreen();
+						// int blue = c.getCellColor().getBlue();
+						// int rgb = red*256*256+green*256+blue;
+						// color.appendChild(document.createTextNode(String.valueOf(rgb)));
+						// cEl.appendChild(color);
+						// }else {
+						// Element assetid = document.createElement("assetid");
+						// assetid.appendChild(document.createTextNode(c.getMyAsset().getAssetId()));
+						// }
+						System.err.print("("+x+ ","+y+") ");
+						array.appendChild(cEl);
 					}
 				}
 			}
-			
+			//document.appendChild(array);
 			File file = new File(filepath);
 			if (file != null && file.canWrite()) {
 				write(file, document);
-			}else {
+			} else {
 				file.createNewFile();
-				write(file,document);
+				write(file, document);
 			}
-			
+
 		} catch (ParserConfigurationException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -186,17 +187,18 @@ public class XmlWriterImpl extends MinimalEObjectImpl.Container implements XmlWr
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case FileioPackage.XML_WRITER___INIT:
-				init();
-				return null;
-			case FileioPackage.XML_WRITER___MAP2XML__STRING_MAP:
-				map2xml((String)arguments.get(0), (Map)arguments.get(1));
-				return null;
+		case FileioPackage.XML_WRITER___INIT:
+			init();
+			return null;
+		case FileioPackage.XML_WRITER___MAP2XML__STRING_MAP:
+			map2xml((String) arguments.get(0), (Map) arguments.get(1));
+			return null;
 		}
 		return super.eInvoke(operationID, arguments);
 	}
