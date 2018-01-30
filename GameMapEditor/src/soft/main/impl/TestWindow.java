@@ -50,7 +50,9 @@ public class TestWindow {
 		mapArea.setBounds(10, 10, mapW*cellL, mapH*cellL);
 		}
 		else {
-			mapArea.setBounds(10, 10, mapW*cellL*2, mapH*cellL*2);
+			mapW = 20;
+			mapH = 20;
+			mapArea.setBounds(10, 10, mapW*cellL, mapH*cellL);
 		}
 
 		org.eclipse.swt.graphics.Color c = mapArea.getBackground();
@@ -203,9 +205,14 @@ public class TestWindow {
 
 								moveMoodButton.setData("move");
 
-										ToolBar asset1 = new ToolBar(shlMapBuilder, SWT.WRAP | SWT.RIGHT);
-										asset1.setBounds(650, 145, 98, 123);
-										asset1.setBackground(SWTResourceManager.getColor(SWT.COLOR_WIDGET_LIGHT_SHADOW));
+								ToolBar assetList = new ToolBar(shlMapBuilder, SWT.WRAP | SWT.RIGHT);
+								assetList.setBounds(650, 145, 98, 123);
+								assetList.setBackground(SWTResourceManager.getColor(SWT.COLOR_WIDGET_LIGHT_SHADOW));
+
+								ToolItem asset1 = new ToolItem(assetList, SWT.NONE);
+								asset1.setWidth(2);
+								asset1.setImage(SWTResourceManager.getImage("images/flower.png"));
+								asset1.addSelectionListener(myListener);
 
 		shlMapBuilder.open();
 		shlMapBuilder.layout();
