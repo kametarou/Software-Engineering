@@ -4,14 +4,13 @@ package soft.graphics.impl;
 
 import java.awt.image.BufferedImage;
 import java.lang.reflect.InvocationTargetException;
-import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import soft.graphics.AssetProcess;
 import soft.graphics.GraphicsPackage;
-
 import soft.mapping.Asset;
 
 /**
@@ -47,7 +46,7 @@ public class AssetProcessImpl extends MinimalEObjectImpl.Container implements As
 	 * @generated NOT
 	 */
 	public Asset createAsset(BufferedImage image, string name) {
-		int orgWidth = iamge.getWidth();
+		int orgWidth = image.getWidth();
 		int orgHeight = image.getHeight();
 		boolean width32 = orgWidth % 32 == 0;
 		boolean height32 = orgHeight % 32 == 0;
