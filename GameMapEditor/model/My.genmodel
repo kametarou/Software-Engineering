@@ -9,18 +9,33 @@
   <genPackages prefix="Mapping" disposableProviderFactory="true" ecorePackage="My.ecore#/">
     <nestedGenPackages prefix="Mapping" basePackage="soft" disposableProviderFactory="true"
         ecorePackage="My.ecore#//mapping">
+      <genDataTypes ecoreDataType="My.ecore#//mapping/AssetArray"/>
       <genDataTypes ecoreDataType="My.ecore#//mapping/Graphics2D"/>
       <genDataTypes ecoreDataType="My.ecore#//mapping/CellArray"/>
+      <genDataTypes ecoreDataType="My.ecore#//mapping/Color"/>
+      <genDataTypes ecoreDataType="My.ecore#//mapping/Device"/>
       <genClasses ecoreClass="My.ecore#//mapping/Map">
-        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference My.ecore#//mapping/Map/opLogs"/>
+        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference My.ecore#//mapping/Map/myLogs"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute My.ecore#//mapping/Map/currentLayer"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute My.ecore#//mapping/Map/cells"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute My.ecore#//mapping/Map/maxLayer"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute My.ecore#//mapping/Map/assetsSet"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute My.ecore#//mapping/Map/mapheight"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute My.ecore#//mapping/Map/mapwidth"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute My.ecore#//mapping/Map/mydevice"/>
         <genOperations ecoreOperation="My.ecore#//mapping/Map/init">
           <genParameters ecoreParameter="My.ecore#//mapping/Map/init/height"/>
           <genParameters ecoreParameter="My.ecore#//mapping/Map/init/width"/>
+          <genParameters ecoreParameter="My.ecore#//mapping/Map/init/mydev"/>
         </genOperations>
-        <genOperations ecoreOperation="My.ecore#//mapping/Map/setLayer">
-          <genParameters ecoreParameter="My.ecore#//mapping/Map/setLayer/layer"/>
+        <genOperations ecoreOperation="My.ecore#//mapping/Map/getCellFromCurrentLayer">
+          <genParameters ecoreParameter="My.ecore#//mapping/Map/getCellFromCurrentLayer/x"/>
+          <genParameters ecoreParameter="My.ecore#//mapping/Map/getCellFromCurrentLayer/y"/>
+        </genOperations>
+        <genOperations ecoreOperation="My.ecore#//mapping/Map/getCellFromSpecifiedLayer">
+          <genParameters ecoreParameter="My.ecore#//mapping/Map/getCellFromSpecifiedLayer/x"/>
+          <genParameters ecoreParameter="My.ecore#//mapping/Map/getCellFromSpecifiedLayer/y"/>
+          <genParameters ecoreParameter="My.ecore#//mapping/Map/getCellFromSpecifiedLayer/layer"/>
         </genOperations>
       </genClasses>
       <genClasses ecoreClass="My.ecore#//mapping/Logs">
@@ -31,21 +46,37 @@
         <genOperations ecoreOperation="My.ecore#//mapping/Logs/undo"/>
         <genOperations ecoreOperation="My.ecore#//mapping/Logs/redo"/>
         <genOperations ecoreOperation="My.ecore#//mapping/Logs/removelog"/>
-        <genOperations ecoreOperation="My.ecore#//mapping/Logs/addlog">
-          <genParameters ecoreParameter="My.ecore#//mapping/Logs/addlog/op"/>
+        <genOperations ecoreOperation="My.ecore#//mapping/Logs/addLog">
+          <genParameters ecoreParameter="My.ecore#//mapping/Logs/addLog/op"/>
+        </genOperations>
+        <genOperations ecoreOperation="My.ecore#//mapping/Logs/init">
+          <genParameters ecoreParameter="My.ecore#//mapping/Logs/init/map"/>
+        </genOperations>
+        <genOperations ecoreOperation="My.ecore#//mapping/Logs/addMap">
+          <genParameters ecoreParameter="My.ecore#//mapping/Logs/addMap/map"/>
         </genOperations>
       </genClasses>
       <genClasses ecoreClass="My.ecore#//mapping/Cell">
         <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference My.ecore#//mapping/Cell/position"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference My.ecore#//mapping/Cell/myAsset"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference My.ecore#//mapping/Cell/myAssetArea"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference My.ecore#//mapping/Cell/referenceCell"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute My.ecore#//mapping/Cell/cellColor"/>
         <genOperations ecoreOperation="My.ecore#//mapping/Cell/init">
           <genParameters ecoreParameter="My.ecore#//mapping/Cell/init/x"/>
           <genParameters ecoreParameter="My.ecore#//mapping/Cell/init/y"/>
+          <genParameters ecoreParameter="My.ecore#//mapping/Cell/init/mydevice"/>
         </genOperations>
+        <genOperations ecoreOperation="My.ecore#//mapping/Cell/toString"/>
       </genClasses>
       <genClasses ecoreClass="My.ecore#//mapping/Position">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute My.ecore#//mapping/Position/x"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute My.ecore#//mapping/Position/y"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference My.ecore#//mapping/Position/myCell"/>
+        <genOperations ecoreOperation="My.ecore#//mapping/Position/init"/>
       </genClasses>
       <genClasses ecoreClass="My.ecore#//mapping/Operation">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute My.ecore#//mapping/Operation/layer"/>
@@ -55,15 +86,21 @@
             ecoreFeature="ecore:EReference My.ecore#//mapping/Operation/beforeMap"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference My.ecore#//mapping/Operation/afterMap"/>
+        <genOperations ecoreOperation="My.ecore#//mapping/Operation/init"/>
       </genClasses>
       <genClasses ecoreClass="My.ecore#//mapping/AreaVector">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference My.ecore#//mapping/AreaVector/start"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference My.ecore#//mapping/AreaVector/end"/>
+        <genOperations ecoreOperation="My.ecore#//mapping/AreaVector/init"/>
       </genClasses>
       <genClasses ecoreClass="My.ecore#//mapping/Asset">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute My.ecore#//mapping/Asset/test"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute My.ecore#//mapping/Asset/myGraphics2d"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute My.ecore#//mapping/Asset/x"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute My.ecore#//mapping/Asset/y"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute My.ecore#//mapping/Asset/assetId"/>
+        <genOperations ecoreOperation="My.ecore#//mapping/Asset/init"/>
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Main" basePackage="soft" disposableProviderFactory="true"
@@ -75,12 +112,72 @@
       <genClasses ecoreClass="My.ecore#//main/Window">
         <genOperations ecoreOperation="My.ecore#//main/Window/init"/>
       </genClasses>
-      <genClasses ecoreClass="My.ecore#//main/MyMouseMotionListener"/>
-      <genClasses ecoreClass="My.ecore#//main/MyKeyboardListener"/>
       <genClasses ecoreClass="My.ecore#//main/File">
         <genOperations ecoreOperation="My.ecore#//main/File/makeNewFile"/>
       </genClasses>
       <genClasses image="false" ecoreClass="My.ecore#//main/Serializable"/>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Fileio" basePackage="soft" disposableProviderFactory="true"
+        ecorePackage="My.ecore#//fileio">
+      <genClasses ecoreClass="My.ecore#//fileio/XmlWriter">
+        <genOperations ecoreOperation="My.ecore#//fileio/XmlWriter/init"/>
+        <genOperations ecoreOperation="My.ecore#//fileio/XmlWriter/map2xml">
+          <genParameters ecoreParameter="My.ecore#//fileio/XmlWriter/map2xml/filepath"/>
+          <genParameters ecoreParameter="My.ecore#//fileio/XmlWriter/map2xml/map"/>
+        </genOperations>
+      </genClasses>
+      <genClasses ecoreClass="My.ecore#//fileio/XmlReader">
+        <genOperations ecoreOperation="My.ecore#//fileio/XmlReader/init"/>
+        <genOperations ecoreOperation="My.ecore#//fileio/XmlReader/xml2map">
+          <genParameters ecoreParameter="My.ecore#//fileio/XmlReader/xml2map/filepath"/>
+        </genOperations>
+        <genOperations ecoreOperation="My.ecore#//fileio/XmlReader/xml2assets">
+          <genParameters ecoreParameter="My.ecore#//fileio/XmlReader/xml2assets/filepath"/>
+        </genOperations>
+      </genClasses>
+      <genClasses ecoreClass="My.ecore#//fileio/MyImageReader">
+        <genOperations ecoreOperation="My.ecore#//fileio/MyImageReader/init"/>
+        <genOperations ecoreOperation="My.ecore#//fileio/MyImageReader/image2graphics2D">
+          <genParameters ecoreParameter="My.ecore#//fileio/MyImageReader/image2graphics2D/filename"/>
+        </genOperations>
+        <genOperations ecoreOperation="My.ecore#//fileio/MyImageReader/image2asset">
+          <genParameters ecoreParameter="My.ecore#//fileio/MyImageReader/image2asset/filename"/>
+        </genOperations>
+      </genClasses>
+      <genClasses ecoreClass="My.ecore#//fileio/MyImageWriter">
+        <genOperations ecoreOperation="My.ecore#//fileio/MyImageWriter/init"/>
+        <genOperations ecoreOperation="My.ecore#//fileio/MyImageWriter/graphics2D2image">
+          <genParameters ecoreParameter="My.ecore#//fileio/MyImageWriter/graphics2D2image/g"/>
+        </genOperations>
+        <genOperations ecoreOperation="My.ecore#//fileio/MyImageWriter/asset2graphics2D">
+          <genParameters ecoreParameter="My.ecore#//fileio/MyImageWriter/asset2graphics2D/asset"/>
+        </genOperations>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Graphics" basePackage="soft" disposableProviderFactory="true"
+        ecorePackage="My.ecore#//graphics">
+      <genDataTypes ecoreDataType="My.ecore#//graphics/Color"/>
+      <genDataTypes ecoreDataType="My.ecore#//graphics/FloatArray"/>
+      <genDataTypes ecoreDataType="My.ecore#//graphics/BufferedImage"/>
+      <genClasses ecoreClass="My.ecore#//graphics/ImageProcess">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute My.ecore#//graphics/ImageProcess/opacity"/>
+        <genOperations ecoreOperation="My.ecore#//graphics/ImageProcess/blending">
+          <genParameters ecoreParameter="My.ecore#//graphics/ImageProcess/blending/wholeMap"/>
+          <genParameters ecoreParameter="My.ecore#//graphics/ImageProcess/blending/renewArea"/>
+          <genParameters ecoreParameter="My.ecore#//graphics/ImageProcess/blending/currentLayer"/>
+          <genParameters ecoreParameter="My.ecore#//graphics/ImageProcess/blending/scale"/>
+        </genOperations>
+        <genOperations ecoreOperation="My.ecore#//graphics/ImageProcess/scaling">
+          <genParameters ecoreParameter="My.ecore#//graphics/ImageProcess/scaling/wholeMap"/>
+          <genParameters ecoreParameter="My.ecore#//graphics/ImageProcess/scaling/scale"/>
+        </genOperations>
+      </genClasses>
+      <genClasses ecoreClass="My.ecore#//graphics/AssetProcess">
+        <genOperations ecoreOperation="My.ecore#//graphics/AssetProcess/createAsset">
+          <genParameters ecoreParameter="My.ecore#//graphics/AssetProcess/createAsset/image"/>
+          <genParameters ecoreParameter="My.ecore#//graphics/AssetProcess/createAsset/name"/>
+        </genOperations>
+      </genClasses>
     </nestedGenPackages>
   </genPackages>
 </genmodel:GenModel>
