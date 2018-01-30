@@ -188,13 +188,22 @@ public interface MappingPackage extends EPackage {
 	int MAP___DELETE_CELL_FROM_CURRENT_LAYER__INT_INT = 3;
 
 	/**
+	 * The operation id for the '<em>Add Log</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAP___ADD_LOG__OPERATION = 4;
+
+	/**
 	 * The number of operations of the '<em>Map</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAP_OPERATION_COUNT = 4;
+	int MAP_OPERATION_COUNT = 5;
 
 	/**
 	 * The meta object id for the '{@link soft.mapping.impl.LogsImpl <em>Logs</em>}' class.
@@ -997,6 +1006,16 @@ public interface MappingPackage extends EPackage {
 	EOperation getMap__DeleteCellFromCurrentLayer__int_int();
 
 	/**
+	 * Returns the meta object for the '{@link soft.mapping.Map#addLog(soft.mapping.Operation) <em>Add Log</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Add Log</em>' operation.
+	 * @see soft.mapping.Map#addLog(soft.mapping.Operation)
+	 * @generated
+	 */
+	EOperation getMap__AddLog__Operation();
+
+	/**
 	 * Returns the meta object for class '{@link soft.mapping.Logs <em>Logs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1608,6 +1627,14 @@ public interface MappingPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation MAP___DELETE_CELL_FROM_CURRENT_LAYER__INT_INT = eINSTANCE.getMap__DeleteCellFromCurrentLayer__int_int();
+
+		/**
+		 * The meta object literal for the '<em><b>Add Log</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation MAP___ADD_LOG__OPERATION = eINSTANCE.getMap__AddLog__Operation();
 
 		/**
 		 * The meta object literal for the '{@link soft.mapping.impl.LogsImpl <em>Logs</em>}' class.

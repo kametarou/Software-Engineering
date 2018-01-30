@@ -44,8 +44,7 @@ public class MenubarSelectionListener implements SelectionListener {
 					e1.printStackTrace();
 				}
             }
-         }
-        else if (source.getData() != null  && source.getData().equals("SaveFileMenu")) {
+         } else if (source.getData() != null  && source.getData().equals("SaveFileMenu")) {
 
         		FileDialog saveDialog = new FileDialog(mapArea.getShell(),SWT.SAVE);
         		String saveFile = saveDialog.open();

@@ -263,4 +263,12 @@ public interface Map extends EObject {
 	 */
 	void deleteCellFromCurrentLayer(int x, int y);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void addLog(Operation operation);
+
 } // Map
