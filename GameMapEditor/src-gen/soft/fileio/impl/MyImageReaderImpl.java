@@ -21,7 +21,6 @@ import soft.fileio.MyImageReader;
 import soft.graphics.AssetProcess;
 import soft.graphics.GraphicsFactory;
 import soft.mapping.Asset;
-import soft.mapping.ImageAsset;
 
 /**
  * <!-- begin-user-doc -->
@@ -67,7 +66,6 @@ public class MyImageReaderImpl extends MinimalEObjectImpl.Container implements M
 	 * @generated
 	 */
 	public Graphics2D image2graphics2D(String filename) {
-		
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
