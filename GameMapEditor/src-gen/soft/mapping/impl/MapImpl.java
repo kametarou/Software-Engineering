@@ -22,6 +22,7 @@ import soft.mapping.Cell;
 import soft.mapping.Logs;
 import soft.mapping.Map;
 import soft.mapping.MappingPackage;
+import soft.mapping.Operation;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object
@@ -438,6 +439,17 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void addLog(Operation operation) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -572,6 +584,9 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 				return getCellFromSpecifiedLayer((Integer)arguments.get(0), (Integer)arguments.get(1), (Integer)arguments.get(2));
 			case MappingPackage.MAP___DELETE_CELL_FROM_CURRENT_LAYER__INT_INT:
 				deleteCellFromCurrentLayer((Integer)arguments.get(0), (Integer)arguments.get(1));
+				return null;
+			case MappingPackage.MAP___ADD_LOG__OPERATION:
+				addLog((Operation)arguments.get(0));
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);

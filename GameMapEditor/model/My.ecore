@@ -26,6 +26,9 @@
         <eParameters name="x" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
         <eParameters name="y" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
       </eOperations>
+      <eOperations name="addLog">
+        <eParameters name="operation" eType="#//mapping/Operation"/>
+      </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="myLogs" lowerBound="1"
           eType="#//mapping/Logs" changeable="false"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="currentLayer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
