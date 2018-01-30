@@ -184,9 +184,8 @@ public class LogsImpl extends MinimalEObjectImpl.Container implements Logs {
 	 * @generated
 	 */
 	public void addLog(Operation op) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		logdata.add(op);
+		current++;
 	}
 
 	/**
