@@ -46,7 +46,7 @@ public class AssetProcessImpl extends MinimalEObjectImpl.Container implements As
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public Asset createAsset(BufferedImage image, string name) {
+	public Asset createAsset(BufferedImage image, String name) {
 		int orgWidth = image.getWidth();
 		int orgHeight = image.getHeight();
 		boolean width32 = orgWidth % 32 == 0;

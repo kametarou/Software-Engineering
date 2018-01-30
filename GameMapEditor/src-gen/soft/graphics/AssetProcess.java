@@ -3,6 +3,7 @@
 package soft.graphics;
 
 import java.awt.image.BufferedImage;
+
 import org.eclipse.emf.ecore.EObject;
 
 import soft.mapping.Asset;
@@ -25,13 +26,5 @@ public interface AssetProcess extends EObject {
 	 * @generated
 	 */
 	Asset createAsset(BufferedImage image, String name);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model dataType="soft.mapping.AssetArray"
-	 * @generated
-	 */
-	Asset[] initialAssetArray();
 
 } // AssetProcess
