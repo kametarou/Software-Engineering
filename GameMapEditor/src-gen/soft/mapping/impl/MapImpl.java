@@ -413,6 +413,35 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public void deleteCellFromCurrentLayer(int x, int y) {
+		Cell refrenceCell = cells[currentLayer][x][y].getReferenceCell();
+		if (refrenceCell == null) {
+			/*soft.mapping.Position start = cells[currentLayer][x][y].getMyAssetArea().getStart();
+			soft.mapping.Position end = cells[currentLayer][x][y].getMyAssetArea().getEnd();
+			for(int areaY = start.getY(); areaY < end.getY(); areaY++) {
+				for(int areaX = start.getX(); areaX < end.getX(); areaX++) {
+					cells[currentLayer][areaX][areaY].setMyAsset(null);
+				}
+			}*/
+		}
+		else {
+			if (cells[currentLayer][x][y].getMyAsset() != null) {
+				cells[currentLayer][x][y].setMyAsset(null);
+			}	
+		}
+		cells[currentLayer][x][y].setCellColor(new org.eclipse.swt.graphics.Color(mydevice, 255, 255, 255));
+		System.out.println("call delete");
+		
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -545,6 +574,9 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 				return getCellFromCurrentLayer((Integer)arguments.get(0), (Integer)arguments.get(1));
 			case MappingPackage.MAP___GET_CELL_FROM_SPECIFIED_LAYER__INT_INT_INT:
 				return getCellFromSpecifiedLayer((Integer)arguments.get(0), (Integer)arguments.get(1), (Integer)arguments.get(2));
+			case MappingPackage.MAP___DELETE_CELL_FROM_CURRENT_LAYER__INT_INT:
+				deleteCellFromCurrentLayer((Integer)arguments.get(0), (Integer)arguments.get(1));
+				return null;
 		}
 		return super.eInvoke(operationID, arguments);
 	}

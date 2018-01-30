@@ -192,7 +192,7 @@ public class LogsImpl extends MinimalEObjectImpl.Container implements Logs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void init(Map map) {
 		addMap(map);
@@ -201,7 +201,7 @@ public class LogsImpl extends MinimalEObjectImpl.Container implements Logs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void addMap(Map map) {
 		maps.add(map);

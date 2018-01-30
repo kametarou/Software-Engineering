@@ -179,13 +179,22 @@ public interface MappingPackage extends EPackage {
 	int MAP___GET_CELL_FROM_SPECIFIED_LAYER__INT_INT_INT = 2;
 
 	/**
+	 * The operation id for the '<em>Delete Cell From Current Layer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAP___DELETE_CELL_FROM_CURRENT_LAYER__INT_INT = 3;
+
+	/**
 	 * The number of operations of the '<em>Map</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAP_OPERATION_COUNT = 3;
+	int MAP_OPERATION_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link soft.mapping.impl.LogsImpl <em>Logs</em>}' class.
@@ -832,6 +841,16 @@ public interface MappingPackage extends EPackage {
 	EOperation getMap__GetCellFromSpecifiedLayer__int_int_int();
 
 	/**
+	 * Returns the meta object for the '{@link soft.mapping.Map#deleteCellFromCurrentLayer(int, int) <em>Delete Cell From Current Layer</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Delete Cell From Current Layer</em>' operation.
+	 * @see soft.mapping.Map#deleteCellFromCurrentLayer(int, int)
+	 * @generated
+	 */
+	EOperation getMap__DeleteCellFromCurrentLayer__int_int();
+
+	/**
 	 * Returns the meta object for class '{@link soft.mapping.Logs <em>Logs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1415,6 +1434,14 @@ public interface MappingPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation MAP___GET_CELL_FROM_SPECIFIED_LAYER__INT_INT_INT = eINSTANCE.getMap__GetCellFromSpecifiedLayer__int_int_int();
+
+		/**
+		 * The meta object literal for the '<em><b>Delete Cell From Current Layer</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation MAP___DELETE_CELL_FROM_CURRENT_LAYER__INT_INT = eINSTANCE.getMap__DeleteCellFromCurrentLayer__int_int();
 
 		/**
 		 * The meta object literal for the '{@link soft.mapping.impl.LogsImpl <em>Logs</em>}' class.

@@ -75,9 +75,9 @@ public class CellImpl extends MinimalEObjectImpl.Container implements Cell {
 	 * <!-- end-user-doc -->
 	 * @see #getReferenceCell()
 	 * @generated
-	 * @ordered
+	 * @ordered NOT
 	 */
-	protected Cell referenceCell;
+	protected Cell referenceCell = null;
 
 	/**
 	 * The default value of the '{@link #getCellColor() <em>Cell Color</em>}' attribute.

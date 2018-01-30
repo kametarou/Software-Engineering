@@ -19,6 +19,7 @@ import soft.mapping.Position;
  *   <li>{@link soft.mapping.Map#init(int, int, org.eclipse.swt.graphics.Device) <em>Init</em>}</li>
  *   <li>{@link soft.mapping.Map#getCellFromCurrentLayer(int, int) <em>Get Cell From Current Layer</em>}</li>
  *   <li>{@link soft.mapping.Map#getCellFromSpecifiedLayer(int, int, int) <em>Get Cell From Specified Layer</em>}</li>
+ *   <li>{@link soft.mapping.Map#deleteCellFromCurrentLayer(int, int) <em>Delete Cell From Current Layer</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -151,6 +152,19 @@ public class MapTest extends TestCase {
 	 * @generated
 	 */
 	public void testGetCellFromSpecifiedLayer__int_int_int() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link soft.mapping.Map#deleteCellFromCurrentLayer(int, int) <em>Delete Cell From Current Layer</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see soft.mapping.Map#deleteCellFromCurrentLayer(int, int)
+	 * @generated
+	 */
+	public void testDeleteCellFromCurrentLayer__int_int() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
