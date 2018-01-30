@@ -7,10 +7,10 @@ import org.eclipse.swt.events.MouseListener;
 import org.eclipse.swt.events.PaintEvent;
 import org.eclipse.swt.events.PaintListener;
 import org.eclipse.swt.graphics.Color;
-import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.MenuItem;
+import org.eclipse.swt.widgets.MessageBox;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.ToolBar;
 import org.eclipse.swt.widgets.ToolItem;
@@ -31,16 +31,29 @@ public class TestWindow {
 		Display display = Display.getDefault();
 		Shell shlMapBuilder = new Shell();
 		shlMapBuilder.setBackground(SWTResourceManager.getColor(232, 232, 232));
-		shlMapBuilder.setSize(600, 450);
+		shlMapBuilder.setSize(900, 650);
 
 		shlMapBuilder.setText("Map Builder");
+
+
+		MessageBox box1 = new MessageBox(shlMapBuilder,SWT.YES|SWT.NO);
+		box1.setMessage("Do you want to choose bigger map?");
+		int result = box1.open();
 
 		int mapW = 10;
 		int mapH = 10;
 		int cellL = 30;
+
 		MapDrawer mapArea = new MapDrawer(shlMapBuilder, SWT.NONE);
 		mapArea.setBackground(SWTResourceManager.getColor(SWT.COLOR_DARK_GRAY));
+		if (result == SWT.NO) {
 		mapArea.setBounds(10, 10, mapW*cellL, mapH*cellL);
+		}
+		else {
+			mapW = 20;
+			mapH = 20;
+			mapArea.setBounds(10, 10, mapW*cellL, mapH*cellL);
+		}
 
 		org.eclipse.swt.graphics.Color c = mapArea.getBackground();
 
@@ -82,12 +95,10 @@ public class TestWindow {
                 	}
                 	//Logging
                 } else if (area.mode == MapDrawer.ERASE) {
-                	 System.out.println(area.mode);
                 	Cell cell = area.getCellAt(e.x, e.y);
                 	  if(cell != null) {
 					area.myMap.deleteCellFromCurrentLayer(cell.getPosition().getX(), cell.getPosition().getY());
                 	    area.redraw();
-                	    System.out.println("call fin");
                 	  }
 				}
                 else {
@@ -148,15 +159,8 @@ public class TestWindow {
 		exportfile.setData("export");
 		ToolbarSelectionListener myListener = new ToolbarSelectionListener(mapArea);
 
-		Composite assets = new Composite(shlMapBuilder, SWT.NONE);
-		assets.setBounds(342, 145, 98, 123);
-
-		ToolBar asset1 = new ToolBar(assets, SWT.WRAP | SWT.RIGHT);
-		asset1.setBackground(SWTResourceManager.getColor(SWT.COLOR_WIDGET_LIGHT_SHADOW));
-		asset1.setBounds(0, 0, 98, 123);
-
 				ToolBar toolBar = new ToolBar(shlMapBuilder, SWT.WRAP | SWT.RIGHT);
-				toolBar.setBounds(342, 10, 140, 129);
+				toolBar.setBounds(650, 10, 140, 129);
 				toolBar.setBackground(SWTResourceManager.getColor(SWT.COLOR_WIDGET_LIGHT_SHADOW));
 
 								ToolItem deleteButton = new ToolItem(toolBar, SWT.NONE);
@@ -200,6 +204,15 @@ public class TestWindow {
 								moveMoodButton.addSelectionListener(myListener);
 
 								moveMoodButton.setData("move");
+
+								ToolBar assetList = new ToolBar(shlMapBuilder, SWT.WRAP | SWT.RIGHT);
+								assetList.setBounds(650, 145, 98, 123);
+								assetList.setBackground(SWTResourceManager.getColor(SWT.COLOR_WIDGET_LIGHT_SHADOW));
+
+								ToolItem asset1 = new ToolItem(assetList, SWT.NONE);
+								asset1.setWidth(2);
+								asset1.setImage(SWTResourceManager.getImage("images/flower.png"));
+								asset1.addSelectionListener(myListener);
 
 		shlMapBuilder.open();
 		shlMapBuilder.layout();
