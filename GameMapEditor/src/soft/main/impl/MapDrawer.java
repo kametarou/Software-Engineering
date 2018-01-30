@@ -15,9 +15,12 @@ public class MapDrawer extends Canvas {
 	Map myMap;
 	int mode = SELECT;
 	Color color = new Color(this.getDisplay(), 255, 255, 255);
-	static int ADD_ASSET = 0;
+
+	static int ADD_COLOR = 0;
 	static int SELECT = 1;
 	static int ERASE = 2;
+	static int ADD_ASSET = 3;
+
 	Logs myLogs = MappingFactory.eINSTANCE.createLogs();
 
 	public MapDrawer(Composite parent, int style) {

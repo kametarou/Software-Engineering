@@ -4,6 +4,7 @@ package soft.main.impl;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.MouseEvent;
 import org.eclipse.swt.events.MouseListener;
+import org.eclipse.swt.events.MouseMoveListener;
 import org.eclipse.swt.events.PaintEvent;
 import org.eclipse.swt.events.PaintListener;
 import org.eclipse.swt.graphics.Color;
@@ -34,7 +35,6 @@ public class TestWindow {
 		shlMapBuilder.setSize(900, 650);
 
 		shlMapBuilder.setText("Map Builder");
-
 
 		MessageBox box1 = new MessageBox(shlMapBuilder,SWT.YES|SWT.NO);
 		box1.setMessage("Do you want to choose bigger map?");
@@ -79,14 +79,13 @@ public class TestWindow {
 			@Override
 			public void mouseDown(MouseEvent e) {
 				// TODO 自動生成されたメソッド・スタブ
-
 			}
 
 			@Override
 			public void mouseUp(MouseEvent e) {
 				// TODO 自動生成されたメソッド・スタブ
 				MapDrawer area = (MapDrawer) e.getSource();
-                if(area.mode == MapDrawer.ADD_ASSET ) {
+                if(area.mode == MapDrawer.ADD_COLOR ) {
                 	// add asset
                 	Cell cell = area.getCellAt(e.x, e.y);
                 	if(cell != null) {
@@ -109,6 +108,12 @@ public class TestWindow {
                 }
 			}
 		});
+
+		mapArea.addMouseMoveListener(new MouseMoveListener() {
+			  public void mouseMove(MouseEvent e){
+			    //マウスが移動したときの処理
+			  }
+			});
 
 		MenubarSelectionListener myMenuListener = new MenubarSelectionListener(mapArea);
 
