@@ -141,22 +141,13 @@ public interface GraphicsPackage extends EPackage {
 	int ASSET_PROCESS___CREATE_ASSET__BUFFEREDIMAGE_STRING = 0;
 
 	/**
-	 * The operation id for the '<em>Initial Asset Array</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSET_PROCESS___INITIAL_ASSET_ARRAY = 1;
-
-	/**
 	 * The number of operations of the '<em>Asset Process</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSET_PROCESS_OPERATION_COUNT = 2;
+	int ASSET_PROCESS_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '<em>Color</em>' data type.
@@ -249,16 +240,6 @@ public interface GraphicsPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getAssetProcess__CreateAsset__BufferedImage_String();
-
-	/**
-	 * Returns the meta object for the '{@link soft.graphics.AssetProcess#initialAssetArray() <em>Initial Asset Array</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Initial Asset Array</em>' operation.
-	 * @see soft.graphics.AssetProcess#initialAssetArray()
-	 * @generated
-	 */
-	EOperation getAssetProcess__InitialAssetArray();
 
 	/**
 	 * Returns the meta object for data type '{@link java.awt.Color <em>Color</em>}'.
@@ -366,14 +347,6 @@ public interface GraphicsPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation ASSET_PROCESS___CREATE_ASSET__BUFFEREDIMAGE_STRING = eINSTANCE.getAssetProcess__CreateAsset__BufferedImage_String();
-
-		/**
-		 * The meta object literal for the '<em><b>Initial Asset Array</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ASSET_PROCESS___INITIAL_ASSET_ARRAY = eINSTANCE.getAssetProcess__InitialAssetArray();
 
 		/**
 		 * The meta object literal for the '<em>Color</em>' data type.

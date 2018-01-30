@@ -17,7 +17,6 @@ import soft.graphics.GraphicsFactory;
  * The following operations are tested:
  * <ul>
  *   <li>{@link soft.graphics.AssetProcess#createAsset(java.awt.image.BufferedImage, java.lang.String) <em>Create Asset</em>}</li>
- *   <li>{@link soft.graphics.AssetProcess#initialAssetArray() <em>Initial Asset Array</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -101,19 +100,6 @@ public class AssetProcessTest extends TestCase {
 	 * @generated
 	 */
 	public void testCreateAsset__BufferedImage_String() {
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link soft.graphics.AssetProcess#initialAssetArray() <em>Initial Asset Array</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see soft.graphics.AssetProcess#initialAssetArray()
-	 * @generated
-	 */
-	public void testInitialAssetArray() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

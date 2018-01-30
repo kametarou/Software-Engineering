@@ -617,13 +617,13 @@ public interface MappingPackage extends EPackage {
 	int ASSET = 6;
 
 	/**
-	 * The feature id for the '<em><b>My Graphics2d</b></em>' attribute.
+	 * The feature id for the '<em><b>My Buffered Image</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSET__MY_GRAPHICS2D = 0;
+	int ASSET__MY_BUFFERED_IMAGE = 0;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -690,13 +690,13 @@ public interface MappingPackage extends EPackage {
 	int IMAGE_ASSET = 7;
 
 	/**
-	 * The feature id for the '<em><b>My Graphics2d</b></em>' attribute.
+	 * The feature id for the '<em><b>My Buffered Image</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_ASSET__MY_GRAPHICS2D = ASSET__MY_GRAPHICS2D;
+	int IMAGE_ASSET__MY_BUFFERED_IMAGE = ASSET__MY_BUFFERED_IMAGE;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -763,13 +763,13 @@ public interface MappingPackage extends EPackage {
 	int COLOR_ASSET = 8;
 
 	/**
-	 * The feature id for the '<em><b>My Graphics2d</b></em>' attribute.
+	 * The feature id for the '<em><b>My Buffered Image</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COLOR_ASSET__MY_GRAPHICS2D = ASSET__MY_GRAPHICS2D;
+	int COLOR_ASSET__MY_BUFFERED_IMAGE = ASSET__MY_BUFFERED_IMAGE;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -1392,15 +1392,15 @@ public interface MappingPackage extends EPackage {
 	EClass getAsset();
 
 	/**
-	 * Returns the meta object for the attribute '{@link soft.mapping.Asset#getMyGraphics2d <em>My Graphics2d</em>}'.
+	 * Returns the meta object for the attribute '{@link soft.mapping.Asset#getMyBufferedImage <em>My Buffered Image</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>My Graphics2d</em>'.
-	 * @see soft.mapping.Asset#getMyGraphics2d()
+	 * @return the meta object for the attribute '<em>My Buffered Image</em>'.
+	 * @see soft.mapping.Asset#getMyBufferedImage()
 	 * @see #getAsset()
 	 * @generated
 	 */
-	EAttribute getAsset_MyGraphics2d();
+	EAttribute getAsset_MyBufferedImage();
 
 	/**
 	 * Returns the meta object for the attribute '{@link soft.mapping.Asset#getX <em>X</em>}'.
@@ -1948,12 +1948,12 @@ public interface MappingPackage extends EPackage {
 		EClass ASSET = eINSTANCE.getAsset();
 
 		/**
-		 * The meta object literal for the '<em><b>My Graphics2d</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>My Buffered Image</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ASSET__MY_GRAPHICS2D = eINSTANCE.getAsset_MyGraphics2d();
+		EAttribute ASSET__MY_BUFFERED_IMAGE = eINSTANCE.getAsset_MyBufferedImage();
 
 		/**
 		 * The meta object literal for the '<em><b>X</b></em>' attribute feature.

@@ -3,7 +3,7 @@
 package soft.mapping.provider;
 
 
-import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
 import java.util.Collection;
 import java.util.List;
 
@@ -61,7 +61,7 @@ public class AssetItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addMyGraphics2dPropertyDescriptor(object);
+			addMyBufferedImagePropertyDescriptor(object);
 			addXPropertyDescriptor(object);
 			addYPropertyDescriptor(object);
 			addAssetIdPropertyDescriptor(object);
@@ -70,19 +70,19 @@ public class AssetItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the My Graphics2d feature.
+	 * This adds a property descriptor for the My Buffered Image feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addMyGraphics2dPropertyDescriptor(Object object) {
+	protected void addMyBufferedImagePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Asset_myGraphics2d_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Asset_myGraphics2d_feature", "_UI_Asset_type"),
-				 MappingPackage.Literals.ASSET__MY_GRAPHICS2D,
+				 getString("_UI_Asset_myBufferedImage_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Asset_myBufferedImage_feature", "_UI_Asset_type"),
+				 MappingPackage.Literals.ASSET__MY_BUFFERED_IMAGE,
 				 true,
 				 false,
 				 false,
@@ -176,7 +176,7 @@ public class AssetItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		Graphics2D labelValue = ((Asset)object).getMyGraphics2d();
+		BufferedImage labelValue = ((Asset)object).getMyBufferedImage();
 		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Asset_type") :
@@ -196,7 +196,7 @@ public class AssetItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Asset.class)) {
-			case MappingPackage.ASSET__MY_GRAPHICS2D:
+			case MappingPackage.ASSET__MY_BUFFERED_IMAGE:
 			case MappingPackage.ASSET__X:
 			case MappingPackage.ASSET__Y:
 			case MappingPackage.ASSET__ASSET_ID:

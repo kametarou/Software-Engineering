@@ -93,7 +93,7 @@ public class AssetProcessImpl extends MinimalEObjectImpl.Container implements As
 		asset.setAssetId(name);
 		asset.setX(x);
 		asset.setY(y);
-		asset.setMyGraphics2d(assetImage.createGraphics());
+		asset.setMyBufferedImage(assetImage);
 		return asset;
 	}
 

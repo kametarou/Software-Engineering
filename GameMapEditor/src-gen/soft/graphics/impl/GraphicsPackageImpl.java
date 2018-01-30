@@ -202,15 +202,6 @@ public class GraphicsPackageImpl extends EPackageImpl implements GraphicsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getAssetProcess__InitialAssetArray() {
-		return assetProcessEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EDataType getColor() {
 		return colorEDataType;
 	}
@@ -268,7 +259,6 @@ public class GraphicsPackageImpl extends EPackageImpl implements GraphicsPackage
 
 		assetProcessEClass = createEClass(ASSET_PROCESS);
 		createEOperation(assetProcessEClass, ASSET_PROCESS___CREATE_ASSET__BUFFEREDIMAGE_STRING);
-		createEOperation(assetProcessEClass, ASSET_PROCESS___INITIAL_ASSET_ARRAY);
 
 		// Create data types
 		colorEDataType = createEDataType(COLOR);
@@ -327,8 +317,6 @@ public class GraphicsPackageImpl extends EPackageImpl implements GraphicsPackage
 		op = initEOperation(getAssetProcess__CreateAsset__BufferedImage_String(), theMappingPackage.getAsset(), "createAsset", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getBufferedImage(), "image", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		initEOperation(getAssetProcess__InitialAssetArray(), theMappingPackage.getAssetArray(), "initialAssetArray", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Initialize data types
 		initEDataType(colorEDataType, Color.class, "Color", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);

@@ -112,7 +112,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Asset" abstract="true">
       <eOperations name="init"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="myGraphics2d" eType="#//mapping/Graphics2D"
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="myBufferedImage" eType="#//graphics/BufferedImage"
           defaultValueLiteral=""/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
