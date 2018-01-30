@@ -124,8 +124,8 @@ public class XmlReaderImpl extends MinimalEObjectImpl.Container implements XmlRe
 					String colorNum = el.getElementsByTagName("color").item(0).getTextContent();
 					if(colorNum==null) {//set Aseet
 						// TODO implement here
-						c.setMyAsset(null);
-						c.setMyAssetArea(null);
+						Asset a = factory.createImageAsset();
+						c.setMyAsset(a);
 					}else {
 					//convert string into 3 integers(r,g,b)
 						int rgb = Integer.valueOf(colorNum);
@@ -136,7 +136,6 @@ public class XmlReaderImpl extends MinimalEObjectImpl.Container implements XmlRe
 					cellarray[depth][x][y]=c;
 				}
 			}
-			
 			
 			map.setMapheight(height);
 			map.setMapwidth(width);
