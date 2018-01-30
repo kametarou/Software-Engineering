@@ -19,8 +19,9 @@ import soft.mapping.MappingFactory;
  *   <li>{@link soft.mapping.Logs#undo() <em>Undo</em>}</li>
  *   <li>{@link soft.mapping.Logs#redo() <em>Redo</em>}</li>
  *   <li>{@link soft.mapping.Logs#removelog() <em>Removelog</em>}</li>
- *   <li>{@link soft.mapping.Logs#addlog(soft.mapping.Operation) <em>Addlog</em>}</li>
- *   <li>{@link soft.mapping.Logs#init() <em>Init</em>}</li>
+ *   <li>{@link soft.mapping.Logs#addLog(soft.mapping.Operation) <em>Add Log</em>}</li>
+ *   <li>{@link soft.mapping.Logs#init(soft.mapping.Map) <em>Init</em>}</li>
+ *   <li>{@link soft.mapping.Logs#addMap(soft.mapping.Map) <em>Add Map</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -136,26 +137,39 @@ public class LogsTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link soft.mapping.Logs#addlog(soft.mapping.Operation) <em>Addlog</em>}' operation.
+	 * Tests the '{@link soft.mapping.Logs#addLog(soft.mapping.Operation) <em>Add Log</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see soft.mapping.Logs#addlog(soft.mapping.Operation)
+	 * @see soft.mapping.Logs#addLog(soft.mapping.Operation)
 	 * @generated
 	 */
-	public void testAddlog__Operation() {
+	public void testAddLog__Operation() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
 
 	/**
-	 * Tests the '{@link soft.mapping.Logs#init() <em>Init</em>}' operation.
+	 * Tests the '{@link soft.mapping.Logs#init(soft.mapping.Map) <em>Init</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see soft.mapping.Logs#init()
+	 * @see soft.mapping.Logs#init(soft.mapping.Map)
 	 * @generated
 	 */
-	public void testInit() {
+	public void testInit__Map() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link soft.mapping.Logs#addMap(soft.mapping.Map) <em>Add Map</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see soft.mapping.Logs#addMap(soft.mapping.Map)
+	 * @generated
+	 */
+	public void testAddMap__Map() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

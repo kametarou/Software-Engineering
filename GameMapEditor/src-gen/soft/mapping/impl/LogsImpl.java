@@ -3,12 +3,11 @@
 package soft.mapping.impl;
 
 import java.lang.reflect.InvocationTargetException;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -50,7 +49,7 @@ public class LogsImpl extends MinimalEObjectImpl.Container implements Logs {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Map> maps;
+	protected EList<Map> maps = new BasicEList<Map>();
 
 	/**
 	 * The default value of the '{@link #getCurrent() <em>Current</em>}' attribute.
@@ -184,7 +183,7 @@ public class LogsImpl extends MinimalEObjectImpl.Container implements Logs {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void addlog(Operation op) {
+	public void addLog(Operation op) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -193,12 +192,19 @@ public class LogsImpl extends MinimalEObjectImpl.Container implements Logs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
-	public void init() {
-		this.current = 0;
-		this.maps = null;
-		this.logdata = null;
+	public void init(Map map) {
+		addMap(map);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void addMap(Map map) {
+		maps.add(map);
 	}
 
 	/**
@@ -311,11 +317,14 @@ public class LogsImpl extends MinimalEObjectImpl.Container implements Logs {
 			case MappingPackage.LOGS___REMOVELOG:
 				removelog();
 				return null;
-			case MappingPackage.LOGS___ADDLOG__OPERATION:
-				addlog((Operation)arguments.get(0));
+			case MappingPackage.LOGS___ADD_LOG__OPERATION:
+				addLog((Operation)arguments.get(0));
 				return null;
-			case MappingPackage.LOGS___INIT:
-				init();
+			case MappingPackage.LOGS___INIT__MAP:
+				init((Map)arguments.get(0));
+				return null;
+			case MappingPackage.LOGS___ADD_MAP__MAP:
+				addMap((Map)arguments.get(0));
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);

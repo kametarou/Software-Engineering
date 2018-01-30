@@ -15,6 +15,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.swt.graphics.Device;
+import org.eclipse.swt.widgets.Display;
+
 import soft.mapping.Asset;
 import soft.mapping.Cell;
 import soft.mapping.Logs;
@@ -371,7 +373,7 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void init(final int height, final int width, final Device mydev) {
 			cells = new Cell[3][width][height];
@@ -380,7 +382,7 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 					for (int x = 0; x < width; x++) {
 						for (int y = 0; y < height; y++) {
 							CellImpl myCell = new CellImpl();
-							myCell.init(x, y, mydev);
+							myCell.init(x, y, Display.getCurrent());
 							cells[z][x][y] = myCell;
 						}
 					}
@@ -536,7 +538,7 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case MappingPackage.MAP___INIT__INT_INT:
+			case MappingPackage.MAP___INIT__INT_INT_DEVICE:
 				init((Integer)arguments.get(0), (Integer)arguments.get(1), (Device)arguments.get(2));
 				return null;
 			case MappingPackage.MAP___GET_CELL_FROM_CURRENT_LAYER__INT_INT:

@@ -11,7 +11,6 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerConfigurationException;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
@@ -39,7 +38,6 @@ import soft.mapping.Map;
 public class XmlWriterImpl extends MinimalEObjectImpl.Container implements XmlWriter {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected XmlWriterImpl() {
@@ -48,7 +46,6 @@ public class XmlWriterImpl extends MinimalEObjectImpl.Container implements XmlWr
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -58,7 +55,6 @@ public class XmlWriterImpl extends MinimalEObjectImpl.Container implements XmlWr
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void init() {
@@ -151,18 +147,17 @@ public class XmlWriterImpl extends MinimalEObjectImpl.Container implements XmlWr
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case FileioPackage.XML_WRITER___INIT:
-			init();
-			return null;
-		case FileioPackage.XML_WRITER___MAP2XML__STRING_MAP:
-			map2xml((String) arguments.get(0), (Map) arguments.get(1));
-			return null;
+			case FileioPackage.XML_WRITER___INIT:
+				init();
+				return null;
+			case FileioPackage.XML_WRITER___MAP2XML__STRING_MAP:
+				map2xml((String)arguments.get(0), (Map)arguments.get(1));
+				return null;
 		}
 		return super.eInvoke(operationID, arguments);
 	}

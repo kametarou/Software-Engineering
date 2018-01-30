@@ -6,11 +6,14 @@ import org.eclipse.swt.widgets.Canvas;
 import org.eclipse.swt.widgets.Composite;
 
 import soft.mapping.Cell;
+import soft.mapping.Logs;
 import soft.mapping.Map;
+import soft.mapping.MappingFactory;
 
 public class MapDrawer extends Canvas {
 
 	Map myMap;
+	Logs myLogs = MappingFactory.eINSTANCE.createLogs();
 
 	public MapDrawer(Composite parent, int style) {
 		super(parent, style);
@@ -20,6 +23,7 @@ public class MapDrawer extends Canvas {
 
 	public void setMap(Map map) {
 		myMap = map;
+		myLogs.init(map);
 	}
 
 	public Map getMap() {
