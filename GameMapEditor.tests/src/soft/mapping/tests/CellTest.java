@@ -100,7 +100,7 @@ public class CellTest extends TestCase {
 	 * @see soft.mapping.Cell#init(int, int, org.eclipse.swt.graphics.Device)
 	 * @generated
 	 */
-	public void testInit__int_int() {
+	public void testInit__int_int_Device() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

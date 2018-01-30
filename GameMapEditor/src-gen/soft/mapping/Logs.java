@@ -114,7 +114,7 @@ public interface Logs extends EObject {
 	 * @model
 	 * @generated
 	 */
-	void addlog(Operation op);
+	void addLog(Operation op);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -122,6 +122,14 @@ public interface Logs extends EObject {
 	 * @model
 	 * @generated
 	 */
-	void init();
+	void init(Map map);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void addMap(Map map);
 
 } // Logs

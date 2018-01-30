@@ -97,7 +97,7 @@ public class CellImpl extends MinimalEObjectImpl.Container implements Cell {
 	 * @generated
 	 * @ordered
 	 */
-	protected Color cellColor; //= CELL_COLOR_EDEFAULT;
+	protected Color cellColor = CELL_COLOR_EDEFAULT; //= CELL_COLOR_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -478,7 +478,7 @@ public class CellImpl extends MinimalEObjectImpl.Container implements Cell {
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case MappingPackage.CELL___INIT__INT_INT:
+			case MappingPackage.CELL___INIT__INT_INT_DEVICE:
 				init((Integer)arguments.get(0), (Integer)arguments.get(1), (Device)arguments.get(2));
 				return null;
 			case MappingPackage.CELL___TO_STRING:

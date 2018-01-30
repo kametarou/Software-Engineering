@@ -158,7 +158,7 @@ public interface MappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAP___INIT__INT_INT = 0;
+	int MAP___INIT__INT_INT_DEVICE = 0;
 
 	/**
 	 * The operation id for the '<em>Get Cell From Current Layer</em>' operation.
@@ -261,13 +261,13 @@ public interface MappingPackage extends EPackage {
 	int LOGS___REMOVELOG = 2;
 
 	/**
-	 * The operation id for the '<em>Addlog</em>' operation.
+	 * The operation id for the '<em>Add Log</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LOGS___ADDLOG__OPERATION = 3;
+	int LOGS___ADD_LOG__OPERATION = 3;
 
 	/**
 	 * The operation id for the '<em>Init</em>' operation.
@@ -276,7 +276,16 @@ public interface MappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGS___INIT = 4;
+	int LOGS___INIT__MAP = 4;
+
+	/**
+	 * The operation id for the '<em>Add Map</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGS___ADD_MAP__MAP = 5;
 
 	/**
 	 * The number of operations of the '<em>Logs</em>' class.
@@ -285,7 +294,7 @@ public interface MappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGS_OPERATION_COUNT = 5;
+	int LOGS_OPERATION_COUNT = 6;
 
 	/**
 	 * The meta object id for the '{@link soft.mapping.impl.CellImpl <em>Cell</em>}' class.
@@ -358,7 +367,7 @@ public interface MappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CELL___INIT__INT_INT = MainPackage.SERIALIZABLE_OPERATION_COUNT + 0;
+	int CELL___INIT__INT_INT_DEVICE = MainPackage.SERIALIZABLE_OPERATION_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>To String</em>' operation.
@@ -800,7 +809,7 @@ public interface MappingPackage extends EPackage {
 	 * @see soft.mapping.Map#init(int, int, org.eclipse.swt.graphics.Device)
 	 * @generated
 	 */
-	EOperation getMap__Init__int_int();
+	EOperation getMap__Init__int_int_Device();
 
 	/**
 	 * Returns the meta object for the '{@link soft.mapping.Map#getCellFromCurrentLayer(int, int) <em>Get Cell From Current Layer</em>}' operation.
@@ -896,24 +905,34 @@ public interface MappingPackage extends EPackage {
 	EOperation getLogs__Removelog();
 
 	/**
-	 * Returns the meta object for the '{@link soft.mapping.Logs#addlog(soft.mapping.Operation) <em>Addlog</em>}' operation.
+	 * Returns the meta object for the '{@link soft.mapping.Logs#addLog(soft.mapping.Operation) <em>Add Log</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Addlog</em>' operation.
-	 * @see soft.mapping.Logs#addlog(soft.mapping.Operation)
+	 * @return the meta object for the '<em>Add Log</em>' operation.
+	 * @see soft.mapping.Logs#addLog(soft.mapping.Operation)
 	 * @generated
 	 */
-	EOperation getLogs__Addlog__Operation();
+	EOperation getLogs__AddLog__Operation();
 
 	/**
-	 * Returns the meta object for the '{@link soft.mapping.Logs#init() <em>Init</em>}' operation.
+	 * Returns the meta object for the '{@link soft.mapping.Logs#init(soft.mapping.Map) <em>Init</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Init</em>' operation.
-	 * @see soft.mapping.Logs#init()
+	 * @see soft.mapping.Logs#init(soft.mapping.Map)
 	 * @generated
 	 */
-	EOperation getLogs__Init();
+	EOperation getLogs__Init__Map();
+
+	/**
+	 * Returns the meta object for the '{@link soft.mapping.Logs#addMap(soft.mapping.Map) <em>Add Map</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Add Map</em>' operation.
+	 * @see soft.mapping.Logs#addMap(soft.mapping.Map)
+	 * @generated
+	 */
+	EOperation getLogs__AddMap__Map();
 
 	/**
 	 * Returns the meta object for class '{@link soft.mapping.Cell <em>Cell</em>}'.
@@ -988,7 +1007,7 @@ public interface MappingPackage extends EPackage {
 	 * @see soft.mapping.Cell#init(int, int, org.eclipse.swt.graphics.Device)
 	 * @generated
 	 */
-	EOperation getCell__Init__int_int();
+	EOperation getCell__Init__int_int_Device();
 
 	/**
 	 * Returns the meta object for the '{@link soft.mapping.Cell#toString() <em>To String</em>}' operation.
@@ -1379,7 +1398,7 @@ public interface MappingPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation MAP___INIT__INT_INT = eINSTANCE.getMap__Init__int_int();
+		EOperation MAP___INIT__INT_INT_DEVICE = eINSTANCE.getMap__Init__int_int_Device();
 
 		/**
 		 * The meta object literal for the '<em><b>Get Cell From Current Layer</b></em>' operation.
@@ -1456,12 +1475,12 @@ public interface MappingPackage extends EPackage {
 		EOperation LOGS___REMOVELOG = eINSTANCE.getLogs__Removelog();
 
 		/**
-		 * The meta object literal for the '<em><b>Addlog</b></em>' operation.
+		 * The meta object literal for the '<em><b>Add Log</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation LOGS___ADDLOG__OPERATION = eINSTANCE.getLogs__Addlog__Operation();
+		EOperation LOGS___ADD_LOG__OPERATION = eINSTANCE.getLogs__AddLog__Operation();
 
 		/**
 		 * The meta object literal for the '<em><b>Init</b></em>' operation.
@@ -1469,7 +1488,15 @@ public interface MappingPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation LOGS___INIT = eINSTANCE.getLogs__Init();
+		EOperation LOGS___INIT__MAP = eINSTANCE.getLogs__Init__Map();
+
+		/**
+		 * The meta object literal for the '<em><b>Add Map</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation LOGS___ADD_MAP__MAP = eINSTANCE.getLogs__AddMap__Map();
 
 		/**
 		 * The meta object literal for the '{@link soft.mapping.impl.CellImpl <em>Cell</em>}' class.
@@ -1527,7 +1554,7 @@ public interface MappingPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation CELL___INIT__INT_INT = eINSTANCE.getCell__Init__int_int();
+		EOperation CELL___INIT__INT_INT_DEVICE = eINSTANCE.getCell__Init__int_int_Device();
 
 		/**
 		 * The meta object literal for the '<em><b>To String</b></em>' operation.

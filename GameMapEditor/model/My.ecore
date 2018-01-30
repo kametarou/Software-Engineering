@@ -43,10 +43,15 @@
       <eOperations name="undo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       <eOperations name="redo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       <eOperations name="removelog"/>
-      <eOperations name="addlog">
+      <eOperations name="addLog">
         <eParameters name="op" eType="#//mapping/Operation"/>
       </eOperations>
-      <eOperations name="init"/>
+      <eOperations name="init">
+        <eParameters name="map" eType="#//mapping/Map"/>
+      </eOperations>
+      <eOperations name="addMap">
+        <eParameters name="map" eType="#//mapping/Map"/>
+      </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="maps" upperBound="-1"
           eType="#//mapping/Map" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="current" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
