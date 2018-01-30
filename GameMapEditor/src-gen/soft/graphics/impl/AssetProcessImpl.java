@@ -4,14 +4,13 @@ package soft.graphics.impl;
 
 import java.awt.image.BufferedImage;
 import java.lang.reflect.InvocationTargetException;
-import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import soft.graphics.AssetProcess;
 import soft.graphics.GraphicsPackage;
-
 import soft.mapping.Asset;
 
 /**
@@ -44,27 +43,10 @@ public class AssetProcessImpl extends MinimalEObjectImpl.Container implements As
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public Asset createAsset(BufferedImage image, String name) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Asset[] initialAssetArray() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
 	public Asset createAsset(BufferedImage image, string name) {
-		int orgWidth = iamge.getWidth();
+		int orgWidth = image.getWidth();
 		int orgHeight = image.getHeight();
 		boolean width32 = orgWidth % 32 == 0;
 		boolean height32 = orgHeight % 32 == 0;
@@ -124,8 +106,6 @@ public class AssetProcessImpl extends MinimalEObjectImpl.Container implements As
 		switch (operationID) {
 			case GraphicsPackage.ASSET_PROCESS___CREATE_ASSET__BUFFEREDIMAGE_STRING:
 				return createAsset((BufferedImage)arguments.get(0), (String)arguments.get(1));
-			case GraphicsPackage.ASSET_PROCESS___INITIAL_ASSET_ARRAY:
-				return initialAssetArray();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

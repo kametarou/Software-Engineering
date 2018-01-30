@@ -198,7 +198,6 @@
         <eParameters name="image" eType="#//graphics/BufferedImage"/>
         <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
-      <eOperations name="initialAssetArray" eType="#//mapping/AssetArray"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EDataType" name="BufferedImage" instanceClassName="java.awt.image.BufferedImage"/>
   </eSubpackages>
