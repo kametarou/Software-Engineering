@@ -46,7 +46,7 @@ public class LogsImpl extends MinimalEObjectImpl.Container implements Logs {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getMaps()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
 	protected EList<Map> maps = new BasicEList<Map>();
