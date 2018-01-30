@@ -197,13 +197,22 @@ public interface MappingPackage extends EPackage {
 	int MAP___ADD_LOG__OPERATION = 4;
 
 	/**
+	 * The operation id for the '<em>Add Asset To Assets Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAP___ADD_ASSET_TO_ASSETS_SET__ASSET = 5;
+
+	/**
 	 * The number of operations of the '<em>Map</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAP_OPERATION_COUNT = 5;
+	int MAP_OPERATION_COUNT = 6;
 
 	/**
 	 * The meta object id for the '{@link soft.mapping.impl.LogsImpl <em>Logs</em>}' class.
@@ -1016,6 +1025,16 @@ public interface MappingPackage extends EPackage {
 	EOperation getMap__AddLog__Operation();
 
 	/**
+	 * Returns the meta object for the '{@link soft.mapping.Map#addAssetToAssetsSet(soft.mapping.Asset) <em>Add Asset To Assets Set</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Add Asset To Assets Set</em>' operation.
+	 * @see soft.mapping.Map#addAssetToAssetsSet(soft.mapping.Asset)
+	 * @generated
+	 */
+	EOperation getMap__AddAssetToAssetsSet__Asset();
+
+	/**
 	 * Returns the meta object for class '{@link soft.mapping.Logs <em>Logs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1635,6 +1654,14 @@ public interface MappingPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation MAP___ADD_LOG__OPERATION = eINSTANCE.getMap__AddLog__Operation();
+
+		/**
+		 * The meta object literal for the '<em><b>Add Asset To Assets Set</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation MAP___ADD_ASSET_TO_ASSETS_SET__ASSET = eINSTANCE.getMap__AddAssetToAssetsSet__Asset();
 
 		/**
 		 * The meta object literal for the '{@link soft.mapping.impl.LogsImpl <em>Logs</em>}' class.
