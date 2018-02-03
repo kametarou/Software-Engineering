@@ -116,8 +116,8 @@ public class XmlWriterImpl extends MinimalEObjectImpl.Container implements XmlWr
 			// cellArrays
 			Element array = document.createElement("cellarray");
 			// document.appendChild(array);
-			for (int d = 0; d < map.getMaxLayer(); d++) {
-				// for (int d = 0; d < 1; d++) {
+			// for (int d = 0; d < map.getMaxLayer(); d++) {
+			for (int d = 0; d < 1; d++) {
 				for (int y = 0; y < map.getMapheight(); y++) {
 					// for (int y = 0; y < 10; y++) {
 					for (int x = 0; x < map.getMapwidth(); x++) {
