@@ -39,11 +39,11 @@ public abstract class AssetImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getMyBufferedImage()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
-	protected static final BufferedImage MY_BUFFERED_IMAGE_EDEFAULT = (BufferedImage)GraphicsFactory.eINSTANCE.createFromString(GraphicsPackage.eINSTANCE.getBufferedImage(), "");
-
+	//protected static final BufferedImage MY_BUFFERED_IMAGE_EDEFAULT = (BufferedImage)GraphicsFactory.eINSTANCE.createFromString(GraphicsPackage.eINSTANCE.getBufferedImage(), "");
+	protected static final BufferedImage MY_BUFFERED_IMAGE_EDEFAULT = null;
 	/**
 	 * The cached value of the '{@link #getMyBufferedImage() <em>My Buffered Image</em>}' attribute.
 	 * <!-- begin-user-doc -->
