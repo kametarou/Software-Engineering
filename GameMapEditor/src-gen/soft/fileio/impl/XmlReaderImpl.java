@@ -18,7 +18,6 @@ import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.widgets.Display;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
-import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
@@ -39,7 +38,6 @@ import soft.mapping.Position;
 public class XmlReaderImpl extends MinimalEObjectImpl.Container implements XmlReader {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected XmlReaderImpl() {
@@ -48,7 +46,6 @@ public class XmlReaderImpl extends MinimalEObjectImpl.Container implements XmlRe
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -58,7 +55,6 @@ public class XmlReaderImpl extends MinimalEObjectImpl.Container implements XmlRe
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void init() {
@@ -161,7 +157,6 @@ public class XmlReaderImpl extends MinimalEObjectImpl.Container implements XmlRe
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Asset xml2assets(String filepath) {
@@ -172,19 +167,18 @@ public class XmlReaderImpl extends MinimalEObjectImpl.Container implements XmlRe
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case FileioPackage.XML_READER___INIT:
-			init();
-			return null;
-		case FileioPackage.XML_READER___XML2MAP__STRING:
-			return xml2map((String) arguments.get(0));
-		case FileioPackage.XML_READER___XML2ASSETS__STRING:
-			return xml2assets((String) arguments.get(0));
+			case FileioPackage.XML_READER___INIT:
+				init();
+				return null;
+			case FileioPackage.XML_READER___XML2MAP__STRING:
+				return xml2map((String)arguments.get(0));
+			case FileioPackage.XML_READER___XML2ASSETS__STRING:
+				return xml2assets((String)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

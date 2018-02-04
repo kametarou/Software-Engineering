@@ -17,6 +17,7 @@ import org.eclipse.swt.widgets.ToolBar;
 import org.eclipse.swt.widgets.ToolItem;
 import org.eclipse.wb.swt.SWTResourceManager;
 
+import soft.mapping.Asset;
 import soft.mapping.Cell;
 import soft.mapping.Map;
 import soft.mapping.MappingFactory;
@@ -106,6 +107,13 @@ public class TestWindow {
                 	    area.redraw();
                 	  }
                 	  pushingEButton = false;
+				} else if (area.mode == MapDrawer.ADD_FLOWER_ASSET) {
+					Cell cell = area.getCellAt(e.x, e.y);
+					if (cell != null) {
+						cell.setMyAsset(map.getAssetFromAssetsSet("flower"));
+						area.redraw();
+					}
+					pushingEButton = false;
 				}
                 else {
 				System.out.println(e.x+" "+e.y);
@@ -243,6 +251,8 @@ public class TestWindow {
 								asset1.setWidth(2);
 								asset1.setImage(SWTResourceManager.getImage("images/flower.png"));
 								asset1.addSelectionListener(myListener);
+								
+								asset1.setData("flower");
 
 		shlMapBuilder.open();
 		shlMapBuilder.layout();

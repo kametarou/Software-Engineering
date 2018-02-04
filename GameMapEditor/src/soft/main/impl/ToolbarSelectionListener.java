@@ -57,7 +57,9 @@ public class ToolbarSelectionListener implements SelectionListener {
          mapArea.mode = MapDrawer.ADD_COLOR;
 
          mapArea.getShell().setCursor(cursorHand);
-        }
+        } else if (source.getData() != null && source.getData().equals("flower")) {
+			mapArea.mode = MapDrawer.ADD_FLOWER_ASSET;
+		}
 	}
 
 	@Override

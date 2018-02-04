@@ -11,9 +11,6 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import soft.graphics.GraphicsFactory;
-import soft.graphics.GraphicsPackage;
 import soft.mapping.Asset;
 import soft.mapping.MappingPackage;
 

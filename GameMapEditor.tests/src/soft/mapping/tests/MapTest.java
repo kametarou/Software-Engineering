@@ -22,6 +22,7 @@ import soft.mapping.Position;
  *   <li>{@link soft.mapping.Map#deleteCellFromCurrentLayer(int, int) <em>Delete Cell From Current Layer</em>}</li>
  *   <li>{@link soft.mapping.Map#addLog(soft.mapping.Operation) <em>Add Log</em>}</li>
  *   <li>{@link soft.mapping.Map#addAssetToAssetsSet(soft.mapping.Asset) <em>Add Asset To Assets Set</em>}</li>
+ *   <li>{@link soft.mapping.Map#getAssetFromAssetsSet(java.lang.String) <em>Get Asset From Assets Set</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -193,6 +194,19 @@ public class MapTest extends TestCase {
 	 * @generated
 	 */
 	public void testAddAssetToAssetsSet__Asset() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link soft.mapping.Map#getAssetFromAssetsSet(java.lang.String) <em>Get Asset From Assets Set</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see soft.mapping.Map#getAssetFromAssetsSet(java.lang.String)
+	 * @generated
+	 */
+	public void testGetAssetFromAssetsSet__String() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
