@@ -108,6 +108,53 @@ public class ImageProcessImpl extends MinimalEObjectImpl.Container implements Im
 		throw new UnsupportedOperationException();
 	}
 
+	public static ImageData blendImageData(ImageData cell1, ImageData cell2, ImageData cell3, int currentLayer) {
+		int width = cell1.x;
+		int height = cell1.y;
+		ImageData res = new ImageData(width, height, cell1.depth, cell1.palette);
+		int x, y;
+
+		if(currentLayer == 1) {
+			for(x = 0; x < width; x++) {
+				for(y = 0; y < height; y++) {
+					res.setPixel(x,  y, cell1.getPixel(x, y));
+				}
+			}
+		}
+
+		if(currentLayer == 2) {
+			for(x = 0; x < width; x++) {
+				for(y = 0; y < height; y++) {
+					int rgb2 = cell2.getPixel(x, y);
+					if(rgb2 == 0)
+						res.setPixel(x, y, cell1.getPixel(x, y));
+					else
+						res.setPixel(x, y, rgb2);
+				}
+			}
+		}
+
+		if(currentLayer == 3) {
+			for(x = 0; x < width; x++) {
+				for(y = 0; y < height; y++) {
+					int rgb3 = cell3.getPixel(x, y);
+					if(rgb3 == 0) {
+						int rgb2 = cell2.getPixel(x, y);
+						if(rgb2 == 0)
+							res.setPixel(x, y, cell1.getPixel(x, y));
+						else
+							res.setPixel(x, y, rgb2);
+					}
+					else
+						res.setPixel(x, y, rgb3);;
+				}
+			}
+		}
+
+		return res;
+
+	}
+
 	//convert AWT image into SWT image
 	//modify code in http://johndingus.blogspot.jp/2014/01/java-convert-bufferedimage-to-swt.html
 	public static ImageData convertToSWT(BufferedImage bufferedImage) {
