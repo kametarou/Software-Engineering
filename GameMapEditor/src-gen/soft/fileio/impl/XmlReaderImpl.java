@@ -66,6 +66,14 @@ public class XmlReaderImpl extends MinimalEObjectImpl.Container implements XmlRe
 		throw new UnsupportedOperationException();
 	}
 
+	private String getCorrectAssetId(String assetId) {
+		if (assetId.equals("images/flower.png")) {
+			return "flower";
+		} else {
+			return null;
+		}
+	}
+
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -130,7 +138,7 @@ public class XmlReaderImpl extends MinimalEObjectImpl.Container implements XmlRe
 					if (colorNum != null) {
 						// convert string into 3 integers(r,g,b)
 						int rgb = Integer.valueOf(colorNum);
-						//System.err.println(rgb);
+						// System.err.println(rgb);
 						int r = rgb / 256 / 256;
 						int g = (rgb - r * 256 * 256) / 256;
 						int b = rgb - r * 256 * 256 - g * 256;
@@ -139,8 +147,8 @@ public class XmlReaderImpl extends MinimalEObjectImpl.Container implements XmlRe
 					if (el.getElementsByTagName("asset").item(0) != null) {
 						String assetId = el.getElementsByTagName("asset").item(0).getTextContent();
 						if (assetId != null) {// set Aseet
-							// TODO implement here
-							c.setMyAsset(map.getAssetFromAssetsSet(assetId));
+							String correctassetId = getCorrectAssetId(assetId);
+							c.setMyAsset(map.getAssetFromAssetsSet(correctassetId));
 						}
 					}
 				}
