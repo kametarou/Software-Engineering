@@ -38,6 +38,7 @@ import soft.mapping.Position;
 public class XmlReaderImpl extends MinimalEObjectImpl.Container implements XmlReader {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected XmlReaderImpl() {
@@ -46,6 +47,7 @@ public class XmlReaderImpl extends MinimalEObjectImpl.Container implements XmlRe
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -55,6 +57,7 @@ public class XmlReaderImpl extends MinimalEObjectImpl.Container implements XmlRe
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void init() {
@@ -94,16 +97,16 @@ public class XmlReaderImpl extends MinimalEObjectImpl.Container implements XmlRe
 					.intValue();
 			map.init(height, width, null);
 			map.setMaxLayer(maxlayer);
-			
+
 			NodeList cellarrayNode = mapEl.getElementsByTagName("cellarray");
-			System.out.println("cell array length:"+cellarrayNode.getLength());
+			System.out.println("cell array length:" + cellarrayNode.getLength());
 			for (int depth = 0; (depth < cellarrayNode.getLength()) && (depth < maxlayer); depth++) {
-				NodeList cells = ((Element)cellarrayNode.item(0)).getElementsByTagName("cell");
-				for (int i = 0; i < height*width; i++) {
+				NodeList cells = ((Element) cellarrayNode.item(0)).getElementsByTagName("cell");
+				for (int i = 0; i < height * width; i++) {
 					Element el = (Element) cells.item(i);
 					int x = i % width;
 					int y = i / width;
-					//Cell c = map.getCellFromSpecifiedLayer(x, y, depth); //method unsupported
+					// Cell c = map.getCellFromSpecifiedLayer(x, y, depth); //method unsupported
 					Cell c = map.getCellFromCurrentLayer(x, y);
 					// assign properties to the cell c
 					// (1)position
@@ -116,24 +119,29 @@ public class XmlReaderImpl extends MinimalEObjectImpl.Container implements XmlRe
 					// (2)referenceCell
 					String refxString = el.getElementsByTagName("refCellX").item(0).getTextContent();
 					String refyString = el.getElementsByTagName("refCellY").item(0).getTextContent();
-					if (refxString!=""&&refyString!="") {
-						//c.setReferenceCell(map.getCellFromSpecifiedLayer(x, y, depth)); //method unsupported
+					if (refxString != "" && refyString != "") {
+						// c.setReferenceCell(map.getCellFromSpecifiedLayer(x, y, depth)); //method
+						// unsupported
 						c.setReferenceCell(map.getCellFromCurrentLayer(x, y));
 					}
-					// (3)cellColor or Asset
+					// (3)cellColor and Asset
 					String colorNum = el.getElementsByTagName("color").item(0).getTextContent();
-					if (colorNum == null) {// set Aseet
-						// TODO implement here
-						Asset a = factory.createImageAsset();
-						c.setMyAsset(a);
-					} else {
+
+					if (colorNum != null) {
 						// convert string into 3 integers(r,g,b)
 						int rgb = Integer.valueOf(colorNum);
-						System.err.println(rgb);
-						int r = rgb /256 /256;
-						int g = (rgb-r*256*256)/256;
-						int b = rgb-r*256*256-g*256;
+						//System.err.println(rgb);
+						int r = rgb / 256 / 256;
+						int g = (rgb - r * 256 * 256) / 256;
+						int b = rgb - r * 256 * 256 - g * 256;
 						c.setCellColor(new Color(Display.getCurrent(), r, g, b));
+					}
+					if (el.getElementsByTagName("asset").item(0) != null) {
+						String assetId = el.getElementsByTagName("asset").item(0).getTextContent();
+						if (assetId != null) {// set Aseet
+							// TODO implement here
+							c.setMyAsset(map.getAssetFromAssetsSet(assetId));
+						}
 					}
 				}
 			}
@@ -154,6 +162,7 @@ public class XmlReaderImpl extends MinimalEObjectImpl.Container implements XmlRe
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Asset xml2assets(String filepath) {
@@ -164,18 +173,19 @@ public class XmlReaderImpl extends MinimalEObjectImpl.Container implements XmlRe
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case FileioPackage.XML_READER___INIT:
-				init();
-				return null;
-			case FileioPackage.XML_READER___XML2MAP__STRING:
-				return xml2map((String)arguments.get(0));
-			case FileioPackage.XML_READER___XML2ASSETS__STRING:
-				return xml2assets((String)arguments.get(0));
+		case FileioPackage.XML_READER___INIT:
+			init();
+			return null;
+		case FileioPackage.XML_READER___XML2MAP__STRING:
+			return xml2map((String) arguments.get(0));
+		case FileioPackage.XML_READER___XML2ASSETS__STRING:
+			return xml2assets((String) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

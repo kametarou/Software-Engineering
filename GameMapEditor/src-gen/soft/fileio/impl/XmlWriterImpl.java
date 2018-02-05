@@ -18,7 +18,6 @@ import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -42,6 +41,7 @@ import soft.mapping.Position;
 public class XmlWriterImpl extends MinimalEObjectImpl.Container implements XmlWriter {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected XmlWriterImpl() {
@@ -50,6 +50,7 @@ public class XmlWriterImpl extends MinimalEObjectImpl.Container implements XmlWr
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -59,6 +60,7 @@ public class XmlWriterImpl extends MinimalEObjectImpl.Container implements XmlWr
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void init() {
@@ -147,10 +149,17 @@ public class XmlWriterImpl extends MinimalEObjectImpl.Container implements XmlWr
 							int rgb = red * 256 * 256 + green * 256 + blue;
 							color.appendChild(document.createTextNode(String.valueOf(rgb)));
 							cEl.appendChild(color);
-						} else {
-							Element assetid = document.createElement("assetid");
-							assetid.appendChild(document.createTextNode(c.getMyAsset().getAssetId()));
 						}
+						if (c.getMyAsset()!=null) {
+							String assetId = c.getMyAsset().getAssetId();
+							Element asset = document.createElement("asset");
+							asset.appendChild(document.createTextNode(assetId));
+							cEl.appendChild(asset);
+						}
+						// } else {
+						// Element assetid = document.createElement("assetid");
+						// assetid.appendChild(document.createTextNode(c.getMyAsset().getAssetId()));
+						// }
 						array.appendChild(cEl);
 					}
 				}
@@ -184,17 +193,18 @@ public class XmlWriterImpl extends MinimalEObjectImpl.Container implements XmlWr
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case FileioPackage.XML_WRITER___INIT:
-				init();
-				return null;
-			case FileioPackage.XML_WRITER___MAP2XML__STRING_MAP:
-				map2xml((String)arguments.get(0), (Map)arguments.get(1));
-				return null;
+		case FileioPackage.XML_WRITER___INIT:
+			init();
+			return null;
+		case FileioPackage.XML_WRITER___MAP2XML__STRING_MAP:
+			map2xml((String) arguments.get(0), (Map) arguments.get(1));
+			return null;
 		}
 		return super.eInvoke(operationID, arguments);
 	}

@@ -93,14 +93,8 @@ public class MyImageReaderImpl extends MinimalEObjectImpl.Container implements M
 		File f = new File(filename);
 		try {
 			readImage=ImageIO.read(f);
-			
-			if(readImage.getColorModel() instanceof DirectColorModel) {System.err.println("direct");}
-			else if(readImage.getColorModel() instanceof IndexColorModel) {System.err.println("index");}
-			else {System.err.println("others");}
-			System.out.println(readImage.getColorModel().toString());
 			AssetProcess ap = GraphicsFactory.eINSTANCE.createAssetProcess();
 			a=ap.createAsset(readImage, filename);
-			//TODO create new Asset and set readImage.
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
