@@ -97,6 +97,53 @@ public class ImageProcessImpl extends MinimalEObjectImpl.Container implements Im
 		throw new UnsupportedOperationException();
 	}
 
+	public static BufferedImage blendBufferedImage(BufferedImage cell1, BufferedImage cell2, BufferedImage cell3, int currentLayer) {
+		BufferedImage result;
+		int width = cell1.getWidth();
+		int height = cell1.getHeight();
+		result = new BufferedImage(width, height, cell1.getType());
+		int i, j;
+
+		if(currentLayer == 1) {
+			for(i = 0; i < width; i++) {
+				for(j = 0; j < height; j++) {
+					result.setRGB(i,  j, cell1.getRGB(i, j));
+				}
+			}
+		}
+
+		if(currentLayer == 2) {
+			for(i = 0; i < width; i++) {
+				for(j = 0; j < height; j++) {
+					int rgb2 = cell2.getRGB(i, j);
+					if(rgb2 == 0)
+						result.setRGB(i, j, cell1.getRGB(i, j));
+					else
+						result.setRGB(i, j, rgb2);
+				}
+			}
+		}
+
+		if(currentLayer == 3) {
+			for(i = 0; i < width; i++) {
+				for(j = 0; j < height; j++) {
+					int rgb3 = cell3.getRGB(i, j);
+					if(rgb3 == 0) {
+						int rgb2 = cell2.getRGB(i, j);
+						if(rgb2 == 0)
+							result.setRGB(i, j, cell1.getRGB(i, j));
+						else
+							result.setRGB(i, j, rgb2);
+					}
+					else
+						result.setRGB(i, j, rgb3);;
+				}
+			}
+		}
+
+		return result;
+	}
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
