@@ -4,13 +4,15 @@ package soft.mapping.impl;
 
 import java.awt.image.BufferedImage;
 import java.lang.reflect.InvocationTargetException;
-import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import soft.graphics.GraphicsFactory;
+import soft.graphics.GraphicsPackage;
 import soft.mapping.Asset;
 import soft.mapping.MappingPackage;
 
@@ -39,8 +41,8 @@ public abstract class AssetImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated NOT
 	 * @ordered
 	 */
-	//protected static final BufferedImage MY_BUFFERED_IMAGE_EDEFAULT = (BufferedImage)GraphicsFactory.eINSTANCE.createFromString(GraphicsPackage.eINSTANCE.getBufferedImage(), "");
-	protected static final BufferedImage MY_BUFFERED_IMAGE_EDEFAULT = null;
+	protected static final BufferedImage MY_BUFFERED_IMAGE_EDEFAULT = (BufferedImage)GraphicsFactory.eINSTANCE.createFromString(GraphicsPackage.eINSTANCE.getBufferedImage(), "");
+//	protected static final BufferedImage MY_BUFFERED_IMAGE_EDEFAULT = null;
 	/**
 	 * The cached value of the '{@link #getMyBufferedImage() <em>My Buffered Image</em>}' attribute.
 	 * <!-- begin-user-doc -->
