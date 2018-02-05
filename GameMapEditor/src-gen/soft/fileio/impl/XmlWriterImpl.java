@@ -150,7 +150,7 @@ public class XmlWriterImpl extends MinimalEObjectImpl.Container implements XmlWr
 							color.appendChild(document.createTextNode(String.valueOf(rgb)));
 							cEl.appendChild(color);
 						}
-						if (c.getMyAsset()!=null) {
+						if (c.getMyAsset() != null) {
 							String assetId = c.getMyAsset().getAssetId();
 							Element asset = document.createElement("asset");
 							asset.appendChild(document.createTextNode(assetId));
@@ -170,11 +170,13 @@ public class XmlWriterImpl extends MinimalEObjectImpl.Container implements XmlWr
 			if (file != null && file.canWrite()) {
 				write(file, document);
 			} else {
-				file.createNewFile();
-				write(file, document);
+				if (file.createNewFile()) {
+					write(file, document);
+				}
 			}
+		} catch (
 
-		} catch (ParserConfigurationException e) {
+		ParserConfigurationException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (FileNotFoundException e) {

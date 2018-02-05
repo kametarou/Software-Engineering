@@ -48,8 +48,8 @@ public class MenubarSelectionListener implements SelectionListener {
 
         		FileDialog saveDialog = new FileDialog(mapArea.getShell(),SWT.SAVE);
         		String saveFile = saveDialog.open();
+        		if(saveFile==null) {return;}
         		//File save = new File (saveFile);
-
         		XmlWriter xmlWriter = FileioFactory.eINSTANCE.createXmlWriter();
     			xmlWriter.map2xml(saveFile, mapArea.myMap);
 //        		if (save != null && save.canWrite()) {
