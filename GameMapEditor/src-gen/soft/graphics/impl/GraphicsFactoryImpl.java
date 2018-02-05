@@ -4,16 +4,18 @@ package soft.graphics.impl;
 
 import java.awt.Color;
 import java.awt.image.BufferedImage;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import soft.graphics.*;
+import soft.graphics.AssetProcess;
+import soft.graphics.GraphicsFactory;
+import soft.graphics.GraphicsPackage;
+import soft.graphics.ImageProcess;
 
 /**
  * <!-- begin-user-doc -->
@@ -163,9 +165,10 @@ public class GraphicsFactoryImpl extends EFactoryImpl implements GraphicsFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public BufferedImage createBufferedImageFromString(EDataType eDataType, String initialValue) {
+		if (initialValue == "") return null;
 		return (BufferedImage)super.createFromString(eDataType, initialValue);
 	}
 
