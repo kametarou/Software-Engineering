@@ -279,4 +279,12 @@ public interface Map extends EObject {
 	 */
 	void addAssetToAssetsSet(Asset asset);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	Asset getAssetFromAssetsSet(String name);
+
 } // Map

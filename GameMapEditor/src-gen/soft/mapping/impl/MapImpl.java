@@ -468,6 +468,19 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Asset getAssetFromAssetsSet(String name) {
+		if (name == "flower") {
+			return assetsSet[0];
+		} else {
+			return null;
+		}
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -609,6 +622,8 @@ public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 			case MappingPackage.MAP___ADD_ASSET_TO_ASSETS_SET__ASSET:
 				addAssetToAssetsSet((Asset)arguments.get(0));
 				return null;
+			case MappingPackage.MAP___GET_ASSET_FROM_ASSETS_SET__STRING:
+				return getAssetFromAssetsSet((String)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
