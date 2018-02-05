@@ -19,7 +19,7 @@ import soft.mapping.Logs;
 import soft.mapping.Map;
 import soft.mapping.MappingFactory;
 
-import soft.main.impl.ConvertImage;
+//import soft.main.impl.ConvertImage;
 
 public class MapDrawer extends Canvas {
 
@@ -90,9 +90,19 @@ public class MapDrawer extends Canvas {
             		  
             		  if (myMap.getCellFromCurrentLayer(x, y).getMyAsset() != null) {
             			  // TODO this method generate too many Image instance.
-            			  ImageData imgdate = new ImageData("images/flower.png");
+            			  //ImageData imgdate = new ImageData("images/flower.png");
+            			  ImageData imgdate = soft.fileio.impl.MyImageReaderImpl.convertToSWT(myMap.getCellFromCurrentLayer(x, y).getMyAsset().getMyBufferedImage());
+            			  
+            			  if(imgdate!=null) {
             			  gc.drawImage(new org.eclipse.swt.graphics.Image(Display.getCurrent(), imgdate), 0, 0, 30, 30, realw/width*x, realh/height*y, realw/width, realh/height);
-            			   /*BufferedImage bf = myMap.getCellFromCurrentLayer(x, y).getMyAsset().getMyBufferedImage();
+            			  } else {
+            				  if(myMap.getCellFromCurrentLayer(x, y).getMyAsset().getMyBufferedImage()!=null) {
+            					  System.err.println("wow!");
+            				  }else {
+            					  System.err.println("mmm...");
+            				  }
+            			  }
+            			  /*BufferedImage bf = myMap.getCellFromCurrentLayer(x, y).getMyAsset().getMyBufferedImage();
             			   PaletteData paletteData = new PaletteData(colors);
             			   ImageData imgdate = new ImageData("images/flower.ping");
             			   rgb = bf.getRGB(x, y);
