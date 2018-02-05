@@ -97,6 +97,7 @@ public class XmlReaderImpl extends MinimalEObjectImpl.Container implements XmlRe
 			int maxlayer = Integer.valueOf(metainfo.getElementsByTagName("maxlayer").item(0).getTextContent())
 					.intValue();
 			map.init(height, width, null);
+			map.setMaxLayer(maxlayer);
 			
 			NodeList cellarrayNode = mapEl.getElementsByTagName("cellarray");
 			System.out.println("cell array length:"+cellarrayNode.getLength());
@@ -106,7 +107,7 @@ public class XmlReaderImpl extends MinimalEObjectImpl.Container implements XmlRe
 					Element el = (Element) cells.item(i);
 					int x = i % width;
 					int y = i / width;
-					//Cell c = map.getCellFromSpecifiedLayer(x, y, depth); //unsupported
+					//Cell c = map.getCellFromSpecifiedLayer(x, y, depth); //method unsupported
 					Cell c = map.getCellFromCurrentLayer(x, y);
 					// assign properties to the cell c
 					// (1)position
@@ -120,7 +121,7 @@ public class XmlReaderImpl extends MinimalEObjectImpl.Container implements XmlRe
 					String refxString = el.getElementsByTagName("refCellX").item(0).getTextContent();
 					String refyString = el.getElementsByTagName("refCellY").item(0).getTextContent();
 					if (refxString!=""&&refyString!="") {
-						//c.setReferenceCell(map.getCellFromSpecifiedLayer(x, y, depth)); //unsupported
+						//c.setReferenceCell(map.getCellFromSpecifiedLayer(x, y, depth)); //method unsupported
 						c.setReferenceCell(map.getCellFromCurrentLayer(x, y));
 					}
 					// (3)cellColor or Asset
@@ -138,12 +139,8 @@ public class XmlReaderImpl extends MinimalEObjectImpl.Container implements XmlRe
 						int b = rgb-r*256*256-g*256;
 						c.setCellColor(new Color(Display.getCurrent(), r, g, b));
 					}
-
-					//cellarray[depth][x][y] = c;
 				}
 			}
-			map.setMaxLayer(maxlayer);
-			//map.setCells(cellarray);
 			return map;
 			// throw new UnsupportedOperationException();
 		} catch (ParserConfigurationException e) {
